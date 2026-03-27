@@ -1,37 +1,54 @@
 import requests
-import re
+from bs4 import BeautifulSoup
 import json
+import re
 from datetime import datetime
 
-# URL of the news page
 URL = "https://www.predecessorgame.com/en-US/news"
 BASE_URL = "https://www.predecessorgame.com"
 
+def parse_date(date_text):
+    # Converts "March 17, 2026" to "2026-03-17"
+    try:
+        return datetime.strptime(date_text.strip(), "%B %d, %Y").strftime("%Y-%m-%d")
+    except:
+        return datetime.now().strftime("%Y-%m-%d")
+
 def scrape():
-    response = requests.get(URL)
-    html = response.text
-    
-    # We find article links and titles using Regex
-    # Pattern looks for: /en-US/news/subdirectory/slug
-    links = re.findall(r'href="(/en-US/news/[^"]+)"[^>]*><h[^>]*>([^<]+)', html)
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    response = requests.get(URL, headers=headers)
+    soup = BeautifulSoup(response.text, 'html.parser')
     
     events = []
-    for link, title in links:
-        # Note: Predecessor's website usually puts dates in the URL or metadata
-        # For this simple version, we'll try to find any YYYY-MM-DD pattern
-        # or just use today's date if one isn't found (Improvement: use actual meta tags)
-        date_match = re.search(r'(\d{4}-\d{2}-\d{2})', html)
-        date_str = date_match.group(1) if date_match else datetime.now().strftime("%Y-%m-%d")
+    
+    # Look for all news cards
+    # Note: Predecessor's site uses specific tags for news items
+    articles = soup.find_all('a', href=re.compile(r'/news/'))
+    
+    for art in articles:
+        title_tag = art.find(['h2', 'h3', 'p'])
+        date_tag = art.find_next('span') # Dates are usually in span tags near titles
         
-        events.append({
-            "date": date_str,
-            "title": title.strip(),
-            "url": BASE_URL + link,
-            "type": "patch" if "patch" in title.lower() else "season"
-        })
+        if title_tag:
+            title = title_tag.get_text().strip()
+            link = art['href']
+            
+            # Simple logic: If we find a date string in the text nearby
+            raw_date = date_tag.get_text() if date_tag else ""
+            clean_date = parse_date(raw_date) if "," in raw_date else datetime.now().strftime("%Y-%m-%d")
+            
+            events.append({
+                "date": clean_date,
+                "title": title,
+                "url": BASE_URL + link if link.startswith('/') else link,
+                "type": "patch" if "patch" in title.lower() else "season"
+            })
+
+    # Save unique events only
+    unique_events = list({v['url']: v for v in events}.values())
     
     with open('events.json', 'w') as f:
-        json.dump(events, f, indent=4)
+        json.dump(unique_events, f, indent=4)
 
 if __name__ == "__main__":
     scrape()
