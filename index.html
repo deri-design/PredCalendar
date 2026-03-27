@@ -11,7 +11,7 @@
         body { background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; padding: 2rem; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
         .header { text-align: center; margin-bottom: 2rem; }
         .header h1 { font-family: 'Orbitron'; color: var(--gold); letter-spacing: 5px; font-size: 3rem; text-shadow: 0 0 20px rgba(220,182,59,0.3); }
-        .st-bar { font-family: 'Orbitron'; font-size: 0.7rem; color: var(--teal); margin-top: 10px; }
+        .st-bar { font-family: 'Orbitron'; font-size: 0.7rem; color: var(--teal); margin-top: 10px; text-transform: uppercase; }
         .calendars { display: flex; gap: 1rem; }
         .section { flex: 1; min-width: 0; }
         .m-name { font-family: 'Orbitron'; color: var(--gold); text-align: center; margin-bottom: 1rem; font-size: 1.1rem; }
@@ -49,10 +49,21 @@
             try {
                 const r = await fetch('./events.json?t=' + Date.now());
                 const data = await r.json();
-                evData = data.events || []; // Handle the new object structure
-                document.getElementById('st').innerText = `SYNC ACTIVE: ${evData.length} EVENTS | LAST SCRAPE: ${data.last_updated}`;
+                
+                // THE FIX: Handle both Array and Object formats
+                if (Array.isArray(data)) {
+                    evData = data;
+                } else {
+                    evData = data.events || [];
+                }
+                
+                const timeStr = data.last_updated ? `| UPDATED: ${data.last_updated}` : "";
+                document.getElementById('st').innerText = `SYNC ACTIVE: ${evData.length} EVENTS ${timeStr}`;
                 render();
-            } catch(e) { document.getElementById('st').innerText = "OFFLINE MODE"; render(); }
+            } catch(e) { 
+                document.getElementById('st').innerText = "DATA NOT FOUND - RUN GITHUB ACTION"; 
+                render(); 
+            }
         }
         function draw(date, gId, lId) {
             const g = document.getElementById(gId), l = document.getElementById(lId);
@@ -81,7 +92,6 @@
             draw(new Date(viewDate.getFullYear(), viewDate.getMonth(), 1), 'g2', 'l2');
             draw(new Date(viewDate.getFullYear(), viewDate.getMonth()+1, 1), 'g3', 'l3');
         }
-        document.getElementById('st').addEventListener('click', () => { viewDate = new Date(today.getFullYear(), today.getMonth(), 1); render(); });
         init();
     </script>
 </body>
