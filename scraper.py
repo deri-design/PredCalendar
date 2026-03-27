@@ -7,87 +7,116 @@ from datetime import datetime, timedelta
 URL = "https://www.predecessorgame.com/en-US/news"
 BASE_URL = "https://www.predecessorgame.com"
 
-def parse_date(art_soup):
-    """Deep search for dates within an article card"""
-    # 1. Look for <time> tags (Best)
-    time_tag = art_soup.find('time')
-    if time_tag and time_tag.has_attr('datetime'):
-        return time_tag['datetime'][:10]
-
-    # 2. Get all text segments to check for "ago" or "Month DD, YYYY"
-    text_content = art_soup.get_text(separator='|').lower()
-    segments = [s.strip() for s in text_content.split('|')]
-    
+def get_clean_date(text):
+    """Try various regex patterns to extract a valid YYYY-MM-DD date."""
+    text = text.replace('|', ' ').replace('\n', ' ').strip()
     now = datetime.now()
-    for s in segments:
-        # Handle "X days ago"
-        if 'ago' in s:
-            num = re.findall(r'\d+', s)
-            n = int(num[0]) if num else 0
-            return (now - timedelta(days=n)).strftime("%Y-%m-%d")
-        
-        # Handle "Mar 18, 2026"
-        match = re.search(r'([a-z]{3})\s+(\d{1,2}),?\s+(\d{4})', s)
-        if match:
-            try:
-                dt = datetime.strptime(f"{match.group(1).capitalize()} {match.group(2)} {match.group(3)}", "%b %d %Y")
-                return dt.strftime("%Y-%m-%d")
-            except: pass
-            
-    # Default to a safe placeholder if not found (helps debugging)
-    return "2026-03-01" 
+
+    # 1. Handle "X days ago"
+    if 'ago' in text.lower():
+        num = re.findall(r'\d+', text)
+        if num:
+            n = int(num[0])
+            if 'day' in text.lower(): return (now - timedelta(days=n)).strftime("%Y-%m-%d")
+            if 'hour' in text.lower() or 'min' in text.lower(): return now.strftime("%Y-%m-%d")
+
+    # 2. Handle "Mar 18, 2026" or "March 18, 2026"
+    months = "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December"
+    match = re.search(fr'({months})\s+(\d{{1,2}}),?\s+(\d{{4}})', text, re.I)
+    if match:
+        mon, day, year = match.groups()
+        try:
+            dt = datetime.strptime(f"{mon[:3].capitalize()} {day} {year}", "%b %d %Y")
+            return dt.strftime("%Y-%m-%d")
+        except: pass
+    
+    return None
 
 def scrape():
-    print("--- Precision Visual Scrape ---")
+    print("--- Starting Advanced Scrape ---")
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36'}
     events = []
     
     try:
-        response = requests.get(URL, headers=headers, timeout=15)
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Target the news cards
-        articles = soup.find_all('a', href=re.compile(r'/news/'))
-        print(f"Found {len(articles)} potential articles.")
+        response = requests.get(URL, headers=headers, timeout=20)
+        html = response.text
+        soup = BeautifulSoup(html, 'html.parser')
 
-        for art in articles:
-            # 1. Title
-            title_tag = art.find(['h2', 'h3', 'h4'])
-            if not title_tag: continue
-            title = title_tag.get_text().strip()
-            
-            # 2. Link
-            link = BASE_URL + art['href'] if art['href'].startswith('/') else art['href']
-            if "patch" in title.lower(): link = link.replace("-patch-notes", "-patchnotes")
+        # METHOD A: Extract from the hidden JSON data (Most accurate)
+        json_match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', html)
+        if json_match:
+            try:
+                data = json.loads(json_match.group(1))
+                # Search recursively for any list that looks like news
+                def find_news(obj):
+                    if isinstance(obj, dict):
+                        if 'newsList' in obj: return obj['newsList']
+                        for v in obj.values():
+                            res = find_news(v)
+                            if res: return res
+                    elif isinstance(obj, list):
+                        for i in obj:
+                            res = find_news(i)
+                            if res: return res
+                    return None
+                
+                news_data = find_news(data)
+                if news_data:
+                    for item in news_data:
+                        date_raw = item.get('publishedAt') or item.get('createdAt') or ""
+                        title = item.get('title', 'New Update')
+                        slug = item.get('slug', '')
+                        cat = item.get('category', {}).get('slug', 'news')
+                        img = item.get('image', {}).get('url', '')
+                        
+                        link = f"{BASE_URL}/en-US/news/{cat}/{slug}"
+                        if "patch" in title.lower(): link = link.replace("-patch-notes", "-patchnotes")
+                        if img.startswith('/'): img = BASE_URL + img
 
-            # 3. Image
-            img_tag = art.find('img')
-            img_url = ""
-            if img_tag:
-                img_url = img_tag.get('src') or img_tag.get('data-src') or ""
+                        events.append({
+                            "date": date_raw[:10],
+                            "title": title,
+                            "url": link,
+                            "image": img,
+                            "type": "patch" if "patch" in title.lower() else "news"
+                        })
+            except: pass
+
+        # METHOD B: HTML Scraping (Fallback for extra items)
+        if len(events) < 5:
+            articles = soup.find_all('a', href=re.compile(r'/news/'))
+            for art in articles:
+                title_tag = art.find(['h2', 'h3', 'h4', 'p'])
+                if not title_tag: continue
+                title = title_tag.get_text().strip()
+                link = BASE_URL + art['href'] if art['href'].startswith('/') else art['href']
+                
+                # Check for duplicates
+                if any(e['url'] == link for e in events): continue
+
+                date_str = get_clean_date(art.get_text(separator='|'))
+                if not date_str: date_str = datetime.now().strftime("%Y-%m-%d")
+
+                img_tag = art.find('img')
+                img_url = img_tag.get('src') if img_tag else ""
                 if img_url.startswith('/'): img_url = BASE_URL + img_url
 
-            # 4. Date (Using our new deep search)
-            date_str = parse_date(art)
-
-            events.append({
-                "date": date_str,
-                "title": title,
-                "url": link,
-                "image": img_url,
-                "type": "patch" if "patch" in title.lower() else "news"
-            })
-            print(f"Captured: {title} on {date_str}")
+                events.append({
+                    "date": date_str, "title": title, "url": link, "image": img_url, 
+                    "type": "patch" if "patch" in title.lower() else "news"
+                })
 
     except Exception as e:
-        print(f"Scrape Error: {e}")
+        print(f"Error: {e}")
 
+    # Final Output
     output = {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "events": events
     }
     with open('events.json', 'w') as f:
         json.dump(output, f, indent=4)
+    print(f"Scrape Complete: {len(events)} events found.")
 
 if __name__ == "__main__":
     scrape()
