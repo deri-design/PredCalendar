@@ -2,89 +2,94 @@ import os
 import requests
 import json
 import re
-from datetime import datetime, timedelta
+from datetime import datetime
 
-# Config
+# Configuration
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 GEMINI_KEY = os.getenv("GEMINI_API_KEY")
-CHANNEL_ID = "1487129767865225261"
+CHANNEL_ID = "1487129767865225261" 
 
 def get_discord_messages():
     headers = {"Authorization": f"Bot {DISCORD_TOKEN}"}
     url = f"https://discord.com/api/v10/channels/{CHANNEL_ID}/messages?limit=15"
     res = requests.get(url, headers=headers)
-    return res.json() if res.status_code == 200 else []
+    if res.status_code != 200:
+        print(f"DISCORD ERROR: {res.status_code} - {res.text}")
+        return []
+    return res.json()
 
-def brute_force_dates(messages):
-    """Fallback: Manual scan if AI fails"""
-    events = []
-    for m in messages:
-        content = m['content']
-        # Look for simple dates like April 10
-        match = re.search(r'([A-Z][a-z]+)\s+(\d{1,2})', content)
-        if match:
-            mon, day = match.groups()
-            try:
-                # Assume current year
-                year = datetime.now().year
-                dt = datetime.strptime(f"{mon[:3].capitalize()} {day} {year}", "%b %d %Y")
-                events.append({
-                    "date": dt.strftime("%Y-%m-%d"),
-                    "title": content[:30] + "...",
-                    "type": "news",
-                    "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
-                })
-            except: pass
-    return events
+def list_available_models():
+    """Diagnostic: Prints all models your API key can access"""
+    url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_KEY}"
+    res = requests.get(url)
+    if res.status_code == 200:
+        print("--- DEBUG: YOUR AVAILABLE MODELS ---")
+        models = res.json().get('models', [])
+        for m in models:
+            print(f"Model Found: {m['name']}")
+        print("------------------------------------")
+    else:
+        print(f"Model List Error: {res.status_code} - {res.text}")
 
 def ask_gemini(messages_text):
-    # Using v1beta which is the most compatible endpoint for 1.5-flash
+    # Try the v1beta endpoint - this is the standard for 1.5-flash
     api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_KEY}"
     
     today = datetime.now().strftime("%A, %B %d, %Y")
-    prompt = f"Today is {today}. Extract game events for 'Predecessor' from these messages. Return ONLY a JSON list: [{{'date': 'YYYY-MM-DD', 'title': 'name', 'type': 'patch/news', 'url': 'link', 'image': 'img'}}]. Text: {messages_text}"
+    prompt = f"""
+    Today is {today}. Context: Game "Predecessor".
+    Extract event dates from these Discord messages.
+    Rules: 
+    1. Identify ACTUAL start dates.
+    2. Format as JSON list only: [{{"date":"YYYY-MM-DD","title":"Name","type":"patch/news"}}]
+    
+    Messages:
+    {messages_text}
+    """
     
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
     
+    response = requests.post(api_url, json=payload)
+    
+    if response.status_code != 200:
+        print(f"AI API ERROR: {response.status_code} - {response.text}")
+        list_available_models() # Run diagnostic on failure
+        return None
+
+    data = response.json()
     try:
-        response = requests.post(api_url, json=payload, timeout=15)
-        data = response.json()
-        
-        if "candidates" in data:
-            raw_text = data["candidates"][0]["content"]["parts"][0]["text"]
-            json_match = re.search(r'\[.*\]', raw_text, re.DOTALL)
-            return json.loads(json_match.group(0))
+        raw_text = data["candidates"][0]["content"]["parts"][0]["text"]
+        json_match = re.search(r'\[.*\]', raw_text, re.DOTALL)
+        return json.loads(json_match.group(0))
     except Exception as e:
-        print(f"AI Step Failed: {e}")
-    return None
+        print(f"JSON Parsing Error: {e}")
+        print(f"Raw AI Response: {data}")
+        return None
 
 def scrape():
-    print("--- Temporal Sync: V1Beta Mode ---")
+    print("AI Agent: Starting Sync...")
+    
+    # 1. Get Discord Data
     messages = get_discord_messages()
-    if not messages:
-        print("Empty Discord results.")
-        return
+    if not messages: return
 
     combined = ""
     for m in messages:
         combined += f"SENT: {m['timestamp']} | MSG: {m['content']}\n---\n"
 
-    print("Requesting Gemini (v1beta/1.5-flash)...")
+    # 2. Get AI Prediction
     events = ask_gemini(combined)
     
-    # If Gemini failed or found nothing, use manual regex scanner
-    if not events:
-        print("AI returned nothing. Using manual scanner fallback...")
-        events = brute_force_dates(messages)
-
-    output = {
-        "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "events": events
-    }
-    
-    with open('events.json', 'w') as f:
-        json.dump(output, f, indent=4)
-    print(f"SUCCESS: {len(events)} events ready.")
+    if events is not None:
+        output = {
+            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "events": events
+        }
+        with open('events.json', 'w') as f:
+            json.dump(output, f, indent=4)
+        print(f"AI SUCCESS: {len(events)} events extracted.")
+    else:
+        print("AI FAILURE: No data written to events.json")
 
 if __name__ == "__main__":
     scrape()
