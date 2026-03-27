@@ -17,8 +17,8 @@ def get_discord_messages():
     return res.json() if res.status_code == 200 else []
 
 def extract_intel(m):
-    """Gathers text and images from any message type (Standard, Forwarded, or Embed)."""
-    text = m.get('content', '')
+    """Gathers the EXACT raw text and images from Discord."""
+    raw_text = m.get('content', '')
     img = ""
     
     def find_img(msg_obj):
@@ -27,48 +27,47 @@ def extract_intel(m):
                 return att.get('url')
         for emb in msg_obj.get('embeds', []):
             if 'image' in emb: return emb['image'].get('url')
-            if 'thumbnail' in emb: return emb['thumbnail'].get('url')
         return ""
 
     img = find_img(m)
 
+    # Append forwarded text exactly
     if 'message_snapshots' in m:
         for snapshot in m['message_snapshots']:
             snap_msg = snapshot.get('message', {})
-            text += f"\n[FORWARDED]: {snap_msg.get('content', '')}"
+            snap_content = snap_msg.get('content', '')
+            if snap_content: raw_text += f"\n{snap_content}"
             if not img: img = find_img(snap_msg)
-            for emb in snap_msg.get('embeds', []):
-                text += f"\n[EMBED INFO]: {emb.get('title', '')} {emb.get('description', '')}"
 
+    # Append embed descriptions exactly (where the "Daybreak V3" list often lives)
     if 'embeds' in m:
-        for emb in m['embeds']:
-            text += f"\n[EMBED INFO]: {emb.get('title', '')} {emb.get('description', '')}"
+        for embed in m['embeds']:
+            desc = embed.get('description', '')
+            if desc: raw_text += f"\n{desc}"
 
-    return text.strip(), img
+    return raw_text.strip(), img
 
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_KEY)
     today = datetime.now().strftime("%Y-%m-%d")
     
     prompt = f"""
-    Today's Date: {today}. 
-    You are a high-level Tactical Intelligence AI for the game "Predecessor".
-    
-    TASK: Extract all upcoming events from the provided Discord logs.
+    Today is {today}. Context: "Predecessor" game announcements.
+    TASK: Identify the event dates.
     
     RULES:
-    1. Output a JSON list ONLY.
-    2. "date": Extract the actual date the event/patch starts (YYYY-MM-DD).
-    3. "title": Short, high-impact title.
-    4. "desc": Provide a 2-3 sentence 'Tactical Briefing'. Mention EVERY specific feature or change (e.g., Level caps, new heroes, specific rewards).
-    5. "type": "patch" if it has a version number (V1.xx), otherwise "news".
+    1. Output a JSON list only.
+    2. "date": The release/event date (YYYY-MM-DD).
+    3. "title": A very short title (max 25 chars).
+    4. "original_msg_id": Match this to the ID provided in the text.
+    5. "type": "patch" or "news".
     
-    Messages to analyze:
+    Messages:
     {messages_text}
 
     OUTPUT FORMAT:
     [
-      {{"date": "YYYY-MM-DD", "title": "Name", "desc": "Summary...", "type": "patch/news", "url": "link", "image": "img_url"}}
+      {{"date": "YYYY-MM-DD", "title": "Name", "original_msg_id": "id", "type": "patch/news"}}
     ]
     """
     
@@ -86,35 +85,40 @@ def scrape():
     messages = get_discord_messages()
     if not messages: return
 
-    combined_intel = []
+    intel_pool = {}
+    ai_input_list = []
+
     for m in messages:
         text, img = extract_intel(m)
         if text:
-            combined_intel.append({
-                "timestamp": m['timestamp'],
-                "text": text,
-                "img": img,
-                "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
-            })
+            # Store the 1:1 raw text indexed by message ID
+            intel_pool[m['id']] = {"text": text, "img": img, "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"}
+            ai_input_list.append(f"ID: {m['id']} | SENT: {m['timestamp']} | CONTENT: {text}")
 
-    ai_input = "\n---\n".join([f"SENT: {i['timestamp']} | CONTENT: {i['text']}" for i in combined_intel])
+    ai_input_text = "\n---\n".join(ai_input_list)
 
     try:
-        events = ask_groq(ai_input)
+        # AI only identifies the Date and Title
+        ai_events = ask_groq(ai_input_text)
         
-        # Link the images found by the scraper to the AI's categorized events
-        for event in events:
-            for i in combined_intel:
-                # If the AI title is mentioned in the original text, use that message's image
-                if not event.get('image') and event['title'].lower()[:10] in i['text'].lower():
-                    event['image'] = i['img']
-                if not event.get('url'):
-                    event['url'] = i['url']
+        final_events = []
+        for ae in ai_events:
+            msg_id = ae.get('original_msg_id')
+            if msg_id in intel_pool:
+                # We inject the 1:1 raw text here, bypassing AI alteration
+                final_events.append({
+                    "date": ae['date'],
+                    "title": ae['title'],
+                    "desc": intel_pool[msg_id]['text'], 
+                    "type": ae['type'],
+                    "url": intel_pool[msg_id]['url'],
+                    "image": intel_pool[msg_id]['img']
+                })
 
-        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": events}
+        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"SUCCESS: Roadmaps updated for all upcoming operations.")
+        print(f"SUCCESS: Synced {len(final_events)} events 1:1 from Discord.")
     except Exception as e:
         print(f"Error: {e}")
 
