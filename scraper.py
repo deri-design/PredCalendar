@@ -14,58 +14,44 @@ def get_discord_messages():
     headers = {"Authorization": f"Bot {DISCORD_TOKEN}"}
     url = f"https://discord.com/api/v10/channels/{CHANNEL_ID}/messages?limit=20"
     res = requests.get(url, headers=headers)
-    if res.status_code != 200:
-        print(f"DISCORD ERROR: {res.status_code}")
-        return []
-    return res.json()
+    return res.json() if res.status_code == 200 else []
 
 def extract_message_text(m):
-    """
-    Extracts text from standard messages AND forwarded messages (snapshots).
-    """
     full_text = m.get('content', '')
-
-    # Check for Discord's newer "Forwarded" message format
     if 'message_snapshots' in m:
         for snapshot in m['message_snapshots']:
-            snap_msg = snapshot.get('message', {})
-            snap_content = snap_msg.get('content', '')
-            if snap_content:
-                full_text += f"\n[FORWARDED CONTENT]: {snap_content}"
-    
-    # Handle Embeds (often used in official announcements)
+            snap_content = snapshot.get('message', {}).get('content', '')
+            if snap_content: full_text += f"\n[FORWARDED]: {snap_content}"
     if 'embeds' in m:
         for embed in m['embeds']:
-            embed_text = f"{embed.get('title', '')} {embed.get('description', '')}"
-            if embed_text.strip():
-                full_text += f"\n[EMBED CONTENT]: {embed_text}"
-
+            full_text += f"\n[EMBED]: {embed.get('title', '')} {embed.get('description', '')}"
     return full_text.strip()
 
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_KEY)
-    today = datetime.now().strftime("%A, %B %d, %Y")
+    today = datetime.now().strftime("%Y-%m-%d")
     
     prompt = f"""
-    Today's Date: {today}. 
-    Context: Announcements for the game "Predecessor".
+    Today's Date: {today}. Context: "Predecessor" game announcements.
+    Task: Extract event dates and descriptions.
     
-    Task: Extract planned events, patches, or releases.
-    Rules:
-    1. Identify the ACTUAL start date (YYYY-MM-DD). 
-    2. If a message refers to "Forwarded Content", treat that as the source of truth.
-    3. Output as a strict JSON list only.
+    RULES:
+    1. Output a JSON list only.
+    2. "date": ACTUAL start date (YYYY-MM-DD).
+    3. "title": Short punchy name (max 30 chars).
+    4. "desc": A detailed summary of the announcement (max 300 chars). Keep the tone informative.
+    5. "type": "patch" or "news".
     
     Messages:
     {messages_text}
 
     OUTPUT FORMAT:
     [
-      {{"date": "YYYY-MM-DD", "title": "Name", "type": "patch/news", "url": "link", "image": "img_url"}}
+      {{"date": "YYYY-MM-DD", "title": "Name", "desc": "Full details...", "type": "patch/news", "url": "link", "image": "img"}}
     ]
     """
     
-    chat_completion = client.chat.completions.create(
+    chat_completion = client.chat.create(
         messages=[{"role": "user", "content": prompt}],
         model="llama-3.3-70b-versatile",
         temperature=0.1
@@ -76,33 +62,20 @@ def ask_groq(messages_text):
     return json.loads(json_match.group(0)) if json_match else []
 
 def scrape():
-    print("Fetching messages (including forwarded content)...")
     messages = get_discord_messages()
-    if not messages:
-        print("No messages found.")
-        return
+    if not messages: return
 
     combined = ""
     for m in messages:
-        # We use our new extraction function here
         text = extract_message_text(m)
-        if text:
-            combined += f"SENT: {m['timestamp']} | MSG: {text}\n---\n"
+        if text: combined += f"SENT: {m['timestamp']} | MSG: {text}\n---\n"
 
-    if not combined:
-        print("No readable text found in the last 20 messages.")
-        return
-
-    print("Consulting Groq AI...")
     try:
         events = ask_groq(combined)
-        output = {
-            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "events": events
-        }
+        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"SUCCESS: {len(events)} events extracted.")
+        print(f"SUCCESS: {len(events)} detailed events saved.")
     except Exception as e:
         print(f"Error: {e}")
 
