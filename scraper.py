@@ -7,48 +7,57 @@ from datetime import datetime
 URL = "https://www.predecessorgame.com/en-US/news"
 BASE_URL = "https://www.predecessorgame.com"
 
-def parse_date(date_text):
-    # Converts "March 17, 2026" to "2026-03-17"
-    try:
-        return datetime.strptime(date_text.strip(), "%B %d, %Y").strftime("%Y-%m-%d")
-    except:
-        return datetime.now().strftime("%Y-%m-%d")
-
 def scrape():
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    response = requests.get(URL, headers=headers)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    print("Starting scrape...")
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
     
-    events = []
-    
-    # Look for all news cards
-    # Note: Predecessor's site uses specific tags for news items
-    articles = soup.find_all('a', href=re.compile(r'/news/'))
-    
-    for art in articles:
-        title_tag = art.find(['h2', 'h3', 'p'])
-        date_tag = art.find_next('span') # Dates are usually in span tags near titles
+    try:
+        response = requests.get(URL, headers=headers)
+        soup = BeautifulSoup(response.text, 'html.parser')
         
-        if title_tag:
-            title = title_tag.get_text().strip()
-            link = art['href']
+        events = []
+        
+        # Predecessor site uses <a> tags that contain both the date and title
+        cards = soup.find_all('a', href=re.compile(r'/news/'))
+        
+        for card in cards:
+            # Look for date text (e.g., "March 17, 2026")
+            # Usually found in a span or small tag inside the card
+            date_text = ""
+            for tag in card.find_all(['span', 'p', 'div']):
+                txt = tag.get_text().strip()
+                if re.search(r'[A-Z][a-z]+ \d{1,2}, \d{4}', txt):
+                    date_text = txt
+                    break
             
-            # Simple logic: If we find a date string in the text nearby
-            raw_date = date_tag.get_text() if date_tag else ""
-            clean_date = parse_date(raw_date) if "," in raw_date else datetime.now().strftime("%Y-%m-%d")
+            # Look for the title (usually h2 or h3)
+            title_tag = card.find(['h2', 'h3', 'h4'])
+            title_text = title_tag.get_text().strip() if title_tag else "New Update"
             
-            events.append({
-                "date": clean_date,
-                "title": title,
-                "url": BASE_URL + link if link.startswith('/') else link,
-                "type": "patch" if "patch" in title.lower() else "season"
-            })
+            if date_text:
+                try:
+                    # Convert "March 17, 2026" -> "2026-03-17"
+                    clean_date = datetime.strptime(date_text, "%B %d, %Y").strftime("%Y-%m-%d")
+                    
+                    events.append({
+                        "date": clean_date,
+                        "title": title_text,
+                        "url": BASE_URL + card['href'] if card['href'].startswith('/') else card['href'],
+                        "type": "patch" if "patch" in title_text.lower() else "news"
+                    })
+                except Exception as e:
+                    print(f"Date error: {e}")
 
-    # Save unique events only
-    unique_events = list({v['url']: v for v in events}.values())
-    
-    with open('events.json', 'w') as f:
-        json.dump(unique_events, f, indent=4)
+        # Unique entries only
+        final_list = list({v['url']: v for v in events}.values())
+        
+        with open('events.json', 'w') as f:
+            json.dump(final_list, f, indent=4)
+        
+        print(f"Success! Found {len(final_list)} events.")
+
+    except Exception as e:
+        print(f"Scrape failed: {e}")
 
 if __name__ == "__main__":
     scrape()
