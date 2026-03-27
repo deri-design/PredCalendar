@@ -53,7 +53,7 @@
     <div class="container">
         <header class="header">
             <h1>PREDECESSOR LIVE ROADMAP</h1>
-            <div id="status" class="status-bar">SYNCING DATA...</div>
+            <div id="status" class="status-bar">CONNECTING TO DATA SOURCE...</div>
         </header>
         <div class="legend">
             <span><div class="dot patch"></div> PATCH NOTES</span>
@@ -72,12 +72,13 @@
         const formatDate = (y, m, d) => `${y}-${String(m).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
         async function init() {
             try {
+                // cache busting timestamp added
                 const response = await fetch('./events.json?t=' + Date.now());
                 eventData = await response.json();
-                document.getElementById('status').innerText = `LIVE SYNC ACTIVE: ${eventData.length} EVENTS LOADED`;
+                document.getElementById('status').innerText = `SYNC ACTIVE: ${eventData.length} EVENTS LOADED`;
                 renderAll();
             } catch (e) {
-                document.getElementById('status').innerText = "OFFLINE MODE";
+                document.getElementById('status').innerText = "OFFLINE OR SYNC IN PROGRESS...";
                 renderAll(); 
             }
         }
