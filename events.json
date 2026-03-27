@@ -1,6 +1,13 @@
 {
-    "last_updated": "2026-03-27 20:22:17",
+    "last_updated": "2026-03-27 20:25:46",
     "events": [
+        {
+            "date": "2026-04-01",
+            "title": "v1.13 Dev Stream",
+            "type": "stream",
+            "url": "",
+            "image": ""
+        },
         {
             "date": "2026-04-07",
             "title": "V1.13: Throne of Thorns",
@@ -9,17 +16,10 @@
             "image": ""
         },
         {
-            "date": "2026-03-31",
-            "title": "V1.13 Patch",
+            "date": "2026-03-27",
+            "title": "V1.12.6",
             "type": "patch",
-            "url": "",
-            "image": "https://predecessor.pro/wp-content/uploads/2023/04/Predecessor-Logo-1024x576.jpg"
-        },
-        {
-            "date": "2026-04-10",
-            "title": "Predecessor Tournament",
-            "type": "event",
-            "url": "",
+            "url": "https://playp.red/47L1xmd",
             "image": ""
         }
     ]
