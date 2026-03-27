@@ -25,53 +25,66 @@ def parse_relative_date(text):
     return None
 
 def scrape():
-    print("Executing Image-Aware Scrape...")
+    print("Starting Deep Image Scrape...")
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
     
     try:
         response = requests.get(URL, headers=headers, timeout=15)
         html = response.text
         
-        # Extract the JSON data block
+        # Locate the JSON data block
         match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', html)
-        if not match: return
+        if not match: 
+            print("Could not find data block.")
+            return
 
         data = json.loads(match.group(1))
         
-        def find_news(obj):
+        # Deep search for the list of news articles
+        def find_news_list(obj):
             if isinstance(obj, dict):
                 if 'newsList' in obj: return obj['newsList']
+                if 'articles' in obj: return obj['articles']
                 for v in obj.values():
-                    res = find_news(v)
+                    res = find_news_list(v)
                     if res: return res
             elif isinstance(obj, list):
                 for i in obj:
-                    res = find_news(i)
+                    res = find_news_list(i)
                     if res: return res
             return None
 
-        news_data = find_news(data)
-        if not news_data: return
+        news_items = find_news_list(data)
+        if not news_items:
+            print("No news items found in JSON.")
+            return
 
-        events = []
-        for item in news_data:
+        final_events = []
+        for item in news_items:
             title = item.get('title', 'New Update')
             slug = item.get('slug', '')
             category = item.get('category', {}).get('slug', 'news')
-            date_raw = item.get('publishedAt') or item.get('createdAt') or ""
             
-            # EXTRACT IMAGE URL
-            image_obj = item.get('image', {})
-            img_url = image_obj.get('url', '')
+            # Date Handling
+            raw_date = item.get('publishedAt') or item.get('createdAt') or ""
+            date_str = raw_date[:10] if raw_date else datetime.now().strftime("%Y-%m-%d")
+            
+            # IMAGE EXTRACTION
+            img_url = ""
+            image_data = item.get('image') or item.get('thumbnail') or {}
+            if isinstance(image_data, dict):
+                img_url = image_data.get('url', '')
+            
             if img_url and img_url.startswith('/'):
                 img_url = BASE_URL + img_url
 
+            # URL Construction & Hyphen Fix
             full_url = f"{BASE_URL}/en-US/news/{category}/{slug}"
             if "patch" in title.lower():
                 full_url = full_url.replace("-patch-notes", "-patchnotes")
 
-            events.append({
-                "date": date_raw[:10] if date_raw else datetime.now().strftime("%Y-%m-%d"),
+            final_events.append({
+                "date": date_str,
                 "title": title,
                 "url": full_url,
                 "image": img_url,
@@ -79,11 +92,12 @@ def scrape():
             })
 
         with open('events.json', 'w') as f:
-            json.dump(events, f, indent=4)
-        print(f"Success! Saved {len(events)} events with images.")
+            json.dump(final_events, f, indent=4)
         
+        print(f"Success! {len(final_events)} events with images saved.")
+
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Scrape failed: {e}")
 
 if __name__ == "__main__":
     scrape()
