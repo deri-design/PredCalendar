@@ -19,72 +19,82 @@
             background-image: linear-gradient(var(--bg-grid) 1px, transparent 1px), linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
             background-size: 40px 40px; padding: 2rem 1rem; min-height: 100vh;
         }
-        .container { max-width: 1800px; margin: 0 auto; width: 100%; }
+        .container { max-width: 1850px; margin: 0 auto; width: 100%; }
         .header { text-align: center; margin-bottom: 2rem; }
         .header h1 { font-family: 'Orbitron'; color: var(--gold); letter-spacing: 6px; font-size: 3rem; text-transform: uppercase; text-shadow: 0 0 20px rgba(220,182,59,0.3); }
-        .status-bar { font-family: 'Orbitron'; font-size: 0.75rem; color: var(--teal); margin-top: 10px; letter-spacing: 2px; }
+        .status-bar { font-family: 'Orbitron'; font-size: 0.7rem; color: var(--teal); margin-top: 10px; letter-spacing: 2px; }
         
-        .calendars-wrapper { display: flex; gap: 1.5rem; width: 100%; }
+        .legend { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; font-size: 0.8rem; font-weight: bold; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+        .dot.patch { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+        .dot.news { background: var(--teal); box-shadow: 0 0 8px var(--teal); }
+
+        .calendars-wrapper { display: flex; gap: 1rem; width: 100%; }
         .section { flex: 1; min-width: 0; }
         .month-header { font-family: 'Orbitron'; color: var(--gold); margin-bottom: 1rem; text-align: center; display: flex; justify-content: space-between; align-items: center; }
         .nav-btn { cursor: pointer; color: var(--text); padding: 5px 15px; border: 1px solid var(--border); transition: 0.2s; user-select: none; }
         .nav-btn:hover { background: #fff; color: #000; }
         
         .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-        .head-cell { background: var(--header-bg); padding: 12px; text-align: center; font-size: 0.65rem; color: #5d7599; font-family: 'Orbitron'; }
+        .head-cell { background: var(--header-bg); padding: 12px; text-align: center; font-size: 0.6rem; color: #5d7599; font-family: 'Orbitron'; }
         
         .cell { 
-            background: var(--cell); min-height: 180px; max-height: 350px; 
-            padding: 8px; display: flex; flex-direction: column; overflow-y: auto; 
+            background: var(--cell); min-height: 180px; max-height: 400px; 
+            padding: 4px; display: flex; flex-direction: column; overflow-y: auto; 
             scrollbar-width: thin; scrollbar-color: var(--border) transparent;
         }
         .cell::-webkit-scrollbar { width: 4px; }
         .cell::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
         
         .today { outline: 1px solid var(--gold); background: rgba(220, 182, 59, 0.08); z-index: 2; }
-        .num { font-family: 'Orbitron'; font-size: 0.8rem; color: #5d7599; margin-bottom: 8px; }
+        .num { font-family: 'Orbitron'; font-size: 0.8rem; color: #5d7599; margin: 4px 0 8px 4px; }
         .active .num { color: var(--text); }
         .today .num { color: var(--gold); }
 
-        /* --- EVENT CARDS WITH IMAGES --- */
+        /* --- EVENT CARDS --- */
         .event { 
-            background: rgba(220, 182, 59, 0.05); border: 1px solid rgba(220, 182, 59, 0.2);
-            border-left: 3px solid var(--gold); padding: 0; margin-bottom: 10px; flex-shrink: 0;
-            overflow: hidden; border-radius: 0 4px 4px 0;
+            background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border);
+            border-left: 3px solid var(--gold); padding: 0; margin-bottom: 8px; flex-shrink: 0;
+            overflow: hidden; border-radius: 2px; transition: transform 0.2s;
         }
-        .event.news { border-left-color: var(--teal); background: rgba(55, 169, 169, 0.05); border-color: rgba(55, 169, 169, 0.2); }
+        .event:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.2); }
+        .event.news { border-left-color: var(--teal); }
         
         .event-img {
-            width: 100%; height: 70px; object-fit: cover; display: block;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            background: #000; /* Fallback */
+            width: 100%; height: 60px; object-fit: cover; display: block;
+            background: #111;
         }
 
         .event-info { padding: 6px; }
-        .event-title { font-weight: bold; color: var(--gold); margin-bottom: 6px; font-family: 'Orbitron'; font-size: 0.6rem; line-height: 1.2; }
+        .event-title { font-weight: bold; color: var(--gold); margin-bottom: 6px; font-family: 'Orbitron'; font-size: 0.55rem; line-height: 1.2; text-transform: uppercase; }
         .event.news .event-title { color: var(--teal); }
         
         .details-btn { 
             display: block; text-align: center; border: 1px solid rgba(255,255,255,0.1); 
-            color: #fff; text-decoration: none; font-size: 0.55rem; padding: 3px; 
-            font-family: 'Orbitron'; transition: 0.2s; background: rgba(0,0,0,0.3);
+            color: #fff; text-decoration: none; font-size: 0.5rem; padding: 3px; 
+            font-family: 'Orbitron'; transition: 0.2s; background: rgba(255,255,255,0.05);
         }
         .details-btn:hover { background: #fff; color: #000; }
 
-        @media (max-width: 1300px) { .calendars-wrapper { flex-direction: column; gap: 3rem; } }
+        @media (max-width: 1400px) { .calendars-wrapper { flex-direction: column; gap: 3rem; } }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <h1>PREDECESSOR LIVE ROADMAP</h1>
-            <div id="status" class="status-bar">SYNCING VISUAL DATA...</div>
+            <div id="status" class="status-bar">SYNCING VISUAL METADATA...</div>
         </header>
 
+        <div class="legend">
+            <span><div class="dot patch"></div> PATCH</span>
+            <span><div class="dot news"></div> NEWS / EVENT</span>
+        </div>
+
         <div class="calendars-wrapper">
-            <div class="section"><div class="month-header"><div class="nav-btn" id="prev-btn">&lt; PREV</div><span id="label-1"></span><div style="width:50px"></div></div><div class="grid" id="grid-1"></div></div>
+            <div class="section"><div class="month-header"><div class="nav-btn" id="prev-btn">&lt;</div><span id="label-1"></span><div style="width:40px"></div></div><div class="grid" id="grid-1"></div></div>
             <div class="section"><div class="month-header" style="justify-content: center; color: #fff;"><span id="label-2"></span></div><div class="grid" id="grid-2"></div></div>
-            <div class="section"><div class="month-header"><div style="width:50px"></div><span id="label-3"></span><div class="nav-btn" id="next-btn">NEXT &gt;</div></div><div class="grid" id="grid-3"></div></div>
+            <div class="section"><div class="month-header"><div style="width:40px"></div><span id="label-3"></span><div class="nav-btn" id="next-btn">&gt;</div></div><div class="grid" id="grid-3"></div></div>
         </div>
     </div>
 
@@ -99,7 +109,7 @@
             try {
                 const response = await fetch('./events.json?t=' + Date.now());
                 eventData = await response.json();
-                document.getElementById('status').innerText = `LIVE SYNC ACTIVE: ${eventData.length} EVENTS LOADED`;
+                document.getElementById('status').innerText = `SYNC ACTIVE: ${eventData.length} EVENTS LOADED`;
                 renderAll();
             } catch (e) {
                 document.getElementById('status').innerText = "OFFLINE MODE";
@@ -128,7 +138,7 @@
                 
                 let eventsHtml = matches.map(e => `
                     <div class="event ${e.type === 'patch' ? '' : 'news'}">
-                        ${e.image ? `<img src="${e.image}" class="event-img" alt="Update Image" onerror="this.style.display='none'">` : ''}
+                        ${e.image ? `<img src="${e.image}" class="event-img" onerror="this.style.display='none'">` : ''}
                         <div class="event-info">
                             <div class="event-title">${e.title}</div>
                             <a href="${e.url}" target="_blank" class="details-btn">DETAILS ↗</a>
