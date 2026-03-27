@@ -1,26 +1,37 @@
 {
-    "last_updated": "2026-03-27 20:25:46",
+    "last_updated": "2026-03-27 22:29:34",
     "events": [
-        {
-            "date": "2026-04-01",
-            "title": "v1.13 Dev Stream",
-            "type": "stream",
-            "url": "",
-            "image": ""
-        },
         {
             "date": "2026-04-07",
             "title": "V1.13: Throne of Thorns",
+            "desc": "V1.13: Throne of Thorns update with Hero Affinity level cap increasing to Level 99",
             "type": "patch",
-            "url": "",
-            "image": ""
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69c83611&is=69c6e491&hm=52d97cfa7b0dcb04d693d959d9813f67e8c223d384a4716bc9586a2edcf7fd6d&",
+            "url": "https://discord.com/channels/1055546338907017278/1487129767865225261"
+        },
+        {
+            "date": "2026-04-01",
+            "title": "V1.13 Dev Stream",
+            "desc": "V1.13 Dev Stream on Twitch for a first look at the new update",
+            "type": "news",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69c83923&is=69c6e7a3&hm=cab6c08af1e1c77279b8fa30ff75d46d0c6f3318455140b7b83d1180b486d28f&",
+            "url": "https://discord.com/channels/1055546338907017278/1487129767865225261"
         },
         {
             "date": "2026-03-27",
             "title": "V1.12.6",
+            "desc": "V1.12.6 patch with Daybreak V3, Sylvanis Skins, and Renegade The Fey Skin",
             "type": "patch",
             "url": "https://playp.red/47L1xmd",
-            "image": ""
+            "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/Patch_Header_1_1_5_85dc3fa777.jpg"
+        },
+        {
+            "date": "2026-03-27",
+            "title": "Refer-a-Friend Competition",
+            "desc": "Refer-a-Friend competition to win a Secretlab TITAN Evo gaming chair",
+            "type": "news",
+            "url": "https://playp.red/4sD3FF8",
+            "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/RAF_Secretlab_1920x1080_2_fd213e4f99.png"
         }
     ]
 }
