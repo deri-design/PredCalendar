@@ -16,36 +16,51 @@ def get_discord_messages():
     res = requests.get(url, headers=headers)
     return res.json() if res.status_code == 200 else []
 
-def extract_intel(m):
-    """Gathers the EXACT raw text and images from Discord."""
-    raw_text = m.get('content', '')
-    img = ""
+def find_best_image(msg_obj):
+    """Deep searches a message object for any valid image URL."""
+    if not msg_obj: return ""
     
-    def find_img(msg_obj):
-        for att in msg_obj.get('attachments', []):
-            if any(ext in att.get('url', '').lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']):
-                return att.get('url')
-        for emb in msg_obj.get('embeds', []):
-            if 'image' in emb: return emb['image'].get('url')
-        return ""
+    # 1. Check Attachments
+    for att in msg_obj.get('attachments', []):
+        url = att.get('url', '')
+        if any(ext in url.lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']):
+            return url
+            
+    # 2. Check Embeds (Image or Thumbnail)
+    for emb in msg_obj.get('embeds', []):
+        # Prefer the large 'image', fallback to 'thumbnail'
+        img = emb.get('image') or emb.get('thumbnail')
+        if img and img.get('url'):
+            return img.get('url')
+            
+    return ""
 
-    img = find_img(m)
+def extract_intel(m):
+    """Gathers 1:1 text and searches all layers for images."""
+    raw_text = m.get('content', '')
+    found_img = find_best_image(m)
 
-    # Append forwarded text exactly
+    # Handle Forwarded Snapshots (This is where your patch note image lives)
     if 'message_snapshots' in m:
         for snapshot in m['message_snapshots']:
             snap_msg = snapshot.get('message', {})
             snap_content = snap_msg.get('content', '')
-            if snap_content: raw_text += f"\n{snap_content}"
-            if not img: img = find_img(snap_msg)
+            if snap_content: 
+                raw_text += f"\n{snap_content}"
+            
+            # If we haven't found an image yet, look inside the snapshot
+            if not found_img:
+                found_img = find_best_image(snap_msg)
 
-    # Append embed descriptions exactly (where the "Daybreak V3" list often lives)
+    # Append all embed descriptions (like the text inside the Patch Notes box)
     if 'embeds' in m:
         for embed in m['embeds']:
             desc = embed.get('description', '')
-            if desc: raw_text += f"\n{desc}"
+            title = embed.get('title', '')
+            if title or desc:
+                raw_text += f"\n{title}\n{desc}"
 
-    return raw_text.strip(), img
+    return raw_text.strip(), found_img
 
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_KEY)
@@ -53,14 +68,14 @@ def ask_groq(messages_text):
     
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Identify the event dates.
+    TASK: Identify release dates and titles from the messages provided.
     
     RULES:
-    1. Output a JSON list only.
-    2. "date": The release/event date (YYYY-MM-DD).
-    3. "title": A very short title (max 25 chars).
-    4. "original_msg_id": Match this to the ID provided in the text.
-    5. "type": "patch" or "news".
+    1. Output JSON list ONLY.
+    2. "date": The actual release/event date mentioned (YYYY-MM-DD).
+    3. "title": A short title for the calendar (max 20 chars).
+    4. "original_msg_id": Match this exactly to the ID provided.
+    5. "type": "patch" if it's a version update, else "news".
     
     Messages:
     {messages_text}
@@ -82,6 +97,7 @@ def ask_groq(messages_text):
     return json.loads(json_match.group(0)) if json_match else []
 
 def scrape():
+    print("Initializing Visual Intel Scrape...")
     messages = get_discord_messages()
     if not messages: return
 
@@ -91,34 +107,36 @@ def scrape():
     for m in messages:
         text, img = extract_intel(m)
         if text:
-            # Store the 1:1 raw text indexed by message ID
-            intel_pool[m['id']] = {"text": text, "img": img, "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"}
+            # Save the 1:1 raw data
+            intel_pool[m['id']] = {
+                "text": text, 
+                "img": img, 
+                "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
+            }
             ai_input_list.append(f"ID: {m['id']} | SENT: {m['timestamp']} | CONTENT: {text}")
 
     ai_input_text = "\n---\n".join(ai_input_list)
 
     try:
-        # AI only identifies the Date and Title
         ai_events = ask_groq(ai_input_text)
-        
         final_events = []
+        
         for ae in ai_events:
             msg_id = ae.get('original_msg_id')
             if msg_id in intel_pool:
-                # We inject the 1:1 raw text here, bypassing AI alteration
                 final_events.append({
                     "date": ae['date'],
                     "title": ae['title'],
                     "desc": intel_pool[msg_id]['text'], 
                     "type": ae['type'],
                     "url": intel_pool[msg_id]['url'],
-                    "image": intel_pool[msg_id]['img']
+                    "image": intel_pool[msg_id]['img'] # This now contains the deep-scraped URL
                 })
 
         output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"SUCCESS: Synced {len(final_events)} events 1:1 from Discord.")
+        print(f"SUCCESS: Synced {len(final_events)} events with high-res images.")
     except Exception as e:
         print(f"Error: {e}")
 
