@@ -52,21 +52,23 @@ def ask_groq(messages_text):
     
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Identify release dates for patches, streams, or events.
+    TASK: Identify release dates for patches, hero reveals, or community events.
     
     RULES:
-    1. Only return events where a SPECIFIC DATE or relative date (e.g. "Next Tuesday") is mentioned in the message body.
-    2. IGNORE the date the message was sent. Look for when the event HAPPENS.
-    3. If no specific release/event date is found in the text, DO NOT include it in the JSON.
-    4. Output JSON list ONLY.
-    5. "original_id": Match to the ID provided.
+    1. Only return events where a SPECIFIC DATE is mentioned.
+    2. Output JSON list ONLY.
+    3. Categorize "type" as: 
+       - "patch" (game updates/version notes)
+       - "hero" (new hero reveals or dev diaries)
+       - "season" (competitive updates, community events, or ranked news)
+       - "twitch" (livestreams, dev talks on Twitch, or broadcast schedules)
     
     Messages:
     {messages_text}
 
     OUTPUT FORMAT:
     [
-      {{"date": "YYYY-MM-DD", "title": "Short Name", "original_id": "id", "type": "patch/news"}}
+      {{"date": "YYYY-MM-DD", "title": "Name", "original_id": "id", "type": "patch/hero/season/twitch"}}
     ]
     """
     
@@ -76,16 +78,14 @@ def ask_groq(messages_text):
         temperature=0.1
     )
     raw = chat.choices[0].message.content
-    return json.loads(re.search(r'\[.*\]', raw, re.DOTALL).group(0))
+    json_match = re.search(r'\[.*\]', raw, re.DOTALL)
+    return json.loads(json_match.group(0)) if json_match else []
 
 def scrape():
-    print("AI Agent: Starting Strict Temporal Sync...")
     messages = get_discord_messages()
     if not messages: return
-
     intel_pool = {}
     ai_input_list = []
-
     for m in messages:
         text = extract_full_content(m)
         img = find_deep_img(m)
@@ -95,7 +95,6 @@ def scrape():
                 "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
             }
             ai_input_list.append(f"ID: {m['id']} | CONTENT: {text}")
-
     try:
         ai_events = ask_groq("\n---\n".join(ai_input_list))
         final = []
@@ -106,11 +105,10 @@ def scrape():
                     "date": ae['date'], "title": ae['title'], "type": ae['type'],
                     "desc": intel_pool[mid]['text'], "url": intel_pool[mid]['url'], "image": intel_pool[mid]['img']
                 })
-
         output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"Success: {len(final)} validated events extracted.")
+        print("Scrape Complete.")
     except Exception as e:
         print(f"Error: {e}")
 
