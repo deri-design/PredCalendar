@@ -95,11 +95,11 @@
         .event.season .e-title { color: var(--red); }
         .event.twitch .e-title { color: #bf94ff; }
 
-        /* --- GLOBAL BRIEFING OVERLAY (16px FIXED VERSION) --- */
+        /* --- GLOBAL BRIEFING OVERLAY (18px FIXED VERSION) --- */
         #global-briefing {
             display: none;
             position: fixed; 
-            width: 400px; /* Balanced width for 16px text */
+            width: 450px; /* Adjusted width for 18px text */
             max-height: 85vh;
             overflow-y: auto;
             background: #0d131f;
@@ -114,20 +114,20 @@
 
         .briefing-img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
             border-bottom: 2px solid var(--border);
             display: none;
         }
 
         .briefing-content {
-            padding: 20px;
+            padding: 25px;
         }
 
-        .briefing-tag { font-family: 'Orbitron'; font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; display: block; }
+        .briefing-tag { font-family: 'Orbitron'; font-size: 0.8rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; display: block; }
         
         .briefing-desc { 
-            font-size: 16px; /* EXACTLY 16PX */
+            font-size: 18px; /* EXACTLY 18PX */
             line-height: 1.6; 
             color: #fff; 
             text-shadow: 0 1px 2px #000; 
@@ -136,7 +136,7 @@
             word-wrap: break-word; 
         }
 
-        .briefing-date { display: block; margin-top: 20px; font-size: 12px; color: var(--teal); font-family: 'Orbitron'; border-top: 1px solid var(--border); padding-top: 10px; }
+        .briefing-date { display: block; margin-top: 25px; font-size: 14px; color: var(--teal); font-family: 'Orbitron'; border-top: 1px solid var(--border); padding-top: 12px; }
 
         @media (max-width: 1400px) { .calendars { flex-direction: column; gap: 4rem; } #global-briefing { width: 95%; left: 2.5% !important; top: 50% !important; transform: translateY(-50%); } }
     </style>
@@ -220,7 +220,7 @@
             
             let x = rect.left + rect.width + 20;
             let y = rect.top;
-            if (x + 400 > window.innerWidth) x = rect.left - 420;
+            if (x + 450 > window.innerWidth) x = rect.left - 470;
             if (y + briefing.offsetHeight > window.innerHeight) y = window.innerHeight - briefing.offsetHeight - 40;
             
             briefing.style.left = x + 'px'; 
