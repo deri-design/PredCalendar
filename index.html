@@ -95,10 +95,10 @@
         }
 
         function setupCountdown() {
-            // THE FIX: Find closest future event using precise UTC math
             const now = new Date().getTime();
+            // EXPLICIT UTC PARSING
             const futureEvents = evData
-                .map(e => ({ ...e, time: new Date(e.iso_date || e.date + "T00:00:00Z").getTime() }))
+                .map(e => ({ ...e, time: Date.parse(e.iso_date || e.date + "T00:00:00Z") }))
                 .filter(e => e.time > now)
                 .sort((a, b) => a.time - b.time);
 
