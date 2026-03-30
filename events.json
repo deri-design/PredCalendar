@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-03-30 16:10:39",
+    "last_updated": "2026-03-30 19:07:05",
     "events": [
         {
             "date": "2026-04-07",
@@ -57,7 +57,7 @@
         },
         {
             "date": "2026-03-27",
-            "iso_date": "2026-03-27T00:00:00Z",
+            "iso_date": "2026-03-27T18:00:00Z",
             "title": "REFER-A-FRIEND",
             "type": "season",
             "desc": "Invite a friend to Predecessor for a chance to win an awesome Secretlab TITAN Evo gaming chair!  \ud83d\udd25 \ud83d\udcba\nOur Refer-a-Friend competition is back - every successful referral earns you an entry to win!\nThe more you refer, the better your chances \ud83d\udc40\nLearn more here:\nhttps://playp.red/4sD3FF8\nRefer-a-Friend Competition | Predecessor\nWin a Secretlab gaming chair in our epic Refer-a-Friend Competition!",
@@ -90,6 +90,15 @@
             "desc": "Invite a friend to Predecessor for a chance to win an awesome Secretlab TITAN Evo gaming chair!  \ud83d\udd25 \ud83d\udcba\nOur Refer-a-Friend competition is back - every successful referral earns you an entry to win!\nThe more you refer, the better your chances \ud83d\udc40\nLearn more here:\nhttps://playp.red/4sD3FF8\nRefer-a-Friend Competition | Predecessor\nWin a Secretlab gaming chair in our epic Refer-a-Friend Competition!",
             "url": "https://playp.red/4sD3FF8",
             "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/RAF_Secretlab_1920x1080_2_fd213e4f99.png"
+        },
+        {
+            "date": "2026-03-30",
+            "iso_date": "2026-03-30T00:00:00Z",
+            "title": "QUESTS",
+            "type": "patch",
+            "desc": "Quests are coming in V1.13: Throne of Thorns! \ud83d\udd25\nFrom daily tasks earning you XP to monthly challenges rewarding Quantum Cores, are you ready to complete them all?\nWe\u2019ll find out soon enough \ud83d\udc40",
+            "url": "https://www.predecessorgame.com/en-US/news",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69cc1677&is=69cac4f7&hm=2df15f9cb54ae8f4e579db19eb8d46d707751c1937a9ff39277816f222422e70&"
         }
     ]
 }
