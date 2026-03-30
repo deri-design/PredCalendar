@@ -55,67 +55,87 @@ def extract_full_content(m):
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_KEY)
     today = datetime.now().strftime("%A, %B %d, %Y")
-    
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    Identify release dates AND specific start times for events.
-    
-    DYNAMIC TIME RULES:
-    1. Scan the text for UTC times (e.g., "6PM UTC", "17:00 UTC").
-    2. Convert whatever UTC time you find into 24-hour format for the "iso_date".
-    3. IMPORTANT: Ignore non-UTC timezones (ET, PT, etc.) if a UTC time is present.
-    4. "iso_date" must be: YYYY-MM-DDTHH:MM:SSZ
-    5. If NO time is mentioned at all, default to midnight: T00:00:00Z.
-    
+    Identify ACTUAL release/event dates and short titles. 
+    Format: JSON list only. date: YYYY-MM-DD. title: short. original_id: match to ID. type: patch/hero/season/twitch.
     Messages: {messages_text}
-
-    OUTPUT FORMAT: [ {{"date": "YYYY-MM-DD", "iso_date": "YYYY-MM-DDTHH:MM:SSZ", "title": "Name", "original_id": "id", "type": "type"}} ]
     """
-    
-    chat_completion = client.chat.completions.create(
+    chat = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model="llama-3.3-70b-versatile",
         temperature=0.1
     )
-    raw = chat_completion.choices[0].message.content
-    json_match = re.search(r'\[.*\]', raw, re.DOTALL)
-    return json.loads(json_match.group(0)) if json_match else []
+    raw = chat.choices[0].message.content
+    return json.loads(re.search(r'\[.*\]', raw, re.DOTALL).group(0))
 
 def scrape():
-    print("--- Starting Fully Dynamic Scrape ---")
+    print("Starting Persistent Logic Scrape...")
     messages = get_discord_messages()
     if not messages: return
+
     intel_pool = {}
     ai_input_list = []
     for m in messages:
-        text, img = extract_full_content(m), find_deep_img(m)
+        text = extract_full_content(m)
+        img = find_deep_img(m)
         if text:
             intel_pool[m['id']] = {
-                "text": clean_discord_text(text), "img": img, 
+                "text": clean_discord_text(text),
+                "img": img, 
                 "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
             }
             ai_input_list.append(f"ID: {m['id']} | CONTENT: {text}")
 
     try:
         ai_events = ask_groq("\n---\n".join(ai_input_list))
-        final_events = []
+        
+        # Load existing events to prevent disappearing items
+        try:
+            with open('events.json', 'r') as f:
+                old_data = json.load(f)
+                new_events = old_data.get('events', [])
+        except:
+            new_events = []
+
         for ae in ai_events:
             mid = ae.get('original_id')
             if mid in intel_pool:
-                final_events.append({
-                    "date": ae['date'], 
-                    "iso_date": ae['iso_date'], # Purely from AI now
-                    "title": ae['title'], 
-                    "type": ae['type'],
-                    "desc": intel_pool[mid]['text'], 
-                    "url": intel_pool[mid]['url'] if ae['type'] != 'twitch' else "https://www.twitch.tv/predecessorgame",
-                    "image": intel_pool[mid]['img']
-                })
-        
-        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
+                # --- HARD LOGIC OVERRIDES ---
+                # 1. Twitch Categorization
+                full_text = intel_pool[mid]['text'].lower()
+                event_type = ae['type']
+                event_url = intel_pool[mid]['url']
+
+                if "twitch.tv" in full_text or "stream" in full_text or "twitch" in full_text:
+                    event_type = "twitch"
+                    event_url = "https://www.twitch.tv/predecessorgame"
+                
+                # 2. ISO Date Fix (Force 18:00 if Twitch Stream)
+                iso = ae.get('iso_date', ae['date'] + "T00:00:00Z")
+                if event_type == "twitch" and "18:00" not in iso:
+                    iso = ae['date'] + "T18:00:00Z"
+
+                event_obj = {
+                    "date": ae['date'], "iso_date": iso, "title": ae['title'], "type": event_type,
+                    "desc": intel_pool[mid]['text'], "url": event_url, "image": intel_pool[mid]['img']
+                }
+
+                # Update if exists, otherwise append
+                existing_idx = next((i for i, x in enumerate(new_events) if x['title'] == ae['title']), -1)
+                if existing_idx > -1:
+                    new_events[existing_idx] = event_obj
+                else:
+                    new_events.append(event_obj)
+
+        # Remove very old events (older than 3 months) to keep file clean
+        cutoff = (datetime.now().replace(day=1)).strftime("%Y-%m-%d")
+        new_events = [e for e in new_events if e['date'] >= "2026-01-01"]
+
+        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": new_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print("Success: Dynamic events saved.")
+        print("Success: Database Merged and twitch logic enforced.")
     except Exception as e:
         print(f"Error: {e}")
 
