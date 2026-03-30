@@ -34,12 +34,8 @@ def find_deep_img(obj):
     return ""
 
 def clean_discord_text(text):
-    """Removes Discord role pings, user IDs, and the notification bell emoji."""
-    # Remove role/user mentions like <@&1128995603444150425> or <@1234567>
     text = re.sub(r'<@&?\d+>', '', text)
-    # Remove the bell emoji specifically and any surrounding whitespace
     text = text.replace('🔔', '')
-    # Clean up multiple newlines or spaces left behind
     text = re.sub(r'\n\s*\n', '\n', text)
     return text.strip()
 
@@ -58,49 +54,36 @@ def extract_full_content(m):
 
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_KEY)
-    today = datetime.now().strftime("%A, %B %d, %Y")
-    
+    today = datetime.now().strftime("%Y-%m-%d")
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Identify release dates for patches, hero reveals, or community events.
-    
+    Identify release dates for patches, hero reveals, or community events.
     RULES:
     1. Only return events where a SPECIFIC DATE is mentioned.
     2. Output JSON list ONLY.
     3. Categorize as "patch", "hero", "season", or "twitch".
-    
-    Messages:
-    {messages_text}
-
-    OUTPUT FORMAT:
-    [
-      {{"date": "YYYY-MM-DD", "title": "Name", "original_id": "id", "type": "type"}}
-    ]
+    Messages: {messages_text}
+    OUTPUT FORMAT: [ {{"date": "YYYY-MM-DD", "title": "Name", "original_id": "id", "type": "type"}} ]
     """
-    
     chat = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model="llama-3.3-70b-versatile",
         temperature=0.1
     )
     raw = chat.choices[0].message.content
-    json_match = re.search(r'\[.*\]', raw, re.DOTALL)
-    return json.loads(json_match.group(0)) if json_match else []
+    return json.loads(re.search(r'\[.*\]', raw, re.DOTALL).group(0))
 
 def scrape():
-    print("AI Agent: Cleaning Intel and Syncing...")
     messages = get_discord_messages()
     if not messages: return
-
     intel_pool = {}
     ai_input_list = []
-
     for m in messages:
         text = extract_full_content(m)
         img = find_deep_img(m)
         if text:
             intel_pool[m['id']] = {
-                "text": clean_discord_text(text), # CLEANING APPLIED HERE
+                "text": clean_discord_text(text),
                 "img": img, 
                 "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
             }
@@ -108,19 +91,19 @@ def scrape():
 
     try:
         ai_events = ask_groq("\n---\n".join(ai_input_list))
-        final = []
+        final_events = []
         for ae in ai_events:
             mid = ae.get('original_id')
             if mid in intel_pool:
-                final.append({
+                # The image from the source message is now forced into every event card
+                final_events.append({
                     "date": ae['date'], "title": ae['title'], "type": ae['type'],
                     "desc": intel_pool[mid]['text'], "url": intel_pool[mid]['url'], "image": intel_pool[mid]['img']
                 })
-
-        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final}
+        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print("Scrape and Scrubbing Complete.")
+        print("Scrape and Intel Sync Complete.")
     except Exception as e:
         print(f"Error: {e}")
 
