@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-03-30 02:59:39",
+    "last_updated": "2026-03-30 05:31:56",
     "events": [
         {
             "date": "2026-04-07",
@@ -54,6 +54,15 @@
             "desc": "Invite a friend to Predecessor for a chance to win an awesome Secretlab TITAN Evo gaming chair!  \ud83d\udd25 \ud83d\udcba\nOur Refer-a-Friend competition is back - every successful referral earns you an entry to win!\nThe more you refer, the better your chances \ud83d\udc40\nLearn more here:\nhttps://playp.red/4sD3FF8\nRefer-a-Friend Competition | Predecessor\nWin a Secretlab gaming chair in our epic Refer-a-Friend Competition!",
             "url": "https://discord.com/channels/1055546338907017278/1487129767865225261/1487202475520819431",
             "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/RAF_Secretlab_1920x1080_2_fd213e4f99.png"
+        },
+        {
+            "date": "2026-03-30",
+            "iso_date": "2026-03-30T00:00:00Z",
+            "title": "DOWNTIME",
+            "type": "patch",
+            "desc": "\u26a0\ufe0f Upcoming Downtime\nPredecessor game servers will enter maintenance mode as we push a new game update. During this time you will be unable to play.",
+            "url": "https://discord.com/channels/1055546338907017278/1487129767865225261/1487975529633026068",
+            "image": "https://images-ext-1.discordapp.net/external/IbiGZbO6HrmxAaiDrN2yZR_xuzO70SfrpZSR0Ei9Wrs/https/pbs.twimg.com/media/GjA_nkZXMAAPssx.jpg?format=webp&width=1581&height=889"
         }
     ]
 }
