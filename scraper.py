@@ -34,11 +34,8 @@ def find_deep_img(obj):
     return ""
 
 def clean_discord_text(text):
-    # Remove role/user pings
     text = re.sub(r'<@&?\d+>', '', text)
-    # Remove notification bell
     text = text.replace('🔔', '')
-    # Clean redundant whitespace
     text = re.sub(r'\n\s*\n', '\n', text)
     return text.strip()
 
@@ -63,28 +60,16 @@ def ask_groq(messages_text):
     Today is {today}. Context: "Predecessor" game announcements.
     TASK: Identify release dates AND specific start times for events.
     
-    CRITICAL TIME RULES:
-    1. Look for times like "6PM UTC / 2PM ET".
-    2. ALWAYS prioritize the UTC time. Ignore ET/PT/other zones.
-    3. CONVERT TO 24-HOUR UTC: 
-       - 6PM UTC = 18:00:00Z
-       - 2PM UTC = 14:00:00Z
-       - 9AM UTC = 09:00:00Z
-    4. "iso_date" must be formatted as: YYYY-MM-DDTHH:MM:SSZ
-    5. If NO time is mentioned in the text, default to midnight: T00:00:00Z.
+    STRICT TIME RULES:
+    1. If you see "6PM UTC", the "iso_date" MUST end in "T18:00:00Z".
+    2. If you see "2PM ET", IGNORE IT. ALWAYS use the UTC time.
+    3. If NO time is mentioned, use "T00:00:00Z" (Midnight).
+    4. "date" is "YYYY-MM-DD".
+    5. "iso_date" is "YYYY-MM-DDTHH:MM:SSZ".
     
-    Rules:
-    - Only return events with specific dates.
-    - Categorize as "patch", "hero", "season", or "twitch".
-    - Match "original_id" to the provided ID.
-    
-    Messages:
-    {messages_text}
+    Messages: {messages_text}
 
-    OUTPUT FORMAT (Strict JSON list only):
-    [ 
-      {{"date": "YYYY-MM-DD", "iso_date": "YYYY-MM-DDTHH:MM:SSZ", "title": "Name", "original_id": "id", "type": "type"}} 
-    ]
+    OUTPUT FORMAT: [ {{"date": "YYYY-MM-DD", "iso_date": "YYYY-MM-DDTHH:MM:SSZ", "title": "Name", "original_id": "id", "type": "type"}} ]
     """
     
     chat_completion = client.chat.completions.create(
@@ -97,10 +82,9 @@ def ask_groq(messages_text):
     return json.loads(json_match.group(0)) if json_match else []
 
 def scrape():
-    print("--- Starting High-Precision Temporal Scrape ---")
+    print("--- Starting UTC-Synchronized Scrape ---")
     messages = get_discord_messages()
     if not messages: return
-    
     intel_pool = {}
     ai_input_list = []
     for m in messages:
@@ -138,7 +122,7 @@ def scrape():
         output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print("Success: Timezone-corrected data saved.")
+        print("Success: Finalized events with UTC timestamps.")
     except Exception as e:
         print(f"Error: {e}")
 
