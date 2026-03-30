@@ -60,10 +60,12 @@ def ask_groq(messages_text):
     Today is {today}. Context: "Predecessor" game announcements.
     Identify release dates AND specific start times for events.
     
-    STRICT TIME RULES:
-    1. Look for "UTC" times. 6PM UTC MUST be "T18:00:00Z".
-    2. IGNORE "ET" or "PT" times.
-    3. Output JSON list ONLY.
+    DYNAMIC TIME RULES:
+    1. Scan the text for UTC times (e.g., "6PM UTC", "17:00 UTC").
+    2. Convert whatever UTC time you find into 24-hour format for the "iso_date".
+    3. IMPORTANT: Ignore non-UTC timezones (ET, PT, etc.) if a UTC time is present.
+    4. "iso_date" must be: YYYY-MM-DDTHH:MM:SSZ
+    5. If NO time is mentioned at all, default to midnight: T00:00:00Z.
     
     Messages: {messages_text}
 
@@ -80,6 +82,7 @@ def ask_groq(messages_text):
     return json.loads(json_match.group(0)) if json_match else []
 
 def scrape():
+    print("--- Starting Fully Dynamic Scrape ---")
     messages = get_discord_messages()
     if not messages: return
     intel_pool = {}
@@ -99,13 +102,11 @@ def scrape():
         for ae in ai_events:
             mid = ae.get('original_id')
             if mid in intel_pool:
-                iso = ae['iso_date']
-                # HARD OVERRIDE: If it's the Dev Stream, force 18:00 UTC
-                if "dev stream" in ae['title'].lower():
-                    iso = ae['date'] + "T18:00:00Z"
-
                 final_events.append({
-                    "date": ae['date'], "iso_date": iso, "title": ae['title'], "type": ae['type'],
+                    "date": ae['date'], 
+                    "iso_date": ae['iso_date'], # Purely from AI now
+                    "title": ae['title'], 
+                    "type": ae['type'],
                     "desc": intel_pool[mid]['text'], 
                     "url": intel_pool[mid]['url'] if ae['type'] != 'twitch' else "https://www.twitch.tv/predecessorgame",
                     "image": intel_pool[mid]['img']
@@ -114,7 +115,7 @@ def scrape():
         output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print("Scrape Complete.")
+        print("Success: Dynamic events saved.")
     except Exception as e:
         print(f"Error: {e}")
 
