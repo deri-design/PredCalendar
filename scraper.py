@@ -2,6 +2,7 @@ import os
 import requests
 import json
 import re
+import time
 from groq import Groq
 from datetime import datetime
 
@@ -34,6 +35,7 @@ def find_deep_img(obj):
     return ""
 
 def clean_discord_text(text):
+    # Remove Discord role pings and bell emojis
     text = re.sub(r'<@&?\d+>', '', text)
     text = text.replace('🔔', '')
     text = re.sub(r'\n\s*\n', '\n', text)
@@ -54,7 +56,7 @@ def extract_full_content(m):
 
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_KEY)
-    today = datetime.now().strftime("%A, %B %d, %Y")
+    today = datetime.now().strftime("%Y-%m-%d")
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
     Identify ACTUAL release/event dates and short titles. 
@@ -70,7 +72,7 @@ def ask_groq(messages_text):
     return json.loads(re.search(r'\[.*\]', raw, re.DOTALL).group(0))
 
 def scrape():
-    print("Starting Persistent Logic Scrape...")
+    print("Starting Smart Logic Scrape...")
     messages = get_discord_messages()
     if not messages: return
 
@@ -90,7 +92,7 @@ def scrape():
     try:
         ai_events = ask_groq("\n---\n".join(ai_input_list))
         
-        # Load existing events to prevent disappearing items
+        # Load existing events
         try:
             with open('events.json', 'r') as f:
                 old_data = json.load(f)
@@ -101,41 +103,42 @@ def scrape():
         for ae in ai_events:
             mid = ae.get('original_id')
             if mid in intel_pool:
-                # --- HARD LOGIC OVERRIDES ---
-                # 1. Twitch Categorization
+                # Resolve Type and URL
                 full_text = intel_pool[mid]['text'].lower()
                 event_type = ae['type']
                 event_url = intel_pool[mid]['url']
-
-                if "twitch.tv" in full_text or "stream" in full_text or "twitch" in full_text:
+                if any(x in full_text for x in ["twitch.tv", "stream"]):
                     event_type = "twitch"
                     event_url = "https://www.twitch.tv/predecessorgame"
                 
-                # 2. ISO Date Fix (Force 18:00 if Twitch Stream)
-                iso = ae.get('iso_date', ae['date'] + "T00:00:00Z")
-                if event_type == "twitch" and "18:00" not in iso:
-                    iso = ae['date'] + "T18:00:00Z"
+                iso = ae.get('iso_date', ae['date'] + "T18:00:00Z" if event_type == "twitch" else ae['date'] + "T00:00:00Z")
 
                 event_obj = {
                     "date": ae['date'], "iso_date": iso, "title": ae['title'], "type": event_type,
                     "desc": intel_pool[mid]['text'], "url": event_url, "image": intel_pool[mid]['img']
                 }
 
-                # Update if exists, otherwise append
-                existing_idx = next((i for i, x in enumerate(new_events) if x['title'] == ae['title']), -1)
-                if existing_idx > -1:
-                    new_events[existing_idx] = event_obj
-                else:
+                # --- NEW SMART DEDUPLICATION LOGIC ---
+                duplicate_found = False
+                for i, existing_ev in enumerate(new_events):
+                    if existing_ev['date'] == ae['date']:
+                        # If titles are similar or one contains the other, they are duplicates
+                        t1 = ae['title'].lower()
+                        t2 = existing_ev['title'].lower()
+                        if t1 in t2 or t2 in t1:
+                            # Update existing with longer/better title
+                            if len(ae['title']) >= len(existing_ev['title']):
+                                new_events[i] = event_obj
+                            duplicate_found = True
+                            break
+                
+                if not duplicate_found:
                     new_events.append(event_obj)
-
-        # Remove very old events (older than 3 months) to keep file clean
-        cutoff = (datetime.now().replace(day=1)).strftime("%Y-%m-%d")
-        new_events = [e for e in new_events if e['date'] >= "2026-01-01"]
 
         output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": new_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print("Success: Database Merged and twitch logic enforced.")
+        print("Success: Duplicates merged.")
     except Exception as e:
         print(f"Error: {e}")
 
