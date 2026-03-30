@@ -22,11 +22,14 @@ def find_deep_img(obj):
         if any(ext in obj.lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']) and 'http' in obj:
             return obj
     if isinstance(obj, dict):
-        for key in['url', 'proxy_url']:
+        for key in ['url', 'proxy_url']:
             if key in obj and isinstance(obj[key], str) and any(ext in obj[key].lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']):
                 return obj[key]
         if 'image' in obj and isinstance(obj['image'], dict):
             res = find_deep_img(obj['image'])
+            if res: return res
+        if 'thumbnail' in obj and isinstance(obj['thumbnail'], dict):
+            res = find_deep_img(obj['thumbnail'])
             if res: return res
         for v in obj.values():
             res = find_deep_img(v)
@@ -56,6 +59,28 @@ def extract_full_content(m):
             text += f"\n{emb.get('title', '')}\n{emb.get('description', '')}"
     return text.strip()
 
+def extract_external_link(text, embeds):
+    """Finds YouTube, website, or other external links, avoiding private Discord links."""
+    # 1. Search raw text for http links
+    urls = re.findall(r'(https?://[^\s]+)', text)
+    for url in urls:
+        url = url.rstrip('.,!?"\')')
+        # Skip image file links (we just want web pages or videos)
+        if any(url.lower().endswith(ext) for ext in ['.png', '.jpg', '.jpeg', '.webp', '.gif']):
+            continue
+        # CRITICAL: Skip private discord channel links
+        if 'discord.com/channels' in url:
+            continue
+        return url
+        
+    # 2. Check embed objects (like YouTube video embeds)
+    for emb in embeds:
+        if 'url' in emb and 'discord.com/channels' not in emb['url']:
+            return emb['url']
+            
+    # 3. Fallback to Official Website News Page (No broken links)
+    return "https://www.predecessorgame.com/en-US/news"
+
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_KEY)
     today = datetime.now().strftime("%Y-%m-%d")
@@ -64,27 +89,22 @@ def ask_groq(messages_text):
     Identify the correct event dates and short titles.
     
     CRITICAL DATE RULES:
-    1. Read the CONTENT. If the text mentions a future date (e.g. "April 7th", "1st April"), convert it to YYYY-MM-DD (e.g. "2026-04-07", "2026-04-01") and use it.
-    2. If the CONTENT does NOT mention a future date (e.g. it says "is LIVE!" or "Available now"), you MUST use the "POSTED" date provided.
-    3. DO NOT group everything on today's date. Respect the text dates or POSTED dates.
+    1. Read the CONTENT. If the text mentions a future date (e.g. "April 7th", "1st April"), convert it to YYYY-MM-DD and use it.
+    2. If the CONTENT does NOT mention a future date, you MUST use the "POSTED" date.
     
-    RULES:
-    - If a single message announces multiple features on the same date, create ONE event for each feature.
-    - JSON list only. Fields: "date" (YYYY-MM-DD), "title" (short), "original_id", "type" (patch/hero/season/twitch).
-    
-    Messages:
-    {messages_text}
+    Format: JSON list only. date: YYYY-MM-DD. title: short. original_id: match to ID. type: patch/hero/season/twitch.
+    Messages: {messages_text}
     """
     chat = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model="llama-3.3-70b-versatile",
-        temperature=0.0 # Set to 0 to make it strictly logical, not creative
+        temperature=0.0
     )
     raw = chat.choices[0].message.content
     return json.loads(re.search(r'\[.*\]', raw, re.DOTALL).group(0))
 
 def scrape():
-    print("Starting Date-Accurate Scrape...")
+    print("Starting Scrape with External Link Tracking...")
     messages = get_discord_messages()
     if not messages: return
 
@@ -93,13 +113,22 @@ def scrape():
     for m in messages:
         text = extract_full_content(m)
         img = find_deep_img(m)
+        
+        # Combine all embeds to search for external video/article URLs
+        all_embeds = m.get('embeds',[])
+        if 'message_snapshots' in m:
+            for snap in m['message_snapshots']:
+                all_embeds.extend(snap.get('message', {}).get('embeds',[]))
+                
+        # Extract the correct external link
+        ext_url = extract_external_link(text, all_embeds)
+        
         if text:
             intel_pool[m['id']] = {
                 "text": clean_discord_text(text), 
                 "img": img, 
-                "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
+                "url": ext_url
             }
-            # THE FIX: Injecting the actual post date back into the AI Prompt
             posted_date = m['timestamp'][:10]
             ai_input_list.append(f"ID: {m['id']} | POSTED: {posted_date} | CONTENT: {text}")
 
@@ -118,8 +147,11 @@ def scrape():
                 full_text = intel_pool[mid]['text'].lower()
                 etype = ae['type']
                 eurl = intel_pool[mid]['url']
-                if any(x in full_text for x in["twitch", "stream"]):
-                    etype, eurl = "twitch", "https://www.twitch.tv/predecessorgame"
+                
+                # --- TWITCH OVERRIDE (Untouched) ---
+                if any(x in full_text for x in ["twitch", "stream"]):
+                    etype = "twitch"
+                    eurl = "https://www.twitch.tv/predecessorgame"
                 
                 iso = ae.get('iso_date', ae['date'] + ("T18:00:00Z" if etype == "twitch" else "T00:00:00Z"))
 
@@ -139,17 +171,17 @@ def scrape():
                                 existing['title'] = new_obj['title']
                                 if new_obj['image']: existing['image'] = new_obj['image']
                                 existing['iso_date'] = new_obj['iso_date']
+                                existing['url'] = new_obj['url']
                             found_match = True
                             break
                 if not found_match: master_list.append(new_obj)
 
-        # Remove very old items
         master_list =[e for e in master_list if e.get('desc') and e['date'] >= "2026-02-01"]
 
         output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": master_list}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"Success: {len(master_list)} events stored on correct dates.")
+        print(f"Success: {len(master_list)} events stored.")
     except Exception as e:
         print(f"Error: {e}")
 
