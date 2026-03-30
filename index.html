@@ -24,7 +24,6 @@
         .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; color: #888; letter-spacing: 1px; }
         .dot { width: 8px; height: 8px; border-radius: 50%; }
         .dot.patch { background: var(--gold); } .dot.hero { background: var(--teal); } .dot.season { background: var(--red); } .dot.twitch { background: var(--twitch); }
-        
         .roadmap-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
         .h-cell { background: #0d131f; padding: 15px; text-align: center; font-size: 0.7rem; color: #5d7599; font-family: 'Orbitron'; font-weight: bold; }
         .roadmap-grid .h-cell:nth-child(6), .roadmap-grid .h-cell:nth-child(7) { background: #141b2a; color: var(--gold); }
@@ -34,25 +33,20 @@
         .num { font-family: 'Orbitron'; font-size: 0.8rem; color: #5d7599; font-weight: bold; }
         .month-tag { font-family: 'Orbitron'; font-size: 0.6rem; color: var(--gold); opacity: 0.5; }
         .cell.today { outline: 2px solid var(--gold); background: rgba(220, 182, 59, 0.05); z-index: 2; }
-        .cell.today .num { color: var(--gold); }
-        
         .event { display: block; text-decoration: none; background: rgba(0, 0, 0, 0.8); border: 1px solid var(--gold); margin-bottom: 8px; flex-shrink: 0; overflow: hidden; border-radius: 2px; transition: 0.2s; cursor: help; padding: 8px; }
         .event:hover { border-color: #fff !important; transform: translateY(-2px); }
         .event.patch { border-color: var(--gold); } .event.hero { border-color: var(--teal); } .event.season { border-color: var(--red); } .event.twitch { border-color: var(--twitch); }
         .e-title { font-weight: bold; color: var(--gold); font-family: 'Orbitron'; font-size: 0.55rem; line-height: 1.2; text-transform: uppercase; }
         .event.hero .e-title { color: var(--teal); } .event.season .e-title { color: var(--red); } .event.twitch .e-title { color: #bf94ff; }
-
         #global-briefing { display: none; position: fixed; width: 450px; max-height: 85vh; overflow-y: auto; background: #0d131f; border: 2px solid var(--gold); padding: 0; z-index: 10000; box-shadow: 0 0 100px rgba(0,0,0,1); pointer-events: none; backdrop-filter: blur(25px); scrollbar-width: thin; }
         .briefing-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--border); display: none; }
         .briefing-content { padding: 25px; }
         .briefing-tag { font-family: 'Orbitron'; font-size: 1rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 15px; border-bottom: 2px solid var(--border); padding-bottom: 10px; display: block; text-transform: uppercase; }
         .briefing-desc { font-size: 18px; line-height: 1.6; color: #fff; text-shadow: 0 1px 2px #000; font-weight: 500; white-space: pre-wrap; word-wrap: break-word; }
-
         @media (max-width: 1000px) { .roadmap-grid { grid-template-columns: repeat(1, 1fr); } #global-briefing { width: 95%; left: 2.5% !important; top: 50% !important; transform: translateY(-50%); } }
     </style>
 </head>
 <body>
-
     <div class="container">
         <header class="header"><h1>PREDECESSOR</h1></header>
         <div class="countdown-container" id="hud">
@@ -76,11 +70,9 @@
         <img id="b-img" class="briefing-img" src="" alt="Visual">
         <div class="briefing-content"><span id="b-tag" class="briefing-tag"></span><div id="b-desc" class="briefing-desc"></div></div>
     </div>
-
     <script>
         let evData = []; const today = new Date();
         const briefing = document.getElementById('global-briefing'), bImg = document.getElementById('b-img');
-
         async function init() {
             try {
                 const r = await fetch('./events.json?t=' + Date.now());
@@ -90,13 +82,9 @@
                 renderRoadmap();
             } catch(e) { renderRoadmap(); }
         }
-
         function setupCountdown() {
             const now = Date.now();
-            const futureEvents = evData
-                .map(e => ({ ...e, time: Date.parse(e.iso_date || e.date + "T00:00:00Z") }))
-                .filter(e => e.time > now)
-                .sort((a, b) => a.time - b.time);
+            const futureEvents = evData.map(e => ({ ...e, time: Date.parse(e.iso_date || e.date + "T00:00:00Z") })).filter(e => e.time > now).sort((a, b) => a.time - b.time);
             if (futureEvents.length > 0) {
                 const nextEv = futureEvents[0];
                 document.getElementById('op-title').innerText = nextEv.title;
@@ -110,7 +98,6 @@
                 }, 1000);
             } else { document.getElementById('op-title').innerText = "NO UPCOMING OPS"; }
         }
-
         function renderRoadmap() {
             const grid = document.getElementById('main-grid');
             grid.innerHTML = "MON TUE WED THU FRI SAT SUN".split(" ").map(d => `<div class="h-cell">${d}</div>`).join("");
@@ -133,7 +120,6 @@
                 cell.innerHTML = cellHtml; grid.appendChild(cell); cursor.setDate(cursor.getDate() + 1);
             }
         }
-
         window.showBriefing = function(e, eventObj) {
             const rect = e.currentTarget.getBoundingClientRect();
             let color = "var(--gold)";
@@ -149,7 +135,6 @@
             if (y + briefing.offsetHeight > window.innerHeight) y = window.innerHeight - briefing.offsetHeight - 40;
             briefing.style.left = x + 'px'; briefing.style.top = Math.max(40, y) + 'px';
         };
-
         window.hideBriefing = function() { briefing.style.display = 'none'; };
         init();
     </script>
