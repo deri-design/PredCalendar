@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-03-30 16:09:10",
+    "last_updated": "2026-03-30 16:10:39",
     "events": [
         {
             "date": "2026-04-07",
@@ -22,7 +22,7 @@
         {
             "date": "2026-04-01",
             "iso_date": "2026-04-01T18:00:00Z",
-            "title": "DEV STREAM",
+            "title": "V1.13 DEV STREAM",
             "type": "twitch",
             "desc": "# \ud83c\udfa5 v1.13 Dev Stream - 1st April \nv1.13 Throne of Thorns is just around the corner! We'll be live on Twitch next week for a first look at the new update \ud83c\udf39\nMark it in your calendar and we'll see you in chat!\n\ud83d\uddd3\ufe0f01 April | \u23f0 6PM UTC / 2PM ET",
             "url": "https://www.twitch.tv/predecessorgame",
@@ -60,6 +60,33 @@
             "iso_date": "2026-03-27T00:00:00Z",
             "title": "REFER-A-FRIEND",
             "type": "season",
+            "desc": "Invite a friend to Predecessor for a chance to win an awesome Secretlab TITAN Evo gaming chair!  \ud83d\udd25 \ud83d\udcba\nOur Refer-a-Friend competition is back - every successful referral earns you an entry to win!\nThe more you refer, the better your chances \ud83d\udc40\nLearn more here:\nhttps://playp.red/4sD3FF8\nRefer-a-Friend Competition | Predecessor\nWin a Secretlab gaming chair in our epic Refer-a-Friend Competition!",
+            "url": "https://playp.red/4sD3FF8",
+            "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/RAF_Secretlab_1920x1080_2_fd213e4f99.png"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T00:00:00Z",
+            "title": "QUESTS",
+            "type": "patch",
+            "desc": "Quests are coming in V1.13: Throne of Thorns! \ud83d\udd25\nFrom daily tasks earning you XP to monthly challenges rewarding Quantum Cores, are you ready to complete them all?\nWe\u2019ll find out soon enough \ud83d\udc40",
+            "url": "https://www.predecessorgame.com/en-US/news",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69cb6db7&is=69ca1c37&hm=fec9f157d5f9cdee6307e45338af3e0da2d219ca432a52b557d293c0088262fd&"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T00:00:00Z",
+            "title": "DAYBREAK V4",
+            "type": "patch",
+            "desc": "\ud83c\udf07 Size - adjusted \n\ud83d\uddfa\ufe0f Layout - improved\n\ud83c\udfc3 Lower Mobility Heroes - empowered\nDaybreak V4 is coming in V1.13: Throne of Thorns on April 7th - bringing some of the most exciting changes yet! \ud83d\udd25",
+            "url": "https://www.predecessorgame.com/en-US/news",
+            "image": ""
+        },
+        {
+            "date": "2026-03-30",
+            "iso_date": "2026-03-30T18:00:00Z",
+            "title": "REFER-A-FRIEND",
+            "type": "twitch",
             "desc": "Invite a friend to Predecessor for a chance to win an awesome Secretlab TITAN Evo gaming chair!  \ud83d\udd25 \ud83d\udcba\nOur Refer-a-Friend competition is back - every successful referral earns you an entry to win!\nThe more you refer, the better your chances \ud83d\udc40\nLearn more here:\nhttps://playp.red/4sD3FF8\nRefer-a-Friend Competition | Predecessor\nWin a Secretlab gaming chair in our epic Refer-a-Friend Competition!",
             "url": "https://playp.red/4sD3FF8",
             "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/RAF_Secretlab_1920x1080_2_fd213e4f99.png"
