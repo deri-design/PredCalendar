@@ -56,7 +56,14 @@ def extract_full_content(m):
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_KEY)
     today = datetime.now().strftime("%Y-%m-%d")
-    prompt = f"Today is {today}. Identify release dates/times and short titles from Predecessor Discord. Output JSON list: date: YYYY-MM-DD, title: short, original_id: msg id, type: patch/hero/season/twitch. Messages: {messages_text}"
+    prompt = f"""
+    Today is {today}. Context: "Predecessor" game announcements.
+    Identify ACTUAL release/event dates and short titles. 
+    RULES:
+    1. Only return events with specific dates. 
+    2. Format: JSON list only. date: YYYY-MM-DD. title: short. original_id: match to ID. type: patch/hero/season/twitch.
+    Messages: {messages_text}
+    """
     chat = client.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         model="llama-3.3-70b-versatile",
@@ -76,20 +83,25 @@ def scrape():
         text = extract_full_content(m)
         img = find_deep_img(m)
         if text:
-            intel_pool[m['id']] = {"text": clean_discord_text(text), "img": img, "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"}
+            # We explicitly link the image to the Message ID here
+            intel_pool[m['id']] = {
+                "text": clean_discord_text(text), 
+                "img": img, 
+                "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
+            }
             ai_input_list.append(f"ID: {m['id']} | CONTENT: {text}")
 
     try:
         ai_events = ask_groq("\n---\n".join(ai_input_list))
         
-        # Load Current Database
+        # Load Existing to maintain historical data
         try:
             with open('events.json', 'r') as f:
                 old_data = json.load(f)
                 master_list = old_data.get('events', [])
         except: master_list = []
 
-        # Process new events
+        # Process new events found by AI
         for ae in ai_events:
             mid = ae.get('original_id')
             if mid in intel_pool:
@@ -101,35 +113,46 @@ def scrape():
                 
                 iso = ae.get('iso_date', ae['date'] + ("T18:00:00Z" if etype == "twitch" else "T00:00:00Z"))
 
+                # Create the entry. Noticeae['image'] is now forced from intel_pool[mid]['img']
                 new_obj = {
                     "date": ae['date'], "iso_date": iso, "title": ae['title'].strip().upper(), "type": etype,
                     "desc": intel_pool[mid]['text'], "url": eurl, "image": intel_pool[mid]['img']
                 }
+                master_list.append(new_obj)
 
-                # Deduplication logic: Check for existing matches by date and normalized title
-                def normalize(t): return re.sub(r'[^A-Z0-9]', '', t.upper())
-                
-                found_match = False
-                for i, existing in enumerate(master_list):
-                    if existing['date'] == new_obj['date']:
-                        n1, n2 = normalize(new_obj['title']), normalize(existing['title'])
-                        if n1 in n2 or n2 in n1:
-                            # Keep the longer title and the new image if available
-                            if len(new_obj['title']) >= len(existing['title']):
-                                existing['title'] = new_obj['title']
-                                if new_obj['image']: existing['image'] = new_obj['image']
-                                existing['iso_date'] = new_obj['iso_date']
-                            found_match = True
-                            break
-                if not found_match: master_list.append(new_obj)
+        # --- ADVANCED DEDUPLICATION ENGINE ---
+        def get_fingerprint(event):
+            # Normalizes title: "V1.13: THRONE" -> "THRONE"
+            t = event['title'].upper()
+            t = re.sub(r'V\d+\.\d+(\.\d+)?', '', t) # Remove version numbers
+            t = re.sub(r'[^A-Z]', '', t) # Remove everything but letters
+            return f"{event['date']}_{t}"
 
-        # Final pass: Remove items with empty descriptions or very old dates
-        master_list = [e for e in master_list if e.get('desc') and e['date'] >= "2026-02-01"]
+        unique_map = {}
+        # Sort so we process items with images first
+        master_list.sort(key=lambda x: (len(x.get('image', '')), len(x['title'])), reverse=True)
 
-        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": master_list}
+        for e in master_list:
+            fingerprint = get_fingerprint(e)
+            if fingerprint not in unique_map:
+                unique_map[fingerprint] = e
+            else:
+                # Merge: Keep the one with the image if the existing one doesn't have it
+                if not unique_map[fingerprint].get('image') and e.get('image'):
+                    unique_map[fingerprint]['image'] = e['image']
+                # Keep the longer description
+                if len(e.get('desc', '')) > len(unique_map[fingerprint].get('desc', '')):
+                    unique_map[fingerprint]['desc'] = e['desc']
+
+        final_events = sorted(list(unique_map.values()), key=lambda x: x['date'])
+
+        # Final cleanup: Remove old events and items without descriptions
+        final_events = [e for e in final_events if e.get('desc') and e['date'] >= "2026-02-01"]
+
+        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"Sync complete. {len(master_list)} events stored.")
+        print(f"Sync complete. {len(final_events)} unique operations stored.")
     except Exception as e:
         print(f"Error: {e}")
 
