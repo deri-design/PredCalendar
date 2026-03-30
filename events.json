@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-03-30 13:46:23",
+    "last_updated": "2026-03-30 15:13:16",
     "events": [
         {
             "date": "2026-04-07",
@@ -8,7 +8,7 @@
             "type": "patch",
             "desc": "V1.13: Throne of Thorns drops April 7th - very soon \ud83d\udc40\nAnd we\u2019ve got some news to share... here's first of them:\nHero Affinity level cap is increasing all the way to Level 99! \ud83d\udd25\nYou asked for it, and it\u2019s finally here. Time to push your mains further than ever before \ud83d\udcaa",
             "url": "https://discord.com/channels/1055546338907017278/1487129767865225261/1487182428824145991",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69cb81d1&is=69ca3051&hm=d9561a7b5cbaa8e2615fe9b5ab37d79b030406706565a36678d3448f9e9da8c4&"
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69cb6db7&is=69ca1c37&hm=fec9f157d5f9cdee6307e45338af3e0da2d219ca432a52b557d293c0088262fd&"
         },
         {
             "date": "2026-04-07",
@@ -90,6 +90,15 @@
             "desc": "V1.13: Throne of Thorns drops April 7th - very soon \ud83d\udc40\nAnd we\u2019ve got some news to share... here's first of them:\nHero Affinity level cap is increasing all the way to Level 99! \ud83d\udd25\nYou asked for it, and it\u2019s finally here. Time to push your mains further than ever before \ud83d\udcaa",
             "url": "https://discord.com/channels/1055546338907017278/1487129767865225261/1487182428824145991",
             "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69cb81d1&is=69ca3051&hm=d9561a7b5cbaa8e2615fe9b5ab37d79b030406706565a36678d3448f9e9da8c4&"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T00:00:00Z",
+            "title": "ADELE HERO",
+            "type": "hero",
+            "desc": "Thorns are spreading across the battlefield\u2026 \ud83c\udf39 \nThat can only mean one thing...\nAdele is joining the fight in V1.13: Throne of Thorns, coming April 7th!\nhttps://youtu.be/_mxjJioNuhI\n @Official News\nAdele Queen of Thorns | Reveal Trailer | Predecessor\nAdele joins the fight in update 1.13: Throne of Thorns on April 7th!\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \nPLAY NOW!\nhttps://playp.red/playnow",
+            "url": "https://discord.com/channels/1055546338907017278/1487129767865225261/1488193504562774108",
+            "image": "https://i.ytimg.com/vi/_mxjJioNuhI/maxresdefault.jpg"
         }
     ]
 }
