@@ -47,8 +47,7 @@
         .active .num { color: #fff; }
         .today { outline: 1px solid var(--gold); background: rgba(220, 182, 59, 0.05); }
 
-        /* --- TEXT-ONLY EVENT CARDS --- */
-        .event { display: block; text-decoration: none; background: rgba(0, 0, 0, 0.8); border: 1px solid var(--gold); margin-bottom: 8px; flex-shrink: 0; overflow: hidden; border-radius: 2px; transition: 0.2s; cursor: help; }
+        .event { display: block; text-decoration: none; background: rgba(0, 0, 0, 0.8); margin-bottom: 8px; flex-shrink: 0; overflow: hidden; border-radius: 2px; transition: 0.2s; cursor: help; border: 1px solid var(--gold); }
         .event:hover { transform: translateY(-2px); border-color: #fff !important; }
         .event.patch { border-color: var(--gold); }
         .event.hero { border-color: var(--teal); }
@@ -63,15 +62,14 @@
 
         /* --- GLOBAL BRIEFING OVERLAY --- */
         #global-briefing {
-            display: none; position: fixed; width: 450px; max-height: 85vh; overflow-y: auto;
-            background: #0d131f; border: 3px solid var(--gold); padding: 0; z-index: 10000;
+            display: none; position: fixed; width: 480px; max-height: 85vh; overflow-y: auto;
+            background: #0d131f; border: 2px solid var(--gold); padding: 0; z-index: 10000;
             box-shadow: 0 0 100px rgba(0,0,0,1); pointer-events: none; backdrop-filter: blur(25px);
         }
-        .briefing-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 3px solid var(--border); display: none; }
+        .briefing-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--border); display: none; }
         .briefing-content { padding: 25px; }
-        .briefing-tag { font-family: 'Orbitron'; font-size: 0.8rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 15px; border-bottom: 2px solid var(--border); padding-bottom: 10px; display: block; }
+        .briefing-tag { font-family: 'Orbitron'; font-size: 1rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 15px; border-bottom: 2px solid var(--border); padding-bottom: 10px; display: block; text-transform: uppercase; }
         .briefing-desc { font-size: 18px; line-height: 1.6; color: #fff; text-shadow: 0 1px 2px #000; font-weight: 500; white-space: pre-wrap; word-wrap: break-word; }
-        .briefing-date { display: block; margin-top: 25px; font-size: 14px; color: var(--teal); font-family: 'Orbitron'; border-top: 2px solid var(--border); padding-top: 12px; }
 
         @media (max-width: 1400px) { .calendars { flex-direction: column; gap: 4rem; } #global-briefing { width: 95%; left: 2.5% !important; top: 50% !important; transform: translateY(-50%); } }
     </style>
@@ -111,7 +109,6 @@
         <div class="briefing-content">
             <span id="b-tag" class="briefing-tag"></span>
             <div id="b-desc" class="briefing-desc"></div>
-            <span id="b-date" class="briefing-date"></span>
         </div>
     </div>
 
@@ -139,20 +136,19 @@
 
             briefing.style.borderColor = categoryColor;
             document.getElementById('b-tag').style.color = categoryColor;
-            document.getElementById('b-tag').innerText = `RAW DISCORD INTEL // ${eventObj.type.toUpperCase()}`;
+            
+            // Headline now matches the calendar card label (The Title)
+            document.getElementById('b-tag').innerText = eventObj.title;
             document.getElementById('b-desc').innerText = eventObj.desc;
-            document.getElementById('b-date').innerText = `TARGET DEPLOYMENT: ${eventObj.date}`;
             
             if (eventObj.image) {
                 bImg.src = eventObj.image; bImg.style.display = 'block';
-            } else {
-                bImg.style.display = 'none';
-            }
+            } else { bImg.style.display = 'none'; }
 
             briefing.style.display = 'block';
             let x = rect.left + rect.width + 20;
             let y = rect.top;
-            if (x + 450 > window.innerWidth) x = rect.left - 470;
+            if (x + 480 > window.innerWidth) x = rect.left - 500;
             if (y + briefing.offsetHeight > window.innerHeight) y = window.innerHeight - briefing.offsetHeight - 40;
             briefing.style.left = x + 'px'; briefing.style.top = Math.max(40, y) + 'px';
         }
