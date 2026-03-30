@@ -47,7 +47,8 @@
         .active .num { color: #fff; }
         .today { outline: 1px solid var(--gold); background: rgba(220, 182, 59, 0.05); }
 
-        .event { display: block; text-decoration: none; background: rgba(0, 0, 0, 0.8); margin-bottom: 8px; flex-shrink: 0; overflow: hidden; border-radius: 2px; transition: 0.2s; cursor: help; border: 1px solid var(--gold); }
+        /* --- EVENT CARDS --- */
+        .event { display: block; text-decoration: none; background: rgba(0, 0, 0, 0.8); border: 1px solid var(--gold); margin-bottom: 8px; flex-shrink: 0; overflow: hidden; border-radius: 2px; transition: 0.2s; cursor: help; }
         .event:hover { transform: translateY(-2px); border-color: #fff !important; }
         .event.patch { border-color: var(--gold); }
         .event.hero { border-color: var(--teal); }
@@ -62,7 +63,7 @@
 
         /* --- GLOBAL BRIEFING OVERLAY --- */
         #global-briefing {
-            display: none; position: fixed; width: 480px; max-height: 85vh; overflow-y: auto;
+            display: none; position: fixed; width: 450px; max-height: 85vh; overflow-y: auto;
             background: #0d131f; border: 2px solid var(--gold); padding: 0; z-index: 10000;
             box-shadow: 0 0 100px rgba(0,0,0,1); pointer-events: none; backdrop-filter: blur(25px);
         }
@@ -136,8 +137,6 @@
 
             briefing.style.borderColor = categoryColor;
             document.getElementById('b-tag').style.color = categoryColor;
-            
-            // Headline now matches the calendar card label (The Title)
             document.getElementById('b-tag').innerText = eventObj.title;
             document.getElementById('b-desc').innerText = eventObj.desc;
             
@@ -148,7 +147,7 @@
             briefing.style.display = 'block';
             let x = rect.left + rect.width + 20;
             let y = rect.top;
-            if (x + 480 > window.innerWidth) x = rect.left - 500;
+            if (x + 450 > window.innerWidth) x = rect.left - 470;
             if (y + briefing.offsetHeight > window.innerHeight) y = window.innerHeight - briefing.offsetHeight - 40;
             briefing.style.left = x + 'px'; briefing.style.top = Math.max(40, y) + 'px';
         }
