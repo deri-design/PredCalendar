@@ -58,14 +58,12 @@ def ask_groq(messages_text):
     
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Identify release dates AND specific start times for events.
+    Identify release dates AND specific start times for events.
     
     STRICT TIME RULES:
-    1. If you see "6PM UTC", the "iso_date" MUST end in "T18:00:00Z".
-    2. If you see "2PM ET", IGNORE IT. ALWAYS use the UTC time.
-    3. If NO time is mentioned, use "T00:00:00Z" (Midnight).
-    4. "date" is "YYYY-MM-DD".
-    5. "iso_date" is "YYYY-MM-DDTHH:MM:SSZ".
+    1. Look for "UTC" times. 6PM UTC MUST be "T18:00:00Z".
+    2. IGNORE "ET" or "PT" times.
+    3. Output JSON list ONLY.
     
     Messages: {messages_text}
 
@@ -82,18 +80,15 @@ def ask_groq(messages_text):
     return json.loads(json_match.group(0)) if json_match else []
 
 def scrape():
-    print("--- Starting UTC-Synchronized Scrape ---")
     messages = get_discord_messages()
     if not messages: return
     intel_pool = {}
     ai_input_list = []
     for m in messages:
-        text = extract_full_content(m)
-        img = find_deep_img(m)
+        text, img = extract_full_content(m), find_deep_img(m)
         if text:
             intel_pool[m['id']] = {
-                "text": clean_discord_text(text),
-                "img": img, 
+                "text": clean_discord_text(text), "img": img, 
                 "url": f"https://discord.com/channels/1055546338907017278/{CHANNEL_ID}/{m['id']}"
             }
             ai_input_list.append(f"ID: {m['id']} | CONTENT: {text}")
@@ -104,25 +99,22 @@ def scrape():
         for ae in ai_events:
             mid = ae.get('original_id')
             if mid in intel_pool:
-                # Set specific URL for twitch
-                event_url = intel_pool[mid]['url']
-                if ae['type'] == 'twitch':
-                    event_url = "https://www.twitch.tv/predecessorgame"
-                
+                iso = ae['iso_date']
+                # HARD OVERRIDE: If it's the Dev Stream, force 18:00 UTC
+                if "dev stream" in ae['title'].lower():
+                    iso = ae['date'] + "T18:00:00Z"
+
                 final_events.append({
-                    "date": ae['date'], 
-                    "iso_date": ae['iso_date'], 
-                    "title": ae['title'], 
-                    "type": ae['type'],
+                    "date": ae['date'], "iso_date": iso, "title": ae['title'], "type": ae['type'],
                     "desc": intel_pool[mid]['text'], 
-                    "url": event_url, 
+                    "url": intel_pool[mid]['url'] if ae['type'] != 'twitch' else "https://www.twitch.tv/predecessorgame",
                     "image": intel_pool[mid]['img']
                 })
         
         output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print("Success: Finalized events with UTC timestamps.")
+        print("Scrape Complete.")
     except Exception as e:
         print(f"Error: {e}")
 
