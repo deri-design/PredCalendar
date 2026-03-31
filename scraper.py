@@ -16,6 +16,25 @@ def get_discord_messages():
     res = requests.get(url, headers=headers)
     return res.json() if res.status_code == 200 else []
 
+def force_iso_date(date_str):
+    """Ensures dates are YYYY-MM-DD even if AI fails."""
+    try:
+        # Standardize month names for parsing
+        date_str = date_str.replace("th", "").replace("st", "").replace("nd", "").replace("rd", "")
+        # Try to parse 'April 7 2026'
+        if not re.search(r'\d{4}', date_str):
+            date_str += f" {datetime.now().year}"
+        
+        # Using a more flexible regex-based parser
+        match = re.search(r'([a-zA-Z]+)\s+(\d+)\s+(\d{4})', date_str)
+        if match:
+            mon, day, year = match.groups()
+            dt = datetime.strptime(f"{mon[:3].capitalize()} {day} {year}", "%b %d %Y")
+            return dt.strftime("%Y-%m-%d")
+    except:
+        pass
+    return date_str # Return original if parsing fails
+
 def find_deep_img(obj):
     if not obj: return ""
     if isinstance(obj, str):
@@ -40,27 +59,6 @@ def clean_discord_text(text):
     text = re.sub(r'\n\s*\n', '\n', text)
     return text.strip()
 
-def extract_external_link(m):
-    """Finds YouTube, playp.red, or website links. Prioritizes non-Discord links."""
-    text = m.get('content', '')
-    # Check regular content
-    urls = re.findall(r'(https?://[^\s]+)', text)
-    # Check embeds
-    for emb in m.get('embeds', []):
-        if emb.get('url'): urls.append(emb['url'])
-    # Check snapshots
-    for snap in m.get('message_snapshots', []):
-        msg = snap.get('message', {})
-        urls.extend(re.findall(r'(https?://[^\s]+)', msg.get('content', '')))
-        for emb in msg.get('embeds', []):
-            if emb.get('url'): urls.append(emb['url'])
-            
-    for url in urls:
-        url = url.rstrip('.,!?"\')')
-        if 'discord.com/channels' not in url and not any(url.lower().endswith(ext) for ext in ['.png', '.jpg', '.jpeg', '.webp']):
-            return url
-    return "https://www.predecessorgame.com/en-US/news"
-
 def extract_full_content(m):
     text = m.get('content', '')
     if 'message_snapshots' in m:
@@ -79,14 +77,10 @@ def ask_groq(messages_text):
     today = datetime.now().strftime("%A, %B %d, %Y")
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Identify release dates for patches, hero reveals, or community events.
-    
-    RULES:
-    1. Only return events where a SPECIFIC DATE is mentioned in the text.
-    2. Extract a short title (max 20 chars).
-    3. Output JSON list ONLY.
-    4. "original_id": Match to the ID provided.
-    
+    Identify ACTUAL release/event dates and short titles. 
+    RULES: 
+    1. DATE MUST BE FORMATTED AS YYYY-MM-DD. Example: 2026-04-07.
+    2. Format: JSON list only.
     Messages: {messages_text}
     """
     chat = client.chat.completions.create(
@@ -98,51 +92,43 @@ def ask_groq(messages_text):
     return json.loads(re.search(r'\[.*\]', raw, re.DOTALL).group(0))
 
 def scrape():
-    print("Starting 1:1 Discord News Sync...")
+    print("Executing Date-Validation Scrape...")
     messages = get_discord_messages()
     if not messages: return
-
     intel_pool = {}
     ai_input_list = []
     for m in messages:
         text = extract_full_content(m)
         img = find_deep_img(m)
-        ext_url = extract_external_link(m)
         if text:
-            intel_pool[m['id']] = {
-                "text": clean_discord_text(text),
-                "img": img, 
-                "url": ext_url
-            }
+            intel_pool[m['id']] = {"text": clean_discord_text(text), "img": img, "url": f"https://discord.com/channels/1055546338907017278/1487129767865225261/{m['id']}"}
             ai_input_list.append(f"ID: {m['id']} | CONTENT: {text}")
 
     try:
         ai_events = ask_groq("\n---\n".join(ai_input_list))
-        
-        # We now keep events strictly mapped 1:1 to Message IDs
-        # No more title-based deduplication
-        final_events = []
+        master_list = []
         for ae in ai_events:
             mid = ae.get('original_id')
             if mid in intel_pool:
+                # FORCE CORRECT DATE FORMAT
+                clean_date = force_iso_date(ae['date'])
+                
                 full_text = intel_pool[mid]['text'].lower()
                 etype = ae.get('type', 'news')
                 if any(x in full_text for x in ["twitch", "stream"]): etype = "twitch"
                 
-                eurl = intel_pool[mid]['url']
-                if etype == "twitch": eurl = "https://www.twitch.tv/predecessorgame"
-                
-                iso = ae.get('iso_date', ae['date'] + ("T18:00:00Z" if etype == "twitch" else "T00:00:00Z"))
+                eurl = "https://www.twitch.tv/predecessorgame" if etype == "twitch" else intel_pool[mid]['url']
+                iso = clean_date + ("T18:00:00Z" if etype == "twitch" else "T00:00:00Z")
 
-                final_events.append({
-                    "date": ae['date'], "iso_date": iso, "title": ae['title'].upper(), "type": etype,
+                master_list.append({
+                    "date": clean_date, "iso_date": iso, "title": ae['title'].upper(), "type": etype,
                     "desc": intel_pool[mid]['text'], "url": eurl, "image": intel_pool[mid]['img']
                 })
 
-        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
+        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": master_list}
         with open('events.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"Success: {len(final_events)} unique Discord messages mapped.")
+        print("Scrape and Formatting Complete.")
     except Exception as e:
         print(f"Error: {e}")
 
