@@ -111,10 +111,29 @@
             50% { border-color: var(--gold-light); } 
         }
 
-        /* HUD: LEFT SECTION */
-        .hud-left { flex: 1; text-align: left; }
+        /* HUD: LEFT SECTION (NOW CONTAINS BUTTON) */
+        .hud-left { flex: 1; text-align: left; display: flex; flex-direction: column; align-items: flex-start; }
         .next-event-label { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; display: block; opacity: 0.8; }
-        .next-op-title { font-family: 'Orbitron'; font-size: 1.6rem; color: #fff; text-transform: uppercase; letter-spacing: 2px; line-height: 1.2; font-weight: 700; }
+        .next-op-title { font-family: 'Orbitron'; font-size: 1.6rem; color: #fff; text-transform: uppercase; letter-spacing: 2px; line-height: 1.2; font-weight: 700; margin-bottom: 15px; }
+
+        .twitch-cta {
+            display: none; /* Controlled by JS */
+            padding: 8px 20px;
+            background: var(--twitch);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            box-shadow: 0 0 15px rgba(145, 70, 255, 0.4);
+        }
+        .twitch-cta:hover { background: #a970ff; transform: translateY(-2px); box-shadow: 0 0 25px rgba(145, 70, 255, 0.7); }
 
         /* HUD: CENTER SECTION */
         .hud-center { flex: 1.5; display: flex; justify-content: center; align-items: center; }
@@ -131,38 +150,19 @@
             width: 85px; 
             text-align: center; 
         }
-        .timer-label { font-size: 0.6rem; font-family: 'Orbitron'; color: var(--gold); margin-top: 5px; letter-spacing: 2px; font-weight: bold; }
+        .timer-label { font-size: 0.55rem; font-family: 'Orbitron'; color: var(--gold); margin-top: 5px; letter-spacing: 2px; font-weight: bold; }
 
         /* HUD: RIGHT SECTION */
-        .hud-right { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .hud-right { flex: 1; display: flex; flex-direction: column; align-items: flex-end; }
         .hud-next-img {
-            width: 220px;
-            height: 120px;
+            width: 240px;
+            height: 130px;
             object-fit: cover;
             border: 1px solid var(--gold);
             border-radius: 2px;
             display: none; /* Shown by JS */
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-
-        .twitch-cta {
-            display: none;
-            padding: 10px 20px;
-            background: var(--twitch);
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 2px;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.2);
-            text-align: center;
-            width: 220px;
-        }
-        .twitch-cta:hover { background: #a970ff; transform: translateY(-2px); }
 
         /* --- LEGEND --- */
         .legend { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap; }
@@ -228,8 +228,9 @@
         .briefing-desc { font-size: 18px; line-height: 1.6; color: #fff; text-shadow: 0 1px 2px #000; font-weight: 500; white-space: pre-wrap; word-wrap: break-word; }
 
         @media (max-width: 1100px) { 
-            .countdown-container { flex-direction: column; padding-bottom: 40px; } 
-            .hud-left { text-align: center; }
+            .countdown-container { flex-direction: column; padding-bottom: 40px; clip-path: none; border-radius: 4px; } 
+            .hud-left { align-items: center; text-align: center; margin-bottom: 20px; }
+            .hud-right { align-items: center; }
             .roadmap-grid { grid-template-columns: repeat(1, 1fr); } 
             #global-briefing { width: 95%; left: 2.5% !important; top: 50% !important; transform: translateY(-50%); } 
             .header h1 { font-size: 2.5rem; } 
@@ -249,6 +250,7 @@
             <div class="hud-left">
                 <span class="next-event-label">NEXT EVENT:</span>
                 <div class="next-op-title" id="op-title">STANDBY</div>
+                <a href="https://www.twitch.tv/predecessorgame" target="_blank" class="twitch-cta" id="twitch-btn">Official Twitch Channel →</a>
             </div>
 
             <div class="hud-center">
@@ -261,8 +263,7 @@
             </div>
 
             <div class="hud-right">
-                <img id="hud-next-img" class="hud-next-img" src="" alt="Upcoming Visual">
-                <a href="https://www.twitch.tv/predecessorgame" target="_blank" class="twitch-cta" id="twitch-btn">Official Twitch Channel →</a>
+                <img id="hud-next-img" class="hud-next-img" src="" alt="Upcoming Operation">
             </div>
         </div>
 
@@ -277,7 +278,7 @@
     </div>
 
     <div id="global-briefing">
-        <img id="b-img" class="briefing-img" src="" alt="Visual">
+        <img id="b-img" class="briefing-img" src="" alt="Visual Record">
         <div class="briefing-content"><span id="b-tag" class="briefing-tag"></span><div id="b-desc" class="briefing-desc"></div></div>
     </div>
 
@@ -304,7 +305,6 @@
                 const nextEv = futureEvents[0]; 
                 document.getElementById('op-title').innerText = nextEv.title;
                 
-                // Show Image in HUD
                 if (nextEv.image) {
                     hudImg.src = nextEv.image;
                     hudImg.style.display = 'block';
@@ -333,25 +333,31 @@
         function renderRoadmap() {
             const grid = document.getElementById('main-grid');
             grid.innerHTML = "MON TUE WED THU FRI SAT SUN".split(" ").map(d => `<div class="h-cell">${d}</div>`).join("");
-            let start = new Date(); start.setDate(start.getDate() - 10);
-            let dayOffset = start.getDay(); start.setDate(start.getDate() - (dayOffset === 0 ? 6 : dayOffset - 1));
-            let end = new Date(); end.setDate(end.getDate() + 15);
-            let endDayOffset = end.getDay(); end.setDate(end.getDate() + (endDayOffset === 0 ? 0 : 7 - endDayOffset) + 7);
-            let cursor = new Date(start);
-            while (cursor <= end) {
+
+            let startDate = new Date(); startDate.setDate(startDate.getDate() - 10);
+            let dayOffset = startDate.getDay(); startDate.setDate(startDate.getDate() - (dayOffset === 0 ? 6 : dayOffset - 1));
+            
+            let endDate = new Date(); endDate.setDate(endDate.getDate() + 15);
+            let endDayOffset = endDate.getDay(); endDate.setDate(endDate.getDate() + (endDayOffset === 0 ? 0 : 7 - endDayOffset) + 7);
+
+            let cursor = new Date(startDate);
+            while (cursor <= endDate) {
                 const dStr = `${cursor.getFullYear()}-${String(cursor.getMonth()+1).padStart(2,'0')}-${String(cursor.getDate()).padStart(2,'0')}`;
                 const items = evData.filter(e => e.date === dStr);
                 const isToday = cursor.toDateString() === today.toDateString();
                 const isWeekend = cursor.getDay() === 0 || cursor.getDay() === 6;
+
                 const cell = document.createElement('div');
                 cell.className = `cell active ${isToday ? 'today' : ''} ${isWeekend ? 'weekend' : ''}`;
                 cell.innerHTML = `<div class="num-container"><span class="num">${cursor.getDate()}</span><span class="month-tag">${cursor.toLocaleString('default',{month:'short'}).toUpperCase()}</span></div>`;
+                
                 items.forEach(ev => {
                     let a = document.createElement('a'); a.href = ev.url || '#'; a.target = "_blank"; a.className = `event ${ev.type}`;
                     a.innerHTML = `<div class="e-title">${ev.title}</div>`;
                     a.addEventListener('mouseenter', (e) => {
                         const rect = e.currentTarget.getBoundingClientRect();
-                        let color = "var(--gold)"; if(ev.type === "hero") color = "var(--teal)"; if(ev.type === "season") color = "var(--red)"; if(ev.type === "twitch") color = "var(--twitch)";
+                        let color = "var(--gold)"; 
+                        if(ev.type === "hero") color = "var(--teal)"; if(ev.type === "season") color = "var(--red)"; if(ev.type === "twitch") color = "var(--twitch)";
                         briefing.style.borderColor = color; document.getElementById('b-tag').style.color = color;
                         document.getElementById('b-tag').innerText = ev.title; document.getElementById('b-desc').innerText = ev.desc;
                         if (ev.image) { bImg.src = ev.image; bImg.style.display = 'block'; } else { bImg.style.display = 'none'; }
@@ -364,7 +370,8 @@
                     a.addEventListener('mouseleave', () => briefing.style.display = 'none');
                     cell.appendChild(a);
                 });
-                grid.appendChild(cell); cursor.setDate(cursor.getDate() + 1);
+                grid.appendChild(cell);
+                cursor.setDate(cursor.getDate() + 1);
             }
         }
         init();
