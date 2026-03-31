@@ -32,7 +32,7 @@
         body::before {
             content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: url('./img/bg.jpg') no-repeat center center; background-size: cover;
-            opacity: 0.15; mix-blend-mode: luminosity; z-index: -1; pointer-events: none;
+            opacity: 0.10; mix-blend-mode: luminosity; z-index: -1; pointer-events: none;
         }
         
         .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
@@ -54,14 +54,12 @@
             border: 1px solid var(--gold); border-bottom: 3px solid var(--gold); 
             padding: 35px 50px; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.6); 
             clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%); 
-            display: flex; justify-content: space-between; align-items: stretch; /* STRETCH TO MATCH HEIGHT */
-            gap: 40px; 
+            display: flex; justify-content: space-between; align-items: stretch; gap: 40px; 
             animation: hudPulse 4s infinite; 
         }
         
         @keyframes hudPulse { 0%, 100% { border-color: var(--gold); } 50% { border-color: var(--gold-light); } }
 
-        /* HUD LEFT: Content Stack */
         .hud-left { flex: 1.2; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; }
         .next-event-label { font-family: 'Orbitron'; font-size: 0.9rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; margin-bottom: 5px;}
         .next-op-title { font-family: 'Orbitron'; font-size: 1.8rem; color: #fff; text-transform: uppercase; letter-spacing: 2px; line-height: 1.2; font-weight: 700; margin-bottom: 10px; }
@@ -83,17 +81,8 @@
         }
         .twitch-cta:hover { background: #a970ff; transform: translateY(-2px); box-shadow: 0 0 25px rgba(145, 70, 255, 0.7); }
 
-        /* HUD RIGHT: Cinematic Image */
         .hud-right { flex: 1; display: flex; justify-content: flex-end; align-items: center; }
-        .hud-next-img { 
-            width: 480px; /* Increased to maintain ratio */
-            height: 280px; /* UPDATED HEIGHT to match requested green marked height */
-            object-fit: cover; 
-            border: 1px solid var(--gold); 
-            border-radius: 2px; 
-            display: none; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5); 
-        }
+        .hud-next-img { width: 480px; height: 280px; object-fit: cover; border: 1px solid var(--gold); border-radius: 2px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
 
         /* --- LEGEND --- */
         .legend { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap; }
@@ -112,6 +101,7 @@
         .month-tag { font-family: 'Orbitron'; font-size: 0.6rem; color: var(--gold); font-weight: bold; }
         .cell.today { outline: 2px solid var(--gold); background: rgba(220, 182, 59, 0.1); z-index: 2; }
         .cell.today .num { color: var(--gold); }
+        
         .event { display: block; text-decoration: none; background: rgba(0, 0, 0, 0.7); border: 1px solid var(--gold); margin-bottom: 8px; flex-shrink: 0; overflow: hidden; border-radius: 2px; transition: 0.2s; cursor: pointer; padding: 8px; }
         .event:hover { border-color: #fff !important; transform: translateY(-2px); background: rgba(255,255,255,0.05); }
         .event.patch { border-color: var(--gold); } .event.hero { border-color: var(--teal); } .event.season { border-color: var(--red); } .event.twitch { border-color: var(--twitch); }
@@ -143,25 +133,19 @@
             <div class="subline">Unofficial Predecessor Event Calendar</div>
         </header>
 
-        <!-- Dynamic Timer HUD -->
         <div class="countdown-container" id="hud">
             <div class="hud-left">
                 <span class="next-event-label">NEXT EVENT</span>
                 <div class="next-op-title" id="op-title">STANDBY</div>
-                
                 <div class="timer-hud">
                     <div class="timer-unit"><div class="timer-val" id="d">00</div><div class="timer-label">DAYS</div></div>
                     <div class="timer-unit"><div class="timer-val" id="h">00</div><div class="timer-label">HRS</div></div>
                     <div class="timer-unit"><div class="timer-val" id="m">00</div><div class="timer-label">MIN</div></div>
                     <div class="timer-unit"><div class="timer-val" id="s">00</div><div class="timer-label">SEC</div></div>
                 </div>
-
                 <a href="https://www.twitch.tv/predecessorgame" target="_blank" class="twitch-cta" id="twitch-btn">Official Twitch Channel →</a>
             </div>
-
-            <div class="hud-right">
-                <img id="hud-next-img" class="hud-next-img" src="" alt="Next Operation">
-            </div>
+            <div class="hud-right"><img id="hud-next-img" class="hud-next-img" src="" alt="Next Op"></div>
         </div>
 
         <div class="legend">
@@ -181,7 +165,6 @@
 
     <script>
         let evData = []; const today = new Date();
-        let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
         const briefing = document.getElementById('global-briefing'), bImg = document.getElementById('b-img'), hudImg = document.getElementById('hud-next-img');
 
         async function init() {
@@ -197,8 +180,7 @@
             const now = Date.now();
             const futureEvents = evData.map(e => ({ ...e, time: Date.parse(e.iso_date || e.date + "T00:00:00Z") })).filter(e => e.time > now).sort((a, b) => a.time - b.time);
             if (futureEvents.length > 0) {
-                const nextEv = futureEvents[0]; 
-                document.getElementById('op-title').innerText = nextEv.title;
+                const nextEv = futureEvents[0]; document.getElementById('op-title').innerText = nextEv.title;
                 if (nextEv.image) { hudImg.src = nextEv.image; hudImg.style.display = 'block'; }
                 if (nextEv.type === 'twitch') { document.getElementById('twitch-btn').style.display = 'inline-block'; } 
                 else { document.getElementById('twitch-btn').style.display = 'none'; }
@@ -216,12 +198,17 @@
         function renderRoadmap() {
             const grid = document.getElementById('main-grid');
             grid.innerHTML = "MON TUE WED THU FRI SAT SUN".split(" ").map(d => `<div class="h-cell">${d}</div>`).join("");
-            let start = new Date(); start.setDate(start.getDate() - 10);
-            let dayOffset = start.getDay(); start.setDate(start.getDate() - (dayOffset === 0 ? 6 : dayOffset - 1));
-            let end = new Date(); end.setDate(end.getDate() + 15);
-            let endDayOffset = end.getDay(); end.setDate(end.getDate() + (endDayOffset === 0 ? 0 : 7 - endDayOffset) + 7);
-            let cursor = new Date(start);
-            while (cursor <= end) {
+            
+            // ADJUSTED: Removing top row by shifting start date forward by 7 days
+            let startDate = new Date(); startDate.setDate(startDate.getDate() - 10);
+            let dayOffset = startDate.getDay(); startDate.setDate(startDate.getDate() - (dayOffset === 0 ? 6 : dayOffset - 1));
+            startDate.setDate(startDate.getDate() + 7); // REMOVE TOP ROW
+            
+            let endDate = new Date(); endDate.setDate(endDate.getDate() + 15);
+            let endDayOffset = endDate.getDay(); endDate.setDate(endDate.getDate() + (endDayOffset === 0 ? 0 : 7 - endDayOffset) + 7);
+            
+            let cursor = new Date(startDate);
+            while (cursor <= endDate) {
                 const dStr = `${cursor.getFullYear()}-${String(cursor.getMonth()+1).padStart(2,'0')}-${String(cursor.getDate()).padStart(2,'0')}`;
                 const items = evData.filter(e => e.date === dStr);
                 const isToday = cursor.toDateString() === today.toDateString();
