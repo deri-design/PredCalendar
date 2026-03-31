@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-03-31 07:24:01",
+    "last_updated": "2026-03-31 10:09:22",
     "events": [
         {
             "date": "2026-04-07",
@@ -62,7 +62,7 @@
             "type": "twitch",
             "desc": "# \ud83c\udfa5 v1.13 Dev Stream - 1st April \nv1.13 Throne of Thorns is just around the corner! We'll be live on Twitch next week for a first look at the new update \ud83c\udf39\nMark it in your calendar and we'll see you in chat!\n\ud83d\uddd3\ufe0f01 April | \u23f0 6PM UTC / 2PM ET",
             "url": "https://www.twitch.tv/predecessorgame",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69cc2da3&is=69cadc23&hm=6ff789e0c2c9eff3b76850d4c6b24057d4c9fa1b1194c250325601d8c6e6d9a4&"
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69ccd663&is=69cb84e3&hm=4de7fcb294a3f6aa8c1ce9c198af1696232bea475bb296dcdb59090f21be15ce&"
         },
         {
             "date": "2026-03-30",
@@ -80,7 +80,7 @@
             "type": "patch",
             "desc": "V1.13: Throne of Thorns drops April 7th - very soon \ud83d\udc40\nAnd we\u2019ve got some news to share... here's first of them:\nHero Affinity level cap is increasing all the way to Level 99! \ud83d\udd25\nYou asked for it, and it\u2019s finally here. Time to push your mains further than ever before \ud83d\udcaa",
             "url": "https://www.predecessorgame.com/en-US/news",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69cc2a91&is=69cad911&hm=db114ca5ffc9bb0088573945ef0efc418d888bdad3b52285baab7207d103fd87&"
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69ccd351&is=69cb81d1&hm=7a822c5854edf9e5895225c52f7b84146e7fe0209b0d1160b5f60f1c32a4e143&"
         }
     ]
 }
