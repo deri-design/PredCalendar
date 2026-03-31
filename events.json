@@ -1,14 +1,14 @@
 {
-    "last_updated": "2026-03-31 13:45:42",
+    "last_updated": "2026-03-31 16:08:58",
     "events": [
         {
             "date": "2026-04-07",
-            "iso_date": "2026-04-07T18:00:00Z",
+            "iso_date": "2026-04-07T00:00:00Z",
             "title": "V1.13",
             "type": "twitch",
             "desc": "Hey everyone!\nQuick heads up - patch notes for V1.13 will be dropping on April 7th due to the Easter Holidays. \nThis **doesn't affect the update** itself, which will launch as planned on **April 7th** as well. \nWe'll be going through a bunch of new stuff in our Dev Stream on Wednesday 1st, so be sure to tune in and find out more about what's coming up in V1.13: Throne of Thorns!",
-            "url": "https://www.twitch.tv/predecessorgame",
-            "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/1_13_Blogheader_Throne_of_Thorns_3ea33ebc5f.jpg"
+            "url": "https://www.predecessorgame.com/en-US/news",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69ccd351&is=69cb81d1&hm=7a822c5854edf9e5895225c52f7b84146e7fe0209b0d1160b5f60f1c32a4e143&"
         },
         {
             "date": "2026-04-07",
