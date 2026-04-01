@@ -1,26 +1,6 @@
 {
-    "last_updated": "2026-04-01 03:19:54",
+    "last_updated": "2026-04-01 07:42:30",
     "events": [
-        {
-            "date": "2026-04-07",
-            "iso_date": "2026-04-07T15:00:00Z",
-            "title": "V1.13 THRONE OF THORNS",
-            "type": "news",
-            "desc": "Quests are coming in V1.13: Throne of Thorns! \ud83d\udd25\nFrom daily tasks earning you XP to monthly challenges rewarding Quantum Cores, are you ready to complete them all?\nWe\u2019ll find out soon enough \ud83d\udc40",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69cd67f7&is=69cc1677&hm=cd14499316e1b65c5c29050bb2a11fd442a1ea5475474b8cbff63407eb61660b&",
-            "url": "https://www.predecessorgame.com/en-US/news",
-            "original_id": "1487885620175966318"
-        },
-        {
-            "date": "2026-04-01",
-            "iso_date": "2026-04-01T18:00:00Z",
-            "title": "V1.13 DEV STREAM",
-            "type": "twitch",
-            "desc": "# \ud83c\udfa5 v1.13 Dev Stream - 1st April \nv1.13 Throne of Thorns is just around the corner! We'll be live on Twitch next week for a first look at the new update \ud83c\udf39\nMark it in your calendar and we'll see you in chat!\n\ud83d\uddd3\ufe0f01 April | \u23f0 6PM UTC / 2PM ET",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69cd7f23&is=69cc2da3&hm=a6e22ae89f8f8bc8fee4befde50f8c5a4948b7a23e7a5d7bc79cc21de72ea480&",
-            "url": "https://www.twitch.tv/predecessorgame",
-            "original_id": "1487185725479714916"
-        },
         {
             "date": "2026-04-07",
             "iso_date": "2026-04-07T15:00:00Z",
@@ -30,6 +10,26 @@
             "image": "",
             "url": "https://www.predecessorgame.com/en-US/news",
             "original_id": "1487885557374914692"
+        },
+        {
+            "date": "2026-04-01",
+            "iso_date": "2026-04-01T18:00:00Z",
+            "title": "DEV STREAM",
+            "type": "twitch",
+            "desc": "# \ud83c\udfa5 v1.13 Dev Stream - 1st April \nv1.13 Throne of Thorns is just around the corner! We'll be live on Twitch next week for a first look at the new update \ud83c\udf39\nMark it in your calendar and we'll see you in chat!\n\ud83d\uddd3\ufe0f01 April | \u23f0 6PM UTC / 2PM ET",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69cd7f23&is=69cc2da3&hm=a6e22ae89f8f8bc8fee4befde50f8c5a4948b7a23e7a5d7bc79cc21de72ea480&",
+            "url": "https://www.twitch.tv/predecessorgame",
+            "original_id": "1487185725479714916"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T15:00:00Z",
+            "title": "QUESTS",
+            "type": "news",
+            "desc": "Quests are coming in V1.13: Throne of Thorns! \ud83d\udd25\nFrom daily tasks earning you XP to monthly challenges rewarding Quantum Cores, are you ready to complete them all?\nWe\u2019ll find out soon enough \ud83d\udc40",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69ce10b7&is=69ccbf37&hm=9ab3a9f05415fa93694b74f2fa5d9b6ca2290c9d09384b32ba695e813a745d06&",
+            "url": "https://www.predecessorgame.com/en-US/news",
+            "original_id": "1487885620175966318"
         },
         {
             "date": "2026-04-07",
@@ -50,6 +50,16 @@
             "image": "https://i.ytimg.com/vi/_mxjJioNuhI/maxresdefault.jpg",
             "url": "https://youtu.be/_mxjJioNuhI",
             "original_id": "1488193504562774108"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T18:00:00Z",
+            "title": "V1.13",
+            "type": "twitch",
+            "desc": "Hey everyone!\nQuick heads up - patch notes for V1.13 will be dropping on April 7th due to the Easter Holidays. \nThis **doesn't affect the update** itself, which will launch as planned on **April 7th** as well. \nWe'll be going through a bunch of new stuff in our Dev Stream on Wednesday 1st, so be sure to tune in and find out more about what's coming up in V1.13: Throne of Thorns!",
+            "image": "",
+            "url": "https://www.twitch.tv/predecessorgame",
+            "original_id": "1488209609377190051"
         },
         {
             "date": "2026-04-07",
