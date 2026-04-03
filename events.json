@@ -1,15 +1,45 @@
 {
-    "last_updated": "2026-04-03 09:56:54",
+    "last_updated": "2026-04-03 13:15:03",
     "events": [
         {
             "date": "2026-04-07",
             "iso_date": "2026-04-07T18:00:00Z",
-            "title": "V1.13 PATCH NOTES",
+            "title": "V1.13: THRONE OF THORNS",
             "type": "twitch",
             "desc": "Hey everyone!\nQuick heads up - patch notes for V1.13 will be dropping on April 7th due to the Easter Holidays. \nThis **doesn't affect the update** itself, which will launch as planned on **April 7th** as well. \nWe'll be going through a bunch of new stuff in our Dev Stream on Wednesday 1st, so be sure to tune in and find out more about what's coming up in V1.13: Throne of Thorns!",
             "image": "",
             "url": "https://www.twitch.tv/predecessorgame",
             "original_id": "1488209609377190051"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T15:00:00Z",
+            "title": "V1.13: THRONE OF THORNS",
+            "type": "news",
+            "desc": "V1.13: Throne of Thorns drops April 7th - very soon \ud83d\udc40\nAnd we\u2019ve got some news to share... here's first of them:\nHero Affinity level cap is increasing all the way to Level 99! \ud83d\udd25\nYou asked for it, and it\u2019s finally here. Time to push your mains further than ever before \ud83d\udcaa",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69d0c7d1&is=69cf7651&hm=30985057bb407c187d93a12da0b0de550a9a2d3d453cdb28e352869aa4a5c071&",
+            "url": "https://www.predecessorgame.com/en-US/news",
+            "original_id": "1487182428824145991"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T15:00:00Z",
+            "title": "V1.13: THRONE OF THORNS",
+            "type": "news",
+            "desc": "Quests are coming in V1.13: Throne of Thorns! \ud83d\udd25\nFrom daily tasks earning you XP to monthly challenges rewarding Quantum Cores, are you ready to complete them all?\nWe\u2019ll find out soon enough \ud83d\udc40",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69d0b3b7&is=69cf6237&hm=c845da5b61842460c5867524c10fb602dd73bb1614da231cb20ad21f1cc2973b&",
+            "url": "https://www.predecessorgame.com/en-US/news",
+            "original_id": "1487885620175966318"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T15:00:00Z",
+            "title": "V1.13: THRONE OF THORNS",
+            "type": "news",
+            "desc": "Catch up on all the V1.13 news so far - and take a look at the brand-new scoreboard too! \ud83d\udc47\nhttps://playp.red/3QbwlXe\n @Official News\nV1.13 Reveals Round-Up | Predecessor\nCatch up on all the exciting reveals coming to V1.13 on April 7th!",
+            "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/1_13_Blogheader_Throne_of_Thorns_3ea33ebc5f.jpg",
+            "url": "https://playp.red/3QbwlXe",
+            "original_id": "1488526943820316804"
         },
         {
             "date": "2026-04-01",
@@ -24,17 +54,7 @@
         {
             "date": "2026-04-07",
             "iso_date": "2026-04-07T15:00:00Z",
-            "title": "V1.13 REVEALS",
-            "type": "news",
-            "desc": "Catch up on all the V1.13 news so far - and take a look at the brand-new scoreboard too! \ud83d\udc47\nhttps://playp.red/3QbwlXe\n @Official News\nV1.13 Reveals Round-Up | Predecessor\nCatch up on all the exciting reveals coming to V1.13 on April 7th!",
-            "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/1_13_Blogheader_Throne_of_Thorns_3ea33ebc5f.jpg",
-            "url": "https://playp.red/3QbwlXe",
-            "original_id": "1488526943820316804"
-        },
-        {
-            "date": "2026-04-07",
-            "iso_date": "2026-04-07T15:00:00Z",
-            "title": "ZARUS PLUSH",
+            "title": "ZARUS PLUSHIE",
             "type": "news",
             "desc": "He\u2019s here! \ud83e\udd17\nWe\u2019ve teamed up with Youtooz for our very first merch drop - introducing the plush version of our own Nyrian Gladiator, Zarus! \ud83e\udd8e\nPre-orders go live on their website starting April 7, and we\u2019ll let you know the moment they\u2019re available \ud83d\uddd3\ufe0f\nWe\u2019ll also be giving away some plushies to a few lucky winners, so stay tuned for more details!\n @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1488568581737152654/predecessor-plush-zarus_reveal_wide_1.png?ex=69d08cc6&is=69cf3b46&hm=279171fa59b69aaee570624abe732ed0256d833dd43467470c5332ea38fa7639&",
@@ -44,22 +64,12 @@
         {
             "date": "2026-04-07",
             "iso_date": "2026-04-07T15:00:00Z",
-            "title": "ADELE",
+            "title": "DAYBREAK V4",
             "type": "news",
-            "desc": "Meet the Queen of Thorns, Adele herself - she rules a queendom, but can she conquer the battlefield? \ud83c\udf39 \u2694\ufe0f\nhttps://youtu.be/93kJH55JG5I\n @Official News\nAdele | Hero Overview | Predecessor\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \nPLAY NOW!\nhttps://playp.red/playnow",
-            "image": "https://i.ytimg.com/vi/93kJH55JG5I/maxresdefault.jpg",
-            "url": "https://youtu.be/93kJH55JG5I",
-            "original_id": "1489295679032655912"
-        },
-        {
-            "date": "2026-04-07",
-            "iso_date": "2026-04-07T18:00:00Z",
-            "title": "V1.13",
-            "type": "twitch",
-            "desc": "# Throne of Thorns First Look Dev Stream \ud83d\udd34 \nWe're LIVE! Come take a look at what's coming up in next week's update \ud83c\udf39 \nhttps://www.twitch.tv/predecessorgame\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1488963691167612989/Twitch_Announcement_1920x1080_Live_Now.jpg?ex=69d0ab3f&is=69cf59bf&hm=cf43fa57728ab86f0b64fe60ce395a20191b995e222bb62e2520d95fd8ee7ef1&",
-            "url": "https://www.twitch.tv/predecessorgame",
-            "original_id": "1488967151757824192"
+            "desc": "\ud83c\udf07 Size - adjusted \n\ud83d\uddfa\ufe0f Layout - improved\n\ud83c\udfc3 Lower Mobility Heroes - empowered\nDaybreak V4 is coming in V1.13: Throne of Thorns on April 7th - bringing some of the most exciting changes yet! \ud83d\udd25",
+            "image": "",
+            "url": "https://www.predecessorgame.com/en-US/news",
+            "original_id": "1487885557374914692"
         },
         {
             "date": "2026-04-07",
@@ -74,12 +84,12 @@
         {
             "date": "2026-04-07",
             "iso_date": "2026-04-07T15:00:00Z",
-            "title": "V1.13",
+            "title": "ADELE",
             "type": "news",
-            "desc": "V1.13: Throne of Thorns drops April 7th - very soon \ud83d\udc40\nAnd we\u2019ve got some news to share... here's first of them:\nHero Affinity level cap is increasing all the way to Level 99! \ud83d\udd25\nYou asked for it, and it\u2019s finally here. Time to push your mains further than ever before \ud83d\udcaa",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69d0c7d1&is=69cf7651&hm=30985057bb407c187d93a12da0b0de550a9a2d3d453cdb28e352869aa4a5c071&",
-            "url": "https://www.predecessorgame.com/en-US/news",
-            "original_id": "1487182428824145991"
+            "desc": "Meet the Queen of Thorns, Adele herself - she rules a queendom, but can she conquer the battlefield? \ud83c\udf39 \u2694\ufe0f\nhttps://youtu.be/93kJH55JG5I\n @Official News\nAdele | Hero Overview | Predecessor\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \nPLAY NOW!\nhttps://playp.red/playnow",
+            "image": "https://i.ytimg.com/vi/93kJH55JG5I/maxresdefault.jpg",
+            "url": "https://youtu.be/93kJH55JG5I",
+            "original_id": "1489295679032655912"
         }
     ]
 }
