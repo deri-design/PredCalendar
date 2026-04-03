@@ -1,13 +1,13 @@
 {
-    "last_updated": "2026-04-03 05:09:51",
+    "last_updated": "2026-04-03 07:17:46",
     "events": [
         {
-            "date": "2026-04-01",
-            "iso_date": "2026-04-01T18:00:00Z",
-            "title": "V1.13 FIRST LOOK DEV STREAM",
+            "date": "2026-04-03",
+            "iso_date": "2026-04-03T18:00:00Z",
+            "title": "THRONE OF THORNS FIRST LOOK DEV STREAM",
             "type": "twitch",
             "desc": "# Throne of Thorns First Look Dev Stream \ud83d\udd34 \nWe're LIVE! Come take a look at what's coming up in next week's update \ud83c\udf39 \nhttps://www.twitch.tv/predecessorgame\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1488963691167612989/Twitch_Announcement_1920x1080_Live_Now.jpg?ex=69d0027f&is=69ceb0ff&hm=38113ba78ccd65a072b8a45d5c3af1f2d0a7e359f1c645d7ea9243ca928b9018&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1488963691167612989/Twitch_Announcement_1920x1080_Live_Now.jpg?ex=69d0ab3f&is=69cf59bf&hm=cf43fa57728ab86f0b64fe60ce395a20191b995e222bb62e2520d95fd8ee7ef1&",
             "url": "https://www.twitch.tv/predecessorgame",
             "original_id": "1488967151757824192"
         },
@@ -27,7 +27,7 @@
             "title": "V1.13: THRONE OF THORNS",
             "type": "news",
             "desc": "Quests are coming in V1.13: Throne of Thorns! \ud83d\udd25\nFrom daily tasks earning you XP to monthly challenges rewarding Quantum Cores, are you ready to complete them all?\nWe\u2019ll find out soon enough \ud83d\udc40",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69d00af7&is=69ceb977&hm=fe593b1008cb5b593faaf3fcc232183a34aa600012be9a6d37b1b975fbebce53&",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69d0b3b7&is=69cf6237&hm=c845da5b61842460c5867524c10fb602dd73bb1614da231cb20ad21f1cc2973b&",
             "url": "https://www.predecessorgame.com/en-US/news",
             "original_id": "1487885620175966318"
         },
@@ -90,6 +90,16 @@
             "image": "https://i.ytimg.com/vi/_mxjJioNuhI/maxresdefault.jpg",
             "url": "https://youtu.be/_mxjJioNuhI",
             "original_id": "1488193504562774108"
+        },
+        {
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T15:00:00Z",
+            "title": "ADELE",
+            "type": "news",
+            "desc": "Meet the Queen of Thorns, Adele herself - she rules a queendom, but can she conquer the battlefield? \ud83c\udf39 \u2694\ufe0f\nhttps://youtu.be/93kJH55JG5I\n @Official News\nAdele | Hero Overview | Predecessor\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \nPLAY NOW!\nhttps://playp.red/playnow",
+            "image": "https://i.ytimg.com/vi/93kJH55JG5I/maxresdefault.jpg",
+            "url": "https://youtu.be/93kJH55JG5I",
+            "original_id": "1489295679032655912"
         }
     ]
 }
