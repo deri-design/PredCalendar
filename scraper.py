@@ -52,15 +52,16 @@ def ask_groq(messages_text):
     today = datetime.now().strftime("%A, %B %d, %Y")
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Process Discord messages into structured data.
+    TASK: Extract event data. 
     
     RULES:
-    1. Identify a SPECIFIC START DATE if mentioned in text (YYYY-MM-DD).
-    2. Identify a VERSION NUMBER if mentioned (e.g., "V1.13").
-    3. Extract a short, punchy TITLE.
-    4. Return ONLY a JSON list of objects.
+    1. For EACH block, identify a specific START DATE (YYYY-MM-DD) if mentioned.
+    2. Identify any VERSION NUMBER (e.g., V1.13) mentioned.
+    3. Return ONLY a JSON list of objects.
+    4. "original_id": Use the EXACT numeric ID provided in the block header.
     
-    Messages: {messages_text}
+    Messages:
+    {messages_text}
     """
     try:
         chat = client.chat.completions.create(
@@ -73,105 +74,92 @@ def ask_groq(messages_text):
     except: return []
 
 def scrape():
+    print("--- Starting Revised Logic Scrape ---")
     messages = get_discord_messages()
     if not messages: return
 
-    # Load existing database for Persistence Rule and Version Sync
     try:
         with open('events.json', 'r') as f:
-            db_data = json.load(f)
-            master_list = db_data.get('events', [])
-    except:
-        master_list = []
+            old_db = json.load(f).get('events', [])
+    except: old_db = []
 
-    existing_ids = [str(e.get('original_id')) for e in master_list]
-    
+    existing_ids = [str(e.get('original_id')) for e in old_db]
     intel_pool = {}
     ai_input_list = []
+    
     for m in messages:
-        # Rule: Card Creation per post
-        # Rule: Persistence - skip if already in DB
-        if str(m['id']) in existing_ids:
-            continue
-
+        if str(m['id']) in existing_ids: continue # Persistence Rule
+        
         content = extract_full_content(m)
-        img = find_deep_img(m)
         if content:
             intel_pool[m['id']] = {
-                "raw_text": content,
-                "clean_text": re.sub(r'<@&?\d+>', '', content).replace('🔔', '').strip(),
-                "img": img,
+                "raw": content,
+                "clean": re.sub(r'<@&?\d+>', '', content).replace('🔔', '').strip(),
+                "img": find_deep_img(m),
                 "posted": m['timestamp'][:10]
             }
-            ai_input_list.append(f"ID: {m['id']} | CONTENT: {content}")
+            ai_input_list.append(f"BLOCK_ID: {m['id']}\nCONTENT: {content}")
 
     if not ai_input_list:
-        print("No new posts to process.")
+        print("No new events to add. Persistence active.")
         return
 
-    try:
-        ai_results = ask_groq("\n---\n".join(ai_input_list))
+    ai_results = ask_groq("\n---\n".join(ai_input_list))
+    new_entries = []
+
+    for ar in ai_results:
+        mid = ar.get('original_id') or ar.get('BLOCK_ID')
+        if not mid or str(mid) not in intel_pool: continue
         
-        for ar in ai_results:
-            mid = ar.get('original_id')
-            if mid not in intel_pool: continue
-            
-            intel = intel_pool[mid]
-            full_text = intel['raw_text']
-            
-            # --- DATE DETERMINATION HIERARCHY ---
-            event_date = ar.get('date') # 1. Direct Mention
-            
-            # 2. Version Sync
-            version = ar.get('version')
-            if (not event_date or event_date == "None") and version:
-                for old in master_list:
-                    if version in old['title'] or version in old['desc']:
-                        event_date = old['date']
-                        break
-            
-            # 3. Creation Date Fallback
-            if not event_date or event_date == "None":
-                event_date = intel['posted']
+        intel = intel_pool[str(mid)]
+        full_text = intel['raw']
+        
+        # 1. Date Hierarchy: Direct -> Version Sync -> Posted
+        event_date = ar.get('date')
+        version = ar.get('version')
+        
+        if (not event_date or event_date == "None") and version:
+            # Search DB for this version
+            for old in (old_db + new_entries):
+                if version.lower() in old['title'].lower() or version.lower() in old['desc'].lower():
+                    event_date = old['date']
+                    break
+        
+        if not event_date or event_date == "None":
+            event_date = intel['posted']
 
-            # --- CATEGORY & LINK ASSIGNMENT ---
-            etype = "patch" # Default
-            eurl = "https://www.predecessorgame.com/en-US/news" # Default fallback
-            
-            # Link check for YouTube
-            yt_match = re.search(r'(https?://(?:www\.)?(?:youtube\.com|youtu\.be)/[^\s]+)', full_text)
-            
-            # 1.0 Twitch Priority
-            if any(x in full_text.lower() for x in ["twitch", "live stream"]):
-                etype = "twitch"
-                eurl = "https://www.twitch.tv/predecessorgame"
-            # 2.0 YouTube Secondary
-            elif yt_match:
-                etype = "youtube"
-                eurl = yt_match.group(0).rstrip('.,!?"\')')
-            
-            # 3.0 Special Link Handling (playp.red priority)
-            pp_match = re.search(r'(https://playp\.red/[^\s]+)', full_text)
-            if pp_match:
-                eurl = pp_match.group(0).rstrip('.,!?"\')')
+        # 2. Category & Link Assignment
+        etype = "patch" # Default
+        eurl = "https://www.predecessorgame.com/en-US/news"
+        
+        yt_match = re.search(r'(https?://(?:www\.)?(?:youtube\.com|youtu\.be)/[^\s]+)', full_text)
+        pp_match = re.search(r'(https://playp\.red/[^\s]+)', full_text)
 
-            master_list.append({
-                "original_id": mid,
-                "date": event_date,
-                "iso_date": event_date + ("T18:00:00Z" if etype == "twitch" else "T15:00:00Z"),
-                "title": ar.get('title', 'UPDATE').upper(),
-                "type": etype,
-                "desc": intel['clean_text'],
-                "image": intel['img'],
-                "url": eurl
-            })
+        if any(x in full_text.lower() for x in ["twitch", "live stream"]):
+            etype, eurl = "twitch", "https://www.twitch.tv/predecessorgame"
+        elif yt_match:
+            etype, eurl = "youtube", yt_match.group(0).rstrip('.,!?"\')')
+        
+        if pp_match: # playp.red priority
+            eurl = pp_match.group(0).rstrip('.,!?"\')')
 
-        output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": master_list}
-        with open('events.json', 'w') as f:
-            json.dump(output, f, indent=4)
-        print("Scrape successful. Persistence and Hierarchies enforced.")
-    except Exception as e:
-        print(f"Error: {e}")
+        new_entries.append({
+            "original_id": mid,
+            "date": event_date,
+            "iso_date": event_date + ("T18:00:00Z" if etype == "twitch" else "T00:00:00Z"),
+            "title": ar.get('title', 'UPDATE').upper(),
+            "type": etype,
+            "desc": intel['clean'],
+            "image": intel['img'],
+            "url": eurl
+        })
+
+    # Combine and Save
+    final_list = old_db + new_entries
+    output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_list}
+    with open('events.json', 'w') as f:
+        json.dump(output, f, indent=4)
+    print(f"Success: {len(new_entries)} new events added.")
 
 if __name__ == "__main__":
     scrape()
