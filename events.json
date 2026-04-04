@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-04-04 04:55:31",
+    "last_updated": "2026-04-04 07:07:51",
     "events": [
         {
             "original_id": "1487185725479714916",
@@ -79,6 +79,16 @@
             "type": "patch",
             "desc": "V1.13: Throne of Thorns drops April 7th - very soon \ud83d\udc40\n\nAnd we\u2019ve got some news to share... here's first of them:\n\nHero Affinity level cap is increasing all the way to Level 99! \ud83d\udd25\n\nYou asked for it, and it\u2019s finally here. Time to push your mains further than ever before \ud83d\udcaa",
             "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69d17091&is=69d01f11&hm=5f8e9797b9adfb62572fb3ba726acc658dc5f6a11440c82d9699480d6f9740fe&",
+            "url": "https://www.predecessorgame.com/en-US/news"
+        },
+        {
+            "original_id": "1487885620175966318",
+            "date": "2026-04-11",
+            "iso_date": "2026-04-11T15:00:00Z",
+            "title": "THRONE OF THORNS UPDATE",
+            "type": "patch",
+            "desc": "Quests are coming in V1.13: Throne of Thorns! \ud83d\udd25\n\nFrom daily tasks earning you XP to monthly challenges rewarding Quantum Cores, are you ready to complete them all?\n\nWe\u2019ll find out soon enough \ud83d\udc40",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69d20537&is=69d0b3b7&hm=f30874605daa0d0a4e7566663130687306e73627726bf93faeef852a60a146ed&",
             "url": "https://www.predecessorgame.com/en-US/news"
         }
     ]
