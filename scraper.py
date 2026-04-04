@@ -34,56 +34,53 @@ def find_deep_img(obj):
             if res: return res
     return ""
 
-def extract_full_content(m):
-    text = m.get('content', '')
-    if 'message_snapshots' in m:
-        for snap in m['message_snapshots']:
-            msg = snap.get('message', {})
-            text += f"\n{msg.get('content', '')}"
-            for emb in msg.get('embeds', []):
-                text += f"\n{emb.get('title', '')}\n{emb.get('description', '')}"
-    if 'embeds' in m:
-        for emb in m['embeds']:
-            text += f"\n{emb.get('title', '')}\n{emb.get('description', '')}"
-    return text.strip()
-
-def python_date_finder(text):
-    text = text.lower()
-    months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
-    match = re.search(r'(\d{1,2})?\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s*(\d{1,2})?', text)
-    if match:
-        m_str, d_str = match.group(2), match.group(1) or match.group(3)
-        if d_str:
-            try:
-                dt = datetime.strptime(f"{m_str.capitalize()} {d_str} 2026", "%b %d %Y")
-                return dt.strftime("%Y-%m-%d")
-            except: pass
-    return None
+def extract_all_text_and_links(m):
+    text_segments = [m.get('content', '')]
+    urls = re.findall(r'(https?://[^\s]+)', m.get('content', ''))
+    def process_obj(obj):
+        if 'message_snapshots' in obj:
+            for snap in obj['message_snapshots']:
+                snap_msg = snap.get('message', {})
+                text_segments.append(snap_msg.get('content', ''))
+                urls.extend(re.findall(r'(https?://[^\s]+)', snap_msg.get('content', '')))
+                process_obj(snap_msg)
+        if 'embeds' in obj:
+            for emb in obj['embeds']:
+                text_segments.append(emb.get('title', ''))
+                text_segments.append(emb.get('description', ''))
+                if emb.get('url'): urls.append(emb['url'])
+    process_obj(m)
+    full_text = "\n".join(filter(None, text_segments))
+    return full_text, [u.rstrip('.,!?"\')') for u in urls]
 
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_API_KEY)
     today = datetime.now().strftime("%A, %B %d, %Y")
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Extract events.
+    TASK: Identify specific titles, release dates, and version numbers.
+    
     RULES:
-    1. Identify a SPECIFIC START DATE (YYYY-MM-DD) if mentioned in CONTENT.
-    2. Identify a VERSION NUMBER (e.g., V1.13) if mentioned.
-    3. Return ONLY a JSON list of objects.
-    4. "original_id": Use the EXACT ID provided in the BLOCK_ID line.
-    Messages: {messages_text}
+    1. For EACH message block, identify a specific START DATE (YYYY-MM-DD) if mentioned.
+    2. Identify the VERSION NUMBER (e.g., V1.13) mentioned in the content.
+    3. Extract the SPECIFIC TITLE of the news (e.g. "V1.13 Reveals Round-Up" or "Adele Hero Trailer"). Do not use generic words like "UPDATE".
+    4. "original_id": Use the EXACT numeric ID provided in the block header.
+    
+    Messages:
+    {messages_text}
     """
     try:
         chat = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
             model="llama-3.3-70b-versatile",
-            temperature=0.0
+            temperature=0.1
         )
         raw = chat.choices[0].message.content
         return json.loads(re.search(r'\[.*\]', raw, re.DOTALL).group(0))
     except: return []
 
 def scrape():
+    print("--- Starting Advanced Hierarchy Scrape ---")
     messages = get_discord_messages()
     if not messages: return
 
@@ -91,82 +88,81 @@ def scrape():
         with open('events.json', 'r') as f:
             db_data = json.load(f)
             master_events = db_data.get('events', [])
-    except:
-        master_events = []
+    except: master_events = []
 
-    # Build a Version Map from existing data to power "Version Sync"
-    version_date_map = {}
+    # Build Map for Version Syncing
+    ver_date_map = {}
     for e in master_events:
-        ver_match = re.search(r'V\d+\.\d+', e['title'] + e['desc'], re.I)
-        if ver_match:
-            version_date_map[ver_match.group(0).upper()] = e['date']
+        v_match = re.search(r'V\d+\.\d+', e['title'] + e['desc'], re.I)
+        if v_match: ver_date_map[v_match.group(0).upper()] = e['date']
 
     existing_ids = [str(e.get('original_id')) for e in master_events]
-    to_process, ai_input = [], ""
+    intel_pool = {}
+    ai_input_list = []
     
     for m in messages:
         if str(m['id']) in existing_ids: continue # Persistence Rule
-        content = extract_full_content(m)
-        if content:
-            to_process.append({
-                "id": m['id'], "raw": content, "img": find_deep_img(m), "posted": m['timestamp'][:10]
-            })
-            ai_input += f"BLOCK_ID: {m['id']}\nCONTENT: {content}\n---\n"
+        full_text, all_urls = extract_all_text_and_links(m)
+        if full_text:
+            intel_pool[str(m['id'])] = {
+                "raw": full_text,
+                "clean": re.sub(r'<@&?\d+>', '', full_text).replace('🔔', '').strip(),
+                "all_urls": all_urls,
+                "img": find_deep_img(m),
+                "posted": m['timestamp'][:10]
+            }
+            ai_input_list.append(f"BLOCK_ID: {m['id']}\nCONTENT: {full_text}")
 
-    if not to_process: return
+    if not ai_input_list:
+        print("No new events.")
+        return
 
-    ai_results = ask_groq(ai_input)
+    ai_results = ask_groq("\n---\n".join(ai_input_list))
     new_entries = []
 
     for ar in ai_results:
-        mid = str(ar.get('original_id'))
-        intel = next((x for x in to_process if str(x['id']) == mid), None)
-        if not intel: continue
+        mid = str(ar.get('original_id') or ar.get('BLOCK_ID'))
+        if mid not in intel_pool: continue
         
-        # --- DATE DETERMINATION HIERARCHY ---
-        # 1. Direct Mention
-        event_date = ar.get('date') or python_date_finder(intel['raw'])
+        intel = intel_pool[mid]
+        text_lower = intel['raw'].lower()
+        urls = intel['all_urls']
         
-        # 2. Version Sync
-        ver_match = re.search(r'V\d+\.\d+', ar.get('title', '') + intel['raw'], re.I)
-        version = ver_match.group(0).upper() if ver_match else None
+        # 1. DATE HIERARCHY
+        event_date = ar.get('date') # Direct Mention
+        version = ar.get('version')
         
-        if (not event_date or event_date == "None") and version:
-            event_date = version_date_map.get(version)
+        if (not event_date or event_date == "None") and version: # Version Sync
+            event_date = ver_date_map.get(version.upper())
         
-        # 3. Creation Date Fallback
-        if not event_date or event_date == "None":
+        if not event_date or event_date == "None": # Fallback
             event_date = intel['posted']
 
-        # Update map for other items in same run
-        if version and event_date:
-            version_date_map[version] = event_date
+        if version and event_date: ver_date_map[version.upper()] = event_date
 
-        # --- LINK ASSIGNMENT ---
-        text_lower = intel['raw'].lower()
+        # 2. CATEGORY & LINK HIERARCHY
         etype, eurl = "patch", "https://www.predecessorgame.com/en-US/news"
-        urls = re.findall(r'(https?://[^\s]+)', intel['raw'])
         yt_url = next((u for u in urls if "youtube.com" in u or "youtu.be" in u), None)
         pp_url = next((u for u in urls if "playp.red" in u), None)
 
-        if "twitch" in text_lower or "live stream" in text_lower:
+        if any(x in text_lower for x in ["twitch", "live stream"]):
             etype, eurl = "twitch", "https://www.twitch.tv/predecessorgame"
         elif yt_url:
-            etype, eurl = "youtube", yt_url.rstrip('.,!?"\')')
+            etype, eurl = "youtube", yt_url
         
-        if pp_url: eurl = pp_url.rstrip('.,!?"\')')
+        if pp_url: eurl = pp_url # playp.red priority 3.0
 
         new_entries.append({
             "original_id": mid, "date": event_date,
             "iso_date": event_date + ("T18:00:00Z" if etype == "twitch" else "T15:00:00Z"),
             "title": ar.get('title', 'UPDATE').upper(), "type": etype,
-            "desc": re.sub(r'<@&?\d+>', '', intel['raw']).replace('🔔', '').strip(),
-            "image": intel['img'], "url": eurl
+            "desc": intel['clean'], "image": intel['img'], "url": eurl
         })
 
     output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": master_events + new_entries}
     with open('events.json', 'w') as f:
         json.dump(output, f, indent=4)
+    print(f"Sync complete. Added {len(new_entries)} items.")
 
 if __name__ == "__main__":
     scrape()
