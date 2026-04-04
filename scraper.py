@@ -35,12 +35,9 @@ def find_deep_img(obj):
     return ""
 
 def extract_all_text_and_links(m):
-    """Gathers all text and all URLs from content, snapshots, and embeds."""
     text_segments = [m.get('content', '')]
     urls = re.findall(r'(https?://[^\s]+)', m.get('content', ''))
-
     def process_obj(obj):
-        nonlocal urls
         if 'message_snapshots' in obj:
             for snap in obj['message_snapshots']:
                 snap_msg = snap.get('message', {})
@@ -52,24 +49,21 @@ def extract_all_text_and_links(m):
                 text_segments.append(emb.get('title', ''))
                 text_segments.append(emb.get('description', ''))
                 if emb.get('url'): urls.append(emb['url'])
-
     process_obj(m)
-    full_text = "\n".join(filter(None, text_segments))
-    # Clean URLs (remove trailing punctuation)
-    clean_urls = [u.rstrip('.,!?"\')') for u in urls]
-    return full_text, clean_urls
+    return "\n".join(filter(None, text_segments)), [u.rstrip('.,!?"\')') for u in urls]
 
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_API_KEY)
     today = datetime.now().strftime("%A, %B %d, %Y")
     prompt = f"""
-    Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Extract events.
+    Today is {today}. I am providing announcements for the game "Predecessor".
+    TASK: Extract specific release/event dates and version numbers.
+    
     RULES:
-    1. Identify a SPECIFIC START DATE (YYYY-MM-DD) if mentioned.
-    2. Identify a VERSION NUMBER (e.g., V1.13) mentioned.
-    3. Extract a short, punchy TITLE.
-    4. "original_id": Use the EXACT ID provided in the BLOCK_ID line.
+    1. For EACH item, identify a START DATE (YYYY-MM-DD) if explicitly mentioned.
+    2. Identify a VERSION NUMBER (e.g. V1.13) if mentioned.
+    3. Return ONLY a JSON list of objects.
+    4. "msg_index": You MUST include the Index number for each block.
     
     Messages:
     {messages_text}
@@ -90,90 +84,78 @@ def scrape():
 
     try:
         with open('events.json', 'r') as f:
-            old_db = json.load(f).get('events', [])
-    except: old_db = []
+            db = json.load(f)
+            master_list = db.get('events', [])
+    except:
+        master_list = []
 
-    existing_ids = [str(e.get('original_id')) for e in old_db]
-    intel_pool = {}
-    ai_input_list = []
+    existing_ids = [str(e.get('original_id')) for e in master_list]
+    to_process = []
+    ai_input = ""
     
-    for m in messages:
-        if str(m['id']) in existing_ids: continue
+    for i, m in enumerate(messages):
+        if str(m['id']) in existing_ids: continue # Rule: Do not modify existing
         
         full_text, all_urls = extract_all_text_and_links(m)
         if full_text:
-            intel_pool[str(m['id'])] = {
-                "full_text": full_text,
-                "clean_text": re.sub(r'<@&?\d+>', '', full_text).replace('🔔', '').strip(),
-                "all_urls": all_urls,
-                "img": find_deep_img(m),
-                "posted": m['timestamp'][:10]
-            }
-            ai_input_list.append(f"BLOCK_ID: {m['id']}\nCONTENT: {full_text}")
+            to_process.append({
+                "id": m['id'], "raw": full_text, "all_urls": all_urls,
+                "clean": re.sub(r'<@&?\d+>', '', full_text).replace('🔔', '').strip(),
+                "img": find_deep_img(m), "posted": m['timestamp'][:10]
+            })
+            ai_input += f"INDEX: {len(to_process)-1}\nCONTENT: {full_text}\n---\n"
 
-    if not ai_input_list:
-        print("No new updates found.")
+    if not to_process:
+        print("Persistence Rule: No new messages to process.")
         return
 
-    ai_results = ask_groq("\n---\n".join(ai_input_list))
+    ai_results = ask_groq(ai_input)
     new_entries = []
 
     for ar in ai_results:
-        mid = str(ar.get('original_id') or ar.get('BLOCK_ID'))
-        if mid not in intel_pool: continue
+        idx = ar.get('msg_index')
+        if idx is None or idx >= len(to_process): continue
         
-        intel = intel_pool[mid]
-        text_lower = intel['full_text'].lower()
+        intel = to_process[idx]
+        text_lower = intel['raw'].lower()
         urls = intel['all_urls']
         
-        # --- DATE DETERMINATION ---
-        event_date = ar.get('date')
-        if (not event_date or event_date == "None") and ar.get('version'):
-            for old in (old_db + new_entries):
-                if ar['version'].lower() in old['title'].lower():
+        # 1. DATE HIERARCHY
+        event_date = ar.get('date') # Direct Mention
+        version = ar.get('version')
+        
+        if (not event_date or event_date == "None") and version: # Version Sync
+            for old in (master_list + new_entries):
+                if version.lower() in old['title'].lower() or version.lower() in old['desc'].lower():
                     event_date = old['date']
                     break
-        if not event_date or event_date == "None":
+        
+        if not event_date or event_date == "None": # Fallback
             event_date = intel['posted']
 
-        # --- CATEGORY & LINK ASSIGNMENT (THE REVISED HIERARCHY) ---
-        etype = "patch" # 4.0 Default
-        eurl = "https://www.predecessorgame.com/en-US/news"
-
-        # Find YouTube URL if it exists
+        # 2. CATEGORY & LINK HIERARCHY
+        etype, eurl = "patch", "https://www.predecessorgame.com/en-US/news"
         yt_url = next((u for u in urls if "youtube.com" in u or "youtu.be" in u), None)
-        # Find playp.red URL if it exists
         pp_url = next((u for u in urls if "playp.red" in u), None)
 
-        # 1.0 Twitch Priority
         if "twitch" in text_lower or "live stream" in text_lower:
-            etype = "twitch"
-            eurl = "https://www.twitch.tv/predecessorgame"
-        # 2.0 YouTube Secondary
+            etype, eurl = "twitch", "https://www.twitch.tv/predecessorgame"
         elif yt_url:
-            etype = "youtube"
-            eurl = yt_url
-
-        # 3.0 Special Link Handling (playp.red overrides link regardless of category)
-        if pp_url:
+            etype, eurl = "youtube", yt_url
+        
+        if pp_url: # playp.red priority override
             eurl = pp_url
 
         new_entries.append({
-            "original_id": mid,
-            "date": event_date,
+            "original_id": intel['id'], "date": event_date, "title": ar.get('title', 'UPDATE').upper(),
             "iso_date": event_date + ("T18:00:00Z" if etype == "twitch" else "T00:00:00Z"),
-            "title": ar.get('title', 'UPDATE').upper(),
-            "type": etype,
-            "desc": intel['clean_text'],
-            "image": intel['img'],
-            "url": eurl
+            "type": etype, "desc": intel['clean'], "image": intel['img'], "url": eurl
         })
 
-    final_list = old_db + new_entries
-    output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_list}
+    output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": master_list + new_entries}
     with open('events.json', 'w') as f:
         json.dump(output, f, indent=4)
-    print(f"Added {len(new_entries)} events.")
+    print(f"Success: {len(new_entries)} new events added.")
 
 if __name__ == "__main__":
     scrape()
