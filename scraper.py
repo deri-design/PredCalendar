@@ -14,7 +14,7 @@ def get_discord_messages():
     headers = {"Authorization": f"Bot {DISCORD_TOKEN}"}
     url = f"https://discord.com/api/v10/channels/{CHANNEL_ID}/messages?limit=25"
     res = requests.get(url, headers=headers)
-    return res.json() if res.status_code == 200 else []
+    return res.json() if res.status_code == 200 else[]
 
 def find_deep_img(obj):
     if not obj: return ""
@@ -50,20 +50,23 @@ def extract_all_content_and_links(m):
                 text_segments.append(emb.get('description', ''))
                 if emb.get('url'): urls.append(emb['url'])
     process_obj(m)
-    return "\n".join(filter(None, text_segments)), [u.rstrip('.,!?"\')') for u in urls]
+    full_text = "\n".join(filter(None, text_segments))
+    clean_urls =[u.rstrip('.,!?"\')') for u in urls]
+    return full_text, clean_urls
 
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_API_KEY)
     today = datetime.now().strftime("%A, %B %d, %Y")
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Identify release dates and version numbers.
+    TASK: Extract event dates and versions.
     
     RULES:
-    1. For each block, identify a START DATE (YYYY-MM-DD) if explicitly mentioned.
-    2. Identify a VERSION NUMBER (e.g., V1.13) if mentioned.
-    3. Extract a short, uppercase TITLE.
-    4. Return ONLY a JSON list of objects: [{{"msg_index": 0, "date": "...", "version": "...", "title": "..."}}]
+    1. If the message explicitly mentions a FUTURE START DATE (like "April 7th"), return it as YYYY-MM-DD.
+    2. If the message says "Live Now", "Available Now", or does NOT mention a specific future date, you MUST set "date" to "None".
+    3. Identify a VERSION NUMBER (e.g., V1.13) if mentioned.
+    4. Return a short, uppercase TITLE.
+    5. Return ONLY a JSON list of objects:[{{"idx": 0, "date": "YYYY-MM-DD or None", "version": "V1.xx or None", "title": "..."}}]
     
     Messages:
     {messages_text}
@@ -72,42 +75,36 @@ def ask_groq(messages_text):
         chat = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
             model="llama-3.3-70b-versatile",
-            temperature=0.1
+            temperature=0.0
         )
         raw = chat.choices[0].message.content
         return json.loads(re.search(r'\[.*\]', raw, re.DOTALL).group(0))
-    except: return []
+    except: return[]
 
 def scrape():
-    print("--- Starting Discord-Timestamp Sync Scrape ---")
+    print("--- Starting Discord Timestamp Sync ---")
     messages = get_discord_messages()
     if not messages: return
 
     try:
         with open('events.json', 'r') as f:
-            db = json.load(f)
-            master_list = db.get('events', [])
-    except: master_list = []
+            db = json.load(f).get('events',[])
+    except: db = []
 
-    existing_ids = [str(e.get('original_id')) for e in master_list]
-    to_process = []
+    existing_ids = [str(e.get('original_id')) for e in db]
+    to_process =[]
     ai_input = ""
     
     for m in messages:
-        if str(m['id']) in existing_ids: continue 
+        if str(m['id']) in existing_ids: continue # Persistence Rule
         
         full_text, all_urls = extract_all_content_and_links(m)
         if full_text:
-            # We capture the message's actual timestamp here
-            posted_timestamp = m['timestamp'][:10] # YYYY-MM-DD
-            
             to_process.append({
-                "id": m['id'], 
-                "raw": full_text, 
-                "all_urls": all_urls,
+                "id": m['id'], "raw": full_text, "urls": all_urls,
                 "clean": re.sub(r'<@&?\d+>', '', full_text).replace('🔔', '').strip(),
                 "img": find_deep_img(m), 
-                "posted": posted_timestamp # THIS IS THE FALLBACK DATE
+                "posted": m['timestamp'][:10] # EXACT DISCORD CREATION DATE (YYYY-MM-DD)
             })
             ai_input += f"BLOCK_INDEX: {len(to_process)-1}\nCONTENT: {full_text}\n---\n"
 
@@ -116,40 +113,48 @@ def scrape():
         return
 
     ai_results = ask_groq(ai_input)
-    new_entries = []
+    new_entries =[]
 
     for ar in ai_results:
-        idx = ar.get('msg_index')
+        idx = ar.get('idx')
         if idx is None or idx >= len(to_process): continue
         
         intel = to_process[idx]
         text_lower = intel['raw'].lower()
-        urls = intel['all_urls']
         
-        # --- DATE DETERMINATION HIERARCHY ---
-        event_date = ar.get('date') # 1. Direct Mention
-        version = ar.get('version')
+        # 1. DATE HIERARCHY
+        event_date = str(ar.get('date')).strip()
+        version = str(ar.get('version')).strip()
         
-        if (not event_date or event_date == "None") and version: # 2. Version Sync
-            for old in (master_list + new_entries):
-                if version.lower() in old['title'].lower() or version.lower() in old['desc'].lower():
+        # Nullify bad AI guesses
+        if event_date.lower() == "none" or not re.match(r'^\d{4}-\d{2}-\d{2}$', event_date):
+            event_date = None
+        
+        # Version Sync
+        if not event_date and version and version.lower() != "none":
+            for old in (db + new_entries):
+                if version.lower() in old['title'].lower() or version.lower() in old.get('desc', '').lower():
                     event_date = old['date']
                     break
         
-        if not event_date or event_date == "None": # 3. DISCORD POST DATE FALLBACK
-            event_date = intel['posted'] # Use the date the message was sent
+        # Final Fallback -> Discord Post Date
+        if not event_date:
+            event_date = intel['posted']
 
-        # --- CATEGORY & LINK ASSIGNMENT ---
-        etype, eurl = "patch", "https://www.predecessorgame.com/en-US/news"
-        yt_url = next((u for u in urls if "youtube.com" in u or "youtu.be" in u), None)
-        pp_url = next((u for u in urls if "playp.red" in u), None)
+        # 2. CATEGORY & LINK ASSIGNMENT
+        etype = "patch"
+        eurl = "https://www.predecessorgame.com/en-US/news"
+        
+        yt_url = next((u for u in intel['urls'] if "youtube.com" in u or "youtu.be" in u), None)
+        pp_url = next((u for u in intel['urls'] if "playp.red" in u), None)
 
-        if "twitch" in text_lower or "live stream" in text_lower:
+        if "twitch" in text_lower or "live stream" in text_lower or "livestream" in text_lower:
             etype, eurl = "twitch", "https://www.twitch.tv/predecessorgame"
         elif yt_url:
             etype, eurl = "youtube", yt_url
         
-        if pp_url: eurl = pp_url 
+        if pp_url: # playp.red priority override
+            eurl = pp_url
 
         new_entries.append({
             "original_id": intel['id'],
@@ -162,10 +167,12 @@ def scrape():
             "url": eurl
         })
 
-    output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": master_list + new_entries}
+    # Combine and Save
+    final_list = db + new_entries
+    output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_list}
     with open('events.json', 'w') as f:
         json.dump(output, f, indent=4)
-    print(f"Success. Added {len(new_entries)} events using Discord timestamps.")
+    print(f"Success: {len(new_entries)} new events added.")
 
 if __name__ == "__main__":
     scrape()
