@@ -13,27 +13,55 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding: 2rem 1rem; min-height: 100vh; position: relative; overflow-x: hidden; }
         body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('./img/bg.jpg') no-repeat center center; background-size: cover; opacity: 0.10; mix-blend-mode: luminosity; z-index: -1; pointer-events: none; }
-        .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+        .container { max-width: 1550px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+        
         .header { text-align: center; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; }
         .header h1 { font-family: 'StoricaHeavy', sans-serif; font-size: 4.5rem; text-transform: uppercase; margin: 0; letter-spacing: 2px; background: linear-gradient(to bottom, var(--gold-light) 20%, var(--gold-dark) 90%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8)); }
         .subline { font-family: 'Inter', sans-serif; color: #ffffff; font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 5px; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
-        .countdown-container { width: 100%; max-width: 1100px; margin: 0 auto 3rem auto; background: var(--cell-glass); backdrop-filter: var(--glass-blur); border: 1px solid var(--gold); border-bottom: 3px solid var(--gold); padding: 35px 50px; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.6); clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%); display: flex; justify-content: space-between; align-items: center; gap: 40px; animation: hudPulse 4s infinite; overflow-x: auto; }
-        @keyframes hudPulse { 0%, 100% { border-color: var(--gold); } 50% { border-color: var(--gold-light); } }
+        
+        /* --- DUAL HUD WRAPPER --- */
+        .huds-wrapper { display: flex; justify-content: space-between; gap: 20px; width: 100%; margin-bottom: 3rem; }
+
+        .countdown-container { 
+            flex: 1; min-width: 0; background: var(--cell-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); 
+            border: 1px solid var(--gold); border-bottom: 3px solid var(--gold); padding: 30px; position: relative; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6); clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%); 
+            display: flex; justify-content: space-between; align-items: center; gap: 20px; animation: hudPulse 4s infinite; 
+        }
+        
+        #hud-daily { border-color: var(--teal); border-bottom: 3px solid var(--teal); animation: hudPulseTeal 4s infinite; }
+        
+        @keyframes hudPulse { 0%, 100% { border-color: var(--gold); box-shadow: 0 0 15px rgba(220,182,59,0.1); } 50% { border-color: var(--gold-light); box-shadow: 0 0 30px rgba(220,182,59,0.25); } }
+        @keyframes hudPulseTeal { 0%, 100% { border-color: var(--teal); box-shadow: 0 0 15px rgba(55,169,169,0.1); } 50% { border-color: #64ffff; box-shadow: 0 0 30px rgba(55,169,169,0.25); } }
+
         .hud-left { flex: 1.2; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
-        .next-event-label { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; margin-bottom: 8px; font-weight: 800; }
-        .next-op-title { font-family: 'Inter', sans-serif; font-size: 1.8rem; color: #fff; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; font-weight: 900; margin-bottom: 20px; }
+        .next-event-label { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; opacity: 0.9; margin-bottom: 8px; font-weight: 800; }
+        .next-op-title { font-family: 'Inter', sans-serif; font-size: 1.5rem; color: #fff; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; font-weight: 900; margin-bottom: 15px; }
+        
+        #hud-daily .next-event-label { color: var(--teal); }
+
         .timer-hud { display: flex; gap: 10px; margin: 5px 0; }
         .timer-unit { display: flex; flex-direction: column; align-items: center; }
-        .timer-val { font-family: 'StoricaHeavy', sans-serif; font-size: 2.2rem; color: #fff; background: rgba(0,0,0,0.4); padding: 10px 0; border-radius: 4px; border-bottom: 2px solid var(--gold); width: 85px; text-align: center; }
-        .timer-label { font-size: 0.6rem; font-family: 'Inter', sans-serif; color: var(--gold); margin-top: 4px; letter-spacing: 1px; font-weight: 900; }
+        .timer-val { font-family: 'StoricaHeavy', sans-serif; font-size: 2rem; color: #fff; background: rgba(0,0,0,0.4); padding: 8px 0; border-radius: 4px; border-bottom: 2px solid var(--gold); width: 75px; text-align: center; }
+        .timer-label { font-size: 0.55rem; font-family: 'Inter', sans-serif; color: var(--gold); margin-top: 4px; letter-spacing: 1px; font-weight: 900; }
+        
+        #hud-daily .timer-val { border-bottom: 2px solid var(--teal); }
+        #hud-daily .timer-label { color: var(--teal); }
+
         .twitch-cta { display: none; padding: 10px 25px; background: var(--twitch); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 800; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 0 15px rgba(145, 70, 255, 0.4); }
         .twitch-cta:hover { background: #a970ff; transform: translateY(-2px); box-shadow: 0 0 25px rgba(145, 70, 255, 0.7); }
+        
         .hud-right { flex: 1; display: flex; justify-content: flex-end; }
-        .hud-next-img { width: 340px; height: 190px; object-fit: cover; border: 1px solid var(--gold); border-radius: 2px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .hud-next-img { width: 100%; max-width: 280px; height: 150px; object-fit: cover; border: 1px solid var(--gold); border-radius: 2px; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        #hud-daily .hud-next-img { border-color: var(--teal); }
+
+        /* --- LEGEND --- */
         .legend { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap; }
         .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 800; color: #fff; letter-spacing: 0.5px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); }
         .dot.patch { background: var(--gold); } .dot.hero { background: var(--teal); } .dot.season { background: var(--red); } .dot.twitch { background: var(--twitch); } .dot.youtube { background: var(--youtube); }
+
+        /* --- ROADMAP GRID --- */
         .roadmap-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); position: relative; z-index: 1; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
         .h-cell { background: #0d131f; padding: 15px; text-align: center; font-size: 0.75rem; color: #5d7599; font-family: 'Inter', sans-serif; font-weight: 900; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .roadmap-grid .h-cell:nth-child(6), .roadmap-grid .h-cell:nth-child(7) { color: var(--gold-light); }
@@ -49,17 +77,17 @@
         .event.patch { border-color: var(--gold); } .event.hero { border-color: var(--teal); } .event.season { border-color: var(--red); } .event.twitch { border-color: var(--twitch); } .event.youtube { border-color: var(--youtube); }
         .e-title { font-weight: 900; color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.6rem; line-height: 1.2; text-transform: uppercase; }
         .event.hero .e-title { color: var(--teal); } .event.season .e-title { color: var(--red); } .event.twitch .e-title { color: #bf94ff; } .event.youtube .e-title { color: #ff6666; }
-        #global-briefing { display: none; position: fixed; width: 450px; max-height: 85vh; overflow-y: auto; background: rgba(13, 19, 31, 0.9); backdrop-filter: var(--glass-blur); border: 2px solid var(--gold); padding: 0; z-index: 10000; box-shadow: 0 0 100px rgba(0,0,0,1); pointer-events: none; scrollbar-width: thin; }
+
+        /* --- POPUP OVERLAY --- */
+        #global-briefing { display: none; position: fixed; width: 450px; max-height: 85vh; overflow-y: auto; background: rgba(13, 19, 31, 0.9); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 2px solid var(--gold); padding: 0; z-index: 10000; box-shadow: 0 0 100px rgba(0,0,0,1); pointer-events: none; scrollbar-width: thin; }
         .briefing-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid rgba(255,255,255,0.1); display: none; }
         .briefing-content { padding: 25px; }
         .briefing-tag { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; display: block; text-transform: uppercase; font-weight: 900; }
         .briefing-desc { font-size: 18px; line-height: 1.6; color: #fff; text-shadow: 0 1px 2px #000; font-weight: 500; white-space: pre-wrap; word-wrap: break-word; }
 
-        @media (max-width: 1100px) { 
-            .countdown-container { flex-direction: column; align-items: center; text-align: center; clip-path: none; border-radius: 4px; padding: 30px; } 
-            .hud-left { align-items: center; text-align: center; margin-bottom: 20px; }
-            .hud-right { align-items: center; }
-            .hud-next-img { width: 100%; height: auto; max-width: 400px; }
+        @media (max-width: 1300px) { 
+            .huds-wrapper { flex-direction: column; align-items: center; }
+            .countdown-container { max-width: 900px; width: 100%; } 
             .roadmap-grid { grid-template-columns: repeat(1, 1fr); } 
             #global-briefing { width: 95%; left: 2.5% !important; top: 50% !important; transform: translateY(-50%); } 
         }
@@ -72,25 +100,42 @@
             <div class="subline">Unofficial Predecessor Event Calendar</div>
         </header>
 
-        <!-- 2-COLUMN HUD -->
-        <div class="countdown-container" id="hud">
-            <div class="hud-left">
-                <span class="next-event-label">NEXT EVENT</span>
-                <div class="next-op-title" id="op-title">STANDBY</div>
-                
-                <div class="timer-hud">
-                    <div class="timer-unit"><div class="timer-val" id="d">00</div><div class="timer-label">DAYS</div></div>
-                    <div class="timer-unit"><div class="timer-val" id="h">00</div><div class="timer-label">HRS</div></div>
-                    <div class="timer-unit"><div class="timer-val" id="m">00</div><div class="timer-label">MIN</div></div>
-                    <div class="timer-unit"><div class="timer-val" id="s">00</div><div class="timer-label">SEC</div></div>
+        <!-- DUAL HUD LAYOUT -->
+        <div class="huds-wrapper">
+            
+            <!-- NEXT EVENT HUD -->
+            <div class="countdown-container" id="hud">
+                <div class="hud-left">
+                    <span class="next-event-label">NEXT EVENT</span>
+                    <div class="next-op-title" id="op-title">STANDBY</div>
+                    <div class="timer-hud">
+                        <div class="timer-unit"><div class="timer-val" id="d">00</div><div class="timer-label">DAYS</div></div>
+                        <div class="timer-unit"><div class="timer-val" id="h">00</div><div class="timer-label">HRS</div></div>
+                        <div class="timer-unit"><div class="timer-val" id="m">00</div><div class="timer-label">MIN</div></div>
+                        <div class="timer-unit"><div class="timer-val" id="s">00</div><div class="timer-label">SEC</div></div>
+                    </div>
+                    <a href="https://www.twitch.tv/predecessorgame" target="_blank" class="twitch-cta" id="twitch-btn">Official Twitch Channel →</a>
                 </div>
-
-                <a href="https://www.twitch.tv/predecessorgame" target="_blank" class="twitch-cta" id="twitch-btn">Official Twitch Channel →</a>
+                <div class="hud-right"><img id="hud-next-img" class="hud-next-img" src="" alt="Next Operation"></div>
             </div>
 
-            <div class="hud-right">
-                <img id="hud-next-img" class="hud-next-img" src="" alt="Upcoming Visual">
+            <!-- DAILY ION LOOT CORE HUD -->
+            <div class="countdown-container" id="hud-daily">
+                <div class="hud-left">
+                    <span class="next-event-label" style="color: var(--teal);">REFRESHES DAILY (10 AM CEST)</span>
+                    <div class="next-op-title">DAILY ION LOOT CORE</div>
+                    <div class="timer-hud">
+                        <!-- Days hidden for Daily Reset to keep UI neat -->
+                        <div class="timer-unit"><div class="timer-val" id="daily-h">00</div><div class="timer-label">HRS</div></div>
+                        <div class="timer-unit"><div class="timer-val" id="daily-m">00</div><div class="timer-label">MIN</div></div>
+                        <div class="timer-unit"><div class="timer-val" id="daily-s">00</div><div class="timer-label">SEC</div></div>
+                    </div>
+                </div>
+                <div class="hud-right">
+                    <img class="hud-next-img" src="./img/ion-loot-core.png" alt="Ion Loot Core" style="display: block;">
+                </div>
             </div>
+
         </div>
 
         <div class="legend">
@@ -111,9 +156,7 @@
 
     <script>
         let evData =[]; const today = new Date();
-        let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-        const briefing = document.getElementById('global-briefing'), bImg = document.getElementById('b-img');
-        const hudImg = document.getElementById('hud-next-img');
+        const briefing = document.getElementById('global-briefing'), bImg = document.getElementById('b-img'), hudImg = document.getElementById('hud-next-img');
 
         async function init() {
             try {
@@ -121,10 +164,12 @@
                 const data = await r.json();
                 evData = data.events ||[];
                 setupCountdown();
+                setupDailyCountdown();
                 renderRoadmap();
-            } catch(e) { renderRoadmap(); }
+            } catch(e) { renderRoadmap(); setupDailyCountdown(); }
         }
 
+        // --- MAIN EVENT TIMER ---
         function setupCountdown() {
             const now = Date.now();
             const futureEvents = evData.map(e => ({ ...e, time: Date.parse(e.iso_date || e.date + "T00:00:00Z") })).filter(e => e.time > now).sort((a, b) => a.time - b.time);
@@ -158,13 +203,36 @@
             }
         }
 
+        // --- DAILY ION LOOT CORE TIMER (10:00 CEST = 08:00 UTC) ---
+        function setupDailyCountdown() {
+            setInterval(() => {
+                const now = new Date();
+                const nowUTC = now.getTime();
+                
+                // Target is exactly 08:00:00 UTC every day
+                const target = new Date();
+                target.setUTCHours(8, 0, 0, 0);
+
+                // If it's already past 08:00 UTC today, the target is tomorrow
+                if (nowUTC >= target.getTime()) {
+                    target.setUTCDate(target.getUTCDate() + 1);
+                }
+
+                const diff = target.getTime() - nowUTC;
+                
+                document.getElementById('daily-h').innerText = String(Math.floor((diff % 864e5) / 36e5)).padStart(2, '0');
+                document.getElementById('daily-m').innerText = String(Math.floor((diff % 36e5) / 6e4)).padStart(2, '0');
+                document.getElementById('daily-s').innerText = String(Math.floor((diff % 6e4) / 1000)).padStart(2, '0');
+            }, 1000);
+        }
+
+        // --- GRID RENDER ---
         function renderRoadmap() {
             const grid = document.getElementById('main-grid');
             grid.innerHTML = "MON TUE WED THU FRI SAT SUN".split(" ").map(d => `<div class="h-cell">${d}</div>`).join("");
 
             let startDate = new Date(); startDate.setDate(startDate.getDate() - 10);
             let dayOffset = startDate.getDay(); startDate.setDate(startDate.getDate() - (dayOffset === 0 ? 6 : dayOffset - 1));
-            startDate.setDate(startDate.getDate() + 7);
             
             let endDate = new Date(); endDate.setDate(endDate.getDate() + 15);
             let endDayOffset = endDate.getDay(); endDate.setDate(endDate.getDate() + (endDayOffset === 0 ? 0 : 7 - endDayOffset) + 7);
@@ -186,11 +254,19 @@
                     a.addEventListener('mouseenter', (e) => {
                         const rect = e.currentTarget.getBoundingClientRect();
                         let color = "var(--gold)"; 
-                        if(ev.type === "hero") color = "var(--teal)"; if(ev.type === "season") color = "var(--red)"; if(ev.type === "twitch") color = "var(--twitch)"; if(ev.type === "youtube") color = "var(--youtube)";
-                        briefing.style.borderColor = color; document.getElementById('b-tag').style.color = color;
-                        document.getElementById('b-tag').innerText = ev.title; document.getElementById('b-desc').innerText = ev.desc;
+                        if(ev.type === "hero") color = "var(--teal)"; 
+                        if(ev.type === "season") color = "var(--red)"; 
+                        if(ev.type === "twitch") color = "var(--twitch)"; 
+                        if(ev.type === "youtube") color = "var(--youtube)";
+                        
+                        briefing.style.borderColor = color; 
+                        document.getElementById('b-tag').style.color = color;
+                        document.getElementById('b-tag').innerText = ev.title; 
+                        document.getElementById('b-desc').innerText = ev.desc;
+                        
                         if (ev.image) { bImg.src = ev.image; bImg.style.display = 'block'; } else { bImg.style.display = 'none'; }
                         briefing.style.display = 'block';
+                        
                         let x = rect.left + rect.width + 20, y = rect.top;
                         if (x + 450 > window.innerWidth) x = rect.left - 470;
                         if (y + briefing.offsetHeight > window.innerHeight) y = window.innerHeight - briefing.offsetHeight - 40;
