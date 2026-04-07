@@ -1,8 +1,8 @@
 name: Sync Twitch Drops
 on:
   schedule:
-    - cron: '0 */2 * * *' # Runs every 2 hours to catch new drops quickly
-  workflow_dispatch:
+    - cron: '0 * * * *'  # Runs at minute 0 past every hour
+  workflow_dispatch:     # Allows you to trigger it manually with a button
 
 permissions:
   contents: write
@@ -11,23 +11,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-          
+
       - name: Install dependencies
         run: pip install requests
-        
+
       - name: Run Twitch GraphQL Scraper
         run: python twitch_drops.py
-        
+
       - name: Commit and Push
         run: |
           git config --global user.name 'Twitch-Bot'
           git config --global user.email 'bot@twitch.tv'
           git add drops.json
-          git commit -m "Sync Twitch Drops Status" || exit 0
-          git push origin main
+          
+          # Only commit if the drops.json file actually changed
+          if git diff --staged --quiet; then
+            echo "No changes to Twitch Drops."
+          else
+            git commit -m "Update Twitch Drops Status"
+            git push origin main
+          fi
