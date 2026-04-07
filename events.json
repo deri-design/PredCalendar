@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-04-06 06:48:35",
+    "last_updated": "2026-04-07 13:43:25",
     "events": [
         {
             "original_id": "1488967151757824192",
@@ -10,6 +10,16 @@
             "desc": "# Throne of Thorns First Look Dev Stream \ud83d\udd34 \n\nWe're LIVE! Come take a look at what's coming up in next week's update \ud83c\udf39 \n\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1488963691167612989/Twitch_Announcement_1920x1080_Live_Now.jpg?ex=69d49fbf&is=69d34e3f&hm=92cf313d4c32da1d5fac2fc651d2ae4c8af5d49b5350fa2ec364ebaa28ea2d33&",
             "url": "https://www.twitch.tv/predecessorgame"
+        },
+        {
+            "original_id": "1491043666654003210",
+            "date": "2026-04-07",
+            "iso_date": "2026-04-07T15:00:00Z",
+            "title": "V1.13: THRONE OF THORNS",
+            "type": "patch",
+            "desc": "# V1.13: Throne of Thorns is LIVE!\n\n\ud83c\udf39 Command the battlefield with Adele, Queen of Thorns\n\ud83c\udf04 Explore Daybreak V4\n\u203c\ufe0f Take on new Quests\n\ud83d\udd22 Check out the new scoreboard\n... and more!\n\nRead full list of changes here \ud83d\uddd2\ufe0f \nhttps://playp.red/4mi5HZ5\n\nJoin the patch discussion here \ud83d\udde8\ufe0f \nhttps://discord.com/channels/389767672151146498/1491039376359297034/1491039376359297034\n\n @Official News\nV1.13: Throne of Thorns Patch Notes | Predecessor\nEverything you need to know about V1.13: Throne of Thorns!",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1491039902043738253/Patch_Highlight.jpg?ex=69d63e9e&is=69d4ed1e&hm=e1e56c99fd57409756e482fb4c7f4d014318b846945d7387b03169fb8bf32e9f&",
+            "url": "https://playp.red/4mi5HZ5"
         },
         {
             "original_id": "1488526943820316804",
