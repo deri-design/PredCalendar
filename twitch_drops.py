@@ -6,12 +6,13 @@ def fetch_drops():
     print("--- Connecting to Twitch Internal GraphQL ---")
     
     url = "https://gql.twitch.tv/gql"
+    # Twitch's universal public Client-ID
     headers = {
         "Client-Id": "kimne78kx3ncx6brgo4mv6wki5h1ko",
         "Content-Type": "application/json"
     }
     
-    # We use Game ID '515056' (Predecessor) to bypass name-matching errors
+    # Querying Predecessor (ID: 515056) specifically for active drops
     payload = {
         "query": """
         query {
@@ -44,57 +45,40 @@ def fetch_drops():
         res = requests.post(url, headers=headers, json=payload, timeout=15)
         data = res.json()
         
-        active_drops =[]
+        active_drops = []
         game_data = data.get("data", {}).get("game")
         
-        if not game_data:
-            print("Error: Twitch returned empty game data.")
-            print(f"Raw Response: {data}")
-        elif not game_data.get("dropCampaigns"):
-            print("Twitch returned game, but no drop campaigns found.")
-        else:
+        if game_data and game_data.get("dropCampaigns"):
             now = datetime.now(timezone.utc)
             
             for camp in game_data["dropCampaigns"]:
-                c_name = camp.get('name', 'Unknown Campaign')
-                c_status = camp.get('status', '')
+                c_status = camp.get('status', '').upper()
                 c_start = camp.get('startAt', '')
                 c_end = camp.get('endAt', '')
                 
-                print(f"Found Campaign: {c_name} | Status: {c_status} | Starts: {c_start}")
-                
-                is_active = False
-                
-                # 1. Check if Twitch officially marked it active
-                if c_status.upper() == "ACTIVE":
-                    is_active = True
-                
-                # 2. Hard check: If status is lagging, check the actual timestamps
+                is_actually_active = False
+                if c_status == "ACTIVE":
+                    is_actually_active = True
                 elif c_start and c_end:
-                    try:
-                        start_dt = datetime.strptime(c_start, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-                        end_dt = datetime.strptime(c_end, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-                        if start_dt <= now <= end_dt:
-                            print(f"-> Forcing Active: Current time is within campaign window.")
-                            is_active = True
-                    except Exception as e:
-                        print(f"-> Time parse error: {e}")
+                    # Fallback check for time window if status is lagging
+                    st = datetime.strptime(c_start, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+                    en = datetime.strptime(c_end, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+                    if st <= now <= en:
+                        is_actually_active = True
 
-                if is_active:
-                    rewards =[]
+                if is_actually_active:
+                    rewards = []
                     for drop in camp.get("timeBasedDrops", []):
-                        for edge in drop.get("benefitEdges",[]):
+                        for edge in drop.get("benefitEdges", []):
                             benefit = edge.get("benefit", {})
                             rewards.append({
-                                "name": benefit.get("name") or drop.get("name", "Reward"),
-                                "image": benefit.get("imageAssetURL") or "https://static-cdn.jtvnw.net/drops/assets/predecessor_default.png",
+                                "name": benefit.get("name") or drop.get("name"),
+                                "image": benefit.get("imageAssetURL"),
                                 "minutes": drop.get("requiredMinutesWatched")
                             })
                     
                     active_drops.append({
-                        "campaign_name": c_name,
-                        "start": c_start,
-                        "end": c_end,
+                        "campaign_name": camp.get("name"),
                         "rewards": rewards
                     })
         
@@ -106,11 +90,13 @@ def fetch_drops():
         
         with open('drops.json', 'w') as f:
             json.dump(output, f, indent=4)
-            
-        print(f"Success! Twitch Drops Active: {output['active']}")
+        print(f"Success! Active campaigns: {len(active_drops)}")
         
     except Exception as e:
-        print(f"Critical error fetching Twitch Drops: {e}")
-        # Make sure the file exists so the workflow doesn't crash
+        print(f"Error: {e}")
+        # Safeguard: Write empty file if it fails
         with open('drops.json', 'w') as f:
-            json.dump({"active": False, "campaigns":
+            json.dump({"active": False, "campaigns": []}, f, indent=4)
+
+if __name__ == "__main__":
+    fetch_drops()
