@@ -1,118 +1,96 @@
 import json
 import requests
-import uuid
+import re
 from datetime import datetime, timedelta, timezone
 
 def fetch_drops():
-    print("--- Connecting to Twitch GraphQL (Browser Mimic Mode) ---")
+    print("--- Connecting to Twitch Drops (Public Overlay Mode) ---")
     
-    url = "https://gql.twitch.tv/gql"
+    # We use the public campaigns page which contains the data in a script tag
+    url = "https://www.twitch.tv/drops/campaigns"
     
-    # We generate a random Device ID and use real browser headers to bypass bot detection
     headers = {
-        "Client-Id": "kimne78kx3ncx6brgo4mv6wki5h1ko",
-        "X-Device-Id": uuid.uuid4().hex,
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-        "Content-Type": "application/json",
-        "Accept": "*/*"
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://www.google.com/"
     }
-    
-    # This is the exact data structure Twitch uses for the public drops page
-    payload = [{
-        "operationName": "ViewerDropsDashboard",
-        "extensions": {
-            "persistedQuery": {
-                "version": 1,
-                "sha256Hash": "e1edcc7790435349e5898d2b0e77d943477e685f060c410427c328905357f89c"
-            }
-        },
-        "variables": {
-            "inventory": False
-        }
-    }]
 
     try:
-        res = requests.post(url, headers=headers, json=payload, timeout=15)
-        response_data = res.json()
+        response = requests.get(url, headers=headers, timeout=15)
+        html = response.text
         
-        # Twitch sometimes returns a list, sometimes a single object
-        data = response_data[0] if isinstance(response_data, list) else response_data
-        all_campaigns = data.get("data", {}).get("dropCampaigns", [])
+        print(f"Page fetched. Status: {response.status_code}")
+
+        # Twitch hides the data inside a JSON block called 'dropCampaigns' in the HTML
+        # We use Regex to find the data for Predecessor (Game ID: 515056)
         
-        # --- FALLBACK: If Persisted Query fails, try Raw Query ---
-        if not all_campaigns:
-            print("Method 1 returned 0. Trying Method 2 (Raw Query)...")
-            raw_payload = {
-                "query": """
-                query {
-                    dropCampaigns {
-                        name
-                        status
-                        startAt
-                        endAt
-                        game { id name }
-                        timeBasedDrops {
-                            name
-                            requiredMinutesWatched
-                            benefitEdges { benefit { name imageAssetURL } }
-                        }
-                    }
-                }
-                """
-            }
-            res = requests.post(url, headers=headers, json=raw_payload, timeout=15)
-            all_campaigns = res.json().get("data", {}).get("dropCampaigns", [])
-
-        print(f"Total Twitch Campaigns Scanned: {len(all_campaigns)}")
+        active_campaigns = []
         
-        active_predecessor_drops = []
-        now = datetime.now(timezone.utc)
+        # 1. Look for the JSON data in the script tags
+        json_blobs = re.findall(r'<script type="application/json">.*?"dropCampaigns":\[(.*?)\].*?</script>', html)
+        
+        if not json_blobs:
+            # Fallback to a broader search if the specific tag changed
+            json_blobs = re.findall(r'"dropCampaigns":\[(.*?)(?:\],"|\}\])', html)
 
-        for camp in all_campaigns:
-            game = camp.get("game", {})
-            # Match by Predecessor Name or Game ID (515056)
-            if game and ("Predecessor" in game.get("name", "") or game.get("id") == "515056"):
-                
-                # Check time window (Twitch 'status' can be slow to update)
-                is_active = camp.get('status') == "ACTIVE"
-                if not is_active:
-                    try:
-                        start = datetime.strptime(camp['startAt'], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-                        end = datetime.strptime(camp['endAt'], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-                        is_active = start <= now <= end
-                    except: pass
-
-                if is_active:
-                    print(f"Found Live Drops: {camp['name']}")
-                    rewards = []
-                    for drop in camp.get("timeBasedDrops", []):
-                        for edge in drop.get("benefitEdges", []):
-                            benefit = edge.get("benefit", {})
-                            rewards.append({
-                                "name": benefit.get("name") or drop.get("name"),
-                                "image": benefit.get("imageAssetURL"),
-                                "minutes": drop.get("requiredMinutesWatched")
-                            })
+        if json_blobs:
+            # Reconstruct the list string into actual objects
+            raw_data = "[" + json_blobs[0] + "]"
+            try:
+                # We do some cleanup to handle Twitch's massive nested JSON
+                # We search for Predecessor's specific ID within the raw text first to save time
+                if "515056" in raw_data or "Predecessor" in raw_data:
+                    data = json.loads(raw_data)
                     
-                    active_predecessor_drops.append({
-                        "campaign_name": camp['name'],
-                        "rewards": rewards
-                    })
+                    now = datetime.now(timezone.utc)
 
-        # Final Timestamp in German Time
+                    for camp in data:
+                        game = camp.get("game", {})
+                        if game.get("id") == "515056" or "Predecessor" in game.get("name", ""):
+                            print(f"Found Campaign: {camp.get('name')}")
+                            
+                            # Standardize time check
+                            try:
+                                start = datetime.strptime(camp['startAt'], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+                                end = datetime.strptime(camp['endAt'], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+                                
+                                if start <= now <= end:
+                                    rewards = []
+                                    for drop in camp.get("timeBasedDrops", []):
+                                        for edge in drop.get("benefitEdges", []):
+                                            benefit = edge.get("benefit", {})
+                                            rewards.append({
+                                                "name": benefit.get("name") or drop.get("name"),
+                                                "image": benefit.get("imageAssetURL"),
+                                                "minutes": drop.get("requiredMinutesWatched")
+                                            })
+                                    
+                                    active_campaigns.append({
+                                        "campaign_name": camp.get("name"),
+                                        "rewards": rewards
+                                    })
+                            except: continue
+            except Exception as e:
+                print(f"JSON Parse Error: {e}")
+        else:
+            print("Could not find the 'dropCampaigns' data block in HTML.")
+
+        # Final Timestamp in German Time (UTC+2)
         german_time = datetime.now(timezone.utc) + timedelta(hours=2)
         output = {
             "last_updated": german_time.strftime("%Y-%m-%d %H:%M:%S") + " (CEST)",
-            "active": len(active_predecessor_drops) > 0,
-            "campaigns": active_predecessor_drops
+            "active": len(active_campaigns) > 0,
+            "campaigns": active_campaigns
         }
         
         with open('drops.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"Scrape Finished. Predecessor Drops Active: {output['active']}")
+            
+        print(f"Scrape Complete. Active: {output['active']}")
 
     except Exception as e:
-        print(f"Scrape Failed: {e}")
+        print(f"Critical Error: {e}")
         with open('drops.json', 'w') as f:
             json.dump({"active": False, "campaigns": [], "last_updated": "Error"}, f, indent=4)
 
