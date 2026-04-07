@@ -12,7 +12,7 @@
         :root { --gold-light: #FBEB61; --gold-dark: #C48400; --gold: #dcb63b; --teal: #37a9a9; --red: #c73843; --twitch: #9146ff; --youtube: #FF0000; --bg: #050b1a; --cell-glass: rgba(12, 22, 45, 0.82); --border: rgba(55, 169, 169, 0.15); --text: #c8d0e0; --glass-blur: blur(25px); }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding: 2rem 1rem; min-height: 100vh; position: relative; overflow-x: hidden; }
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('./img/bg.jpg') no-repeat center center; background-size: cover; opacity: 0.15; mix-blend-mode: luminosity; z-index: -1; pointer-events: none; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('./img/bg.jpg') no-repeat center center; background-size: cover; opacity: 0.10; mix-blend-mode: luminosity; z-index: -1; pointer-events: none; }
         .container { max-width: 1550px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
         
         .header { text-align: center; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; }
@@ -22,7 +22,7 @@
         /* --- 3-COLUMN HUD WRAPPER --- */
         .huds-wrapper { display: flex; justify-content: space-between; gap: 20px; width: 100%; margin-bottom: 2rem; align-items: stretch; }
 
-        .hud-card { 
+        .countdown-container { 
             flex: 1; min-width: 0; background: var(--cell-glass); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); 
             border: 1px solid var(--gold); border-bottom: 4px solid var(--gold); padding: 25px 20px; position: relative; 
             box-shadow: 0 10px 40px rgba(0,0,0,0.6); border-radius: 4px;
@@ -80,6 +80,7 @@
         .slide-in-right { animation: slideInR 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
         .slide-in-left { animation: slideInL 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
         .fade-in { animation: fadeIn 0.4s ease forwards; }
+
         @keyframes slideInR { 0% { opacity: 0; transform: translateX(50px); } 100% { opacity: 1; transform: translateX(0); } }
         @keyframes slideInL { 0% { opacity: 0; transform: translateX(-50px); } 100% { opacity: 1; transform: translateX(0); } }
         @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
@@ -95,7 +96,6 @@
         .month-tag { font-family: 'Inter', sans-serif; font-size: 0.65rem; color: var(--gold); font-weight: 900; }
         .cell.today { outline: 2px solid var(--gold); background: rgba(220, 182, 59, 0.15); z-index: 2; }
         .cell.today .num { color: var(--gold); }
-        
         .event { display: block; text-decoration: none; background: rgba(0, 0, 0, 0.7); border: 1px solid var(--gold); margin-bottom: 8px; flex-shrink: 0; overflow: hidden; border-radius: 2px; transition: 0.2s; cursor: pointer; padding: 8px; }
         .event:hover { border-color: #fff !important; transform: translateY(-2px); background: rgba(255,255,255,0.05); }
         .event.patch { border-color: var(--gold); } .event.hero { border-color: var(--teal); } .event.season { border-color: var(--red); } .event.twitch { border-color: var(--twitch); } .event.youtube { border-color: var(--youtube); }
@@ -109,11 +109,15 @@
         .briefing-tag { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; display: block; text-transform: uppercase; font-weight: 900; }
         .briefing-desc { font-size: 18px; line-height: 1.6; color: #fff; text-shadow: 0 1px 2px #000; font-weight: 500; white-space: pre-wrap; word-wrap: break-word; }
 
-        @media (max-width: 1300px) { .huds-wrapper { flex-direction: column; align-items: center; } .hud-card { max-width: 900px; width: 100%; } .roadmap-grid { grid-template-columns: repeat(1, 1fr); } #global-briefing { width: 95%; left: 2.5% !important; top: 50% !important; transform: translateY(-50%); } }
+        @media (max-width: 1300px) { 
+            .huds-wrapper { flex-direction: column; align-items: center; }
+            .countdown-container { max-width: 900px; width: 100%; } 
+            .roadmap-grid { grid-template-columns: repeat(1, 1fr); } 
+            #global-briefing { width: 95%; left: 2.5% !important; top: 50% !important; transform: translateY(-50%); } 
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
         <header class="header">
             <h1>PredeCalendar</h1>
@@ -124,10 +128,9 @@
         <div class="huds-wrapper">
             
             <!-- LEFT: Next Event HUD -->
-            <div class="hud-card" id="hud-next">
+            <div class="countdown-container" id="hud-next">
                 <span class="hud-label" style="color: var(--gold);">NEXT EVENT</span>
                 <div class="hud-title" id="op-title">STANDBY</div>
-                <img id="hud-next-img" class="hud-img" src="" alt="Visual" style="display: none;">
                 
                 <div class="timer-hud">
                     <div class="timer-unit"><div class="timer-val" id="d">00</div><div class="timer-label">DAYS</div></div>
@@ -140,10 +143,10 @@
             </div>
 
             <!-- MIDDLE: Daily Ion Loot Core -->
-            <div class="hud-card" id="hud-daily">
+            <div class="countdown-container" id="hud-daily">
                 <span class="hud-label" style="color: var(--teal);">REFRESHES DAILY (10 AM CEST)</span>
                 <div class="hud-title">DAILY ION LOOT CORE</div>
-                <img class="hud-img" src="./img/ion-loot-core.png" alt="Ion Loot Core" style="object-fit: contain; border: none; background: transparent; box-shadow: none; height: 120px; margin-bottom: 25px;">
+                <img class="hud-img" src="./img/ion-loot-core.png" alt="Ion Loot Core" style="object-fit: contain; border: none; background: transparent; box-shadow: none; height: 120px; margin-bottom: 25px; display: block;">
                 
                 <div class="timer-hud">
                     <div class="timer-unit"><div class="timer-val" id="daily-h">00</div><div class="timer-label">HRS</div></div>
@@ -153,12 +156,10 @@
             </div>
 
             <!-- RIGHT: Twitch Drops HUD -->
-            <div class="hud-card" id="hud-drops">
+            <div class="countdown-container" id="hud-drops">
                 <span class="hud-label" style="color: var(--twitch);">TWITCH DROPS</span>
                 <div class="hud-title" id="drops-title" style="font-size: 1.4rem; min-height: auto;">SCANNING...</div>
-                
                 <div id="drops-rewards" class="drops-list"></div>
-                
                 <a href="https://www.twitch.tv/directory/category/predecessor" target="_blank" class="cta-btn" id="drops-btn" style="display: none; background: var(--twitch);">Watch Live Streams →</a>
             </div>
 
@@ -193,7 +194,7 @@
         let currentWeekOffset = 0; 
         
         const grid = document.getElementById('main-grid');
-        const briefing = document.getElementById('global-briefing'), bImg = document.getElementById('b-img'), hudImg = document.getElementById('hud-next-img');
+        const briefing = document.getElementById('global-briefing'), bImg = document.getElementById('b-img');
 
         async function init() {
             // Load Events
@@ -201,7 +202,8 @@
                 const r = await fetch('./events.json?t=' + Date.now());
                 const data = await r.json();
                 evData = data.events ||[];
-                setupCountdown(); animateAndRender('fade');
+                setupCountdown();
+                animateAndRender('fade');
             } catch(e) { animateAndRender('fade'); }
 
             // Load Twitch Drops
@@ -289,11 +291,6 @@
                 const nextEv = futureEvents[0]; 
                 document.getElementById('op-title').innerText = nextEv.title;
 
-                if (nextEv.image) {
-                    hudImg.src = nextEv.image;
-                    hudImg.style.display = 'block';
-                }
-
                 if (nextEv.type === 'twitch') {
                     document.getElementById('twitch-btn').style.display = 'inline-block';
                 } else {
@@ -321,7 +318,8 @@
                 const nowUTC = now.getTime();
                 const target = new Date();
                 target.setUTCHours(8, 0, 0, 0);
-                if (nowUTC >= target.getTime()) { target.setUTCDate(target.getUTCDate() + 1); }
+                if (nowUTC >= target.getTime()) target.setUTCDate(target.getUTCDate() + 1);
+                
                 const diff = target.getTime() - nowUTC;
                 document.getElementById('daily-h').innerText = String(Math.floor((diff % 864e5) / 36e5)).padStart(2, '0');
                 document.getElementById('daily-m').innerText = String(Math.floor((diff % 36e5) / 6e4)).padStart(2, '0');
@@ -329,7 +327,7 @@
             }, 1000);
         }
 
-        // --- GRID RENDER ---
+        // --- GRID RENDER (Sliding Window) ---
         function renderRoadmap() {
             grid.innerHTML = "MON TUE WED THU FRI SAT SUN".split(" ").map(d => `<div class="h-cell">${d}</div>`).join("");
 
@@ -352,11 +350,18 @@
                 const cell = document.createElement('div');
                 cell.className = `cell active ${isToday ? 'today' : ''} ${isWeekend ? 'weekend' : ''}`;
                 
-                let cellHtml = `<div class="num-container"><span class="num">${cursor.getDate()}</span><span class="month-tag">${cursor.toLocaleString('default',{month:'short'}).toUpperCase()}</span></div>`;
+                const numContainer = document.createElement('div');
+                numContainer.className = 'num-container';
+                numContainer.innerHTML = `<span class="num">${cursor.getDate()}</span><span class="month-tag">${cursor.toLocaleString('default',{month:'short'}).toUpperCase()}</span>`;
+                cell.appendChild(numContainer);
 
                 items.forEach(ev => {
-                    let a = document.createElement('a'); a.href = ev.url || '#'; a.target = "_blank"; a.className = `event ${ev.type}`;
+                    let a = document.createElement('a'); 
+                    a.href = ev.url || '#'; 
+                    a.target = "_blank"; 
+                    a.className = `event ${ev.type}`;
                     a.innerHTML = `<div class="e-title">${ev.title}</div>`;
+                    
                     a.addEventListener('mouseenter', (e) => {
                         const rect = e.currentTarget.getBoundingClientRect();
                         let color = "var(--gold)"; 
@@ -381,36 +386,16 @@
                         if (y + briefing.offsetHeight > window.innerHeight) y = window.innerHeight - briefing.offsetHeight - 40;
                         briefing.style.left = x + 'px'; briefing.style.top = Math.max(40, y) + 'px';
                     });
+                    
                     a.addEventListener('mouseleave', () => briefing.style.display = 'none');
                     cell.appendChild(a);
                 });
                 
-                cell.innerHTML += cellHtml; 
-                cell.innerHTML = cellHtml; 
-                cell.innerHTML = `<div class="num-container"><span class="num">${cursor.getDate()}</span><span class="month-tag">${cursor.toLocaleString('default',{month:'short'}).toUpperCase()}</span></div>`;
-                
-                items.forEach(ev => {
-                    let a = document.createElement('a'); a.href = ev.url || '#'; a.target = "_blank"; a.className = `event ${ev.type}`;
-                    a.innerHTML = `<div class="e-title">${ev.title}</div>`;
-                    a.addEventListener('mouseenter', (e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        let color = "var(--gold)"; if(ev.type === "hero") color = "var(--teal)"; if(ev.type === "season") color = "var(--red)"; if(ev.type === "twitch") color = "var(--twitch)"; if(ev.type === "youtube") color = "var(--youtube)";
-                        briefing.style.borderColor = color; document.getElementById('b-tag').style.color = color;
-                        document.getElementById('b-tag').innerText = ev.title; document.getElementById('b-desc').innerText = ev.desc;
-                        if (ev.image) { bImg.src = ev.image; bImg.style.display = 'block'; } else { bImg.style.display = 'none'; }
-                        briefing.style.display = 'block';
-                        let x = rect.left + rect.width + 20, y = rect.top;
-                        if (x + 450 > window.innerWidth) x = rect.left - 470;
-                        if (y + briefing.offsetHeight > window.innerHeight) y = window.innerHeight - briefing.offsetHeight - 40;
-                        briefing.style.left = x + 'px'; briefing.style.top = Math.max(40, y) + 'px';
-                    });
-                    a.addEventListener('mouseleave', () => briefing.style.display = 'none');
-                    cell.appendChild(a);
-                });
                 grid.appendChild(cell);
                 cursor.setDate(cursor.getDate() + 1);
             }
         }
+        init();
     </script>
 </body>
 </html>
