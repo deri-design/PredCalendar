@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-04-07 13:43:25",
+    "last_updated": "2026-04-08 19:25:00",
     "events": [
         {
             "original_id": "1488967151757824192",
@@ -92,6 +92,16 @@
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
+            "original_id": "1491472786802344150",
+            "date": "2026-04-08",
+            "iso_date": "2026-04-08T15:00:00Z",
+            "title": "UPCOMING DOWNTIME",
+            "type": "news",
+            "desc": "\u26a0\ufe0f Upcoming Downtime\nPredecessor game servers will enter maintenance mode as we push a new game update. During this time you will be unable to play.",
+            "image": "https://images-ext-1.discordapp.net/external/IbiGZbO6HrmxAaiDrN2yZR_xuzO70SfrpZSR0Ei9Wrs/https/pbs.twimg.com/media/GjA_nkZXMAAPssx.jpg?format=webp&width=1581&height=889",
+            "url": "https://www.predecessorgame.com/en-US/news"
+        },
+        {
             "original_id": "1487185725479714916",
             "date": "2026-04-01",
             "iso_date": "2026-04-01T18:00:00Z",
@@ -109,6 +119,16 @@
             "type": "patch",
             "desc": "Quests are coming in V1.13: Throne of Thorns! \ud83d\udd25\n\nFrom daily tasks earning you XP to monthly challenges rewarding Quantum Cores, are you ready to complete them all?\n\nWe\u2019ll find out soon enough \ud83d\udc40",
             "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487885619915915314/image_175.png?ex=69d4a837&is=69d356b7&hm=ad7933e824bac2b3db48372f2982801a912427106bfd16b2b48cc9f854d6dcba&",
+            "url": "https://www.predecessorgame.com/en-US/news"
+        },
+        {
+            "original_id": "1491490716520812597",
+            "date": "2026-04-08",
+            "iso_date": "2026-04-08T15:00:00Z",
+            "title": "V1.13.1 LIVE",
+            "type": "patch",
+            "desc": "# Maintenance is over, V1.13.1 is LIVE!",
+            "image": "",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
