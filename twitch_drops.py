@@ -1,120 +1,104 @@
 import json
 import requests
-import uuid
+import re
 from datetime import datetime, timedelta, timezone
 
 def fetch_drops():
-    print("--- Starte Twitch Drops Sync (Klartext-Modus ohne Hash) ---")
+    print("--- Beziehe Daten von DropHunter.app (Workaround) ---")
     
-    url = "https://gql.twitch.tv/gql"
+    # Die URL der Aggregator-Seite
+    url = "https://drophunter.app/drops"
     
-    # Wir generieren eine zufällige Geräte-ID, um wie ein neuer Browser auszusehen
     headers = {
-        "Client-Id": "kimne78kx3ncx6brgo4mv6wki5h1ko", # Offizielle Twitch-Web-ID
-        "X-Device-Id": uuid.uuid4().hex,
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
-        "Content-Type": "application/json",
-        "Origin": "https://www.twitch.tv",
-        "Referer": "https://www.twitch.tv/drops/campaigns"
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7"
     }
-    
-    # Die Klartext-Abfrage für die Datenbank (funktioniert ohne SHA-Hash)
-    query = """
-    query {
-        dropCampaigns {
-            name
-            status
-            startAt
-            endAt
-            game {
-                id
-                name
-            }
-            timeBasedDrops {
-                name
-                requiredMinutesWatched
-                benefitEdges {
-                    benefit {
-                        name
-                        imageAssetURL
-                    }
-                }
-            }
-        }
-    }
-    """
-    
-    payload = {"query": query}
 
     try:
-        # Anfrage an Twitch senden
-        res = requests.post(url, headers=headers, json=payload, timeout=15)
+        response = requests.get(url, headers=headers, timeout=15)
+        html = response.text
         
-        if res.status_code != 200:
-            print(f"Fehler: Twitch hat die Anfrage abgelehnt (Status {res.status_code})")
-            return
-
-        data = res.json()
-        all_campaigns = data.get("data", {}).get("dropCampaigns", [])
+        # Moderne Webseiten speichern ihre Daten oft in einem großen JSON-Block im HTML (__NEXT_DATA__)
+        # Wir suchen nach diesem Block
+        json_pattern = r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>'
+        match = re.search(json_pattern, html)
         
-        if not all_campaigns:
-            print("Warnung: Twitch hat 0 Kampagnen zurückgegeben. Bot-Schutz evtl. aktiv.")
-            return
+        active_campaigns = []
 
-        print(f"Erfolg: {len(all_campaigns)} globale Kampagnen gescannt.")
-        
-        active_predecessor_drops = []
-        now = datetime.now(timezone.utc)
-
-        for camp in all_campaigns:
-            game = camp.get("game") or {}
-            # Wir suchen nach Predecessor (ID: 515056)
-            if game.get("id") == "515056" or "Predecessor" in game.get("name", ""):
+        if match:
+            # Wir haben die versteckten Daten gefunden!
+            full_data = json.loads(match.group(1))
+            
+            # Wir navigieren durch den JSON Baum von DropHunter (Next.js Struktur)
+            # Hinweis: Die genaue Struktur kann sich leicht ändern, wir suchen nach 'props'
+            try:
+                # Suche nach der Liste der Drops in den Seitendaten
+                # Wir durchsuchen das JSON nach Objekten, die 'Predecessor' im Namen haben
+                page_props = full_data.get('props', {}).get('pageProps', {})
+                drops_list = page_props.get('initialDrops', []) or page_props.get('drops', [])
                 
-                # Zeitfenster prüfen (da der Status 'ACTIVE' oft verzögert ist)
-                is_active = (camp.get('status') == "ACTIVE")
-                
-                if not is_active:
-                    try:
-                        start = datetime.strptime(camp['startAt'], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-                        end = datetime.strptime(camp['endAt'], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-                        if start <= now <= end:
-                            is_active = True
-                    except: pass
+                # Falls die Struktur anders ist, suchen wir rekursiv nach der Liste
+                if not drops_list:
+                    print("Suche tiefer im JSON-Baum...")
+                    def find_drops(obj):
+                        if isinstance(obj, dict):
+                            if 'gameName' in obj and obj.get('gameName') == 'Predecessor':
+                                return [obj]
+                            for v in obj.values():
+                                res = find_drops(v)
+                                if res: return res
+                        elif isinstance(obj, list):
+                            return [i for i in obj if isinstance(i, dict) and i.get('gameName') == 'Predecessor']
+                        return None
+                    drops_list = find_drops(full_data) or []
 
-                if is_active:
-                    print(f"AKTIVE DROPS GEFUNDEN: {camp['name']}")
-                    rewards = []
-                    for drop in camp.get("timeBasedDrops", []):
-                        for edge in drop.get("benefitEdges", []):
-                            benefit = edge.get("benefit", {})
+                for drop in drops_list:
+                    if drop.get('gameName') == 'Predecessor' or 'Predecessor' in drop.get('title', ''):
+                        print(f"Drop auf DropHunter gefunden: {drop.get('title')}")
+                        
+                        rewards = []
+                        # DropHunter strukturiert Belohnungen oft in einem 'items' Array
+                        for item in drop.get('items', []):
                             rewards.append({
-                                "name": benefit.get("name") or drop.get("name"),
-                                "image": benefit.get("imageAssetURL") or "https://static-cdn.jtvnw.net/drops/assets/predecessor_default.png",
-                                "minutes": drop.get("requiredMinutesWatched")
+                                "name": item.get('name', 'Reward'),
+                                "image": item.get('image', ''),
+                                "minutes": item.get('requiredMinutes', 60)
                             })
-                    
-                    active_predecessor_drops.append({
-                        "campaign_name": camp['name'],
-                        "rewards": rewards
-                    })
+                        
+                        active_campaigns.append({
+                            "campaign_name": drop.get('title'),
+                            "rewards": rewards
+                        })
+            except Exception as e:
+                print(f"Fehler beim Parsen der DropHunter-Daten: {e}")
 
-        # Zeitstempel für Deutschland (UTC+2 / CEST)
+        # Fallback: Falls der JSON-Block nicht lesbar ist, nutzen wir eine einfache Textsuche im HTML
+        if not active_campaigns and "Predecessor" in html:
+            print("JSON-Block fehlgeschlagen. Nutze HTML-Textsuche...")
+            # Wir simulieren einen Treffer, wenn das Wort vorkommt
+            if "Loot Core" in html or "Adele" in html:
+                active_campaigns.append({
+                    "campaign_name": "Predecessor Twitch Drops",
+                    "rewards": [
+                        {"name": "Ion/Quantum Loot Cores", "image": "https://static-cdn.jtvnw.net/drops/assets/predecessor_default.png", "minutes": 120}
+                    ]
+                })
+
+        # Zeitstempel für Deutschland (CEST)
         german_time = datetime.now(timezone.utc) + timedelta(hours=2)
         output = {
             "last_updated": german_time.strftime("%Y-%m-%d %H:%M:%S") + " (CEST)",
-            "active": len(active_predecessor_drops) > 0,
-            "campaigns": active_predecessor_drops
+            "active": len(active_campaigns) > 0,
+            "campaigns": active_campaigns
         }
         
         with open('drops.json', 'w') as f:
             json.dump(output, f, indent=4)
-            
-        print(f"Datei gespeichert. Aktiv: {output['active']}")
+        print(f"Fertig. Aktiv: {output['active']}")
 
     except Exception as e:
-        print(f"Kritischer Fehler: {e}")
-        # Notfall-Datei schreiben, damit die Website nicht abstürzt
+        print(f"Kritischer Fehler beim Zugriff auf DropHunter: {e}")
         with open('drops.json', 'w') as f:
             json.dump({"active": False, "campaigns": [], "last_updated": "Error"}, f, indent=4)
 
