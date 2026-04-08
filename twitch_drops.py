@@ -22,7 +22,7 @@ def fetch_drops():
     
     token = get_access_token()
     if not token:
-        print("Failed to get Twitch Access Token. Check your Secrets.")
+        print("Error: Could not get access token. Check Client ID/Secret.")
         return
 
     headers = {
@@ -30,7 +30,7 @@ def fetch_drops():
         "Authorization": f"Bearer {token}"
     }
 
-    # Endpoint for all active drop campaigns
+    # Fetch all active drop campaigns globally
     url = "https://api.twitch.tv/helix/drops/campaigns"
     
     try:
@@ -38,28 +38,24 @@ def fetch_drops():
         data = res.json()
         
         all_campaigns = data.get("data", [])
-        print(f"Total campaigns on Twitch: {len(all_campaigns)}")
-        
         active_predecessor_drops = []
         
         for camp in all_campaigns:
-            # Predecessor Game ID is 515056
-            if camp.get("game", {}).get("id") == "515056":
-                # Helix only returns active/upcoming by default
+            # Predecessor Game ID: 515056
+            if str(camp.get("game", {}).get("id")) == "515056":
                 status = camp.get("status")
                 print(f"Found Predecessor Campaign: {camp.get('name')} [{status}]")
                 
+                # We only show it on the site if it is currently ACTIVE
                 if status == "ACTIVE":
                     rewards = []
-                    # Helix has a slightly different structure for rewards
-                    # We grab the benefit info from the campaign
-                    for drop in camp.get("button_entitlements", []):
-                        # Note: Helix provides less visual detail than GQL, 
-                        # but we can map the names to icons manually if needed.
+                    # Helix rewards structure is simple, we map them to our UI
+                    # We look for the 'allow' list which usually contains reward names
+                    for entitlement in camp.get("button_entitlements", []):
                         rewards.append({
-                            "name": drop.get("name", "Drop Reward"),
+                            "name": entitlement.get("name", "Drop Reward"),
                             "image": "https://static-cdn.jtvnw.net/drops/assets/predecessor_default.png",
-                            "minutes": 60 # Defaulting to 60 as Helix doesn't show minutes easily
+                            "minutes": 60 # Helix doesn't provide easy minute data, defaulting to 60
                         })
                     
                     active_predecessor_drops.append({
@@ -67,7 +63,7 @@ def fetch_drops():
                         "rewards": rewards
                     })
 
-        # German Time Timestamp
+        # German Time (CEST) for the footer
         german_time = datetime.now(timezone.utc) + timedelta(hours=2)
         output = {
             "last_updated": german_time.strftime("%Y-%m-%d %H:%M:%S") + " (CEST)",
@@ -77,7 +73,7 @@ def fetch_drops():
         
         with open('drops.json', 'w') as f:
             json.dump(output, f, indent=4)
-        print(f"Success! Active: {output['active']}")
+        print(f"Process Complete. Active Drops: {output['active']}")
 
     except Exception as e:
         print(f"API Error: {e}")
