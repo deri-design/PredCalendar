@@ -14,9 +14,7 @@ def get_discord_messages():
     headers = {"Authorization": f"Bot {DISCORD_TOKEN}"}
     url = f"https://discord.com/api/v10/channels/{CHANNEL_ID}/messages?limit=20"
     res = requests.get(url, headers=headers)
-    if res.status_code != 200:
-        print(f"DISCORD ERROR {res.status_code}: {res.text}")
-        return []
+    if res.status_code != 200: return []
     return res.json()
 
 def find_deep_img(obj):
@@ -51,20 +49,7 @@ def extract_all_text_and_links(m):
 def ask_groq(messages_text):
     client = Groq(api_key=GROQ_API_KEY)
     today = datetime.now().strftime("%A, %B %d, %Y")
-    prompt = f"""
-    Today is {today}. Predecessor game announcements.
-    TASK: Extract events.
-    RULES:
-    1. Identify START DATE (YYYY-MM-DD).
-    2. Identify START TIME (HH:MM). If message says "2:00 PM", that is 14:00.
-    3. If no time mentioned, use 14:00.
-    4. "index" must match block header.
-    Messages:
-    {messages_text}
-    OUTPUT FORMAT:[
-      {{"index": 0, "date": "YYYY-MM-DD", "time": "HH:MM", "title": "Title", "type": "patch/news/twitch/hero"}}
-    ]
-    """
+    prompt = f"Today is {today}. Predecessor game announcements. Extract events. RULES: 1. Identify DATE (YYYY-MM-DD). 2. Identify TIME (HH:MM) - if '2:00 PM' use 14:00. If none, use 14:00. 3. 'index' must match header. Messages: {messages_text} OUTPUT FORMAT: [{{'index': 0, 'date': 'YYYY-MM-DD', 'time': 'HH:MM', 'title': 'Title', 'type': 'patch/news/twitch/hero'}}] "
     try:
         chat = client.chat.completions.create(messages=[{"role": "user", "content": prompt}], model="llama-3.3-70b-versatile", temperature=0.0)
         return json.loads(re.search(r'\[.*\]', chat.choices[0].message.content, re.DOTALL).group(0))
@@ -73,8 +58,6 @@ def ask_groq(messages_text):
 def scrape():
     messages = get_discord_messages()
     if not messages: return
-
-    # Process all messages fresh to fix any time errors
     to_process, ai_input_list = [], []
     for i, m in enumerate(messages):
         full_text, all_urls = extract_all_text_and_links(m)
@@ -87,31 +70,23 @@ def scrape():
 
     ai_results = ask_groq("\n---\n".join(ai_input_list))
     final_events = []
-
     for ar in ai_results:
         intel = next((x for x in to_process if x['index'] == ar['index']), None)
         if not intel: continue
-        
         event_date = ar.get('date') or intel['posted']
         event_time = ar.get('time', '14:00')
+        iso_date = f"{event_date}T{event_time}:00+02:00" # FORCE CEST
         
-        # FORCE CEST OFFSET (+02:00)
-        iso_date = f"{event_date}T{event_time}:00+02:00"
+        etype = ar.get('type', 'news')
+        eurl = next((u for u in intel['urls'] if "playp.red" in u or "predecessorgame" in u), "https://www.predecessorgame.com/en-US/news")
+        if "twitch" in intel['raw'].lower(): etype = "twitch"
 
         final_events.append({
-            "original_id": intel['id'],
-            "date": event_date,
-            "iso_date": iso_date,
+            "original_id": intel['id'], "date": event_date, "iso_date": iso_date,
             "title": str(ar.get('title', 'UPDATE')).upper()[:40],
-            "type": ar.get('type', 'news'),
-            "desc": intel['clean'],
-            "image": intel['img'],
-            "url": next((u for u in intel['urls'] if "playp.red" in u or "predecessorgame" in u), "https://www.predecessorgame.com/en-US/news")
+            "type": etype, "desc": intel['clean'], "image": intel['img'], "url": eurl
         })
-
     with open('events.json', 'w') as f:
         json.dump({"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}, f, indent=4)
-    print("Events overwritten with corrected CEST times.")
 
-if __name__ == "__main__":
-    scrape()
+if __name__ == "__main__": scrape()
