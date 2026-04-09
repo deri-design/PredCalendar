@@ -1,8 +1,8 @@
 name: Sync Twitch Drops
 on:
   schedule:
-    - cron: '0 * * * *' # Every hour
-  workflow_dispatch:
+    - cron: '0 * * * *'  # Läuft einmal pro Stunde
+  workflow_dispatch:     # Erlaubt manuelles Starten
 
 permissions:
   contents: write
@@ -11,18 +11,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+
       - name: Install dependencies
-        run: pip install requests
+        # HIER WURDE beautifulsoup4 HINZUGEFÜGT
+        run: pip install requests beautifulsoup4
+
       - name: Run Twitch Scraper
         run: python twitch_drops.py
-      - name: Push changes
+
+      - name: Commit and Push
         run: |
           git config --global user.name 'Twitch-Bot'
           git config --global user.email 'bot@twitch.tv'
           git add drops.json
-          git diff --staged --quiet || (git commit -m "Update Twitch Drops" && git push origin main)
+          git diff --staged --quiet || (git commit -m "Update Twitch Drops Status" && git push origin main)
