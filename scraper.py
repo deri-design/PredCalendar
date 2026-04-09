@@ -31,10 +31,6 @@ def find_deep_img(obj):
         for v in obj.values():
             res = find_deep_img(v)
             if res: return res
-    if isinstance(obj, list):
-        for i in obj:
-            res = find_deep_img(i)
-            if res: return res
     return ""
 
 def extract_all_text_and_links(m):
@@ -60,17 +56,17 @@ def ask_groq(messages_text):
     today = datetime.now().strftime("%A, %B %d, %Y")
     prompt = f"""
     Today is {today}. Predecessor game announcements. 
-    TASK: Extract events with exact times.
+    TASK: Extract events with exact dates and ranges.
     RULES:
     1. Identify START DATE (YYYY-MM-DD).
-    2. Identify START TIME (HH:MM) - e.g. "2:00 PM" is 14:00. If none found, use 14:00.
-    3. Return ONLY valid JSON list.
-    4. "index" MUST match header index.
+    2. Identify END DATE (YYYY-MM-DD). If it's a one-day event, use the same date as START DATE.
+    3. Identify START TIME (HH:MM) - e.g. "2:00 PM" is 14:00. Default 14:00.
+    4. Return ONLY valid JSON list. "index" must match header index.
     Messages:
     {messages_text}
     OUTPUT FORMAT:
     [
-      {{"index": 0, "date": "YYYY-MM-DD", "time": "HH:MM", "title": "Title", "type": "patch/news/twitch/hero"}}
+      {{"index": 0, "date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD", "time": "HH:MM", "title": "Title", "type": "patch/news/twitch/hero"}}
     ]
     """
     try:
@@ -101,17 +97,23 @@ def scrape():
         if not intel: continue
         
         date = ar.get('date') or intel['posted']
+        end_date = ar.get('end_date') or date
         time = ar.get('time', '14:00')
-        iso = f"{date}T{time}:00+02:00" # FORCE CEST OFFSET
+        iso = f"{date}T{time}:00+02:00" # CEST
 
         etype = ar.get('type', 'news')
         if "twitch" in intel['raw'].lower(): etype = "twitch"
         if "v1." in intel['raw'].lower() or "patch" in intel['raw'].lower(): etype = "patch"
 
         event_map[str(intel['id'])] = {
-            "original_id": intel['id'], "date": date, "iso_date": iso,
-            "title": str(ar.get('title', 'UPDATE')).upper()[:40], "type": etype,
-            "desc": intel['clean'], "image": intel['img'],
+            "original_id": intel['id'], 
+            "date": date, 
+            "end_date": end_date,
+            "iso_date": iso,
+            "title": str(ar.get('title', 'UPDATE')).upper()[:40], 
+            "type": etype,
+            "desc": intel['clean'], 
+            "image": intel['img'],
             "url": next((u for u in intel['urls'] if "playp.red" in u or "predecessor" in u), "https://www.predecessorgame.com/en-US/news")
         }
 
