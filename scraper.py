@@ -21,9 +21,6 @@ def get_discord_messages():
 
 def find_deep_img(obj):
     if not obj: return ""
-    if isinstance(obj, str):
-        if any(ext in obj.lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']) and 'http' in obj:
-            return obj
     if isinstance(obj, dict):
         for key in['url', 'proxy_url']:
             if key in obj and isinstance(obj[key], str) and any(ext in obj[key].lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']):
@@ -63,20 +60,19 @@ def ask_groq(messages_text):
     
     prompt = f"""
     Today is {today}. Context: "Predecessor" game announcements.
-    TASK: Extract events.
+    TASK: Extract events with exact times.
     
     RULES:
-    1. Identify a SPECIFIC START DATE (YYYY-MM-DD).
-    2. Identify a SPECIFIC TIME (HH:MM) if mentioned. If not, use 15:00.
-    3. Extract a short, punchy TITLE.
-    4. Return ONLY a valid JSON list of objects.
-    5. "index": Use the EXACT integer index provided in the block header.
+    1. Identify START DATE (YYYY-MM-DD).
+    2. Identify START TIME (HH:MM) in 24h format. (e.g. 2:00 PM -> 14:00). 
+    3. If no time is found, use 14:00.
+    4. Return JSON only. "index" must match the block header index.
     
     Messages:
     {messages_text}
 
     OUTPUT FORMAT:[
-      {{"index": 0, "date": "YYYY-MM-DD", "time": "HH:MM", "title": "Short Title", "type": "patch/news/twitch/hero"}}
+      {{"index": 0, "date": "YYYY-MM-DD", "time": "HH:MM", "title": "Title", "type": "patch/news/twitch/hero"}}
     ]
     """
     try:
@@ -104,12 +100,10 @@ def scrape():
     except: old_db = []
 
     existing_ids =[str(e.get('original_id')) for e in old_db]
-    to_process = []
-    ai_input_list =[]
+    to_process, ai_input_list = [], []
     
     for i, m in enumerate(messages):
         if str(m['id']) in existing_ids: continue
-        
         full_text, all_urls = extract_all_text_and_links(m)
         if full_text:
             to_process.append({
@@ -119,9 +113,7 @@ def scrape():
             })
             ai_input_list.append(f"INDEX: [{i}]\nCONTENT: {full_text}")
 
-    if not ai_input_list:
-        print("No new events.")
-        return
+    if not ai_input_list: return
 
     ai_results = ask_groq("\n---\n".join(ai_input_list))
     new_entries =[]
@@ -131,29 +123,19 @@ def scrape():
         intel = next((x for x in to_process if x['index'] == idx), None)
         if not intel: continue
         
-        etype = ar.get('type', 'news')
         event_date = ar.get('date') or intel['posted']
-        event_time = ar.get('time', '15:00')
+        event_time = ar.get('time', '14:00')
         
-        # Convert to ISO format (assuming CEST/Local for the announcement text)
-        iso_date = f"{event_date}T{event_time}:00" 
+        # Predecessor events use CEST (+02:00)
+        iso_date = f"{event_date}T{event_time}:00+02:00"
 
-        eurl = "https://www.predecessorgame.com/en-US/news"
-        yt_url = next((u for u in intel['urls'] if "youtube.com" in u or "youtu.be" in u), None)
-        pp_url = next((u for u in intel['urls'] if "playp.red" in u), None)
-
-        if "twitch" in intel['raw'].lower() or "live stream" in intel['raw'].lower():
-            etype, eurl = "twitch", "https://www.twitch.tv/predecessorgame"
-            iso_date = f"{event_date}T18:00:00" # Standard stream time
-        elif yt_url:
-            etype, eurl = "youtube", yt_url.rstrip('.,!?"\')')
-        
-        if pp_url: eurl = pp_url.rstrip('.,!?"\')')
+        etype = ar.get('type', 'news')
+        eurl = next((u for u in intel['urls'] if "playp.red" in u or "predecessorgame" in u), "https://www.predecessorgame.com/en-US/news")
 
         new_entries.append({
             "original_id": intel['id'],
             "date": event_date,
-            "iso_date": iso_date, # Now includes specific time
+            "iso_date": iso_date,
             "title": str(ar.get('title', 'UPDATE')).upper()[:40],
             "type": etype,
             "desc": intel['clean'],
@@ -161,13 +143,7 @@ def scrape():
             "url": eurl
         })
 
-    final_list = old_db + new_entries
-    unique_map = {}
-    for e in sorted(final_list, key=lambda x: len(x['title']), reverse=True):
-        fingerprint = f"{e['date']}_{e['original_id']}"
-        if fingerprint not in unique_map: unique_map[fingerprint] = e
-
-    final_events = list(unique_map.values())
+    final_events = old_db + new_entries
     output = {"last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "events": final_events}
     with open('events.json', 'w') as f:
         json.dump(output, f, indent=4)
