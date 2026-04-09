@@ -1,5 +1,16 @@
 {
-    "last_updated": "2026-04-09 03:57:14 (CEST)",
-    "active": false,
-    "campaigns": []
+    "last_updated": "2026-04-09 04:02:00 (CEST)",
+    "active": true,
+    "campaigns": [
+        {
+            "campaign_name": "Predecessor Twitch Drops",
+            "rewards": [
+                {
+                    "name": "Loot Cores / Skins",
+                    "image": "https://static-cdn.jtvnw.net/drops/assets/predecessor_default.png",
+                    "minutes": 60
+                }
+            ]
+        }
+    ]
 }
