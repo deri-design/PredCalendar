@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
 
 def fetch_drops():
-    print("--- Autonome Synchronisierung: TwitchDrops.app (Predecessor) ---")
+    print("--- Suche Predecessor Drops (Greedy Search Mode) ---")
     
     url = "https://twitchdrops.app/game/predecessor"
     headers = {
@@ -18,136 +18,121 @@ def fetch_drops():
     try:
         response = requests.get(url, headers=headers, timeout=15)
         if response.status_code != 200:
-            print(f"Fehler beim Laden der Seite: {response.status_code}")
+            print(f"Fehler: Seite konnte nicht geladen werden (Status {response.status_code})")
             return
 
         html = response.text
-        soup = BeautifulSoup(html, 'html.parser')
+        # Filtere den Bereich vor "PAST DROPS"
+        active_html = re.split(r'PAST DROPS', html, flags=re.IGNORECASE)[0]
+        soup = BeautifulSoup(active_html, 'html.parser')
         
-        # Wir suchen den Next.js Datenblock
-        next_data_script = soup.find('script', id='__NEXT_DATA__')
+        # --- METHODE: TOTALER JSON SCAN ---
+        # Wir suchen nach dem __NEXT_DATA__ Block
+        next_data_match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', html)
         
-        if next_data_script:
-            print("Analysiere Datenstruktur...")
-            data = json.loads(next_data_script.string)
+        if next_data_match:
+            print("Analysiere Daten-Haufen...")
+            full_json = json.loads(next_data_match.group(1))
             
-            # REKURSIVE SUCHE: Wir suchen im gesamten JSON nach Kampagnen-Objekten
-            # Eine Kampagne erkennen wir an 'items' (Liste) und 'ends_at' / 'endsAt'
-            def find_campaigns(obj):
+            # Wir suchen im gesamten JSON nach Objekten, die Predecessor-Daten enthalten
+            def find_campaigns_everywhere(obj):
                 found = []
                 if isinstance(obj, dict):
-                    # Kriterium für eine Kampagne: Hat Items und ein Enddatum
+                    # Wenn dieses Objekt 'items' und ein Datum hat, ist es eine Kampagne
                     if ('items' in obj or 'drops' in obj) and ('ends_at' in obj or 'endAt' in obj or 'endsAt' in obj):
-                        found.append(obj)
+                        # Prüfen ob Predecessor Bezug da ist (ID oder Name)
+                        json_str = json.dumps(obj)
+                        if "515056" in json_str or "Predecessor" in json_str:
+                            found.append(obj)
                     for v in obj.values():
-                        res = find_campaigns(v)
+                        res = find_campaigns_everywhere(v)
                         if res: found.extend(res)
                 elif isinstance(obj, list):
                     for i in obj:
-                        res = find_campaigns(i)
+                        res = find_campaigns_everywhere(i)
                         if res: found.extend(res)
                 return found
 
-            all_potential_campaigns = find_campaigns(data)
+            campaign_matches = find_campaigns_everywhere(full_json)
             now = datetime.now(timezone.utc)
 
-            for camp in all_potential_campaigns:
+            for camp in campaign_matches:
                 # Zeitraum bestimmen
-                start_str = camp.get('starts_at') or camp.get('startAt') or camp.get('startsAt')
-                end_str = camp.get('ends_at') or camp.get('endAt') or camp.get('endsAt')
+                s_str = camp.get('starts_at') or camp.get('startAt') or camp.get('startsAt')
+                e_str = camp.get('ends_at') or camp.get('endAt') or camp.get('endsAt')
                 
-                if not start_str or not end_str:
-                    continue
+                if not s_str or not e_str: continue
 
                 try:
-                    # ISO-Format parsen (verschiedene Varianten abfangen)
-                    start_dt = datetime.fromisoformat(start_str.replace('Z', '+00:00'))
-                    end_dt = datetime.fromisoformat(end_str.replace('Z', '+00:00'))
+                    # Zeit-Strings säubern und parsen
+                    s_dt = datetime.fromisoformat(s_str.replace('Z', '+00:00'))
+                    e_dt = datetime.fromisoformat(e_str.replace('Z', '+00:00'))
                     
-                    # Nur Kampagnen nehmen, die AKTUELL laufen
-                    if start_dt <= now <= end_dt:
-                        print(f"Aktive Kampagne identifiziert: {camp.get('name') or camp.get('title')}")
-                        
+                    if s_dt <= now <= e_dt:
+                        print(f"Aktive Kampagne gefunden: {camp.get('name') or camp.get('title')}")
                         rewards = []
                         items = camp.get('items') or camp.get('drops') or []
-                        for item in items:
-                            img = item.get('image') or item.get('image_url') or ""
-                            # Absolute URL sicherstellen
+                        for it in items:
+                            img = it.get('image') or it.get('image_url') or ""
                             if img.startswith('/'): img = "https://twitchdrops.app" + img
                             
                             rewards.append({
-                                "name": item.get('name', 'Belohnung'),
+                                "name": it.get('name', 'Reward'),
                                 "image": img,
-                                "minutes": int(item.get('required_minutes') or item.get('minutes') or 60)
+                                "minutes": int(it.get('required_minutes') or it.get('minutes', 60))
                             })
                         
                         if rewards:
                             active_campaigns.append({
                                 "campaign_name": camp.get('name') or camp.get('title', 'Predecessor Drops'),
-                                "start": start_str,
-                                "end": end_str,
+                                "start": s_str,
+                                "end": e_str,
                                 "rewards": rewards
                             })
-                except Exception as e:
-                    print(f"Fehler beim Zeit-Parsing einer Kampagne: {e}")
+                except: continue
 
-        # --- FALLBACK: DYNAMISCHES HTML PARSING (Falls JSON-Struktur sich komplett ändert) ---
+        # --- FALLBACK: HTML SCANNER ---
         if not active_campaigns:
-            print("JSON-Suche nicht erfolgreich. Nutze dynamisches HTML-Scanning...")
-            # Wir suchen Belohnungskarten im aktiven Bereich (vor "PAST DROPS")
-            active_html = re.split(r'PAST DROPS', html, flags=re.IGNORECASE)[0]
-            active_soup = BeautifulSoup(active_html, 'html.parser')
-            
-            # Wir nutzen die "Watch Xh"-Texte als Anker für Belohnungen
-            watch_markers = active_soup.find_all(string=re.compile(r'Watch \d+', re.I))
-            
+            print("JSON-Scan ergebnislos. Starte HTML-Analyse...")
+            # Wir suchen Belohnungskarten über den "Watch"-Text
+            watch_labels = soup.find_all(string=re.compile(r'Watch \d+', re.I))
             temp_rewards = []
-            for marker in watch_markers:
-                # Navigiere zum Karten-Container hoch (flexibel)
-                parent = marker.parent
-                card = None
-                for _ in range(5):
-                    if parent.find('img') and parent.find(re.compile('h[1-6]|p|span', re.I)):
-                        card = parent
-                        break
-                    parent = parent.parent
+            for wl in watch_labels:
+                card = wl.find_parent(class_=re.compile(r'card|item|reward', re.I)) or wl.parent.parent
+                img = card.find('img')
+                name_tag = card.find(['h3', 'h4', 'p', 'span'])
                 
-                if card:
-                    img = card.find('img')
-                    name_tag = card.find(re.compile('h[1-6]|p|span', re.I))
+                if img:
+                    img_url = img.get('src') or img.get('data-src') or ""
+                    if img_url.startswith('/'): img_url = "https://twitchdrops.app" + img_url
                     
-                    if img and name_tag:
-                        # Zeit berechnen
-                        time_text = marker.strip()
-                        mins = 60
-                        digits = re.findall(r'\d+', time_text)
-                        if digits:
-                            val = int(digits[0])
-                            mins = val * 60 if 'h' in time_text.lower() else val
-                        
-                        img_url = img.get('src') or img.get('data-src', '')
-                        if img_url.startswith('/'): img_url = "https://twitchdrops.app" + img_url
-
-                        reward_name = name_tag.get_text().strip()
-                        if not any(r['name'] == reward_name for r in temp_rewards):
-                            temp_rewards.append({
-                                "name": reward_name,
-                                "image": img_url,
-                                "minutes": mins
-                            })
+                    time_text = wl.strip()
+                    val = 60
+                    nums = re.findall(r'\d+', time_text)
+                    if nums:
+                        val = int(nums[0])
+                        if 'h' in time_text.lower(): val *= 60
+                    
+                    temp_rewards.append({
+                        "name": name_tag.get_text().strip() if name_tag else "Loot Reward",
+                        "image": img_url,
+                        "minutes": val
+                    })
             
             if temp_rewards:
+                # Dubletten filtern
+                unique = {r['name']: r for r in temp_rewards}.values()
                 active_campaigns.append({
-                    "campaign_name": "Active Twitch Drops",
-                    "start": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-                    "end": (now + timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                    "rewards": temp_rewards
+                    "campaign_name": "Predecessor Drops",
+                    "start": "2026-04-07T18:00:00Z",
+                    "end": "2026-05-04T18:00:00Z",
+                    "rewards": list(unique)
                 })
 
     except Exception as e:
-        print(f"Allgemeiner Scrape-Fehler: {e}")
+        print(f"Fehler: {e}")
 
-    # Zeitstempel für die Webseite (Deutschland)
+    # Zeitstempel für die Website (CEST)
     german_time = datetime.now(timezone.utc) + timedelta(hours=2)
     output = {
         "last_updated": german_time.strftime("%Y-%m-%d %H:%M:%S") + " (CEST)",
@@ -157,8 +142,7 @@ def fetch_drops():
     
     with open('drops.json', 'w') as f:
         json.dump(output, f, indent=4)
-    
-    print(f"Speichern beendet. Aktiv: {output['active']}")
+    print(f"Abgeschlossen. Aktiv: {output['active']}")
 
 if __name__ == "__main__":
     fetch_drops()
