@@ -24,8 +24,18 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding: 2rem 1rem; min-height: 100vh; position: relative; overflow-x: hidden; }
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('./img/bg.jpg') no-repeat center center; background-size: cover; opacity: 0.10; mix-blend-mode: luminosity; z-index: -1; pointer-events: none; }
+        
+        body { 
+            background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; 
+            padding: 2rem 1rem; min-height: 100vh; position: relative; overflow-x: hidden;
+        }
+
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('./img/bg.jpg') no-repeat center center; background-size: cover;
+            opacity: 0.10; mix-blend-mode: luminosity; z-index: -1; pointer-events: none;
+        }
+        
         .container { max-width: 1650px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
 
         /* --- HEADER SECTION --- */
@@ -47,8 +57,6 @@
             padding: 20px 15px; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.6); border-radius: 4px;
             display: flex; flex-direction: column; align-items: center; text-align: center;
         }
-
-        /* Stacked dailies columns adjustment */
         .hud-column.center-stack .hud-card { flex: none; padding: 12px 15px; }
 
         #hud-next { border-color: var(--gold); animation: pulseGold 4s infinite; }
@@ -77,13 +85,21 @@
         #hud-duration .timer-val, #hud-duration .timer-label { color: var(--red); border-color: var(--red); }
         .center-stack .timer-val { font-size: 1.2rem; width: 40px; padding: 4px 0; }
 
-        .drops-list { width: 100%; display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; flex: 1; overflow-y: auto; max-height: 180px; scrollbar-width: thin; }
-        .reward-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(145, 70, 255, 0.3); border-radius: 4px; padding: 6px; display: flex; align-items: center; gap: 10px; text-align: left; }
-        .reward-img { width: 35px; height: 35px; object-fit: contain; }
-        .reward-name { font-family: 'Inter', sans-serif; font-size: 0.65rem; color: #fff; font-weight: 900; line-height: 1.1; }
-        .reward-req { font-size: 0.6rem; color: var(--twitch); font-weight: 800; margin-top: 1px; }
+        /* --- REWARDS POPUP BUTTONS --- */
+        .rewards-btn { cursor: pointer; background: rgba(145, 70, 255, 0.1); border: 1px solid var(--twitch); color: #fff; padding: 8px 15px; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; transition: 0.2s; margin-bottom: 15px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .rewards-btn:hover { background: var(--twitch); transform: scale(1.02); }
+        .cta-btn { margin-top: 10px; padding: 10px; background: var(--twitch); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 800; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; width: 100%; text-align: center; box-shadow: 0 0 10px rgba(145, 70, 255, 0.3); transition: 0.2s; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(145, 70, 255, 0.5); }
 
-        .cta-btn { margin-top: 10px; padding: 8px; background: var(--twitch); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 800; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; width: 100%; text-align: center; box-shadow: 0 0 10px rgba(145, 70, 255, 0.3); }
+        /* --- DROPS MODAL --- */
+        #drops-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 20000; backdrop-filter: blur(10px); align-items: center; justify-content: center; }
+        .modal-content { background: var(--cell-glass); border: 2px solid var(--twitch); padding: 30px; border-radius: 4px; max-width: 500px; width: 90%; position: relative; box-shadow: 0 0 100px rgba(145, 70, 255, 0.3); }
+        .modal-close { position: absolute; top: 15px; right: 15px; cursor: pointer; color: #fff; font-weight: 900; font-size: 1.5rem; opacity: 0.6; transition: 0.2s; }
+        .modal-close:hover { opacity: 1; }
+        .reward-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(145, 70, 255, 0.3); border-radius: 4px; padding: 10px; display: flex; align-items: center; gap: 15px; text-align: left; margin-bottom: 10px; }
+        .reward-img { width: 50px; height: 50px; object-fit: contain; }
+        .reward-name { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #fff; font-weight: 900; }
+        .reward-req { font-size: 0.7rem; color: var(--twitch); font-weight: 800; margin-top: 2px; }
 
         /* --- LEGEND --- */
         .legend { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
@@ -91,13 +107,12 @@
         .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); }
         .dot.patch { background: var(--gold); } .dot.hero { background: var(--teal); } .dot.season { background: var(--red); } .dot.twitch { background: var(--twitch); } .dot.youtube { background: var(--youtube); }
 
-        /* --- CALENDAR NAVIGATION --- */
+        /* --- CALENDAR --- */
         .calendar-nav { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; }
         .nav-btn { background: var(--cell-glass); border: 1px solid var(--gold); color: var(--gold); padding: 10px 25px; font-weight: 900; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; border-radius: 2px; transition: 0.2s; }
         .nav-btn:hover { background: var(--gold); color: #000; }
         .nav-btn.active { background: var(--gold); color: #000; pointer-events: none; }
 
-        /* --- ROADMAP GRID --- */
         .roadmap-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: rgba(55, 169, 169, 0.2); border: 1px solid rgba(55, 169, 169, 0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
         .h-cell { background: var(--cell-glass); padding: 15px; text-align: center; font-size: 0.75rem; color: #5d7599; font-weight: 900; }
         .roadmap-grid .h-cell:nth-child(6), .roadmap-grid .h-cell:nth-child(7) { color: var(--gold-light); }
@@ -136,7 +151,7 @@
             <!-- COL 1: NEXT EVENT -->
             <div class="hud-column">
                 <div class="hud-card" id="hud-next">
-                    <span class="hud-label" style="color: var(--gold);">NEXT EVENT</span>
+                    <span class="hud-label" style="color: var(--gold);">UPCOMING EVENT</span>
                     <div class="hud-title" id="op-title">STANDBY</div>
                     <img id="hud-next-img" class="hud-img" src="" alt="Visual" style="display: none;">
                     <div class="timer-hud">
@@ -171,7 +186,7 @@
                 </div>
             </div>
 
-            <!-- COL 3: EVENT DURATION -->
+            <!-- COL 3: EVENT DURATION (NOW FIXED) -->
             <div class="hud-column">
                 <div class="hud-card" id="hud-duration">
                     <span class="hud-label" style="color: var(--red);">ACTIVE EVENT ENDS IN</span>
@@ -185,23 +200,38 @@
                 </div>
             </div>
 
-            <!-- COL 4: TWITCH DROPS -->
+            <!-- COL 4: TWITCH DROPS (HIDDEN REWARDS) -->
             <div class="hud-column">
                 <div class="hud-card" id="hud-drops">
                     <span class="hud-label" style="color: var(--twitch);">TWITCH DROPS</span>
                     <div class="hud-title" id="drops-title">SCANNING...</div>
-                    <div id="drops-rewards" class="drops-list"></div>
+                    
+                    <button class="rewards-btn" id="rewards-open-btn" style="display: none;" onclick="document.getElementById('drops-modal').style.display='flex'">
+                        <span style="background:#fff; color:var(--twitch); width:18px; height:18px; border-radius:50%; display:inline-block; font-size:12px; line-height:18px;">i</span>
+                        Rewards
+                    </button>
+
                     <div id="drops-timer-container" style="margin-top:10px; display:none;">
-                        <div style="font-size:0.6rem; color:var(--twitch); margin-bottom:5px; font-weight:900;">ENDS IN:</div>
+                        <div style="font-size:0.6rem; color:var(--twitch); margin-bottom:5px; font-weight:900; text-transform: uppercase; letter-spacing: 1px;">Ends In:</div>
                         <div class="timer-hud">
-                            <div class="timer-unit"><div class="timer-val" id="dr-d" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label">DAYS</div></div>
-                            <div class="timer-unit"><div class="timer-val" id="dr-h" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label">HRS</div></div>
-                            <div class="timer-unit"><div class="timer-val" id="dr-m" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label">MIN</div></div>
-                            <div class="timer-unit"><div class="timer-val" id="dr-s" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label">SEC</div></div>
+                            <div class="timer-unit"><div class="timer-val" id="dr-d" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">DAYS</div></div>
+                            <div class="timer-unit"><div class="timer-val" id="dr-h" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">HRS</div></div>
+                            <div class="timer-unit"><div class="timer-val" id="dr-m" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">MIN</div></div>
+                            <div class="timer-unit"><div class="timer-val" id="dr-s" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">SEC</div></div>
                         </div>
                     </div>
                     <a href="https://www.twitch.tv/directory/category/predecessor" target="_blank" class="cta-btn" id="drops-btn" style="display: none; background: var(--twitch);">Watch Live Streams →</a>
                 </div>
+            </div>
+        </div>
+
+        <!-- REWARDS MODAL -->
+        <div id="drops-modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="document.getElementById('drops-modal').style.display='none'">&times;</span>
+                <span class="hud-label" style="color: var(--twitch); margin-bottom: 20px; display: block;">Active Drops Rewards</span>
+                <div id="modal-rewards-list"></div>
+                <a href="https://www.twitch.tv/directory/category/predecessor" target="_blank" class="cta-btn" style="background: var(--twitch); margin-top: 20px; display: block;">Watch on Twitch</a>
             </div>
         </div>
 
@@ -235,9 +265,10 @@
         }
 
         function setupDrops(data) {
-            const titleEl = document.getElementById('drops-title'), container = document.getElementById('drops-rewards'), btn = document.getElementById('drops-btn'), timerHUD = document.getElementById('drops-timer-container');
+            const titleEl = document.getElementById('drops-title'), modalList = document.getElementById('modal-rewards-list'), openBtn = document.getElementById('rewards-open-btn'), btn = document.getElementById('drops-btn'), timerHUD = document.getElementById('drops-timer-container');
             if (data.active && data.campaigns.length > 0) {
-                titleEl.innerText = "ACTIVE NOW"; btn.style.display = "block"; timerHUD.style.display = "block"; let html = "";
+                titleEl.innerText = "ACTIVE NOW"; openBtn.style.display = "flex"; btn.style.display = "block"; timerHUD.style.display = "block"; 
+                let html = "";
                 data.campaigns.forEach(camp => {
                     const end = Date.parse(camp.end);
                     if (!isNaN(end)) { setInterval(() => { const diff = end - Date.now(); if (diff > 0) {
@@ -250,7 +281,7 @@
                         const h = Math.round(rew.minutes / 60); const timeStr = h >= 1 ? `${h} h` : `${rew.minutes} m`;
                         html += `<div class="reward-card"><img src="${rew.image}" class="reward-img"><div class="reward-info"><span class="reward-name">${rew.name}</span><span class="reward-req">Watch ${timeStr}</span></div></div>`;
                     });
-                }); container.innerHTML = html;
+                }); modalList.innerHTML = html;
             } else { titleEl.innerText = "NONE ACTIVE"; }
         }
 
@@ -285,11 +316,13 @@
 
         function setupCountdown() {
             setInterval(() => {
-                const now = Date.now(); const futureEvents = evData.map(e => ({ ...e, time: Date.parse(e.iso_date) })).filter(e => e.time > now).sort((a, b) => a.time - b.time);
+                const now = Date.now(); 
+                // upcoming: filter events that haven't started yet
+                const futureEvents = evData.map(e => ({ ...e, time: Date.parse(e.iso_date) })).filter(e => e.time > now).sort((a, b) => a.time - b.time);
                 if (futureEvents.length > 0) {
                     const nextEv = futureEvents[0]; document.getElementById('op-title').innerText = nextEv.title;
-                    if (nextEv.image) { hudImg.src = nextEv.image; hudImg.style.display = 'block'; }
-                    if (nextEv.type === 'twitch') { document.getElementById('twitch-btn').style.display = 'block'; }
+                    if (nextEv.image) { hudImg.src = nextEv.image; hudImg.style.display = 'block'; } else { hudImg.style.display = 'none'; }
+                    if (nextEv.type === 'twitch') { document.getElementById('twitch-btn').style.display = 'block'; } else { document.getElementById('twitch-btn').style.display = 'none'; }
                     const diff = nextEv.time - now;
                     document.getElementById('d').innerText = String(Math.floor(diff/864e5)).padStart(2,'0');
                     document.getElementById('h').innerText = String(Math.floor((diff%864e5)/36e5)).padStart(2,'0');
@@ -317,11 +350,13 @@
         function setupDurationCountdown() {
             setInterval(() => {
                 const now = Date.now();
+                // Find any event where NOW is between START and END
                 const activeEv = evData.find(e => {
                     const start = Date.parse(e.iso_date);
                     const end = Date.parse(e.end_date + "T23:59:59+02:00");
                     return now >= start && now <= end;
                 });
+                
                 if (activeEv) {
                     const end = Date.parse(activeEv.end_date + "T23:59:59+02:00");
                     const diff = end - now;
@@ -330,18 +365,27 @@
                     document.getElementById('dur-h').innerText = String(Math.floor((diff%864e5)/36e5)).padStart(2,'0');
                     document.getElementById('dur-m').innerText = String(Math.floor((diff%36e5)/6e4)).padStart(2,'0');
                     document.getElementById('dur-s').innerText = String(Math.floor((diff%6e4)/1000)).padStart(2,'0');
-                } else { document.getElementById('dur-title').innerText = "NONE ACTIVE"; }
+                } else { 
+                    document.getElementById('dur-title').innerText = "NONE ACTIVE"; 
+                    document.getElementById('dur-d').innerText = "00"; document.getElementById('dur-h').innerText = "00";
+                    document.getElementById('dur-m').innerText = "00"; document.getElementById('dur-s').innerText = "00";
+                }
             }, 1000);
         }
 
         window.showBriefing = function(e, obj) {
             const rect = e.currentTarget.getBoundingClientRect(); document.getElementById('b-tag').innerText = obj.title; document.getElementById('b-desc').innerText = obj.desc;
             if (obj.image) { bImg.src = obj.image; bImg.style.display = 'block'; } else { bImg.style.display = 'none'; }
-            briefing.style.display = 'block'; let x = rect.left + rect.width + 20; let y = rect.top + window.scrollY;
+            briefing.style.display = 'block'; 
+            let x = rect.left + rect.width + 20; let y = rect.top + window.scrollY;
             if (x + 450 > window.innerWidth) x = rect.left - 470;
             const bHeight = briefing.offsetHeight || 400; if (rect.top + bHeight > window.innerHeight) y = (rect.bottom + window.scrollY) - bHeight;
             briefing.style.left = x + 'px'; briefing.style.top = Math.max(40, y) + 'px';
         };
+
+        // Close Modal on outside click
+        window.onclick = function(event) { if (event.target == document.getElementById('drops-modal')) document.getElementById('drops-modal').style.display = "none"; }
+
         init();
     </script>
 </body>
