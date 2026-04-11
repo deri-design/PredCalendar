@@ -57,7 +57,9 @@
             padding: 20px 15px; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.6); border-radius: 4px;
             display: flex; flex-direction: column; align-items: center; text-align: center;
         }
-        .hud-column.center-stack .hud-card { flex: none; padding: 12px 15px; }
+
+        /* Fixed 50/50 Height Alignment for Column 2 */
+        .hud-column.center-stack .hud-card { flex: 1; min-height: 0; padding: 15px; justify-content: center; }
 
         #hud-next { border-color: var(--gold); animation: pulseGold 4s infinite; }
         #hud-daily { border-color: var(--teal); border-bottom: 4px solid var(--teal); animation: pulseTeal 4s infinite; }
@@ -73,7 +75,7 @@
 
         .hud-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-weight: 800; }
         .hud-title { font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #fff; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; font-weight: 900; margin-bottom: 10px; min-height: 2.5rem; display: flex; align-items: center; justify-content: center; }
-        .center-stack .hud-title { font-size: 1rem; min-height: 0; margin-bottom: 5px; }
+        .center-stack .hud-title { font-size: 1rem; min-height: 0; margin-bottom: 8px; }
         .hud-img { width: 100%; height: 120px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; margin-bottom: 10px; background: #0a0f18; }
         
         .timer-hud { display: flex; gap: 6px; margin-top: auto; }
@@ -83,9 +85,8 @@
         #hud-daily .timer-val, #hud-daily .timer-label { color: var(--teal); border-color: var(--teal); }
         #hud-quests .timer-val, #hud-quests .timer-label { color: var(--quest); border-color: var(--quest); }
         #hud-duration .timer-val, #hud-duration .timer-label { color: var(--red); border-color: var(--red); }
-        .center-stack .timer-val { font-size: 1.2rem; width: 40px; padding: 4px 0; }
+        .center-stack .timer-val { font-size: 1.2rem; width: 45px; padding: 4px 0; }
 
-        /* --- REWARDS POPUP BUTTONS --- */
         .rewards-btn { cursor: pointer; background: rgba(145, 70, 255, 0.1); border: 1px solid var(--twitch); color: #fff; padding: 8px 15px; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; transition: 0.2s; margin-bottom: 15px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .rewards-btn:hover { background: var(--twitch); transform: scale(1.02); }
         .cta-btn { margin-top: 10px; padding: 10px; background: var(--twitch); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 800; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; width: 100%; text-align: center; box-shadow: 0 0 10px rgba(145, 70, 255, 0.3); transition: 0.2s; }
@@ -107,12 +108,13 @@
         .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); }
         .dot.patch { background: var(--gold); } .dot.hero { background: var(--teal); } .dot.season { background: var(--red); } .dot.twitch { background: var(--twitch); } .dot.youtube { background: var(--youtube); }
 
-        /* --- CALENDAR --- */
+        /* --- CALENDAR NAVIGATION --- */
         .calendar-nav { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; }
         .nav-btn { background: var(--cell-glass); border: 1px solid var(--gold); color: var(--gold); padding: 10px 25px; font-weight: 900; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; border-radius: 2px; transition: 0.2s; }
         .nav-btn:hover { background: var(--gold); color: #000; }
         .nav-btn.active { background: var(--gold); color: #000; pointer-events: none; }
 
+        /* --- ROADMAP GRID --- */
         .roadmap-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: rgba(55, 169, 169, 0.2); border: 1px solid rgba(55, 169, 169, 0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
         .h-cell { background: var(--cell-glass); padding: 15px; text-align: center; font-size: 0.75rem; color: #5d7599; font-weight: 900; }
         .roadmap-grid .h-cell:nth-child(6), .roadmap-grid .h-cell:nth-child(7) { color: var(--gold-light); }
@@ -133,7 +135,7 @@
         .e-title { font-weight: 900; color: var(--gold); font-size: 0.6rem; text-transform: uppercase; }
         .event.hero .e-title { color: var(--teal); } .event.season .e-title { color: var(--red); } .event.twitch .e-title { color: #bf94ff; } .event.youtube .e-title { color: #ff6666; }
 
-        /* --- POPUP --- */
+        /* --- BRIEFING POPUP --- */
         #global-briefing { display: none; position: fixed; width: 450px; max-height: 85vh; overflow-y: auto; background: rgba(13, 19, 31, 0.95); backdrop-filter: var(--glass-blur); border: 2px solid var(--gold); z-index: 10000; pointer-events: none; scrollbar-width: thin; box-shadow: 0 0 100px #000; }
         .briefing-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .briefing-content { padding: 25px; }
@@ -164,7 +166,7 @@
                 </div>
             </div>
 
-            <!-- COL 2: DAILIES -->
+            <!-- COL 2: DAILIES (50/50 Split) -->
             <div class="hud-column center-stack">
                 <div class="hud-card" id="hud-daily">
                     <span class="hud-label" style="color: var(--teal);">DAILY RESET (10 AM CEST)</span>
@@ -186,7 +188,7 @@
                 </div>
             </div>
 
-            <!-- COL 3: EVENT DURATION (NOW FIXED) -->
+            <!-- COL 3: EVENT DURATION -->
             <div class="hud-column">
                 <div class="hud-card" id="hud-duration">
                     <span class="hud-label" style="color: var(--red);">ACTIVE EVENT ENDS IN</span>
@@ -200,19 +202,19 @@
                 </div>
             </div>
 
-            <!-- COL 4: TWITCH DROPS (HIDDEN REWARDS) -->
+            <!-- COL 4: TWITCH DROPS -->
             <div class="hud-column">
                 <div class="hud-card" id="hud-drops">
                     <span class="hud-label" style="color: var(--twitch);">TWITCH DROPS</span>
                     <div class="hud-title" id="drops-title">SCANNING...</div>
                     
                     <button class="rewards-btn" id="rewards-open-btn" style="display: none;" onclick="document.getElementById('drops-modal').style.display='flex'">
-                        <span style="background:#fff; color:var(--twitch); width:18px; height:18px; border-radius:50%; display:inline-block; font-size:12px; line-height:18px;">i</span>
+                        <span style="background:#fff; color:var(--twitch); width:18px; height:18px; border-radius:50%; display:inline-block; font-size:12px; line-height:18px; font-weight: 900;">i</span>
                         Rewards
                     </button>
 
                     <div id="drops-timer-container" style="margin-top:10px; display:none;">
-                        <div style="font-size:0.6rem; color:var(--twitch); margin-bottom:5px; font-weight:900; text-transform: uppercase; letter-spacing: 1px;">Ends In:</div>
+                        <div style="font-size:0.6rem; color:var(--twitch); margin-bottom:5px; font-weight:900; text-transform: uppercase;">Ends In:</div>
                         <div class="timer-hud">
                             <div class="timer-unit"><div class="timer-val" id="dr-d" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">DAYS</div></div>
                             <div class="timer-unit"><div class="timer-val" id="dr-h" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">HRS</div></div>
@@ -250,6 +252,7 @@
         </div>
         <div class="roadmap-grid" id="main-grid"></div>
     </div>
+
     <div id="global-briefing"><img id="b-img" class="briefing-img" src="" alt=""><div class="briefing-content"><span id="b-tag" class="briefing-tag"></span><div id="b-desc" class="briefing-desc"></div></div></div>
     
     <script>
@@ -316,9 +319,12 @@
 
         function setupCountdown() {
             setInterval(() => {
-                const now = Date.now(); 
-                // upcoming: filter events that haven't started yet
-                const futureEvents = evData.map(e => ({ ...e, time: Date.parse(e.iso_date) })).filter(e => e.time > now).sort((a, b) => a.time - b.time);
+                const now = Date.now();
+                // Find next event where start time is in the future
+                const futureEvents = evData.map(e => ({ ...e, time: Date.parse(e.iso_date) }))
+                    .filter(e => e.time > now)
+                    .sort((a, b) => a.time - b.time);
+
                 if (futureEvents.length > 0) {
                     const nextEv = futureEvents[0]; document.getElementById('op-title').innerText = nextEv.title;
                     if (nextEv.image) { hudImg.src = nextEv.image; hudImg.style.display = 'block'; } else { hudImg.style.display = 'none'; }
@@ -349,17 +355,23 @@
 
         function setupDurationCountdown() {
             setInterval(() => {
-                const now = Date.now();
-                // Find any event where NOW is between START and END
+                const now = new Date();
+                const nowTS = now.getTime();
+                const todayStr = now.toISOString().split('T')[0];
+
+                // Check for ANY active event spanning current time
                 const activeEv = evData.find(e => {
-                    const start = Date.parse(e.iso_date);
-                    const end = Date.parse(e.end_date + "T23:59:59+02:00");
-                    return now >= start && now <= end;
+                    const startTS = Date.parse(e.iso_date);
+                    // Force the end of the end_date day in CEST (+02:00)
+                    const endTS = Date.parse(e.end_date + "T23:59:59+02:00");
+                    
+                    // Logic: now is between start time and end of range
+                    return nowTS >= startTS && nowTS <= endTS;
                 });
                 
                 if (activeEv) {
-                    const end = Date.parse(activeEv.end_date + "T23:59:59+02:00");
-                    const diff = end - now;
+                    const endTS = Date.parse(activeEv.end_date + "T23:59:59+02:00");
+                    const diff = endTS - nowTS;
                     document.getElementById('dur-title').innerText = activeEv.title;
                     document.getElementById('dur-d').innerText = String(Math.floor(diff/864e5)).padStart(2,'0');
                     document.getElementById('dur-h').innerText = String(Math.floor((diff%864e5)/36e5)).padStart(2,'0');
@@ -383,7 +395,6 @@
             briefing.style.left = x + 'px'; briefing.style.top = Math.max(40, y) + 'px';
         };
 
-        // Close Modal on outside click
         window.onclick = function(event) { if (event.target == document.getElementById('drops-modal')) document.getElementById('drops-modal').style.display = "none"; }
 
         init();
