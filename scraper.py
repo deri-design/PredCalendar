@@ -22,14 +22,16 @@ def get_discord_messages():
 def find_deep_img(obj):
     if not obj: return ""
     if isinstance(obj, str):
-        if any(ext in obj.lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']) and 'http' in obj:
-            return obj
+        if any(ext in obj.lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']) and 'http' in obj: return obj
     if isinstance(obj, dict):
         for key in ['url', 'proxy_url']:
-            if key in obj and isinstance(obj[key], str) and any(ext in obj[key].lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']):
-                return obj[key]
+            if key in obj and isinstance(obj[key], str) and any(ext in obj[key].lower() for ext in ['.png', '.jpg', '.jpeg', '.webp']): return obj[key]
         for v in obj.values():
             res = find_deep_img(v)
+            if res: return res
+    if isinstance(obj, list):
+        for i in obj:
+            res = find_deep_img(i)
             if res: return res
     return ""
 
@@ -59,7 +61,7 @@ def ask_groq(messages_text):
     TASK: Extract events with exact dates and ranges.
     RULES:
     1. Identify START DATE (YYYY-MM-DD).
-    2. Identify END DATE (YYYY-MM-DD). If it's a one-day event, use the same date as START DATE.
+    2. Identify END DATE (YYYY-MM-DD). If one-day, use same as START.
     3. Identify START TIME (HH:MM) - e.g. "2:00 PM" is 14:00. Default 14:00.
     4. Return ONLY valid JSON list. "index" must match header index.
     Messages:
@@ -99,21 +101,16 @@ def scrape():
         date = ar.get('date') or intel['posted']
         end_date = ar.get('end_date') or date
         time = ar.get('time', '14:00')
-        iso = f"{date}T{time}:00+02:00" # CEST
+        iso = f"{date}T{time}:00+02:00"
 
         etype = ar.get('type', 'news')
         if "twitch" in intel['raw'].lower(): etype = "twitch"
-        if "v1." in intel['raw'].lower() or "patch" in intel['raw'].lower(): etype = "patch"
+        if "patch" in intel['raw'].lower() or "v1." in intel['raw'].lower(): etype = "patch"
 
         event_map[str(intel['id'])] = {
-            "original_id": intel['id'], 
-            "date": date, 
-            "end_date": end_date,
-            "iso_date": iso,
-            "title": str(ar.get('title', 'UPDATE')).upper()[:40], 
-            "type": etype,
-            "desc": intel['clean'], 
-            "image": intel['img'],
+            "original_id": intel['id'], "date": date, "end_date": end_date, "iso_date": iso,
+            "title": str(ar.get('title', 'UPDATE')).upper()[:40], "type": etype,
+            "desc": intel['clean'], "image": intel['img'],
             "url": next((u for u in intel['urls'] if "playp.red" in u or "predecessor" in u), "https://www.predecessorgame.com/en-US/news")
         }
 
