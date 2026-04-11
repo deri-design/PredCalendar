@@ -58,9 +58,8 @@
             display: flex; flex-direction: column; align-items: center; text-align: center;
         }
 
-        /* Fixed 50/50 Alignment */
-        .center-stack { justify-content: space-between; }
-        .center-stack .hud-card { flex: 1; height: calc(50% - 7.5px); padding: 15px; }
+        /* Fixed 50/50 Height Alignment for Column 2 */
+        .center-stack .hud-card { flex: 1; min-height: 0; justify-content: center; }
 
         #hud-next { border-color: var(--gold); animation: pulseGold 4s infinite; }
         #hud-daily { border-color: var(--teal); border-bottom: 4px solid var(--teal); animation: pulseTeal 4s infinite; }
@@ -76,7 +75,7 @@
 
         .hud-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-weight: 800; }
         .hud-title { font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #fff; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2; font-weight: 900; margin-bottom: 10px; min-height: 2.5rem; display: flex; align-items: center; justify-content: center; }
-        .center-stack .hud-title { font-size: 1rem; min-height: 0; margin-bottom: 8px; }
+        .center-stack .hud-title { font-size: 1rem; min-height: 0; margin-bottom: 5px; }
         .hud-img { width: 100%; height: 140px; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; margin-bottom: 10px; background: #0a0f18; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         
         .timer-hud { display: flex; gap: 6px; margin-top: auto; }
@@ -86,7 +85,7 @@
         #hud-daily .timer-val, #hud-daily .timer-label { color: var(--teal); border-color: var(--teal); }
         #hud-quests .timer-val, #hud-quests .timer-label { color: var(--quest); border-color: var(--quest); }
         #hud-duration .timer-val, #hud-duration .timer-label { color: var(--red); border-color: var(--red); }
-        .center-stack .timer-val { font-size: 1.25rem; width: 45px; padding: 4px 0; }
+        .center-stack .timer-val { font-size: 1.2rem; width: 45px; padding: 4px 0; }
 
         .rewards-btn { cursor: pointer; background: rgba(145, 70, 255, 0.1); border: 1px solid var(--twitch); color: #fff; padding: 8px 15px; font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; transition: 0.2s; margin-bottom: 15px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .rewards-btn:hover { background: var(--twitch); transform: scale(1.02); }
@@ -135,7 +134,7 @@
         .e-title { font-weight: 900; color: var(--gold); font-size: 0.6rem; text-transform: uppercase; }
         .event.hero .e-title { color: var(--teal); } .event.season .e-title { color: var(--red); } .event.twitch .e-title { color: #bf94ff; } .event.youtube .e-title { color: #ff6666; }
 
-        /* --- BRIEFING POPUP --- */
+        /* --- POPUP --- */
         #global-briefing { display: none; position: fixed; width: 450px; max-height: 85vh; overflow-y: auto; background: rgba(13, 19, 31, 0.95); backdrop-filter: var(--glass-blur); border: 2px solid var(--gold); z-index: 10000; pointer-events: none; scrollbar-width: thin; box-shadow: 0 0 100px #000; }
         .briefing-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .briefing-content { padding: 25px; }
@@ -150,7 +149,7 @@
         <header class="header"><h1>PREDCALENDAR</h1><div class="subline">Unofficial Predecessor Event Calendar</div></header>
         
         <div class="huds-wrapper">
-            <!-- COL 1: UPCOMING -->
+            <!-- COL 1 -->
             <div class="hud-column">
                 <div class="hud-card" id="hud-next">
                     <span class="hud-label" style="color: var(--gold);">UPCOMING EVENT</span>
@@ -166,7 +165,7 @@
                 </div>
             </div>
 
-            <!-- COL 2: DAILIES (50/50 Height Fixed) -->
+            <!-- COL 2 -->
             <div class="hud-column center-stack">
                 <div class="hud-card" id="hud-daily">
                     <span class="hud-label" style="color: var(--teal);">DAILY RESET (10 AM CEST)</span>
@@ -188,7 +187,7 @@
                 </div>
             </div>
 
-            <!-- COL 3: ACTIVE EVENT (FIXED PRIORITY) -->
+            <!-- COL 3 (ACTIVE EVENT) -->
             <div class="hud-column">
                 <div class="hud-card" id="hud-duration">
                     <span class="hud-label" style="color: var(--red);">ACTIVE EVENT ENDS IN</span>
@@ -202,19 +201,14 @@
                 </div>
             </div>
 
-            <!-- COL 4: TWITCH DROPS -->
+            <!-- COL 4 -->
             <div class="hud-column">
                 <div class="hud-card" id="hud-drops">
                     <span class="hud-label" style="color: var(--twitch);">TWITCH DROPS</span>
                     <div class="hud-title" id="drops-title">SCANNING...</div>
-                    
-                    <button class="rewards-btn" id="rewards-open-btn" style="display: none;" onclick="document.getElementById('drops-modal').style.display='flex'">
-                        <span style="background:#fff; color:var(--twitch); width:18px; height:18px; border-radius:50%; display:inline-block; font-size:12px; line-height:18px; font-weight: 900;">i</span>
-                        Rewards
-                    </button>
-
+                    <button class="rewards-btn" id="rewards-open-btn" style="display: none;" onclick="document.getElementById('drops-modal').style.display='flex'">Rewards</button>
                     <div id="drops-timer-container" style="margin-top:10px; display:none;">
-                        <div style="font-size:0.6rem; color:var(--twitch); margin-bottom:5px; font-weight:900; text-transform: uppercase;">Ends In:</div>
+                        <div style="font-size:0.6rem; color:var(--twitch); margin-bottom:5px; font-weight:900;">Ends In:</div>
                         <div class="timer-hud">
                             <div class="timer-unit"><div class="timer-val" id="dr-d" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">DAYS</div></div>
                             <div class="timer-unit"><div class="timer-val" id="dr-h" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">HRS</div></div>
@@ -222,18 +216,16 @@
                             <div class="timer-unit"><div class="timer-val" id="dr-s" style="font-size:1.1rem; width:45px;">00</div><div class="timer-label" style="font-size:0.45rem;">SEC</div></div>
                         </div>
                     </div>
-                    <a href="https://www.twitch.tv/directory/category/predecessor" target="_blank" class="cta-btn" id="drops-btn" style="display: none; background: var(--twitch);">Watch Live Streams →</a>
+                    <a href="https://www.twitch.tv/directory/category/predecessor" target="_blank" class="cta-btn" id="drops-btn" style="display: none;">Watch Live Streams →</a>
                 </div>
             </div>
         </div>
 
-        <!-- REWARDS MODAL -->
         <div id="drops-modal">
             <div class="modal-content">
                 <span class="modal-close" onclick="document.getElementById('drops-modal').style.display='none'">&times;</span>
                 <span class="hud-label" style="color: var(--twitch); margin-bottom: 20px; display: block;">Active Drops Rewards</span>
                 <div id="modal-rewards-list"></div>
-                <a href="https://www.twitch.tv/directory/category/predecessor" target="_blank" class="cta-btn" style="background: var(--twitch); margin-top: 20px; display: block;">Watch on Twitch</a>
             </div>
         </div>
 
@@ -252,7 +244,6 @@
         </div>
         <div class="roadmap-grid" id="main-grid"></div>
     </div>
-
     <div id="global-briefing"><img id="b-img" class="briefing-img" src="" alt=""><div class="briefing-content"><span id="b-tag" class="briefing-tag"></span><div id="b-desc" class="briefing-desc"></div></div></div>
     
     <script>
@@ -319,8 +310,8 @@
 
         function setupCountdown() {
             setInterval(() => {
-                const now = Date.now(); 
-                // Only show events that have NOT started yet
+                const now = Date.now();
+                // Filter events that haven't started yet and aren't running
                 const futureEvents = evData.map(e => ({ ...e, time: Date.parse(e.iso_date) }))
                     .filter(e => e.time > now)
                     .sort((a, b) => a.time - b.time);
@@ -341,52 +332,45 @@
         function setupDailyCountdown() {
             setInterval(() => {
                 const now = Date.now();
-                const targetLoot = new Date(); targetLoot.setUTCHours(8, 0, 0, 0); if (now >= targetLoot.getTime()) targetLoot.setUTCDate(targetLoot.getUTCDate() + 1);
-                const targetQuests = new Date(); targetQuests.setUTCHours(10, 0, 0, 0); if (now >= targetQuests.getTime()) targetQuests.setUTCDate(targetQuests.getUTCDate() + 1);
-                const diffLoot = targetLoot.getTime() - now; const diffQuests = targetQuests.getTime() - now;
-                document.getElementById('daily-h').innerText = String(Math.floor((diffLoot % 864e5) / 36e5)).padStart(2, '0');
-                document.getElementById('daily-m').innerText = String(Math.floor((diffLoot % 36e5) / 6e4)).padStart(2, '0');
-                document.getElementById('daily-s').innerText = String(Math.floor((diffLoot % 6e4) / 1000)).padStart(2, '0');
-                document.getElementById('quest-h').innerText = String(Math.floor((diffQuests % 864e5) / 36e5)).padStart(2, '0');
-                document.getElementById('quest-m').innerText = String(Math.floor((diffQuests % 36e5) / 6e4)).padStart(2, '0');
-                document.getElementById('quest-s').innerText = String(Math.floor((diffQuests % 6e4) / 1000)).padStart(2, '0');
+                const tLoot = new Date(); tLoot.setUTCHours(8, 0, 0, 0); if (now >= tLoot.getTime()) tLoot.setUTCDate(tLoot.getUTCDate() + 1);
+                const tQuest = new Date(); tQuest.setUTCHours(10, 0, 0, 0); if (now >= tQuest.getTime()) tQuest.setUTCDate(tQuest.getUTCDate() + 1);
+                const dL = tLoot.getTime() - now, dQ = tQuest.getTime() - now;
+                document.getElementById('daily-h').innerText = String(Math.floor((dL % 864e5) / 36e5)).padStart(2, '0');
+                document.getElementById('daily-m').innerText = String(Math.floor((dL % 36e5) / 6e4)).padStart(2, '0');
+                document.getElementById('daily-s').innerText = String(Math.floor((dL % 6e4) / 1000)).padStart(2, '0');
+                document.getElementById('quest-h').innerText = String(Math.floor((dQ % 864e5) / 36e5)).padStart(2, '0');
+                document.getElementById('quest-m').innerText = String(Math.floor((dQ % 36e5) / 6e4)).padStart(2, '0');
+                document.getElementById('quest-s').innerText = String(Math.floor((dQ % 6e4) / 1000)).padStart(2, '0');
             }, 1000);
         }
 
         function setupDurationCountdown() {
             setInterval(() => {
                 const nowTS = Date.now();
-                
-                // Prioritize events that have "XP" in the title and are currently within range
+                const now = new Date();
+                const curStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+
+                // Find currently running events by date comparison
                 const activeEvents = evData.filter(e => {
-                    const startTS = Date.parse(e.iso_date);
-                    const endDay = e.end_date || e.date;
-                    const endTS = Date.parse(endDay + "T23:59:59+02:00");
-                    return nowTS >= startTS && nowTS <= endTS;
+                    const end = e.end_date || e.date;
+                    return curStr >= e.date && curStr <= end;
                 });
 
-                // Sort to put XP events first if multiple are active
-                activeEvents.sort((a, b) => {
-                    const aXP = a.title.toUpperCase().includes("XP");
-                    const bXP = b.title.toUpperCase().includes("XP");
-                    return bXP - aXP;
-                });
+                // Prioritize XP events
+                activeEvents.sort((a,b) => b.title.includes("XP") - a.title.includes("XP"));
                 
                 if (activeEvents.length > 0) {
-                    const activeEv = activeEvents[0];
-                    const endDay = activeEv.end_date || activeEv.date;
-                    const endTS = Date.parse(endDay + "T23:59:59+02:00");
+                    const e = activeEvents[0];
+                    const endTS = Date.parse((e.end_date || e.date) + "T23:59:59+02:00");
                     const diff = endTS - nowTS;
-                    
-                    document.getElementById('dur-title').innerText = activeEv.title;
+                    document.getElementById('dur-title').innerText = e.title;
                     document.getElementById('dur-d').innerText = String(Math.floor(diff/864e5)).padStart(2,'0');
                     document.getElementById('dur-h').innerText = String(Math.floor((diff%864e5)/36e5)).padStart(2,'0');
                     document.getElementById('dur-m').innerText = String(Math.floor((diff%36e5)/6e4)).padStart(2,'0');
                     document.getElementById('dur-s').innerText = String(Math.floor((diff%6e4)/1000)).padStart(2,'0');
-                } else { 
-                    document.getElementById('dur-title').innerText = "NONE ACTIVE"; 
-                    document.getElementById('dur-d').innerText = "00"; document.getElementById('dur-h').innerText = "00";
-                    document.getElementById('dur-m').innerText = "00"; document.getElementById('dur-s').innerText = "00";
+                } else {
+                    document.getElementById('dur-title').innerText = "NONE ACTIVE";
+                    ["dur-d","dur-h","dur-m","dur-s"].forEach(id => document.getElementById(id).innerText = "00");
                 }
             }, 1000);
         }
@@ -394,15 +378,11 @@
         window.showBriefing = function(e, obj) {
             const rect = e.currentTarget.getBoundingClientRect(); document.getElementById('b-tag').innerText = obj.title; document.getElementById('b-desc').innerText = obj.desc;
             if (obj.image) { bImg.src = obj.image; bImg.style.display = 'block'; } else { bImg.style.display = 'none'; }
-            briefing.style.display = 'block'; 
-            let x = rect.left + rect.width + 20; let y = rect.top + window.scrollY;
+            briefing.style.display = 'block'; let x = rect.left + rect.width + 20; let y = rect.top + window.scrollY;
             if (x + 450 > window.innerWidth) x = rect.left - 470;
             const bHeight = briefing.offsetHeight || 400; if (rect.top + bHeight > window.innerHeight) y = (rect.bottom + window.scrollY) - bHeight;
             briefing.style.left = x + 'px'; briefing.style.top = Math.max(40, y) + 'px';
         };
-
-        window.onclick = function(event) { if (event.target == document.getElementById('drops-modal')) document.getElementById('drops-modal').style.display = "none"; }
-
         init();
     </script>
 </body>
