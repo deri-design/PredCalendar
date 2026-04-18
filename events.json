@@ -1,11 +1,11 @@
 {
-    "last_updated": "2026-04-18 05:11:52",
+    "last_updated": "2026-04-18 07:16:54",
     "events": [
         {
             "original_id": "1491804563257163796",
-            "date": "2026-04-19",
+            "date": "2026-04-18",
             "end_date": "2026-04-19",
-            "iso_date": "2026-04-19T14:00:00+02:00",
+            "iso_date": "2026-04-18T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# Double XP Weekend \ud83d\udca5\n\nThe affinity cap has been raised and to celebrate, we've got double account and affinity XP all weekend - starting tomorrow! \n\nLogin and play between <t:1775822400:f> and <t:1776081600:f> to earn those levels! \ud83d\udcc8\n\n\ud83d\udd14 @Official News",
@@ -17,7 +17,7 @@
             "date": "2026-04-07",
             "end_date": "2026-04-07",
             "iso_date": "2026-04-07T14:00:00+02:00",
-            "title": "V1.13 UPDATE",
+            "title": "V1.13 PATCH NOTES",
             "type": "patch",
             "desc": "Hey everyone!\n\nQuick heads up - patch notes for V1.13 will be dropping on April 7th due to the Easter Holidays. \n\nThis **doesn't affect the update** itself, which will launch as planned on **April 7th** as well. \n\nWe'll be going through a bunch of new stuff in our Dev Stream on Wednesday 1st, so be sure to tune in and find out more about what's coming up in V1.13: Throne of Thorns!",
             "image": "",
