@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-04-19 18:59:07",
+    "last_updated": "2026-04-19 21:41:07",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -17,7 +17,7 @@
             "date": "2026-04-07",
             "end_date": "2026-04-07",
             "iso_date": "2026-04-07T14:00:00+02:00",
-            "title": "V1.13 UPDATE",
+            "title": "V1.13 PATCH NOTES",
             "type": "patch",
             "desc": "Hey everyone!\n\nQuick heads up - patch notes for V1.13 will be dropping on April 7th due to the Easter Holidays. \n\nThis **doesn't affect the update** itself, which will launch as planned on **April 7th** as well. \n\nWe'll be going through a bunch of new stuff in our Dev Stream on Wednesday 1st, so be sure to tune in and find out more about what's coming up in V1.13: Throne of Thorns!",
             "image": "",
@@ -27,11 +27,11 @@
             "original_id": "1487185725479714916",
             "date": "2026-04-01",
             "end_date": "2026-04-01",
-            "iso_date": "2026-04-01T14:00:00+02:00",
+            "iso_date": "2026-04-01T18:00:00+02:00",
             "title": "V1.13 DEV STREAM",
             "type": "patch",
             "desc": "# \ud83c\udfa5 v1.13 Dev Stream - 1st April \n\nv1.13 Throne of Thorns is just around the corner! We'll be live on Twitch next week for a first look at the new update \ud83c\udf39\n\nMark it in your calendar and we'll see you in chat!\n\ud83d\uddd3\ufe0f01 April | \u23f0 6PM UTC / 2PM ET\n\n\ud83d\udd14",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69e5e2e3&is=69e49163&hm=70557e0cdab6857772cfc211c86673e67a1149802fea21162798619858dfc46f&",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69e68ba3&is=69e53a23&hm=c0b5a5fc464d604ee837433e36523728c36fc8e03b517caf0f941644bd89cdf7&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -39,7 +39,7 @@
             "date": "2026-04-07",
             "end_date": "2026-04-07",
             "iso_date": "2026-04-07T14:00:00+02:00",
-            "title": "ADELE HERO RELEASE",
+            "title": "ADELE QUEEN OF THORNS RELEASE",
             "type": "patch",
             "desc": "Thorns are spreading across the battlefield\u2026 \ud83c\udf39 \n\nThat can only mean one thing...\n\nAdele is joining the fight in V1.13: Throne of Thorns, coming April 7th!\n\nhttps://youtu.be/_mxjJioNuhI\n\n\ud83d\udd14 @Official News\nAdele Queen of Thorns | Reveal Trailer | Predecessor\nAdele joins the fight in update 1.13: Throne of Thorns on April 7th!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/_mxjJioNuhI/maxresdefault.jpg",
@@ -64,7 +64,7 @@
             "title": "V1.13: THRONE OF THORNS RELEASE",
             "type": "patch",
             "desc": "V1.13: Throne of Thorns drops April 7th - very soon \ud83d\udc40\n\nAnd we\u2019ve got some news to share... here's first of them:\n\nHero Affinity level cap is increasing all the way to Level 99! \ud83d\udd25\n\nYou asked for it, and it\u2019s finally here. Time to push your mains further than ever before \ud83d\udcaa\n\n\ud83d\udd14",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69e5dfd1&is=69e48e51&hm=470de675357fe66f07866cc9ad562b3a54f21ffb78a0397a4222332d98c17146&",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69e68891&is=69e53711&hm=46c346344d073ed3e7cc2de67118f9f77a399e28673d620314ba3d202faa30d3&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -72,7 +72,7 @@
             "date": "2026-04-07",
             "end_date": "2026-04-07",
             "iso_date": "2026-04-07T14:00:00+02:00",
-            "title": "MERCH DROP",
+            "title": "PLUSH PRE-ORDERS",
             "type": "news",
             "desc": "He\u2019s here! \ud83e\udd17\n\nWe\u2019ve teamed up with Youtooz for our very first merch drop - introducing the plush version of our own Nyrian Gladiator, Zarus! \ud83e\udd8e\n\nPre-orders go live on their website starting April 7, and we\u2019ll let you know the moment they\u2019re available \ud83d\uddd3\ufe0f\n\nWe\u2019ll also be giving away some plushies to a few lucky winners, so stay tuned for more details!\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1488568581737152654/predecessor-plush-zarus_reveal_wide_1.png?ex=69e64d86&is=69e4fc06&hm=a98bd26f5e0cdcc2a853b375decbc293c35840ab6a9612adff5b85b8b64fb3ff&",
