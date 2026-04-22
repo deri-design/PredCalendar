@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-04-22 07:57:47",
+    "last_updated": "2026-04-22 10:22:19",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -27,11 +27,11 @@
             "original_id": "1487185725479714916",
             "date": "2026-04-01",
             "end_date": "2026-04-01",
-            "iso_date": "2026-04-01T14:00:00+02:00",
+            "iso_date": "2026-04-01T18:00:00+02:00",
             "title": "V1.13 DEV STREAM",
             "type": "patch",
             "desc": "# \ud83c\udfa5 v1.13 Dev Stream - 1st April \n\nv1.13 Throne of Thorns is just around the corner! We'll be live on Twitch next week for a first look at the new update \ud83c\udf39\n\nMark it in your calendar and we'll see you in chat!\n\ud83d\uddd3\ufe0f01 April | \u23f0 6PM UTC / 2PM ET\n\n\ud83d\udd14",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69e92ea3&is=69e7dd23&hm=da53134179063b6218148d3d25b296f8b3f0938db5d38a176cbc49e0d72f4be0&",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487185724934590584/1.3_Stream_1080.jpg?ex=69e9d763&is=69e885e3&hm=f9894d401248ea39d99c298f9c3514edabd5b708d55419bbd5f2ffadaf2445d5&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -64,7 +64,7 @@
             "title": "V1.13: THRONE OF THORNS RELEASE",
             "type": "patch",
             "desc": "V1.13: Throne of Thorns drops April 7th - very soon \ud83d\udc40\n\nAnd we\u2019ve got some news to share... here's first of them:\n\nHero Affinity level cap is increasing all the way to Level 99! \ud83d\udd25\n\nYou asked for it, and it\u2019s finally here. Time to push your mains further than ever before \ud83d\udcaa\n\n\ud83d\udd14",
-            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69e92b91&is=69e7da11&hm=ae1633a5e21ea45d67beecde963b24ab7dbb19d757ce0c5cd0f10f5c3931da1d&",
+            "image": "https://cdn.discordapp.com/attachments/1487129767865225261/1487182428861890600/image_173.png?ex=69e9d451&is=69e882d1&hm=c7591eb1f8b93ebf3fde8d1f7c11b5c416099f56c4861433b6e88dca4f8411a7&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
