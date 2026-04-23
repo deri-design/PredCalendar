@@ -1,15 +1,15 @@
 {
-    "last_updated": "2026-04-22 21:54:30",
+    "last_updated": "2026-04-23 03:22:35",
     "events": [
         {
             "original_id": "1491804563257163796",
-            "date": "2026-04-18",
-            "end_date": "2026-04-20",
-            "iso_date": "2026-04-18T14:00:00+02:00",
+            "date": "2026-04-24",
+            "end_date": "2026-04-26",
+            "iso_date": "2026-04-24T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# Double XP Weekend \ud83d\udca5\n\nThe affinity cap has been raised and to celebrate, we've got double account and affinity XP all weekend - starting tomorrow! \n\nLogin and play between <t:1775822400:f> and <t:1776081600:f> to earn those levels! \ud83d\udcc8\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1491803013440995488/1-13_DoubleXP_16-9.jpg?ex=69ea28d2&is=69e8d752&hm=8ebc6b873d054b79d1c37ba2c3bd240d0051c0da0d59c90fde7c1a8baffa1b1e&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1491803013440995488/1-13_DoubleXP_16-9.jpg?ex=69ead192&is=69e98012&hm=8be448fbfa093c5aa62f0b3b0def9d3bbd66243bfd72768610c911601027415c&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -17,7 +17,7 @@
             "date": "2026-04-07",
             "end_date": "2026-04-07",
             "iso_date": "2026-04-07T14:00:00+02:00",
-            "title": "V1.13 PATCH NOTES",
+            "title": "V1.13 UPDATE",
             "type": "patch",
             "desc": "Hey everyone!\n\nQuick heads up - patch notes for V1.13 will be dropping on April 7th due to the Easter Holidays. \n\nThis **doesn't affect the update** itself, which will launch as planned on **April 7th** as well. \n\nWe'll be going through a bunch of new stuff in our Dev Stream on Wednesday 1st, so be sure to tune in and find out more about what's coming up in V1.13: Throne of Thorns!",
             "image": "",
