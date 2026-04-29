@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-04-29 17:06:42 (CEST)",
+    "last_updated": "2026-04-29 19:21:00 (CEST)",
     "active": true,
     "campaigns": [
         {
@@ -18,21 +18,6 @@
                     "minutes": 120
                 },
                 {
-                    "name": "Purple Adele Banner",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/f3ff63ca-efc1-4e89-888d-9bb86afbb116.jpeg",
-                    "minutes": 240
-                },
-                {
-                    "name": "Quantum Loot Core",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
-                    "minutes": 360
-                },
-                {
-                    "name": "Purple Adele Skin Variant",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/afa72ad3-2d89-4d8a-ade8-f2b061b3a42d.jpeg",
-                    "minutes": 480
-                },
-                {
                     "name": "Regent Countess Banner",
                     "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/e41478c1-c2a7-48fe-a1de-3ed79f7dd163.jpeg",
                     "minutes": 120
@@ -43,9 +28,24 @@
                     "minutes": 180
                 },
                 {
+                    "name": "Purple Adele Banner",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/f3ff63ca-efc1-4e89-888d-9bb86afbb116.jpeg",
+                    "minutes": 240
+                },
+                {
+                    "name": "Quantum Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
+                    "minutes": 360
+                },
+                {
                     "name": "Regent Countess Icon",
                     "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/be6bff8a-89ba-478a-8192-e933e37bdd83.jpeg",
                     "minutes": 360
+                },
+                {
+                    "name": "Purple Adele Skin Variant",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/afa72ad3-2d89-4d8a-ade8-f2b061b3a42d.jpeg",
+                    "minutes": 480
                 },
                 {
                     "name": "Dynasty Feng Mao Icon",
