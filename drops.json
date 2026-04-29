@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-04-29 10:05:13 (CEST)",
+    "last_updated": "2026-04-29 12:49:41 (CEST)",
     "active": true,
     "campaigns": [
         {
@@ -30,6 +30,26 @@
                 {
                     "name": "Purple Adele Skin Variant",
                     "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/afa72ad3-2d89-4d8a-ade8-f2b061b3a42d.jpeg",
+                    "minutes": 480
+                },
+                {
+                    "name": "Regent Countess Banner",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/e41478c1-c2a7-48fe-a1de-3ed79f7dd163.jpeg",
+                    "minutes": 120
+                },
+                {
+                    "name": "Dynasty Feng Mao Banner",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/0d1cf608-fefe-4059-a4eb-1c2ddb6a10f3.jpeg",
+                    "minutes": 180
+                },
+                {
+                    "name": "Regent Countess Icon",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/be6bff8a-89ba-478a-8192-e933e37bdd83.jpeg",
+                    "minutes": 360
+                },
+                {
+                    "name": "Dynasty Feng Mao Icon",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/2969eb6d-733b-41db-9534-6c720f53ea8b.jpeg",
                     "minutes": 480
                 }
             ]
