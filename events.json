@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-04-30 08:28:59",
+    "last_updated": "2026-04-30 10:58:50",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -121,6 +121,28 @@
             "desc": "# \u2696\ufe0f v1.13.2 Patch Notes!\n\nBalance Patch v1.13.2 is coming on 28th April \ud83d\udd25\n\nThe patch notes are here, so dive in and check out all the changes coming up next week\ud83d\udc47\nhttps://playp.red/3QY13DG \n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1497235212822773901/Patch_Header_1-1_LIVE_copy.jpg?ex=69f408b4&is=69f2b734&hm=6b7fd96c26988760a06f3caabe86e278cb1b6465477b59692199e1394966b483&",
             "url": "https://playp.red/3QY13DG"
+        },
+        {
+            "original_id": "1498635783320371203",
+            "date": "2026-04-30",
+            "end_date": "2026-04-30",
+            "iso_date": "2026-04-30T14:00:00+02:00",
+            "title": "BALANCE PATCH V1.13.2 IS LIVE",
+            "type": "patch",
+            "desc": "# Balance Patch v1.13.2 is LIVE! \u2696\ufe0f \n\nMaintenance is over! Download the new update and get back to the fight \u2694\ufe0f \n\nPatch notes if you missed them last week \ud83d\udc47 \nhttps://www.predecessorgame.com/en-US/news/patch-notes/1.13.2_Patch_Notes\n\n\ud83d\udd14 @Official News",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1498631407453474866/Patch_Header_1-1_LIVE.jpg?ex=69f47fc2&is=69f32e42&hm=6aa25122eea99d9a937bede63f42585a91ce30bf821950efe8a617109fd55e76&",
+            "url": "https://www.predecessorgame.com/en-US/news/patch-notes/1.13.2_Patch_Notes"
+        },
+        {
+            "original_id": "1497603160569675886",
+            "date": "2026-05-02",
+            "end_date": "2026-05-09",
+            "iso_date": "2026-05-02T14:00:00+02:00",
+            "title": "NATIONS LEAGUE",
+            "type": "twitch",
+            "desc": "# Nations League is LIVE \ud83d\udd34 \n\nTune in this weekend (and next weekend!) to catch all the action and find out which country will take the crown \ud83d\udc51 \nhttps://playp.red/3QqgAfm\n\n\ud83d\udd14 @Official News\nPredecessorGame - Twitch\nNations League #3",
+            "image": "https://static-cdn.jtvnw.net/jtv_user_pictures/278a37d4-ef0f-4bc2-a614-467af5f8b268-profile_image-300x300.png",
+            "url": "https://playp.red/3QqgAfm"
         }
     ]
 }
