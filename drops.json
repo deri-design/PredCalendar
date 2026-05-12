@@ -1,43 +1,5 @@
 {
-    "last_updated": "2026-05-13 00:53:33 (CEST)",
-    "active": true,
-    "campaigns": [
-        {
-            "campaign_name": "Predecessor Drops",
-            "start": "2026-04-07T18:00:00Z",
-            "end": "2026-05-04T18:00:00Z",
-            "rewards": [
-                {
-                    "name": "Ion Loot Core",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3d23d56e-1719-4fff-a001-c16c7e9f923f.png",
-                    "minutes": 60
-                },
-                {
-                    "name": "Regent Countess Banner",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/e41478c1-c2a7-48fe-a1de-3ed79f7dd163.jpeg",
-                    "minutes": 120
-                },
-                {
-                    "name": "Dynasty Feng Mao Banner",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/0d1cf608-fefe-4059-a4eb-1c2ddb6a10f3.jpeg",
-                    "minutes": 180
-                },
-                {
-                    "name": "Regent Countess Icon",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/be6bff8a-89ba-478a-8192-e933e37bdd83.jpeg",
-                    "minutes": 360
-                },
-                {
-                    "name": "Dynasty Feng Mao Icon",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/2969eb6d-733b-41db-9534-6c720f53ea8b.jpeg",
-                    "minutes": 480
-                },
-                {
-                    "name": "Quantum Loot Core",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
-                    "minutes": 600
-                }
-            ]
-        }
-    ]
+    "last_updated": "2026-05-13 01:53:57 (CEST)",
+    "active": false,
+    "campaigns": []
 }
