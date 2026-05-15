@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-05-15 16:53:50",
+    "last_updated": "2026-05-15 19:45:17",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -91,9 +91,9 @@
         },
         {
             "original_id": "1491043666654003210",
-            "date": "2026-04-21",
-            "end_date": "2026-04-21",
-            "iso_date": "2026-04-21T14:00:00+02:00",
+            "date": "2026-04-28",
+            "end_date": "2026-04-28",
+            "iso_date": "2026-04-28T14:00:00+02:00",
             "title": "V1.13: THRONE OF THORNS",
             "type": "patch",
             "desc": "# V1.13: Throne of Thorns is LIVE!\n\n\ud83c\udf39 Command the battlefield with Adele, Queen of Thorns\n\ud83c\udf04 Explore Daybreak V4\n\u203c\ufe0f Take on new Quests\n\ud83d\udd22 Check out the new scoreboard\n... and more!\n\nRead full list of changes here \ud83d\uddd2\ufe0f \nhttps://playp.red/4mi5HZ5\n\nJoin the patch discussion here \ud83d\udde8\ufe0f \nhttps://discord.com/channels/389767672151146498/1491039376359297034/1491039376359297034\n\n\ud83d\udd14 @Official News\nV1.13: Throne of Thorns Patch Notes | Predecessor\nEverything you need to know about V1.13: Throne of Thorns!",
@@ -116,7 +116,7 @@
             "date": "2026-04-28",
             "end_date": "2026-04-28",
             "iso_date": "2026-04-28T14:00:00+02:00",
-            "title": "V1.13.2 PATCH NOTES",
+            "title": "V1.13.2 PATCH",
             "type": "patch",
             "desc": "# \u2696\ufe0f v1.13.2 Patch Notes!\n\nBalance Patch v1.13.2 is coming on 28th April \ud83d\udd25\n\nThe patch notes are here, so dive in and check out all the changes coming up next week\ud83d\udc47\nhttps://playp.red/3QY13DG \n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1497235212822773901/Patch_Header_1-1_LIVE_copy.jpg?ex=6a0877f4&is=6a072674&hm=1240cc4c5eb270b3b75660b8bba60a1769b0ad17658ecdef65cdc1f0274d76b9&",
@@ -136,7 +136,7 @@
         {
             "original_id": "1497603160569675886",
             "date": "2026-05-15",
-            "end_date": "2026-05-16",
+            "end_date": "2026-05-23",
             "iso_date": "2026-05-15T14:00:00+02:00",
             "title": "NATIONS LEAGUE",
             "type": "twitch",
@@ -168,22 +168,22 @@
         },
         {
             "original_id": "1488967151757824192",
-            "date": "2026-04-14",
-            "end_date": "2026-04-14",
-            "iso_date": "2026-04-14T14:00:00+02:00",
+            "date": "2026-04-21",
+            "end_date": "2026-04-21",
+            "iso_date": "2026-04-21T14:00:00+02:00",
             "title": "THRONE OF THORNS FIRST LOOK DEV STREAM",
             "type": "twitch",
             "desc": "# Throne of Thorns First Look Dev Stream \ud83d\udd34 \n\nWe're LIVE! Come take a look at what's coming up in next week's update \ud83c\udf39 \n\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1488963691167612989/Twitch_Announcement_1920x1080_Live_Now.jpg?ex=6a080a3f&is=6a06b8bf&hm=bbc82558ac86462435bb25356fc507008b6193246232d2b3e8d60e9888505fd3&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1488963691167612989/Twitch_Announcement_1920x1080_Live_Now.jpg?ex=6a08b2ff&is=6a07617f&hm=f45b42f5d8fe102ce1c86f383dc17f4325341449254f7db76e9fa82e0fa119ab&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
             "original_id": "1501606813190197310",
-            "date": "2026-05-13",
-            "end_date": "2026-05-13",
-            "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "UPDATE 1.14: HARBINGERS OF RUIN LIVESTRE",
-            "type": "twitch",
+            "date": "2026-05-19",
+            "end_date": "2026-05-19",
+            "iso_date": "2026-05-19T14:00:00+02:00",
+            "title": "UPDATE 1.14: HARBINGERS OF RUIN",
+            "type": "patch",
             "desc": "# \u2694\ufe0f Update 1.14: Harbingers of Ruin - May 19th!\n\nThe new update launches in less than two weeks, bringing our biggest, most in-depth Hero customisation system ever - **Eternals**! \ud83d\udc40\nhttps://youtube.com/shorts/gppqJLAWRL4\n\nFind out more on our livestream next Wednesday, May 13th \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nEternals - New Customisation System Coming Soon\n#predecessor #moba #gamingshorts",
             "image": "https://i.ytimg.com/vi/gppqJLAWRL4/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -229,7 +229,7 @@
             "title": "1.14 FIRST LOOK LIVESTREAM",
             "type": "twitch",
             "desc": "# 1.14 First Look Livestream - Tomorrow! \ud83c\udfa5\n\nIt's almost time! We'll be live tomorrow - <t:1778695200:f> on Twitch \ud83d\udd34\n\nDon't miss out on the first look at our new Hero, Legion, AND Eternals! \ud83d\udd25\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1503806623687118950/Twitch_Announcement_1920x1080.png?ex=6a07fc4e&is=6a06aace&hm=d4a5981d455839dbc4093a4cb0b23043e604b0d5d5e0545c2dceeceed5d947ef&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1503806623687118950/Twitch_Announcement_1920x1080.png?ex=6a08a50e&is=6a07538e&hm=e606d64251046d46bebfbafb82267732424f74203aae924fd8e1acbd44e3f8ca&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -240,7 +240,7 @@
             "title": "DEV STREAM",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a0808d2&is=6a06b752&hm=61bdb8a4c1b00e462dd7d28aef72ebe34b939cd605717c9fd9e738c2b4a45f4a&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a08b192&is=6a076012&hm=f737645511bd624e300561894daeb76d769d35c647f7d344e8fba4d104b9d9cb&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -256,9 +256,9 @@
         },
         {
             "original_id": "1489295679032655912",
-            "date": "2026-04-21",
-            "end_date": "2026-04-21",
-            "iso_date": "2026-04-21T14:00:00+02:00",
+            "date": "2026-04-28",
+            "end_date": "2026-04-28",
+            "iso_date": "2026-04-28T14:00:00+02:00",
             "title": "ADELE HERO OVERVIEW",
             "type": "hero",
             "desc": "Meet the Queen of Thorns, Adele herself - she rules a queendom, but can she conquer the battlefield? \ud83c\udf39 \u2694\ufe0f\n\nhttps://youtu.be/93kJH55JG5I\n\n\ud83d\udd14 @Official News\nAdele | Hero Overview | Predecessor\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
