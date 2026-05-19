@@ -1,5 +1,38 @@
 {
-    "last_updated": "2026-05-19 15:54:02 (CEST)",
-    "active": false,
-    "campaigns": []
+    "last_updated": "2026-05-19 18:47:18 (CEST)",
+    "active": true,
+    "campaigns": [
+        {
+            "campaign_name": "Predecessor Drops",
+            "start": "2026-04-07T18:00:00Z",
+            "end": "2026-05-04T18:00:00Z",
+            "rewards": [
+                {
+                    "name": "Purple Legion Icon",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/15268f75-659b-4bed-a9f1-4f573cc03023.png",
+                    "minutes": 60
+                },
+                {
+                    "name": "Ion Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3d23d56e-1719-4fff-a001-c16c7e9f923f.png",
+                    "minutes": 120
+                },
+                {
+                    "name": "Purple Legion Banner",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/800e980b-6e78-4c89-8b9a-6418aa0deeaf.png",
+                    "minutes": 180
+                },
+                {
+                    "name": "Quantum Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
+                    "minutes": 360
+                },
+                {
+                    "name": "Purple Legion Variant",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/c34964de-6cc5-4555-80db-6443eb5f7151.png",
+                    "minutes": 600
+                }
+            ]
+        }
+    ]
 }
