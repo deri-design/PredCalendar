@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-05-20 22:25:29",
+    "last_updated": "2026-05-21 04:11:51",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -9,7 +9,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# Double XP Weekend \ud83d\udca5\n\nThe affinity cap has been raised and to celebrate, we've got double account and affinity XP all weekend - starting tomorrow! \n\nLogin and play between <t:1775822400:f> and <t:1776081600:f> to earn those levels! \ud83d\udcc8\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1491803013440995488/1-13_DoubleXP_16-9.jpg?ex=6a0f12d2&is=6a0dc152&hm=15405d47a962d63a077eddbe22e12b3de83852368d225576b937b06e647ee420&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1491803013440995488/1-13_DoubleXP_16-9.jpg?ex=6a0fbb92&is=6a0e6a12&hm=a8e689f63592002df6cbc9911de21f680c7d1ad135853fd09328abac52747065&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -102,13 +102,13 @@
         },
         {
             "original_id": "1492160067339030721",
-            "date": "2026-05-16",
+            "date": "2026-05-15",
             "end_date": "2026-05-17",
-            "iso_date": "2026-05-16T14:00:00+02:00",
+            "iso_date": "2026-05-15T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# Double XP Weekend is LIVE \ud83d\udca5\n\nDouble account AND affinity XP all weekend until <t:1776081600:f> <:MurdockNice:1021857503602032690> \n\nJump in and get those affinity levels up! \ud83d\udcc8\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1492157288054657214/1-13_DoubleXP_16-9_LIVE_1.jpg?ex=6a0f0b44&is=6a0db9c4&hm=f10285ce80d0f55fde38a81f0c798c7b3e161f655fe1c13e72526a1e8176ecfc&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1492157288054657214/1-13_DoubleXP_16-9_LIVE_1.jpg?ex=6a0fb404&is=6a0e6284&hm=d6cc62cb6fcfe3b397a233c2c2a5cc58f2d2e981d400d056fdcc8a487d4b1cf3&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -182,7 +182,7 @@
             "date": "2026-05-13",
             "end_date": "2026-05-13",
             "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "UPDATE 1.14: HARBINGERS OF RUIN LIVESTRE",
+            "title": "LIVESTREAM",
             "type": "twitch",
             "desc": "# \u2694\ufe0f Update 1.14: Harbingers of Ruin - May 19th!\n\nThe new update launches in less than two weeks, bringing our biggest, most in-depth Hero customisation system ever - **Eternals**! \ud83d\udc40\nhttps://youtube.com/shorts/gppqJLAWRL4\n\nFind out more on our livestream next Wednesday, May 13th \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nEternals - New Customisation System Coming Soon\n#predecessor #moba #gamingshorts",
             "image": "https://i.ytimg.com/vi/gppqJLAWRL4/maxresdefault.jpg",
@@ -193,7 +193,7 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "ETERNALS - A QUICK LOOK",
+            "title": "ETERNALS",
             "type": "news",
             "desc": "# Eternals - A Quick Look! \ud83d\udc40\n\nCurious about Eternals? Our new Hero customization system is coming in Update 1.14: Harbingers of Ruin (May 19th)!\n\nSo here's a quick breakdown before we show it off on stream on May 13th \ud83d\udc47\nhttps://youtube.com/shorts/7L95X-kil9s\n\n\ud83d\udd14 @Official News\nA Quick Look at Eternals!\nEternals is a brand new Hero customisation system coming in Update 1.14: Harbingers of Ruin on May 19th. Find out more on our dev stream on May 13th!\n\n#predecessor #gamingshorts #moba",
             "image": "https://i.ytimg.com/vi/7L95X-kil9s/maxresdefault.jpg",
@@ -223,9 +223,9 @@
         },
         {
             "original_id": "1503810575547760694",
-            "date": "2026-05-14",
-            "end_date": "2026-05-14",
-            "iso_date": "2026-05-14T14:00:00+02:00",
+            "date": "2026-05-13",
+            "end_date": "2026-05-13",
+            "iso_date": "2026-05-13T14:00:00+02:00",
             "title": "1.14 FIRST LOOK LIVESTREAM",
             "type": "twitch",
             "desc": "# 1.14 First Look Livestream - Tomorrow! \ud83c\udfa5\n\nIt's almost time! We'll be live tomorrow - <t:1778695200:f> on Twitch \ud83d\udd34\n\nDon't miss out on the first look at our new Hero, Legion, AND Eternals! \ud83d\udd25\n\n\ud83d\udd14 @Official News",
@@ -237,7 +237,7 @@
             "date": "2026-05-13",
             "end_date": "2026-05-13",
             "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "DEV STREAM - LIVE NOW",
+            "title": "DEV STREAM",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a0f4912&is=6a0df792&hm=e4ac5023caef774b7e3beb49d48161677cf486292d2d4044ce998d21f0707417&",
@@ -270,7 +270,7 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "X3 BATTLEPASS XP WEEKEND",
+            "title": "NEW UPDATE",
             "type": "news",
             "desc": "# x3 Battlepass XP Weekend <:MurdockNice:1021857503602032690> \n\nTo celebrate the new update dropping on May 19th, we've got a HUGE X3 Battlepass XP Weekend live right now!\n\nGet triple XP on the **Neon Renegades Battlepass** until Tuesday 19th May - grab those rewards before the new Battlepass launches!\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504879294483136543/x3_XP_WEEKEND.png?ex=6a0f2f0f&is=6a0ddd8f&hm=3b38cb0ce65b09abec7acc84fb181f4a8cb2d6f1d1055b6cf68be061285389e6&",
