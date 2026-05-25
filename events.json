@@ -1,15 +1,15 @@
 {
-    "last_updated": "2026-05-25 10:18:55",
+    "last_updated": "2026-05-25 15:18:10",
     "events": [
         {
             "original_id": "1491804563257163796",
-            "date": "2026-05-15",
-            "end_date": "2026-05-17",
-            "iso_date": "2026-05-15T14:00:00+02:00",
+            "date": "2026-05-01",
+            "end_date": "2026-05-03",
+            "iso_date": "2026-05-01T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# Double XP Weekend \ud83d\udca5\n\nThe affinity cap has been raised and to celebrate, we've got double account and affinity XP all weekend - starting tomorrow! \n\nLogin and play between <t:1775822400:f> and <t:1776081600:f> to earn those levels! \ud83d\udcc8\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1491803013440995488/1-13_DoubleXP_16-9.jpg?ex=6a150192&is=6a13b012&hm=2e56aa098401551272bbd4074abe13e8bdaba155c7eab5e0aa5bc77af3ec914e&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1491803013440995488/1-13_DoubleXP_16-9.jpg?ex=6a15aa52&is=6a1458d2&hm=2a5f763417b6ad4667bca15480839b5a015d2e4d1a9a5d6bd1d58af2b67a914a&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -102,13 +102,13 @@
         },
         {
             "original_id": "1492160067339030721",
-            "date": "2026-05-15",
-            "end_date": "2026-05-17",
-            "iso_date": "2026-05-15T14:00:00+02:00",
+            "date": "2026-05-01",
+            "end_date": "2026-05-03",
+            "iso_date": "2026-05-01T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# Double XP Weekend is LIVE \ud83d\udca5\n\nDouble account AND affinity XP all weekend until <t:1776081600:f> <:MurdockNice:1021857503602032690> \n\nJump in and get those affinity levels up! \ud83d\udcc8\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1492157288054657214/1-13_DoubleXP_16-9_LIVE_1.jpg?ex=6a14fa04&is=6a13a884&hm=d36f60507a37abbc93b6a7b4c4f9da0a38f74bf9f6deb4229772de2340e2a254&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1492157288054657214/1-13_DoubleXP_16-9_LIVE_1.jpg?ex=6a15a2c4&is=6a145144&hm=0346a8e571d6499967391bc477d92923558d21574b92fc41bb40eaa6350e22c8&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -119,7 +119,7 @@
             "title": "V1.13.2 PATCH NOTES",
             "type": "patch",
             "desc": "# \u2696\ufe0f v1.13.2 Patch Notes!\n\nBalance Patch v1.13.2 is coming on 28th April \ud83d\udd25\n\nThe patch notes are here, so dive in and check out all the changes coming up next week\ud83d\udc47\nhttps://playp.red/3QY13DG \n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1497235212822773901/Patch_Header_1-1_LIVE_copy.jpg?ex=6a14fe34&is=6a13acb4&hm=c779ce64beb607b86da8b44820cadc06b9344a4c5cb10392c5d45e01664697e3&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1497235212822773901/Patch_Header_1-1_LIVE_copy.jpg?ex=6a15a6f4&is=6a145574&hm=8d7139973177aebc591ffb966d37fec354befd1813de31a2d3aeb123501c0d3d&",
             "url": "https://playp.red/3QY13DG"
         },
         {
@@ -204,7 +204,7 @@
             "date": "2026-05-13",
             "end_date": "2026-05-13",
             "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "DEV STREAM - LEGION FIRST LOOK",
+            "title": "NEW HERO: LEGION DEV STREAM",
             "type": "twitch",
             "desc": "# New Hero: Legion \ud83d\udd25\n\nOrder. By any means necessary \u2696\ufe0f\n\nComing in Update 1.14: Harbingers of Ruin on May 19th \ud83d\uddd3\ufe0f\n\nTune into the dev stream on May 13th for a first look! \ud83d\udc40\nhttps://youtu.be/bfHLPFHKowk \n\n\ud83d\udd14 @Official News\nLegion | Hero Teaser | Predecessor\nLegion arrives alongside update 1.14: Harbingers of Ruin on May 19th. Tune into our livestream on May 13th for a first look!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/bfHLPFHKowk/maxresdefault.jpg",
@@ -234,10 +234,10 @@
         },
         {
             "original_id": "1504186232324751391",
-            "date": "2026-05-13",
-            "end_date": "2026-05-13",
-            "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "DEV STREAM - UPDATE 1.14 FIRST LOOK",
+            "date": "2026-05-12",
+            "end_date": "2026-05-12",
+            "iso_date": "2026-05-12T14:00:00+02:00",
+            "title": "DEV STREAM - LIVE NOW!",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a1537d2&is=6a13e652&hm=236b9b9bbe52fd523ae401f96848b9e14793f3114a319ec7e08006a9a0f4029a&",
@@ -281,7 +281,7 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "IRON GUARD SKINS TRAILER",
+            "title": "HARBINGERS OF RUIN PATCH NOTES!",
             "type": "patch",
             "desc": "# Harbingers of Ruin PATCH NOTES!\ud83d\udca5\n\nThey're HERE! Everything you need to know about 1.14: Harbingers of Ruin \ud83d\udc47\nhttps://playp.red/HarbingersOfRuin_PatchNotes\n\nBut also...\n\n# Iron Guard Skins Trailer \ud83e\uddbe\n\nCheck out the trailer for the all-new Iron Guard skins. Also coming in 1.14 - May 19th!\nhttps://youtu.be/KKlcTlh5Jx4\n\nWe're so excited for everyone to try the new update next week, the response so far has been amazing, thank you all for the support! \ud83d\udcaa\n\n\ud83d\udd14 @Official News\nPatch Notes: 1.14 Harbingers of Ruin | Predecessor\nEverything you need to know about update 1.14: Harbingers of Ruin!\nIron Guard Skins Trailer | Predecessor\nThe Iron Guard skins are coming to Predecessor in update 1.14: Harbingers of Ruin!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/patch_note_img_001_51aa3fb5d7.jpg",
@@ -317,7 +317,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a150a72&is=6a13b8f2&hm=c38a271e4244eab8f20a909c3059911e44402d8a15f99d1e92888fe6da5002e3&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a15b332&is=6a1461b2&hm=ebe1a357c3ace71ce71a877f58c8fe52c4f6dcf1c47605df47559329f99bc13d&",
             "url": "https://www.predecessorgame.com/en-US/news"
         }
     ]
