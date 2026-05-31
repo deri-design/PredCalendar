@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-05-31 16:15:15",
+    "last_updated": "2026-05-31 19:23:37",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -102,9 +102,9 @@
         },
         {
             "original_id": "1492160067339030721",
-            "date": "2026-05-31",
-            "end_date": "2026-05-31",
-            "iso_date": "2026-05-31T14:00:00+02:00",
+            "date": "2026-05-01",
+            "end_date": "2026-05-03",
+            "iso_date": "2026-05-01T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# Double XP Weekend is LIVE \ud83d\udca5\n\nDouble account AND affinity XP all weekend until <t:1776081600:f> <:MurdockNice:1021857503602032690> \n\nJump in and get those affinity levels up! \ud83d\udcc8\n\n\ud83d\udd14 @Official News",
@@ -116,7 +116,7 @@
             "date": "2026-04-28",
             "end_date": "2026-04-28",
             "iso_date": "2026-04-28T14:00:00+02:00",
-            "title": "V1.13.2 PATCH NOTES",
+            "title": "V1.13.2 PATCH",
             "type": "patch",
             "desc": "# \u2696\ufe0f v1.13.2 Patch Notes!\n\nBalance Patch v1.13.2 is coming on 28th April \ud83d\udd25\n\nThe patch notes are here, so dive in and check out all the changes coming up next week\ud83d\udc47\nhttps://playp.red/3QY13DG \n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1497235212822773901/Patch_Header_1-1_LIVE_copy.jpg?ex=6a1d8ff4&is=6a1c3e74&hm=0192a06ffd9737c0ef61d96e31160260e9db7c4cecdd4ef4e33b362a13681ff8&",
@@ -223,13 +223,13 @@
         },
         {
             "original_id": "1503810575547760694",
-            "date": "2026-05-13",
-            "end_date": "2026-05-13",
-            "iso_date": "2026-05-13T14:00:00+02:00",
+            "date": "2026-05-14",
+            "end_date": "2026-05-14",
+            "iso_date": "2026-05-14T14:00:00+02:00",
             "title": "1.14 FIRST LOOK LIVESTREAM",
             "type": "twitch",
             "desc": "# 1.14 First Look Livestream - Tomorrow! \ud83c\udfa5\n\nIt's almost time! We'll be live tomorrow - <t:1778695200:f> on Twitch \ud83d\udd34\n\nDon't miss out on the first look at our new Hero, Legion, AND Eternals! \ud83d\udd25\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1503806623687118950/Twitch_Announcement_1920x1080.png?ex=6a1d144e&is=6a1bc2ce&hm=7473a591d8004d9281c95ec5c8fc5aee139f34e6301e8af375e6a43aae3037e6&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1503806623687118950/Twitch_Announcement_1920x1080.png?ex=6a1dbd0e&is=6a1c6b8e&hm=3899311a581d7864421392330d8341a16f1f6ef8001e8de1eaa1cbfa9de09990&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -267,9 +267,9 @@
         },
         {
             "original_id": "1504882061507559587",
-            "date": "2026-05-19",
+            "date": "2026-05-16",
             "end_date": "2026-05-19",
-            "iso_date": "2026-05-19T14:00:00+02:00",
+            "iso_date": "2026-05-16T14:00:00+02:00",
             "title": "X3 BATTLEPASS XP WEEKEND",
             "type": "news",
             "desc": "# x3 Battlepass XP Weekend <:MurdockNice:1021857503602032690> \n\nTo celebrate the new update dropping on May 19th, we've got a HUGE X3 Battlepass XP Weekend live right now!\n\nGet triple XP on the **Neon Renegades Battlepass** until Tuesday 19th May - grab those rewards before the new Battlepass launches!\n\n\ud83d\udd14 @Official News",
