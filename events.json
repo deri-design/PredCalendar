@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-06 13:54:15",
+    "last_updated": "2026-06-06 16:10:26",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -179,11 +179,11 @@
         },
         {
             "original_id": "1501606813190197310",
-            "date": "2026-05-13",
-            "end_date": "2026-05-13",
-            "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "LIVESTREAM",
-            "type": "twitch",
+            "date": "2026-05-19",
+            "end_date": "2026-05-19",
+            "iso_date": "2026-05-19T14:00:00+02:00",
+            "title": "UPDATE 1.14: HARBINGERS OF RUIN",
+            "type": "patch",
             "desc": "# \u2694\ufe0f Update 1.14: Harbingers of Ruin - May 19th!\n\nThe new update launches in less than two weeks, bringing our biggest, most in-depth Hero customisation system ever - **Eternals**! \ud83d\udc40\nhttps://youtube.com/shorts/gppqJLAWRL4\n\nFind out more on our livestream next Wednesday, May 13th \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nEternals - New Customisation System Coming Soon\n#predecessor #moba #gamingshorts",
             "image": "https://i.ytimg.com/vi/gppqJLAWRL4/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -317,7 +317,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a24dc72&is=6a238af2&hm=e49a9d440647a4266220038e33da604f4d1b0c618b6700724774867c49aaaee2&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a258532&is=6a2433b2&hm=4a1d6da9ba143886fc23650edeb6fb028327617b2ccd72419375bec0db3681d2&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -361,7 +361,7 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a24df92&is=6a238e12&hm=a06bae21175e8419659c0698aafe6ce04a65bdc762aab1d427e718b0c364ee9d&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a258852&is=6a2436d2&hm=5696130dc7943bb1d645c884fe60ba7d2e0ecadbc5596f36eb1f87a68c3e2675&",
             "url": "https://playp.red/4xcL7Oz"
         }
     ]
