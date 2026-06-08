@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-08 20:24:44",
+    "last_updated": "2026-06-08 22:41:47",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -182,7 +182,7 @@
             "date": "2026-05-13",
             "end_date": "2026-05-13",
             "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "LIVESTREAM - UPDATE 1.14",
+            "title": "LIVESTREAM",
             "type": "twitch",
             "desc": "# \u2694\ufe0f Update 1.14: Harbingers of Ruin - May 19th!\n\nThe new update launches in less than two weeks, bringing our biggest, most in-depth Hero customisation system ever - **Eternals**! \ud83d\udc40\nhttps://youtube.com/shorts/gppqJLAWRL4\n\nFind out more on our livestream next Wednesday, May 13th \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nEternals - New Customisation System Coming Soon\n#predecessor #moba #gamingshorts",
             "image": "https://i.ytimg.com/vi/gppqJLAWRL4/maxresdefault.jpg",
@@ -201,11 +201,11 @@
         },
         {
             "original_id": "1503429185295745316",
-            "date": "2026-05-13",
-            "end_date": "2026-05-13",
-            "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "DEV STREAM - LEGION",
-            "type": "twitch",
+            "date": "2026-05-19",
+            "end_date": "2026-05-19",
+            "iso_date": "2026-05-19T14:00:00+02:00",
+            "title": "UPDATE 1.14: HARBINGERS OF RUIN",
+            "type": "patch",
             "desc": "# New Hero: Legion \ud83d\udd25\n\nOrder. By any means necessary \u2696\ufe0f\n\nComing in Update 1.14: Harbingers of Ruin on May 19th \ud83d\uddd3\ufe0f\n\nTune into the dev stream on May 13th for a first look! \ud83d\udc40\nhttps://youtu.be/bfHLPFHKowk \n\n\ud83d\udd14 @Official News\nLegion | Hero Teaser | Predecessor\nLegion arrives alongside update 1.14: Harbingers of Ruin on May 19th. Tune into our livestream on May 13th for a first look!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/bfHLPFHKowk/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -240,7 +240,7 @@
             "title": "DEV STREAM - LIVE NOW",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a265b52&is=6a2509d2&hm=06245b1b09a456caa27c8c2fced8a50de089aaf87fdbff118993b69636300101&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a285592&is=6a270412&hm=2104542c546adbfa6705ecd03358952f5babcaacc86dc1e29328da22fce331ff&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
