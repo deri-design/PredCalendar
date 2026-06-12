@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-12 04:26:47",
+    "last_updated": "2026-06-12 10:21:30",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -193,7 +193,7 @@
             "date": "2026-05-13",
             "end_date": "2026-05-13",
             "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "ETERNALS - A QUICK LOOK!",
+            "title": "ETERNALS - A QUICK LOOK",
             "type": "news",
             "desc": "# Eternals - A Quick Look! \ud83d\udc40\n\nCurious about Eternals? Our new Hero customization system is coming in Update 1.14: Harbingers of Ruin (May 19th)!\n\nSo here's a quick breakdown before we show it off on stream on May 13th \ud83d\udc47\nhttps://youtube.com/shorts/7L95X-kil9s\n\n\ud83d\udd14 @Official News\nA Quick Look at Eternals!\nEternals is a brand new Hero customisation system coming in Update 1.14: Harbingers of Ruin on May 19th. Find out more on our dev stream on May 13th!\n\n#predecessor #gamingshorts #moba",
             "image": "https://i.ytimg.com/vi/7L95X-kil9s/maxresdefault.jpg",
@@ -204,8 +204,8 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "UPDATE 1.14: HARBINGERS OF RUIN",
-            "type": "patch",
+            "title": "LEGION RELEASE",
+            "type": "hero",
             "desc": "# New Hero: Legion \ud83d\udd25\n\nOrder. By any means necessary \u2696\ufe0f\n\nComing in Update 1.14: Harbingers of Ruin on May 19th \ud83d\uddd3\ufe0f\n\nTune into the dev stream on May 13th for a first look! \ud83d\udc40\nhttps://youtu.be/bfHLPFHKowk \n\n\ud83d\udd14 @Official News\nLegion | Hero Teaser | Predecessor\nLegion arrives alongside update 1.14: Harbingers of Ruin on May 19th. Tune into our livestream on May 13th for a first look!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/bfHLPFHKowk/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -229,7 +229,7 @@
             "title": "1.14 FIRST LOOK LIVESTREAM",
             "type": "twitch",
             "desc": "# 1.14 First Look Livestream - Tomorrow! \ud83c\udfa5\n\nIt's almost time! We'll be live tomorrow - <t:1778695200:f> on Twitch \ud83d\udd34\n\nDon't miss out on the first look at our new Hero, Legion, AND Eternals! \ud83d\udd25\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1503806623687118950/Twitch_Announcement_1920x1080.png?ex=6a2c3d8e&is=6a2aec0e&hm=022bb7235a0de0b473ed7d2618b645c3008d80728863f0a1df3b0c4f480bd46b&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1503806623687118950/Twitch_Announcement_1920x1080.png?ex=6a2ce64e&is=6a2b94ce&hm=3aebc2bec8ee2412167f1f31038fdcc81f73bc3204e7ba68dc8ba5542b99a733&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -237,10 +237,10 @@
             "date": "2026-05-13",
             "end_date": "2026-05-13",
             "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "DEV STREAM - LIVE NOW!",
+            "title": "DEV STREAM - LIVE NOW",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a2c4a12&is=6a2af892&hm=5d86972dc1f1884b795204a96011d2263077889b77ce4fed1fa7181bbe546bdc&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a2cf2d2&is=6a2ba152&hm=8ce3e4368ea4600de299ce08b9ca42d0a80579f5bac35e33c80a1303bbda4952&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -278,10 +278,10 @@
         },
         {
             "original_id": "1504860279144583168",
-            "date": "2026-05-13",
-            "end_date": "2026-05-13",
-            "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "HARBINGERS OF RUIN PATCH NOTES!",
+            "date": "2026-05-19",
+            "end_date": "2026-05-19",
+            "iso_date": "2026-05-19T14:00:00+02:00",
+            "title": "HARBINGERS OF RUIN PATCH NOTES",
             "type": "patch",
             "desc": "# Harbingers of Ruin PATCH NOTES!\ud83d\udca5\n\nThey're HERE! Everything you need to know about 1.14: Harbingers of Ruin \ud83d\udc47\nhttps://playp.red/HarbingersOfRuin_PatchNotes\n\nBut also...\n\n# Iron Guard Skins Trailer \ud83e\uddbe\n\nCheck out the trailer for the all-new Iron Guard skins. Also coming in 1.14 - May 19th!\nhttps://youtu.be/KKlcTlh5Jx4\n\nWe're so excited for everyone to try the new update next week, the response so far has been amazing, thank you all for the support! \ud83d\udcaa\n\n\ud83d\udd14 @Official News\nPatch Notes: 1.14 Harbingers of Ruin | Predecessor\nEverything you need to know about update 1.14: Harbingers of Ruin!\nIron Guard Skins Trailer | Predecessor\nThe Iron Guard skins are coming to Predecessor in update 1.14: Harbingers of Ruin!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://d3tyjtqxpxwenc.cloudfront.net/kVgp1B/patch_note_img_001_51aa3fb5d7.jpg",
