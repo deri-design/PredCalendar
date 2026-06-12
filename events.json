@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-12 10:21:30",
+    "last_updated": "2026-06-12 15:26:28",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -204,8 +204,8 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "LEGION RELEASE",
-            "type": "hero",
+            "title": "HARBINGERS OF RUIN",
+            "type": "patch",
             "desc": "# New Hero: Legion \ud83d\udd25\n\nOrder. By any means necessary \u2696\ufe0f\n\nComing in Update 1.14: Harbingers of Ruin on May 19th \ud83d\uddd3\ufe0f\n\nTune into the dev stream on May 13th for a first look! \ud83d\udc40\nhttps://youtu.be/bfHLPFHKowk \n\n\ud83d\udd14 @Official News\nLegion | Hero Teaser | Predecessor\nLegion arrives alongside update 1.14: Harbingers of Ruin on May 19th. Tune into our livestream on May 13th for a first look!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/bfHLPFHKowk/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -306,7 +306,7 @@
             "title": "HARBINGERS OF RUIN IS LIVE",
             "type": "patch",
             "desc": "# Harbingers of Ruin is LIVE \ud83d\udd25\n\nIt's finally here! Update 1:14 has officially arrived \ud83d\ude4c\n\n\u2620\ufe0f Legion\n\u2728 Eternals\n\ud83c\udf81 Battlepass\n\ud83c\udf0d Daybreak V5\n& more!\n\nDownload the new update and jump into the fight! \u2694\ufe0f\n\nPatch notes if you missed em \ud83d\udc47\nhttps://playp.red/HarbingersOfRuin_PatchNotes\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1506245410878918717/1.14_LIVE.jpg?ex=6a2c8b1a&is=6a2b399a&hm=36eb62dec8ccb24b873ff52d322bf8ae9a69d6d66b4eb40d5685545987530c0c&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1506245410878918717/1.14_LIVE.jpg?ex=6a2d33da&is=6a2be25a&hm=3d0b99bad538c42909b4f278102972a3256fc4dce6ff2690e0c1c589fef28638&",
             "url": "https://playp.red/HarbingersOfRuin_PatchNotes"
         },
         {
@@ -317,7 +317,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a2cc572&is=6a2b73f2&hm=e2c7502d44570256eb8bb2758e3ab107c60888217a1a4b56d5b70e1cacd0253f&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a2d6e32&is=6a2c1cb2&hm=6d3a3878517ee410dc025a5ddc7f693c88076f9803115aa9d3049ce738c37c06&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -361,7 +361,7 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a2cc892&is=6a2b7712&hm=ddabcee0dc5d4425ae58d773bca98a03e02c2374458ed5e2be7df863742bbf6e&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a2d7152&is=6a2c1fd2&hm=1cc3fcd2ffced27f20481c2872d7254ec3fcacd33248cd6bf1cd0a8fdb6ab783&",
             "url": "https://playp.red/4xcL7Oz"
         }
     ]
