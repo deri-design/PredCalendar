@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-14 09:43:40",
+    "last_updated": "2026-06-14 14:14:12",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -204,7 +204,7 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "LEGION HERO RELEASE",
+            "title": "NEW HERO: LEGION",
             "type": "hero",
             "desc": "# New Hero: Legion \ud83d\udd25\n\nOrder. By any means necessary \u2696\ufe0f\n\nComing in Update 1.14: Harbingers of Ruin on May 19th \ud83d\uddd3\ufe0f\n\nTune into the dev stream on May 13th for a first look! \ud83d\udc40\nhttps://youtu.be/bfHLPFHKowk \n\n\ud83d\udd14 @Official News\nLegion | Hero Teaser | Predecessor\nLegion arrives alongside update 1.14: Harbingers of Ruin on May 19th. Tune into our livestream on May 13th for a first look!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/bfHLPFHKowk/maxresdefault.jpg",
@@ -212,10 +212,10 @@
         },
         {
             "original_id": "1502720810417258749",
-            "date": "2026-06-10",
-            "end_date": "2026-06-10",
-            "iso_date": "2026-06-10T14:00:00+02:00",
-            "title": "NIGHTSHADE 2V2",
+            "date": "2026-06-14",
+            "end_date": "2026-06-14",
+            "iso_date": "2026-06-14T14:00:00+02:00",
+            "title": "NIGHTSHADE 2V2 IS LIVE",
             "type": "twitch",
             "desc": "\ud83d\udea8 Nightshade 2v2 is LIVE \ud83d\udea8\n\n\u2694\ufe0f16 duos\n\ud83d\udcb0$500 prize pool.\n\ud83e\ude995,000 in Platinum giveaways.\n\ud83c\udfc6One duo crowned champion.\n\nTune in NOW and watch the best duos in Predecessor battle for glory\ud83d\udc47\nhttps://playp.red/Nightshade2v2\n\n\ud83d\udd14 @Official News\nPredecessorGame - Twitch\nNightshade 2v2 Pair-A-Gon Tournament",
             "image": "https://static-cdn.jtvnw.net/jtv_user_pictures/278a37d4-ef0f-4bc2-a614-467af5f8b268-profile_image-300x300.png",
@@ -240,7 +240,7 @@
             "title": "DEV STREAM - LIVE NOW",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a2eed12&is=6a2d9b92&hm=3b169a90652acc555c3ca7d2a0b0841b34369b2b29d93bf6efc5a45846e47e58&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a2f95d2&is=6a2e4452&hm=3864453bd0db7723e42114c6009f6bad6de8f1cb6c7cc21b9621712d950d39fb&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -248,8 +248,8 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "UPDATE 1.14: HARBINGERS OF RUIN",
-            "type": "patch",
+            "title": "LEGION HERO OVERVIEW",
+            "type": "hero",
             "desc": "# Legion Hero Overview \ud83d\udca5\n\nLegion's ready to liberate the battlefield! Take a look and see what our new Hero can do in the Overview video \ud83d\udc47\nhttps://youtu.be/9mfKb2a-FkY\n\nUpdate 1.14: Harbingers of Ruin launches next week - May 19th! \ud83d\udd25 \n\n\ud83d\udd14 @Official News\nLegion | Hero Overview | Predecessor\nLegion arrives in Predecessor on May 19th, alongside Update 1.14: Harbingers of Ruin!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/9mfKb2a-FkY/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -267,11 +267,11 @@
         },
         {
             "original_id": "1504882061507559587",
-            "date": "2026-05-16",
+            "date": "2026-05-15",
             "end_date": "2026-05-19",
-            "iso_date": "2026-05-16T14:00:00+02:00",
+            "iso_date": "2026-05-15T14:00:00+02:00",
             "title": "X3 BATTLEPASS XP WEEKEND",
-            "type": "event",
+            "type": "news",
             "desc": "# x3 Battlepass XP Weekend <:MurdockNice:1021857503602032690> \n\nTo celebrate the new update dropping on May 19th, we've got a HUGE X3 Battlepass XP Weekend live right now!\n\nGet triple XP on the **Neon Renegades Battlepass** until Tuesday 19th May - grab those rewards before the new Battlepass launches!\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504879294483136543/x3_XP_WEEKEND.png?ex=6a2f7bcf&is=6a2e2a4f&hm=628272994b668165df6d644c49c444e4b1b60883e6ec4f6d4b093b8ad89feece&",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -315,7 +315,7 @@
             "end_date": "2026-06-22",
             "iso_date": "2026-06-19T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
-            "type": "event",
+            "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a2f6872&is=6a2e16f2&hm=705bfcabfe46c924dd17442e790521c8b3e98bfae8d4c22311305d6e8a8ec4d9&",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -344,11 +344,11 @@
         },
         {
             "original_id": "1509576350124736652",
-            "date": "2026-06-20",
-            "end_date": "2026-07-12",
-            "iso_date": "2026-06-20T14:00:00+02:00",
+            "date": "2026-06-14",
+            "end_date": "2026-06-14",
+            "iso_date": "2026-06-14T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT 2026",
-            "type": "event",
+            "type": "news",
             "desc": "# PCC Summer Summit 2026 \u2694\ufe0f\n\nThe Summer Summit is fast approaching! 3 weeks of top-tier, competitive Predecessor where the strongest teams in the scene clash for $14,000 across EU and NA! \n\nHere's everything you need to know \ud83d\udc47\nhttps://playp.red/PCCSummer2026\n\n(PS sign-ups are still open, but not for long!)\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1509574262917435504/image_26.png?ex=6a2f6cd6&is=6a2e1b56&hm=19f5a7e785e5c498eb95de296a994309eb428450b4c5de878cf5c758110a26e8&",
             "url": "https://playp.red/PCCSummer2026"
