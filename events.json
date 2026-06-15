@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-15 04:57:24",
+    "last_updated": "2026-06-15 12:26:18",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -201,9 +201,9 @@
         },
         {
             "original_id": "1503429185295745316",
-            "date": "2026-05-19",
-            "end_date": "2026-05-19",
-            "iso_date": "2026-05-19T14:00:00+02:00",
+            "date": "2026-05-13",
+            "end_date": "2026-05-13",
+            "iso_date": "2026-05-13T14:00:00+02:00",
             "title": "NEW HERO: LEGION",
             "type": "hero",
             "desc": "# New Hero: Legion \ud83d\udd25\n\nOrder. By any means necessary \u2696\ufe0f\n\nComing in Update 1.14: Harbingers of Ruin on May 19th \ud83d\uddd3\ufe0f\n\nTune into the dev stream on May 13th for a first look! \ud83d\udc40\nhttps://youtu.be/bfHLPFHKowk \n\n\ud83d\udd14 @Official News\nLegion | Hero Teaser | Predecessor\nLegion arrives alongside update 1.14: Harbingers of Ruin on May 19th. Tune into our livestream on May 13th for a first look!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
@@ -212,9 +212,9 @@
         },
         {
             "original_id": "1502720810417258749",
-            "date": "2026-05-12",
-            "end_date": "2026-05-12",
-            "iso_date": "2026-05-12T14:00:00+02:00",
+            "date": "2026-06-15",
+            "end_date": "2026-06-15",
+            "iso_date": "2026-06-15T14:00:00+02:00",
             "title": "NIGHTSHADE 2V2",
             "type": "twitch",
             "desc": "\ud83d\udea8 Nightshade 2v2 is LIVE \ud83d\udea8\n\n\u2694\ufe0f16 duos\n\ud83d\udcb0$500 prize pool.\n\ud83e\ude995,000 in Platinum giveaways.\n\ud83c\udfc6One duo crowned champion.\n\nTune in NOW and watch the best duos in Predecessor battle for glory\ud83d\udc47\nhttps://playp.red/Nightshade2v2\n\n\ud83d\udd14 @Official News\nPredecessorGame - Twitch\nNightshade 2v2 Pair-A-Gon Tournament",
@@ -229,7 +229,7 @@
             "title": "1.14 FIRST LOOK LIVESTREAM",
             "type": "twitch",
             "desc": "# 1.14 First Look Livestream - Tomorrow! \ud83c\udfa5\n\nIt's almost time! We'll be live tomorrow - <t:1778695200:f> on Twitch \ud83d\udd34\n\nDon't miss out on the first look at our new Hero, Legion, AND Eternals! \ud83d\udd25\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1503806623687118950/Twitch_Announcement_1920x1080.png?ex=6a30320e&is=6a2ee08e&hm=7cdb9b7471cd0a2064232ee43e400b6d08f31d0489ca9952199f38a67c513986&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1503806623687118950/Twitch_Announcement_1920x1080.png?ex=6a30dace&is=6a2f894e&hm=eb33d1bb1c027d39db62ec9d724c54cc8c4d3c027140aeafcb9b0786294a8436&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -237,10 +237,10 @@
             "date": "2026-05-13",
             "end_date": "2026-05-13",
             "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "DEV STREAM - LIVE NOW!",
+            "title": "DEV STREAM - LIVE NOW",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a303e92&is=6a2eed12&hm=6601f25f36f618a2530eb9b2dc0ca1e38abbce4d8dfb1944573e04a7e3dde9ea&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a30e752&is=6a2f95d2&hm=4a6e439906f29a08a0372f409286d9b0e01ab00bacf9dc1ed0b44fe2c9261aa0&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -267,9 +267,9 @@
         },
         {
             "original_id": "1504882061507559587",
-            "date": "2026-05-15",
+            "date": "2026-05-16",
             "end_date": "2026-05-19",
-            "iso_date": "2026-05-15T14:00:00+02:00",
+            "iso_date": "2026-05-16T14:00:00+02:00",
             "title": "X3 BATTLEPASS XP WEEKEND",
             "type": "news",
             "desc": "# x3 Battlepass XP Weekend <:MurdockNice:1021857503602032690> \n\nTo celebrate the new update dropping on May 19th, we've got a HUGE X3 Battlepass XP Weekend live right now!\n\nGet triple XP on the **Neon Renegades Battlepass** until Tuesday 19th May - grab those rewards before the new Battlepass launches!\n\n\ud83d\udd14 @Official News",
@@ -311,9 +311,9 @@
         },
         {
             "original_id": "1507035470390099992",
-            "date": "2026-06-19",
-            "end_date": "2026-06-22",
-            "iso_date": "2026-06-19T14:00:00+02:00",
+            "date": "2026-05-22",
+            "end_date": "2026-05-25",
+            "iso_date": "2026-05-22T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
@@ -344,9 +344,9 @@
         },
         {
             "original_id": "1509576350124736652",
-            "date": "2026-06-19",
-            "end_date": "2026-07-05",
-            "iso_date": "2026-06-19T14:00:00+02:00",
+            "date": "2026-06-15",
+            "end_date": "2026-07-06",
+            "iso_date": "2026-06-15T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT 2026",
             "type": "news",
             "desc": "# PCC Summer Summit 2026 \u2694\ufe0f\n\nThe Summer Summit is fast approaching! 3 weeks of top-tier, competitive Predecessor where the strongest teams in the scene clash for $14,000 across EU and NA! \n\nHere's everything you need to know \ud83d\udc47\nhttps://playp.red/PCCSummer2026\n\n(PS sign-ups are still open, but not for long!)\n\n\ud83d\udd14 @Official News",
