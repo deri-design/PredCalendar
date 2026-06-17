@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-17 20:20:13",
+    "last_updated": "2026-06-17 22:46:55",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -237,7 +237,7 @@
             "date": "2026-05-13",
             "end_date": "2026-05-13",
             "iso_date": "2026-05-13T14:00:00+02:00",
-            "title": "DEV STREAM - LIVE NOW",
+            "title": "DEV STREAM - LIVE NOW!",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a343312&is=6a32e192&hm=f7750ed5d18e2575f869948df4a3adb1475ae60ee002f78faa5bcd685df115c7&",
@@ -345,7 +345,7 @@
         {
             "original_id": "1509576350124736652",
             "date": "2026-06-17",
-            "end_date": "2026-06-17",
+            "end_date": "2026-07-07",
             "iso_date": "2026-06-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT 2026",
             "type": "news",
@@ -361,7 +361,7 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a336012&is=6a320e92&hm=3f3e9e9f87ede5e583ab9bc9eb78ee7fb3b38f1176b7b7be813c1e637781cf12&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a3408d2&is=6a32b752&hm=ce3cdb6e11859c154b3f0cfcfda6b54a011548f5e94a7a1e25548c5ba1d38350&",
             "url": "https://playp.red/4xcL7Oz"
         }
     ]
