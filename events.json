@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-21 09:56:35",
+    "last_updated": "2026-06-21 14:21:04",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -204,8 +204,8 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "HARBINGERS OF RUIN UPDATE",
-            "type": "patch",
+            "title": "LEGION HERO RELEASE",
+            "type": "hero",
             "desc": "# New Hero: Legion \ud83d\udd25\n\nOrder. By any means necessary \u2696\ufe0f\n\nComing in Update 1.14: Harbingers of Ruin on May 19th \ud83d\uddd3\ufe0f\n\nTune into the dev stream on May 13th for a first look! \ud83d\udc40\nhttps://youtu.be/bfHLPFHKowk \n\n\ud83d\udd14 @Official News\nLegion | Hero Teaser | Predecessor\nLegion arrives alongside update 1.14: Harbingers of Ruin on May 19th. Tune into our livestream on May 13th for a first look!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/bfHLPFHKowk/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -234,9 +234,9 @@
         },
         {
             "original_id": "1504186232324751391",
-            "date": "2026-05-13",
-            "end_date": "2026-05-13",
-            "iso_date": "2026-05-13T14:00:00+02:00",
+            "date": "2026-05-14",
+            "end_date": "2026-05-14",
+            "iso_date": "2026-05-14T14:00:00+02:00",
             "title": "DEV STREAM - HARBINGERS OF RUIN",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
@@ -311,9 +311,9 @@
         },
         {
             "original_id": "1507035470390099992",
-            "date": "2026-05-22",
-            "end_date": "2026-05-25",
-            "iso_date": "2026-05-22T14:00:00+02:00",
+            "date": "2026-06-22",
+            "end_date": "2026-06-25",
+            "iso_date": "2026-06-22T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
@@ -361,7 +361,7 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a37fd52&is=6a36abd2&hm=12cc5bf6722dbe4af19c8ac621593a1bf7ac8ce190cbdd08e6642beadafc6274&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a38a612&is=6a375492&hm=6a9f07aea319c71a008e9afa22617f3eed33679744a464d47c70fb497b33f734&",
             "url": "https://playp.red/4xcL7Oz"
         },
         {
