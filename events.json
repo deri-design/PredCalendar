@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-23 20:11:37",
+    "last_updated": "2026-06-23 22:17:54",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -237,7 +237,7 @@
             "date": "2026-05-14",
             "end_date": "2026-05-14",
             "iso_date": "2026-05-14T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "title": "DEV STREAM - UPDATE 1.14: HARBINGERS OF ",
             "type": "twitch",
             "desc": "# Dev Stream - LIVE NOW! \ud83d\udd34\n\nWe're live right now with a first look at Update 1.14: Harbingers of Ruin! \n\nWanna see Legion and Eternals in action? Get in here! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n@Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1504182450597925005/1.14_LIVENOW.jpg?ex=6a3c1c12&is=6a3aca92&hm=044e026163e22a6f6cce8fe72e40bd68d8f7d8a18ba8ea71627cb824b22b3d3d&",
@@ -248,7 +248,7 @@
             "date": "2026-05-19",
             "end_date": "2026-05-19",
             "iso_date": "2026-05-19T14:00:00+02:00",
-            "title": "LEGION HERO RELEASE",
+            "title": "LEGION HERO LAUNCH",
             "type": "hero",
             "desc": "# Legion Hero Overview \ud83d\udca5\n\nLegion's ready to liberate the battlefield! Take a look and see what our new Hero can do in the Overview video \ud83d\udc47\nhttps://youtu.be/9mfKb2a-FkY\n\nUpdate 1.14: Harbingers of Ruin launches next week - May 19th! \ud83d\udd25 \n\n\ud83d\udd14 @Official News\nLegion | Hero Overview | Predecessor\nLegion arrives in Predecessor on May 19th, alongside Update 1.14: Harbingers of Ruin!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/9mfKb2a-FkY/maxresdefault.jpg",
@@ -361,16 +361,16 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a394ed2&is=6a37fd52&hm=7802021437c38b5203447b5729fe934d61cda4de5b797167d29c454373efacf6&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a3bf1d2&is=6a3aa052&hm=316ae300f282260db66083fe0077115d43f2a3eac482265017579d9ca1d84654&",
             "url": "https://playp.red/4xcL7Oz"
         },
         {
             "original_id": "1517203853169262623",
-            "date": "2026-06-24",
-            "end_date": "2026-06-24",
-            "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM",
-            "type": "twitch",
+            "date": "2026-06-30",
+            "end_date": "2026-06-30",
+            "iso_date": "2026-06-30T14:00:00+02:00",
+            "title": "UPDATE 1.15: SPLASH DAMAGE",
+            "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
