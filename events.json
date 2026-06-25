@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-25 17:13:58",
+    "last_updated": "2026-06-25 20:07:26",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -311,9 +311,9 @@
         },
         {
             "original_id": "1507035470390099992",
-            "date": "2026-05-22",
-            "end_date": "2026-05-25",
-            "iso_date": "2026-05-22T14:00:00+02:00",
+            "date": "2026-06-22",
+            "end_date": "2026-06-25",
+            "iso_date": "2026-06-22T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
@@ -369,7 +369,7 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM FOR UPDATE 1.15: SPLASH DAMAG",
+            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
@@ -383,7 +383,7 @@
             "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a3dec11&is=6a3c9a91&hm=c58f3ef528ebc95204f85200bdb68c899feaac9e8ec21a6ea5b643a15c50e580&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a3e94d1&is=6a3d4351&hm=40effc597d2a364cc296bca01065014f54ed8c686b89215b13e363b94c23ca93&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -414,7 +414,7 @@
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
             "title": "IKRA ARRIVES IN UPDATE 1.15: SPLASH DAMA",
-            "type": "hero",
+            "type": "patch",
             "desc": "# \ud83d\udd31 Plunge into the abyss! \ud83c\udf0a\n\nIkra arrives in Update 1.15: Splash Damage on June 30th! Check out the Hero Overview to see what the Arbiter of the Deep can do \ud83d\udc47\nhttps://youtu.be/6uOfBBXzJnI\n\n\ud83d\udd14 @Official News\nIkra | Hero Overview | Predecessor\nIkra, new Midlaner joins the fight in Predecessor! Update 1.15: Splash Damage launches 30th June!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/6uOfBBXzJnI/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
