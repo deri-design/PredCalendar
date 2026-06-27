@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-27 13:23:00 (CEST)",
+    "last_updated": "2026-06-27 15:17:32 (CEST)",
     "active": true,
     "campaigns": [
         {
@@ -21,6 +21,11 @@
                     "name": "Quantum Loot Core",
                     "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
                     "minutes": 180
+                },
+                {
+                    "name": "Dekker OHE",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/99ee0add-3197-4e06-be50-025976c434f8.jpeg",
+                    "minutes": 240
                 },
                 {
                     "name": "Greystone OHE",
