@@ -1,43 +1,5 @@
 {
-    "last_updated": "2026-06-29 07:25:25 (CEST)",
-    "active": true,
-    "campaigns": [
-        {
-            "campaign_name": "Predecessor Drops",
-            "start": "2026-04-07T18:00:00Z",
-            "end": "2026-05-04T18:00:00Z",
-            "rewards": [
-                {
-                    "name": "Ion Loot Core",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3d23d56e-1719-4fff-a001-c16c7e9f923f.png",
-                    "minutes": 60
-                },
-                {
-                    "name": "Twinblast OHE",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/fdc4cae3-15dc-4c2d-8a0d-13edd4ac68c3.jpeg",
-                    "minutes": 120
-                },
-                {
-                    "name": "Quantum Loot Core",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
-                    "minutes": 180
-                },
-                {
-                    "name": "Dekker OHE",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/99ee0add-3197-4e06-be50-025976c434f8.jpeg",
-                    "minutes": 240
-                },
-                {
-                    "name": "Greystone OHE",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/5ea7123a-2ee0-4b94-989d-d6284e2d98f9.jpeg",
-                    "minutes": 360
-                },
-                {
-                    "name": "Victorious Core",
-                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3ba0cf6a-6622-4cf9-9ac6-48097200efe6.jpeg",
-                    "minutes": 720
-                }
-            ]
-        }
-    ]
+    "last_updated": "2026-06-29 12:28:05 (CEST)",
+    "active": false,
+    "campaigns": []
 }
