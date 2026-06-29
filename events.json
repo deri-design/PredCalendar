@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-29 11:09:02",
+    "last_updated": "2026-06-29 15:54:59",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -311,13 +311,13 @@
         },
         {
             "original_id": "1507035470390099992",
-            "date": "2026-05-22",
-            "end_date": "2026-05-25",
-            "iso_date": "2026-05-22T14:00:00+02:00",
+            "date": "2026-06-22",
+            "end_date": "2026-06-25",
+            "iso_date": "2026-06-22T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a432ef2&is=6a41dd72&hm=1e0f0a4faca3550fc1f818c80dea24dd150b8b860f04fd1482e90cd4e2a2b1b6&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1507032830486515894/2xp_weekend_1.14.jpg?ex=6a43d7b2&is=6a428632&hm=f14c92e1c9f998f84b5357437fd9f30243a9b592cf0e7581baa7b719f04580e0&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -361,7 +361,7 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a433212&is=6a41e092&hm=6e9d022fc8d8ed0ae3a1e7d4ca5d2050b4b7cf2f512a39191f779ab62620f84c&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a43dad2&is=6a428952&hm=229892b0ab86293ed094b7f1412faf23e373ba2dbd6c924e05bdf60780b95895&",
             "url": "https://playp.red/4xcL7Oz"
         },
         {
@@ -383,7 +383,7 @@
             "title": "DEV STREAM: UPDATE 1.15 SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a433211&is=6a41e091&hm=b63a978684af9045a2fb3718624685dfe4af941fbf4d4a50aca3bc27e09df780&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a43dad1&is=6a428951&hm=0f1e879d649b7efed6500fa13b8b0bdbe16aad59a1627d73662e5027502028a6&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -427,7 +427,7 @@
             "title": "1.15 PATCH NOTES: SPLASH DAMAGE",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a432c14&is=6a41da94&hm=c2d51c3380084ffde583b4fb8124f358f14124dcd39b18ec09a2a96ef3b5213b&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a43d4d4&is=6a428354&hm=39bf01819d237bd6bcc1cba76955734ac2930ccfe4579fbaaf5b829129844f64&",
             "url": "https://playp.red/SplashDamage"
         },
         {
