@@ -1,5 +1,38 @@
 {
-    "last_updated": "2026-06-30 15:05:43 (CEST)",
-    "active": false,
-    "campaigns": []
+    "last_updated": "2026-06-30 18:18:49 (CEST)",
+    "active": true,
+    "campaigns": [
+        {
+            "campaign_name": "Predecessor Drops",
+            "start": "2026-04-07T18:00:00Z",
+            "end": "2026-05-04T18:00:00Z",
+            "rewards": [
+                {
+                    "name": "Ikra Profile Icon",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3d58dba8-0408-4fda-8772-af21f176dd0e.png",
+                    "minutes": 60
+                },
+                {
+                    "name": "Ion Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3d23d56e-1719-4fff-a001-c16c7e9f923f.png",
+                    "minutes": 120
+                },
+                {
+                    "name": "Ikra Banner",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/6b492243-9c6e-44b4-abd3-9a6f8ee091a4.png",
+                    "minutes": 180
+                },
+                {
+                    "name": "Quantum Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
+                    "minutes": 360
+                },
+                {
+                    "name": "Ikra Skin Variant",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/4d822a7e-b164-42f9-a8e2-8e1053b9c601.png",
+                    "minutes": 600
+                }
+            ]
+        }
+    ]
 }
