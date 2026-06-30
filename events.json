@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-06-30 17:07:58",
+    "last_updated": "2026-06-30 20:04:32",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -322,9 +322,9 @@
         },
         {
             "original_id": "1506955095290417196",
-            "date": "2026-05-20",
-            "end_date": "2026-05-20",
-            "iso_date": "2026-05-20T14:00:00+02:00",
+            "date": "2026-06-16",
+            "end_date": "2026-06-16",
+            "iso_date": "2026-06-16T14:00:00+02:00",
             "title": "MAINTENANCE IS COMPLETE",
             "type": "patch",
             "desc": "# Maintenance is complete  \u2705\n\nServers are back up and the new patch is live!\n\nCheck out the notes below for all the changes \ud83d\udc47\nhttps://playp.red/HarbingersOfRuin_PatchNotes\n\n\ud83d\udd14 @Official News\nPatch Notes: 1.14 Harbingers of Ruin | Predecessor\nEverything you need to know about update 1.14: Harbingers of Ruin!",
