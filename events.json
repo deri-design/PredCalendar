@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-01 09:58:11",
+    "last_updated": "2026-07-01 14:46:48",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -311,9 +311,9 @@
         },
         {
             "original_id": "1507035470390099992",
-            "date": "2026-05-22",
-            "end_date": "2026-05-25",
-            "iso_date": "2026-05-22T14:00:00+02:00",
+            "date": "2026-06-22",
+            "end_date": "2026-06-25",
+            "iso_date": "2026-06-22T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 DOUBLE XP WEEKEND \ud83d\udca5\n\nStarting tomorrow, we're celebrating the new update with a HUGE double XP weekend \ud83d\udc47\n\n\u2728 Double Affinity XP\n\ud83d\udcc8 Double Account XP\n\nAll weekend from **Friday 22nd** to **Monday 25th** \ud83d\udd25\n\n\ud83d\udd14 @Official News",
@@ -369,7 +369,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "UPDATE 1.15 - SPLASH DAMAGE",
+            "title": "UPDATE 1.15: SPLASH DAMAGE",
             "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
@@ -380,7 +380,7 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "title": "DEV STREAM - IKRA, ARBITER OF THE DEEP",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a45d511&is=6a448391&hm=d512cdba785094767a7be3055a12c502d34428061ace6732bb584bf7aa450859&",
@@ -388,9 +388,9 @@
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-06-26",
-            "end_date": "2026-06-28",
-            "iso_date": "2026-06-26T14:00:00+02:00",
+            "date": "2026-06-20",
+            "end_date": "2026-06-20",
+            "iso_date": "2026-06-20T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
             "type": "news",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
@@ -399,13 +399,13 @@
         },
         {
             "original_id": "1515722384168980785",
-            "date": "2026-06-27",
-            "end_date": "2026-06-29",
-            "iso_date": "2026-06-27T14:00:00+02:00",
+            "date": "2026-06-21",
+            "end_date": "2026-06-21",
+            "iso_date": "2026-06-21T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 2",
             "type": "news",
             "desc": "# \ud83d\udd25We're back with Day 2 of the PCC Summer Summit!\n\nCatch all the action from the best teams in the scene right now \ud83d\udc47\nhttps://playp.red/4vcbnr2\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515720321217593385/LiveJune14.png?ex=6a45c8cd&is=6a44774d&hm=f2024c61705c81de23804c440f629d4851fd83f863e56342dc6c6bdd5e4bf350&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515720321217593385/LiveJune14.png?ex=6a46718d&is=6a45200d&hm=da08c935484ef687704f312a43f867718ad7f448e631494f580ca3b70873222a&",
             "url": "https://playp.red/4vcbnr2"
         },
         {
