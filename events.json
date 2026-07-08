@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-07 22:13:57",
+    "last_updated": "2026-07-08 03:19:04",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -361,7 +361,7 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a4e66d2&is=6a4d1552&hm=0cbea0a93796c68a89adbf2bff3f9d149b317b85ab4e4a8365141408533a5996&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a4f0f92&is=6a4dbe12&hm=625e2016e527df24b6222b65f28746be340fa8c7db91ba20876f373da42f97f4&",
             "url": "https://playp.red/4xcL7Oz"
         },
         {
@@ -380,10 +380,10 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
+            "title": "DEV STREAM - FIRST LOOK AT UPDATE 1.15: ",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a4e66d1&is=6a4d1551&hm=7890b5fca38116ad2a9c538ffd914dc463b8fa7b3fa29bcd6302eb4dcbe15fa7&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a4f0f91&is=6a4dbe11&hm=3c4217fe08bc195f693ccdeaafb58f21ba723a54fd807811164d3ab8019d1c82&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -427,7 +427,7 @@
             "title": "1.15 PATCH NOTES!",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a4e60d4&is=6a4d0f54&hm=9bd88d61fdcee7c413b4ae1052f299525e4bef8a7022171f618adafc7ad03f87&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a4f0994&is=6a4db814&hm=c28d70ddd62dee05e086d8d56b6a7c6a4510c777a995e61401ebfb92c5facdd1&",
             "url": "https://playp.red/SplashDamage"
         },
         {
