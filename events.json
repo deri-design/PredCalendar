@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-10 14:38:10",
+    "last_updated": "2026-07-10 16:59:43",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -361,7 +361,7 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a51b292&is=6a506112&hm=c9c41e4d9cfdabdc0f504970fbda10471a974403b4a06e37ee83d054b8449cb1&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a525b52&is=6a5109d2&hm=62a818cf1d56a4f9ade8dca434b7778b0182dac62b0bec1fe8c1f570bc90e7f2&",
             "url": "https://playp.red/4xcL7Oz"
         },
         {
@@ -383,7 +383,7 @@
             "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a51b291&is=6a506111&hm=efeab304b5dd2eb119ec0b5864f0848b819efb753dc4ea7888e74584e867c1fb&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a525b51&is=6a5109d1&hm=10d540109e7e65b30f3bff4541bdeaafdc382648dc4b3758c3e529f1db2fa657&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -427,7 +427,7 @@
             "title": "1.15 PATCH NOTES!",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a51ac94&is=6a505b14&hm=830c6e48c5df8b451e721a11226edbfc1ac870f465777066ab0d6e89a2e8c6ed&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a525554&is=6a5103d4&hm=1b14e8b120017939e05b3e376b6d8e5a687bc3f481502672197145a1b88523f0&",
             "url": "https://playp.red/SplashDamage"
         },
         {
@@ -449,7 +449,7 @@
             "title": "SPLASH DAMAGE - DOUBLE XP WEEKEND!",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a51b904&is=6a506784&hm=ed5344e0fb7e17164ce3691a41b3f698797666ccba003c43ea6f0de41da26606&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a5261c4&is=6a511044&hm=5582ab47989a3470602b843629a2e52015e93668f52260860b07bf06e53ca86a&",
             "url": "https://www.predecessorgame.com/en-US/news"
         }
     ]
