@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-11 19:10:38",
+    "last_updated": "2026-07-11 21:54:42",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -345,7 +345,7 @@
         {
             "original_id": "1509576350124736652",
             "date": "2026-07-03",
-            "end_date": "2026-07-06",
+            "end_date": "2026-07-26",
             "iso_date": "2026-07-03T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT 2026",
             "type": "news",
@@ -388,11 +388,11 @@
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-07-10",
-            "end_date": "2026-07-10",
-            "iso_date": "2026-07-10T14:00:00+02:00",
+            "date": "2026-07-03",
+            "end_date": "2026-07-03",
+            "iso_date": "2026-07-03T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
-            "type": "twitch",
+            "type": "news",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a53abad&is=6a525a2d&hm=263cb46c4fc7a4f175b4800e0c2c622b192148ed5e7cab7dff058d4e19b81654&",
             "url": "https://playp.red/4vcbnr2"
