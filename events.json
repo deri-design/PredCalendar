@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-12 10:37:13",
+    "last_updated": "2026-07-12 13:37:11",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -366,11 +366,11 @@
         },
         {
             "original_id": "1517203853169262623",
-            "date": "2026-06-24",
-            "end_date": "2026-06-24",
-            "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
-            "type": "twitch",
+            "date": "2026-06-30",
+            "end_date": "2026-06-30",
+            "iso_date": "2026-06-30T14:00:00+02:00",
+            "title": "UPDATE 1.15 - SPLASH DAMAGE",
+            "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -432,13 +432,13 @@
         },
         {
             "original_id": "1520430849886130187",
-            "date": "2026-07-11",
-            "end_date": "2026-07-11",
-            "iso_date": "2026-07-11T14:00:00+02:00",
+            "date": "2026-07-12",
+            "end_date": "2026-07-12",
+            "iso_date": "2026-07-12T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit: The Pinnacle - LIVE!\n\nIt's finals weekend and the competition is FIERCE \ud83d\udd25\n\nCatch all the action live and pick up some new Twitch Drops! \ud83d\udc47\n\ud83d\udfe3Twitch: https://www.twitch.tv/predecessorgame \n\ud83d\udd34YouTube: https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a539e03&is=6a524c83&hm=2c9f330d967a153edf7f2d5c4d2ccdd871dddccea20813be744ff003ffbe8420&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a5446c3&is=6a52f543&hm=6aacce27aee9050710e110544907208f47a3b79a97bb9b0f4ee64667a8b4e9bb&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
