@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-15 13:51:48",
+    "last_updated": "2026-07-15 16:26:40",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -344,13 +344,13 @@
         },
         {
             "original_id": "1509576350124736652",
-            "date": "2026-06-24",
-            "end_date": "2026-07-12",
-            "iso_date": "2026-06-24T14:00:00+02:00",
+            "date": "2026-07-03",
+            "end_date": "2026-07-06",
+            "iso_date": "2026-07-03T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT 2026",
             "type": "news",
             "desc": "# PCC Summer Summit 2026 \u2694\ufe0f\n\nThe Summer Summit is fast approaching! 3 weeks of top-tier, competitive Predecessor where the strongest teams in the scene clash for $14,000 across EU and NA! \n\nHere's everything you need to know \ud83d\udc47\nhttps://playp.red/PCCSummer2026\n\n(PS sign-ups are still open, but not for long!)\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1509574262917435504/image_26.png?ex=6a584b56&is=6a56f9d6&hm=78a5099a1047f0faea1237276f409b05042f0bcef78ae56d7fddea2f1de2101d&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1509574262917435504/image_26.png?ex=6a58f416&is=6a57a296&hm=d87c07c395e910f84ae1127aa8e65f7b34bdc6bf196e732733c8ead5335b82da&",
             "url": "https://playp.red/PCCSummer2026"
         },
         {
@@ -361,16 +361,16 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a584a12&is=6a56f892&hm=a65fde436f08427701a5439a4cc3d10f51dac7eb9efc72fd216710960cf8606e&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a58f2d2&is=6a57a152&hm=3034f6b94372138ece9f0c9e9fea3f62c4e13f64a99d9eb5d719d1349fbc1b81&",
             "url": "https://playp.red/4xcL7Oz"
         },
         {
             "original_id": "1517203853169262623",
-            "date": "2026-06-30",
-            "end_date": "2026-06-30",
-            "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "UPDATE 1.15 - SPLASH DAMAGE",
-            "type": "patch",
+            "date": "2026-06-24",
+            "end_date": "2026-06-24",
+            "iso_date": "2026-06-24T14:00:00+02:00",
+            "title": "DEV STREAM",
+            "type": "twitch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -380,10 +380,10 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM - FIRST LOOK AT UPDATE 1.15: ",
+            "title": "DEV STREAM - IKRA",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a584a11&is=6a56f891&hm=668fe9f1cf29367b164fbd6426a3722b1d949118a9a72431d9978c2c18091e5d&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a58f2d1&is=6a57a151&hm=30f455b0a6928376617f1914f682129ca2ea58c8ea75a908599eee31be600b92&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -413,7 +413,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "IKRA ARRIVES IN UPDATE 1.15: SPLASH DAMA",
+            "title": "IKRA HERO OVERVIEW",
             "type": "hero",
             "desc": "# \ud83d\udd31 Plunge into the abyss! \ud83c\udf0a\n\nIkra arrives in Update 1.15: Splash Damage on June 30th! Check out the Hero Overview to see what the Arbiter of the Deep can do \ud83d\udc47\nhttps://youtu.be/6uOfBBXzJnI\n\n\ud83d\udd14 @Official News\nIkra | Hero Overview | Predecessor\nIkra, new Midlaner joins the fight in Predecessor! Update 1.15: Splash Damage launches 30th June!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/6uOfBBXzJnI/maxresdefault.jpg",
@@ -424,10 +424,10 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "1.15 PATCH NOTES!",
+            "title": "1.15 PATCH NOTES",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a584414&is=6a56f294&hm=07dd722c1e426021ec182bd5b539b765798e172493815334b4baf5447622e9a8&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a58ecd4&is=6a579b54&hm=018193c77ea5670bf7a885ba5f212dbadfbbca2d19c337ca3601ddbb3d382dee&",
             "url": "https://playp.red/SplashDamage"
         },
         {
@@ -449,7 +449,7 @@
             "title": "SPLASH DAMAGE - DOUBLE XP WEEKEND!",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a585084&is=6a56ff04&hm=e5955d6e6909b7971e328613b99693eb6563395455c52f610d26db790a58c70d&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a58f944&is=6a57a7c4&hm=1cd95a13c53bb6b4e64c293423d3a074aaefaacb808e7162a39a490ffc999d78&",
             "url": "https://www.predecessorgame.com/en-US/news"
         }
     ]
