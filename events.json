@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-19 16:00:35",
+    "last_updated": "2026-07-19 19:12:07",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -369,7 +369,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "UPDATE 1.15: SPLASH DAMAGE",
+            "title": "UPDATE 1.15 - SPLASH DAMAGE",
             "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
@@ -388,13 +388,13 @@
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-07-03",
-            "end_date": "2026-07-06",
-            "iso_date": "2026-07-03T14:00:00+02:00",
+            "date": "2026-07-19",
+            "end_date": "2026-07-19",
+            "iso_date": "2026-07-19T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
-            "type": "news",
+            "type": "event",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a5d8eed&is=6a5c3d6d&hm=4db0bbebe0f2bc1716dab48cfae4a523cba19a98d7e9503eecf0edf488ada0cc&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a5e37ad&is=6a5ce62d&hm=59b93f760bef4449126911c81be665fb1ed7a02a4e44b3fc3561f9ffe36a4f04&",
             "url": "https://playp.red/4vcbnr2"
         },
         {
