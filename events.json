@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-20 09:23:07",
+    "last_updated": "2026-07-20 14:17:09",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -344,13 +344,13 @@
         },
         {
             "original_id": "1509576350124736652",
-            "date": "2026-07-03",
-            "end_date": "2026-07-26",
-            "iso_date": "2026-07-03T14:00:00+02:00",
+            "date": "2026-07-17",
+            "end_date": "2026-08-02",
+            "iso_date": "2026-07-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT 2026",
-            "type": "news",
+            "type": "event",
             "desc": "# PCC Summer Summit 2026 \u2694\ufe0f\n\nThe Summer Summit is fast approaching! 3 weeks of top-tier, competitive Predecessor where the strongest teams in the scene clash for $14,000 across EU and NA! \n\nHere's everything you need to know \ud83d\udc47\nhttps://playp.red/PCCSummer2026\n\n(PS sign-ups are still open, but not for long!)\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1509574262917435504/image_26.png?ex=6a5d9156&is=6a5c3fd6&hm=0975b2be662749d22bdafa1e359aa12b467c0dfe59b30163df98b5876eb82418&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1509574262917435504/image_26.png?ex=6a5ee2d6&is=6a5d9156&hm=3c4b972d98d6eae98540e515097da65abfe6d7a01d2612953afc6e02d79349a6&",
             "url": "https://playp.red/PCCSummer2026"
         },
         {
@@ -366,11 +366,11 @@
         },
         {
             "original_id": "1517203853169262623",
-            "date": "2026-06-24",
-            "end_date": "2026-06-24",
-            "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
-            "type": "twitch",
+            "date": "2026-06-30",
+            "end_date": "2026-06-30",
+            "iso_date": "2026-06-30T14:00:00+02:00",
+            "title": "UPDATE 1.15 - SPLASH DAMAGE",
+            "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -380,7 +380,7 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
+            "title": "DEV STREAM - IKRA, ARBITER OF THE DEEP",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a5ee191&is=6a5d9011&hm=1ec32bb4ed2a015939e290d797100f9a0f89dac62215107aa961902453047ebb&",
@@ -388,24 +388,24 @@
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-07-19",
+            "date": "2026-07-17",
             "end_date": "2026-07-19",
-            "iso_date": "2026-07-19T14:00:00+02:00",
+            "iso_date": "2026-07-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
-            "type": "twitch",
+            "type": "event",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a5e37ad&is=6a5ce62d&hm=59b93f760bef4449126911c81be665fb1ed7a02a4e44b3fc3561f9ffe36a4f04&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a5ee06d&is=6a5d8eed&hm=fa2281d2c6d5c2b6c6871fd077499c62358f162a70376da4b61c4c4981d2b6df&",
             "url": "https://playp.red/4vcbnr2"
         },
         {
             "original_id": "1515722384168980785",
-            "date": "2026-07-19",
+            "date": "2026-07-18",
             "end_date": "2026-07-19",
-            "iso_date": "2026-07-19T14:00:00+02:00",
+            "iso_date": "2026-07-18T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 2",
-            "type": "twitch",
+            "type": "event",
             "desc": "# \ud83d\udd25We're back with Day 2 of the PCC Summer Summit!\n\nCatch all the action from the best teams in the scene right now \ud83d\udc47\nhttps://playp.red/4vcbnr2\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515720321217593385/LiveJune14.png?ex=6a5e2c8d&is=6a5cdb0d&hm=cdb67399d671f3079740630eeae992b665d528291003379cec02eb6673d8ddf0&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515720321217593385/LiveJune14.png?ex=6a5f7e0d&is=6a5e2c8d&hm=ea35f676e327f6e1b5383c3a1df5fd713006a0027ac26dccc06b36535c703596&",
             "url": "https://playp.red/4vcbnr2"
         },
         {
@@ -460,7 +460,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \ud83c\udf0a Patch Notes are here! \n\nBalance Patch 1.15.3 lands next Tuesday, 21st July! \n\nWe've got a bunch of new Summer skins and a slew of balance changes coming up, take a look \ud83d\udc47\nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a5ed0e2&is=6a5d7f62&hm=9b574185edd6b04c36c5993b8cff4451c974eaf85750dd8e492e1f56b09a1778&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a5f79a2&is=6a5e2822&hm=f257f8c3aa54199df69db12b110118195a78bf63198234e431fb74ef584ae303&",
             "url": "https://playp.red/PatchNotes1_15_3"
         }
     ]
