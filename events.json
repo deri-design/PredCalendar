@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-21 11:12:01",
+    "last_updated": "2026-07-21 14:03:25",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -366,11 +366,11 @@
         },
         {
             "original_id": "1517203853169262623",
-            "date": "2026-06-30",
-            "end_date": "2026-06-30",
-            "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "UPDATE 1.15: SPLASH DAMAGE",
-            "type": "patch",
+            "date": "2026-06-24",
+            "end_date": "2026-06-24",
+            "iso_date": "2026-06-24T14:00:00+02:00",
+            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
+            "type": "twitch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -380,7 +380,7 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
+            "title": "FIRST LOOK AT UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a603311&is=6a5ee191&hm=e19f2e5567fb1c0f9648d980a4933c82d9b670399bc416589e0d933ba295495b&",
@@ -388,9 +388,9 @@
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-07-18",
-            "end_date": "2026-07-18",
-            "iso_date": "2026-07-18T14:00:00+02:00",
+            "date": "2026-07-17",
+            "end_date": "2026-07-19",
+            "iso_date": "2026-07-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
             "type": "news",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
@@ -399,9 +399,9 @@
         },
         {
             "original_id": "1515722384168980785",
-            "date": "2026-07-19",
-            "end_date": "2026-07-19",
-            "iso_date": "2026-07-19T14:00:00+02:00",
+            "date": "2026-07-18",
+            "end_date": "2026-07-18",
+            "iso_date": "2026-07-18T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 2",
             "type": "news",
             "desc": "# \ud83d\udd25We're back with Day 2 of the PCC Summer Summit!\n\nCatch all the action from the best teams in the scene right now \ud83d\udc47\nhttps://playp.red/4vcbnr2\n\n\ud83d\udd14 @Official News",
@@ -432,13 +432,13 @@
         },
         {
             "original_id": "1520430849886130187",
-            "date": "2026-07-20",
-            "end_date": "2026-07-20",
-            "iso_date": "2026-07-20T14:00:00+02:00",
+            "date": "2026-07-21",
+            "end_date": "2026-07-21",
+            "iso_date": "2026-07-21T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit: The Pinnacle - LIVE!\n\nIt's finals weekend and the competition is FIERCE \ud83d\udd25\n\nCatch all the action live and pick up some new Twitch Drops! \ud83d\udc47\n\ud83d\udfe3Twitch: https://www.twitch.tv/predecessorgame \n\ud83d\udd34YouTube: https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a602443&is=6a5ed2c3&hm=873ee395525595e34ea41b8e31380d6726042dd10a55c986a55888c33cc07a67&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a60cd03&is=6a5f7b83&hm=5173a71ac99109cceaa2fb6574ac066e0febd32fdfd09032b18fade61c560e20&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -460,7 +460,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \ud83c\udf0a Patch Notes are here! \n\nBalance Patch 1.15.3 lands next Tuesday, 21st July! \n\nWe've got a bunch of new Summer skins and a slew of balance changes coming up, take a look \ud83d\udc47\nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a602262&is=6a5ed0e2&hm=0035115251a251eb8dd2e7d3be6133b1d820e0ee0e4408c866d007a082a090b2&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a60cb22&is=6a5f79a2&hm=962c918dcdd1f90c9d89a9362186f2e1f104d17b06508141a1d7090b99950701&",
             "url": "https://playp.red/PatchNotes1_15_3"
         },
         {
