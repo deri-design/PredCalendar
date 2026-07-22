@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-22 19:26:42",
+    "last_updated": "2026-07-22 22:07:55",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -388,22 +388,22 @@
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-07-03",
-            "end_date": "2026-07-03",
-            "iso_date": "2026-07-03T14:00:00+02:00",
+            "date": "2026-07-17",
+            "end_date": "2026-07-19",
+            "iso_date": "2026-07-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
-            "type": "event",
+            "type": "news",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a622c2d&is=6a60daad&hm=40b5906465d57ec1bed97d612d69d6519c27803bacf3c5292e3023c51f8145b9&",
             "url": "https://playp.red/4vcbnr2"
         },
         {
             "original_id": "1515722384168980785",
-            "date": "2026-07-04",
-            "end_date": "2026-07-04",
-            "iso_date": "2026-07-04T14:00:00+02:00",
+            "date": "2026-07-18",
+            "end_date": "2026-07-19",
+            "iso_date": "2026-07-18T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 2",
-            "type": "event",
+            "type": "news",
             "desc": "# \ud83d\udd25We're back with Day 2 of the PCC Summer Summit!\n\nCatch all the action from the best teams in the scene right now \ud83d\udc47\nhttps://playp.red/4vcbnr2\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515720321217593385/LiveJune14.png?ex=6a62210d&is=6a60cf8d&hm=03420df941ca00e7634c03d8b599a81182375445136c083111915801cf84b447&",
             "url": "https://playp.red/4vcbnr2"
@@ -432,9 +432,9 @@
         },
         {
             "original_id": "1520430849886130187",
-            "date": "2026-07-17",
-            "end_date": "2026-07-19",
-            "iso_date": "2026-07-17T14:00:00+02:00",
+            "date": "2026-07-25",
+            "end_date": "2026-07-26",
+            "iso_date": "2026-07-25T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit: The Pinnacle - LIVE!\n\nIt's finals weekend and the competition is FIERCE \ud83d\udd25\n\nCatch all the action live and pick up some new Twitch Drops! \ud83d\udc47\n\ud83d\udfe3Twitch: https://www.twitch.tv/predecessorgame \n\ud83d\udd34YouTube: https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
@@ -484,6 +484,17 @@
             "desc": "# \u2696\ufe0f  Balance Patch 1.15.3 is LIVE! \n\nDownload the new update and check out all the summer skins, as well as a range of balance adjustments \ud83d\ude4c \n\nPatch notes if you missed them \ud83d\udc47 \nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1529063013120737310/1.15.3_LIVE.png?ex=6a61e3e6&is=6a609266&hm=a4cfd3dc2deef93467e3b8abad58892ae87c1d337618e63f20bf19035f23cad7&",
             "url": "https://playp.red/PatchNotes1_15_3"
+        },
+        {
+            "original_id": "1519406639629996163",
+            "date": "2026-06-24",
+            "end_date": "2026-06-24",
+            "iso_date": "2026-06-24T14:00:00+02:00",
+            "title": "FIRST LOOK AT UPDATE 1.15: SPLASH DAMAGE",
+            "type": "twitch",
+            "desc": "# \ud83c\udfa5\ud83d\udd34 We're live with a first look at Update 1.15: Splash Damage!\n\nCome take a look at what we've been cooking up for next week's update! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1519403073846509751/1.15_STREAM_LIVE.png?ex=6a6257e1&is=6a610661&hm=58ee4b5edf62924f2627e0d3f1fdad17a3bb382e0d6a370f2376cd4840b027de&",
+            "url": "https://www.twitch.tv/predecessorgame"
         }
     ]
 }
