@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-25 03:13:42",
+    "last_updated": "2026-07-25 08:12:16",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -388,9 +388,9 @@
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-07-03",
-            "end_date": "2026-07-03",
-            "iso_date": "2026-07-03T14:00:00+02:00",
+            "date": "2026-07-17",
+            "end_date": "2026-07-19",
+            "iso_date": "2026-07-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
             "type": "news",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
@@ -399,9 +399,9 @@
         },
         {
             "original_id": "1515722384168980785",
-            "date": "2026-07-04",
-            "end_date": "2026-07-04",
-            "iso_date": "2026-07-04T14:00:00+02:00",
+            "date": "2026-07-18",
+            "end_date": "2026-07-20",
+            "iso_date": "2026-07-18T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 2",
             "type": "news",
             "desc": "# \ud83d\udd25We're back with Day 2 of the PCC Summer Summit!\n\nCatch all the action from the best teams in the scene right now \ud83d\udc47\nhttps://playp.red/4vcbnr2\n\n\ud83d\udd14 @Official News",
@@ -433,7 +433,7 @@
         {
             "original_id": "1520430849886130187",
             "date": "2026-07-25",
-            "end_date": "2026-07-25",
+            "end_date": "2026-07-26",
             "iso_date": "2026-07-25T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
@@ -449,7 +449,7 @@
             "title": "SPLASH DAMAGE - DOUBLE XP WEEKEND!",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a64d6c4&is=6a638544&hm=8a7961782f65acc59dea5bd291369c1d76262d43fc3a421b91f2707ca7da508a&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a657f84&is=6a642e04&hm=6599f3f5de76fae832887e3b2d6373020e61859c98a55d1ef6d47cbca28e04cc&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
