@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-27 03:35:33",
+    "last_updated": "2026-07-27 09:59:17",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -392,7 +392,7 @@
             "end_date": "2026-07-03",
             "iso_date": "2026-07-03T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
-            "type": "event",
+            "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a681aed&is=6a66c96d&hm=86d2d9033dc8ecde96141f5035a74a5cb783e5b2e54b5fa72a7b63551c074e6a&",
             "url": "https://playp.red/4vcbnr2"
@@ -403,7 +403,7 @@
             "end_date": "2026-07-04",
             "iso_date": "2026-07-04T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 2",
-            "type": "event",
+            "type": "twitch",
             "desc": "# \ud83d\udd25We're back with Day 2 of the PCC Summer Summit!\n\nCatch all the action from the best teams in the scene right now \ud83d\udc47\nhttps://playp.red/4vcbnr2\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515720321217593385/LiveJune14.png?ex=6a680fcd&is=6a66be4d&hm=a420fb9c43e986d4af9ac2bcdd12655cb7bde5fa71f6c8882f70a434527ad187&",
             "url": "https://playp.red/4vcbnr2"
@@ -432,13 +432,13 @@
         },
         {
             "original_id": "1520430849886130187",
-            "date": "2026-07-25",
+            "date": "2026-07-24",
             "end_date": "2026-07-26",
-            "iso_date": "2026-07-25T14:00:00+02:00",
+            "iso_date": "2026-07-24T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit: The Pinnacle - LIVE!\n\nIt's finals weekend and the competition is FIERCE \ud83d\udd25\n\nCatch all the action live and pick up some new Twitch Drops! \ud83d\udc47\n\ud83d\udfe3Twitch: https://www.twitch.tv/predecessorgame \n\ud83d\udd34YouTube: https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a676483&is=6a661303&hm=fb7cb54b17ee10ab2a38815c4572982f0067ea1d78f7de728608eaeb7337600a&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a680d43&is=6a66bbc3&hm=58f06b324d23f4d7676ee9f48e8f4b2bf9ef7ddee5d447360b2f1cdf1049c0c1&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
