@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-30 02:43:56",
+    "last_updated": "2026-07-30 05:45:33",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -361,7 +361,7 @@
             "title": "BALANCE PATCH V1.14.4",
             "type": "patch",
             "desc": "# \u2696\ufe0f Balance Patch v1.14.4 - Patch Notes\n\nPatch notes are here for the next balance update, launching next Tuesday 9th June \ud83d\udc47\nhttps://playp.red/4xcL7Oz\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a6b67d2&is=6a6a1652&hm=3e0885399754d3eb4bd78aff0f3cc5f054a3af79292ba685083bd3334be375d1&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1512472004719153443/1.14.x_PatchHeader.jpg?ex=6a6c1092&is=6a6abf12&hm=30568af0f6a4d4aa5d623fc17886f0ad7137ab274f39202e1d0a0c031c034351&",
             "url": "https://playp.red/4xcL7Oz"
         },
         {
@@ -369,7 +369,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "UPDATE 1.15: SPLASH DAMAGE",
+            "title": "UPDATE 1.15: SPLASH DAMAGE RELEASE",
             "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
@@ -383,27 +383,27 @@
             "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a6b67d1&is=6a6a1651&hm=61872d2577ef621f70f3768c40678cf54d2e311deaa93eceb0c090cd235a3abf&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a6c1091&is=6a6abf11&hm=46eab8e848c442200b7dfd92d3e6bf17e4c367d8edb5b9331e9a3ac694ddf1ca&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-07-03",
-            "end_date": "2026-07-06",
-            "iso_date": "2026-07-03T14:00:00+02:00",
+            "date": "2026-07-17",
+            "end_date": "2026-07-19",
+            "iso_date": "2026-07-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
-            "type": "event",
+            "type": "news",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a6b66ad&is=6a6a152d&hm=69f3430ce95a74e3316d5f9e91b0eb3971a366d55292c236f983d27ca1df389c&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a6c0f6d&is=6a6abded&hm=5f0d1fd9a22511a88be1b59aa75875dfd9c41a87783b02bc1a845b3d281c4d3a&",
             "url": "https://playp.red/4vcbnr2"
         },
         {
             "original_id": "1515722384168980785",
-            "date": "2026-07-04",
-            "end_date": "2026-07-06",
-            "iso_date": "2026-07-04T14:00:00+02:00",
+            "date": "2026-07-18",
+            "end_date": "2026-07-19",
+            "iso_date": "2026-07-18T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 2",
-            "type": "event",
+            "type": "news",
             "desc": "# \ud83d\udd25We're back with Day 2 of the PCC Summer Summit!\n\nCatch all the action from the best teams in the scene right now \ud83d\udc47\nhttps://playp.red/4vcbnr2\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515720321217593385/LiveJune14.png?ex=6a6c044d&is=6a6ab2cd&hm=48061ccd52b3ec0c2a8671230fbcff5cfb8880d2ed853d0c2c89d6f24e655fc3&",
             "url": "https://playp.red/4vcbnr2"
@@ -449,7 +449,7 @@
             "title": "SPLASH DAMAGE - DOUBLE XP WEEKEND!",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a6b6e44&is=6a6a1cc4&hm=953e7670c31b07eecc7d98e06fa21b339add42f4681a754bd5d3a17137c284bf&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a6c1704&is=6a6ac584&hm=2c733ce096dab4c6b8cb78aaa59aefd273a5f16a4087d665d89dec790329a91a&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
