@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-30 08:34:17",
+    "last_updated": "2026-07-30 11:10:55",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -369,7 +369,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "UPDATE 1.15: SPLASH DAMAGE RELEASE",
+            "title": "UPDATE 1.15: SPLASH DAMAGE",
             "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
@@ -432,13 +432,13 @@
         },
         {
             "original_id": "1520430849886130187",
-            "date": "2026-07-17",
-            "end_date": "2026-07-19",
-            "iso_date": "2026-07-17T14:00:00+02:00",
+            "date": "2026-07-25",
+            "end_date": "2026-07-26",
+            "iso_date": "2026-07-25T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit: The Pinnacle - LIVE!\n\nIt's finals weekend and the competition is FIERCE \ud83d\udd25\n\nCatch all the action live and pick up some new Twitch Drops! \ud83d\udc47\n\ud83d\udfe3Twitch: https://www.twitch.tv/predecessorgame \n\ud83d\udd34YouTube: https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a6b5903&is=6a6a0783&hm=af3bf5a2f92e1a32dbe8b66d8155d1febfd0b0f97a17fb7b42ad7e8bc8f24490&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a6c01c3&is=6a6ab043&hm=ecdaac95ed58819c90229663a94027e6d1c663dda1a22f6f30480a4d929a58c0&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
