@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-07-31 14:19:23",
+    "last_updated": "2026-07-31 16:47:57",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -383,25 +383,25 @@
             "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a6d6211&is=6a6c1091&hm=fd8734258cd195a97bb94393f9f8b6a88217af028ec69c7be89b60a172cb5d8c&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a6e0ad1&is=6a6cb951&hm=5ac75a350f71285f1ad6515c09fa6738005ec7c96106b0bb5c4fd67083cfe713&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
             "original_id": "1515373325323600022",
-            "date": "2026-07-17",
-            "end_date": "2026-07-19",
-            "iso_date": "2026-07-17T14:00:00+02:00",
+            "date": "2026-07-03",
+            "end_date": "2026-07-03",
+            "iso_date": "2026-07-03T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
             "type": "event",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a6d60ed&is=6a6c0f6d&hm=7cab1628a808ecce892b1ec24d63c24d3804a5ffe0a72e984d69727701951af8&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a6e09ad&is=6a6cb82d&hm=03c6fbb92a30880312c1aa6a438bf34390cf66fedfad344f0c0caad4578f7af0&",
             "url": "https://playp.red/4vcbnr2"
         },
         {
             "original_id": "1515722384168980785",
-            "date": "2026-07-24",
-            "end_date": "2026-07-26",
-            "iso_date": "2026-07-24T14:00:00+02:00",
+            "date": "2026-07-04",
+            "end_date": "2026-07-04",
+            "iso_date": "2026-07-04T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 2",
             "type": "event",
             "desc": "# \ud83d\udd25We're back with Day 2 of the PCC Summer Summit!\n\nCatch all the action from the best teams in the scene right now \ud83d\udc47\nhttps://playp.red/4vcbnr2\n\n\ud83d\udd14 @Official News",
@@ -427,14 +427,14 @@
             "title": "UPDATE 1.15: SPLASH DAMAGE PATCH NOTES",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a6d5c14&is=6a6c0a94&hm=d7c8d14af3a40a0109b420c3b66aed15b8e58ea7b00e52398d1c16fada08fc65&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a6e04d4&is=6a6cb354&hm=8f53c7ff4ee2b9497869ea41973ab25be7bb04e74f8ada09dbb66ff47167f169&",
             "url": "https://playp.red/SplashDamage"
         },
         {
             "original_id": "1520430849886130187",
-            "date": "2026-07-31",
-            "end_date": "2026-08-02",
-            "iso_date": "2026-07-31T14:00:00+02:00",
+            "date": "2026-07-17",
+            "end_date": "2026-07-17",
+            "iso_date": "2026-07-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit: The Pinnacle - LIVE!\n\nIt's finals weekend and the competition is FIERCE \ud83d\udd25\n\nCatch all the action live and pick up some new Twitch Drops! \ud83d\udc47\n\ud83d\udfe3Twitch: https://www.twitch.tv/predecessorgame \n\ud83d\udd34YouTube: https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
@@ -449,7 +449,7 @@
             "title": "SPLASH DAMAGE - DOUBLE XP WEEKEND",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a6d6884&is=6a6c1704&hm=ebf27ade4e7ef5feb8aa43dfd59bd5bb0089f09c6b4cca2a226a02781c1ee6cd&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a6e1144&is=6a6cbfc4&hm=8e61a5f96a2a7f709799569cd4866e79998b9a4cf509862a3c8a66033c00ed54&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -504,7 +504,7 @@
             "title": "UPDATE 1.16: AEGIS OF DAWN",
             "type": "patch",
             "desc": "# \ud83d\udce3 It's coming back! \u2694\ufe0f\ud83d\udd25\n\nGet ready to **BRAWL** in Update 1.16: Aegis of Dawn on August 11th \ud83d\udcab\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a6d6973&is=6a6c17f3&hm=48a4d23f6e1e34e1208b643170d6638286934cd04dbcb972bd758df49e177e74&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a6e1233&is=6a6cc0b3&hm=41a43462f01a3da9d4c1f0345fe487b2b6925dac3c273bec9535dcae1731bd8a&",
             "url": "https://www.predecessorgame.com/en-US/news"
         }
     ]
