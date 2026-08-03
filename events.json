@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-03 19:43:03",
+    "last_updated": "2026-08-03 22:11:03",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -369,7 +369,7 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM - UPDATE 1.15 SPLASH DAMAGE",
+            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
@@ -380,8 +380,8 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "IKRA, ARBITER OF THE DEEP",
-            "type": "hero",
+            "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
+            "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a71ff51&is=6a70add1&hm=3aa8024ead52910ae448675f3455cac53c88fbe1f88d6807d50e230b468cec94&",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -392,9 +392,9 @@
             "end_date": "2026-07-03",
             "iso_date": "2026-07-03T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT DAY 1",
-            "type": "event",
+            "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit day 1 is LIVE! \n Kicking off the first of 3 weekends of high-octane, competitive Predecessor! \u2694\ufe0f\n \n The teams are ready - jump in \ud83d\udc47\nhttps://playp.red/4vcbnr2\n \n \ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a70acad&is=6a6f5b2d&hm=6f26ab89c413aea9fd1d2e1cc8f492409dbc3aa4969ad0b82e808a15e3ca74db&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1515369877731541022/LiveJune13.png?ex=6a71fe2d&is=6a70acad&hm=d7d967e629f8a7452cfc6632afe137b8c6ec767b06da73b26dddd548cd381bd0&",
             "url": "https://playp.red/4vcbnr2"
         },
         {
