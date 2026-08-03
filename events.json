@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-02 21:58:51",
+    "last_updated": "2026-08-03 03:26:43",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -383,7 +383,7 @@
             "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a70add1&is=6a6f5c51&hm=62ace197bb9d277de520fb5fdbb6571b783478c0d5c2539f8a19cbe3ff6d3341&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a715691&is=6a700511&hm=f29bf1d2230a0c6f9756a0590b1fc584a4641e4b3a77e250720cf882c49ba94e&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -413,7 +413,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "IKRA HERO OVERVIEW",
+            "title": "IKRA HERO RELEASE",
             "type": "hero",
             "desc": "# \ud83d\udd31 Plunge into the abyss! \ud83c\udf0a\n\nIkra arrives in Update 1.15: Splash Damage on June 30th! Check out the Hero Overview to see what the Arbiter of the Deep can do \ud83d\udc47\nhttps://youtu.be/6uOfBBXzJnI\n\n\ud83d\udd14 @Official News\nIkra | Hero Overview | Predecessor\nIkra, new Midlaner joins the fight in Predecessor! Update 1.15: Splash Damage launches 30th June!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/6uOfBBXzJnI/maxresdefault.jpg",
@@ -424,21 +424,21 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "1.15 PATCH NOTES",
+            "title": "UPDATE 1.15: SPLASH DAMAGE",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a70a7d4&is=6a6f5654&hm=e1e17dc1a9164d65f90bcb3eb1816fb51b65eb2bfc9178e317eb4fb5b3f1398f&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a715094&is=6a6fff14&hm=90a6335c7820d07801e204433096ed952a423159a32f2220d6786e8cb9de02d5&",
             "url": "https://playp.red/SplashDamage"
         },
         {
             "original_id": "1520430849886130187",
             "date": "2026-07-17",
-            "end_date": "2026-07-17",
+            "end_date": "2026-07-19",
             "iso_date": "2026-07-17T14:00:00+02:00",
             "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit: The Pinnacle - LIVE!\n\nIt's finals weekend and the competition is FIERCE \ud83d\udd25\n\nCatch all the action live and pick up some new Twitch Drops! \ud83d\udc47\n\ud83d\udfe3Twitch: https://www.twitch.tv/predecessorgame \n\ud83d\udd34YouTube: https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a709f03&is=6a6f4d83&hm=b9c84e819a66aeee619a5440c62fa4adb769495485f107fad0353e29147edb3c&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a7147c3&is=6a6ff643&hm=7d9860a9ba30a09780199c8dd7c0cfc7e803f9c13690b8f9f407dfc3f11c2824&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -460,7 +460,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \ud83c\udf0a Patch Notes are here! \n\nBalance Patch 1.15.3 lands next Tuesday, 21st July! \n\nWe've got a bunch of new Summer skins and a slew of balance changes coming up, take a look \ud83d\udc47\nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a709d22&is=6a6f4ba2&hm=16dd53a53b8bc6a09b6eb7436413d874d258425dd3fd3adb15dab7a85e1ae143&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a7145e2&is=6a6ff462&hm=06e55aa657f47c4c3dbf42d6e28ae0e80d49d05a6158a27df65afbfdf3cbd48e&",
             "url": "https://playp.red/PatchNotes1_15_3"
         },
         {
