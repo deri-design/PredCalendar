@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-05 05:49:30",
+    "last_updated": "2026-08-05 08:42:38",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -366,11 +366,11 @@
         },
         {
             "original_id": "1517203853169262623",
-            "date": "2026-06-24",
-            "end_date": "2026-06-24",
-            "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM",
-            "type": "twitch",
+            "date": "2026-06-30",
+            "end_date": "2026-06-30",
+            "iso_date": "2026-06-30T14:00:00+02:00",
+            "title": "UPDATE 1.15: SPLASH DAMAGE",
+            "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15 - Splash Damage - June 30th! \ud83d\udd25\n\nFind out more next week on the dev stream and keep an eye out on our socials for more! \ud83d\udc47\nhttps://youtu.be/LAeLe8KjLBY\n\nDev Stream - <t:1782324000:F>\n\n\ud83d\udd14 @Official News\nUpdate 1.15 Splash Damage | Teaser | Predecessor\nUpdate 1.15: Splash Damage arrives on June 30th! join us on June 24th for the developer livestream where we'll be showing off what we've got in store!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/LAeLe8KjLBY/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -380,7 +380,7 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "title": "DEV STREAM - IKRA, ARBITER OF THE DEEP",
             "type": "twitch",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a73f991&is=6a72a811&hm=5f8b90d564dd007bf4a643f973198fb91e63de022e75d63ad538e479b7ad5b31&",
@@ -413,7 +413,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "IKRA HERO RELEASE",
+            "title": "IKRA ARRIVES IN UPDATE 1.15: SPLASH DAMA",
             "type": "hero",
             "desc": "# \ud83d\udd31 Plunge into the abyss! \ud83c\udf0a\n\nIkra arrives in Update 1.15: Splash Damage on June 30th! Check out the Hero Overview to see what the Arbiter of the Deep can do \ud83d\udc47\nhttps://youtu.be/6uOfBBXzJnI\n\n\ud83d\udd14 @Official News\nIkra | Hero Overview | Predecessor\nIkra, new Midlaner joins the fight in Predecessor! Update 1.15: Splash Damage launches 30th June!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/6uOfBBXzJnI/maxresdefault.jpg",
@@ -446,7 +446,7 @@
             "date": "2026-07-03",
             "end_date": "2026-07-06",
             "iso_date": "2026-07-03T14:00:00+02:00",
-            "title": "DOUBLE XP WEEKEND",
+            "title": "SPLASH DAMAGE - DOUBLE XP WEEKEND",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a740004&is=6a72ae84&hm=a57e9535425c2dd62136e824cf9460c51fff687ad241b8cd189cee51552c6eb0&",
@@ -493,7 +493,7 @@
             "title": "DEV STREAM - UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udfa5\ud83d\udd34 We're live with a first look at Update 1.15: Splash Damage!\n\nCome take a look at what we've been cooking up for next week's update! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1519403073846509751/1.15_STREAM_LIVE.png?ex=6a737b61&is=6a7229e1&hm=9e625c1a03a3a2e971406e77418d06fb4e1a05b88eb3c57ef43a4da56fb2f654&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1519403073846509751/1.15_STREAM_LIVE.png?ex=6a742421&is=6a72d2a1&hm=16e9488f2c0ecb4dcd81018ddd7eea874cf188d1ec3d3cd636186687e88f0070&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -501,7 +501,7 @@
             "date": "2026-08-11",
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "UPDATE 1.16: AEGIS OF DAWN",
+            "title": "BRAWL IN UPDATE 1.16: AEGIS OF DAWN",
             "type": "patch",
             "desc": "# \ud83d\udce3 It's coming back! \u2694\ufe0f\ud83d\udd25\n\nGet ready to **BRAWL** in Update 1.16: Aegis of Dawn on August 11th \ud83d\udcab\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a7400f3&is=6a72af73&hm=8039a200fb8d12e21b7e8dc3214d10b23f9df1280724ff8fac05d09fd018d0ec&",
@@ -509,11 +509,11 @@
         },
         {
             "original_id": "1533877240629301349",
-            "date": "2026-08-05",
-            "end_date": "2026-08-05",
-            "iso_date": "2026-08-05T14:00:00+02:00",
-            "title": "DEV STREAM",
-            "type": "twitch",
+            "date": "2026-08-11",
+            "end_date": "2026-08-11",
+            "iso_date": "2026-08-11T14:00:00+02:00",
+            "title": "UPDATE 1.16: AEGIS OF DAWN",
+            "type": "patch",
             "desc": "# \ud83d\udd25 Get ready to ignite the battlefield!\n\nScarlett joins the fight in Update 1.16: Aegis of Dawn \u2694\ufe0f\nhttps://youtu.be/KeOfssI0pLA\n\nCatch her in action for the first time on our Dev Stream \ud83d\uddd3\ufe0f  <t:1785952800:F> \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nScarlett | Hero Teaser | Predecessor\nNew Hero, Scarlett, arrives in update 1.16: Aegis of Dawn! Tune into the livestream on August 5th to see her in action for the first time!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/KeOfssI0pLA/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
