@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-05 22:14:12",
+    "last_updated": "2026-08-06 02:55:08",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -380,8 +380,8 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM",
-            "type": "twitch",
+            "title": "IKRA HERO TEASER",
+            "type": "hero",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a74a251&is=6a7350d1&hm=42e1684301ffd7742830e64cd6a4ee8b512301c3f2fd181b76335cfac11f448c&",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -413,7 +413,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "IKRA HERO RELEASE",
+            "title": "IKRA HERO ARRIVAL",
             "type": "hero",
             "desc": "# \ud83d\udd31 Plunge into the abyss! \ud83c\udf0a\n\nIkra arrives in Update 1.15: Splash Damage on June 30th! Check out the Hero Overview to see what the Arbiter of the Deep can do \ud83d\udc47\nhttps://youtu.be/6uOfBBXzJnI\n\n\ud83d\udd14 @Official News\nIkra | Hero Overview | Predecessor\nIkra, new Midlaner joins the fight in Predecessor! Update 1.15: Splash Damage launches 30th June!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/6uOfBBXzJnI/maxresdefault.jpg",
@@ -427,7 +427,7 @@
             "title": "UPDATE 1.15: SPLASH DAMAGE",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a749c54&is=6a734ad4&hm=891eeecd4d0a8fcfe96d591f20bf4a2b9959ac44d5f64ecaf835d144c53fd8aa&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a754514&is=6a73f394&hm=6c4fbca1fdcd435602db10b889e1704c3b8da4e5fcaef996695bef49a3847844&",
             "url": "https://playp.red/SplashDamage"
         },
         {
@@ -460,7 +460,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \ud83c\udf0a Patch Notes are here! \n\nBalance Patch 1.15.3 lands next Tuesday, 21st July! \n\nWe've got a bunch of new Summer skins and a slew of balance changes coming up, take a look \ud83d\udc47\nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a7491a2&is=6a734022&hm=8bd8fa4e5d8e4b18dfe1c123181df04e454f18e79f85d6e3055caf4346bed781&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a753a62&is=6a73e8e2&hm=b28bf9a2a83abd63b037fdf9600a44d677c8467d9dd873920a4d251c6834c1ab&",
             "url": "https://playp.red/PatchNotes1_15_3"
         },
         {
@@ -512,21 +512,21 @@
             "date": "2026-08-05",
             "end_date": "2026-08-05",
             "iso_date": "2026-08-05T14:00:00+02:00",
-            "title": "DEV STREAM",
-            "type": "twitch",
+            "title": "SCARLETT HERO TEASER",
+            "type": "hero",
             "desc": "# \ud83d\udd25 Get ready to ignite the battlefield!\n\nScarlett joins the fight in Update 1.16: Aegis of Dawn \u2694\ufe0f\nhttps://youtu.be/KeOfssI0pLA\n\nCatch her in action for the first time on our Dev Stream \ud83d\uddd3\ufe0f  <t:1785952800:F> \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nScarlett | Hero Teaser | Predecessor\nNew Hero, Scarlett, arrives in update 1.16: Aegis of Dawn! Tune into the livestream on August 5th to see her in action for the first time!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/KeOfssI0pLA/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
             "original_id": "1534210385731784774",
-            "date": "2026-08-06",
-            "end_date": "2026-08-06",
-            "iso_date": "2026-08-06T14:00:00+02:00",
+            "date": "2026-08-07",
+            "end_date": "2026-08-07",
+            "iso_date": "2026-08-07T14:00:00+02:00",
             "title": "DEV STREAM",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a749b39&is=6a7349b9&hm=f994a051b2c7e92324f04e5e47304d65841b3e62c14b6be3893fdb9779d3ed4b&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a7543f9&is=6a73f279&hm=7562808ecdbb30040427cca626935475aa4317e2c62daf219a9f26eddbead82c&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
