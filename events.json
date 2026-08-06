@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-06 08:44:00",
+    "last_updated": "2026-08-06 11:26:59",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -380,8 +380,8 @@
             "date": "2026-06-24",
             "end_date": "2026-06-24",
             "iso_date": "2026-06-24T14:00:00+02:00",
-            "title": "DEV STREAM",
-            "type": "twitch",
+            "title": "IKRA HERO TEASER",
+            "type": "hero",
             "desc": "# \ud83c\udf0a Ikra, Arbiter of the Deep \ud83d\udd31\n\nCatch the new Hero in action as we show off a first look at Update 1.15: Splash Damage on the Dev Stream!\n\ud83d\uddd3\ufe0f<t:1782324000:F>\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1518994982994972833/SD_Twitch_Reminder_1920.png?ex=6a754b11&is=6a73f991&hm=c3d284828b7c5b65ab62673e7827d72403c6b57276d76b65e0b3d953c46c516e&",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -413,7 +413,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "IKRA HERO RELEASE",
+            "title": "IKRA HERO ARRIVAL",
             "type": "hero",
             "desc": "# \ud83d\udd31 Plunge into the abyss! \ud83c\udf0a\n\nIkra arrives in Update 1.15: Splash Damage on June 30th! Check out the Hero Overview to see what the Arbiter of the Deep can do \ud83d\udc47\nhttps://youtu.be/6uOfBBXzJnI\n\n\ud83d\udd14 @Official News\nIkra | Hero Overview | Predecessor\nIkra, new Midlaner joins the fight in Predecessor! Update 1.15: Splash Damage launches 30th June!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/6uOfBBXzJnI/maxresdefault.jpg",
@@ -512,8 +512,8 @@
             "date": "2026-08-05",
             "end_date": "2026-08-05",
             "iso_date": "2026-08-05T14:00:00+02:00",
-            "title": "DEV STREAM",
-            "type": "twitch",
+            "title": "SCARLETT HERO TEASER",
+            "type": "hero",
             "desc": "# \ud83d\udd25 Get ready to ignite the battlefield!\n\nScarlett joins the fight in Update 1.16: Aegis of Dawn \u2694\ufe0f\nhttps://youtu.be/KeOfssI0pLA\n\nCatch her in action for the first time on our Dev Stream \ud83d\uddd3\ufe0f  <t:1785952800:F> \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nScarlett | Hero Teaser | Predecessor\nNew Hero, Scarlett, arrives in update 1.16: Aegis of Dawn! Tune into the livestream on August 5th to see her in action for the first time!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/KeOfssI0pLA/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
