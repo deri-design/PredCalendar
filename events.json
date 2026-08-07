@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-07 13:13:46",
+    "last_updated": "2026-08-07 15:59:28",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -413,7 +413,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "IKRA HERO RELEASE",
+            "title": "IKRA ARRIVES IN UPDATE 1.15: SPLASH DAMA",
             "type": "hero",
             "desc": "# \ud83d\udd31 Plunge into the abyss! \ud83c\udf0a\n\nIkra arrives in Update 1.15: Splash Damage on June 30th! Check out the Hero Overview to see what the Arbiter of the Deep can do \ud83d\udc47\nhttps://youtu.be/6uOfBBXzJnI\n\n\ud83d\udd14 @Official News\nIkra | Hero Overview | Predecessor\nIkra, new Midlaner joins the fight in Predecessor! Update 1.15: Splash Damage launches 30th June!\n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/6uOfBBXzJnI/maxresdefault.jpg",
@@ -424,10 +424,10 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "UPDATE 1.15: SPLASH DAMAGE",
+            "title": "1.15 PATCH NOTES",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a769694&is=6a754514&hm=aca42a5b4e65ad48c20df26b48bd456ba1be1fe05f82305aff27c2aef8a8b3ae&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a773f54&is=6a75edd4&hm=70adda972f2ff46f023877293065d0e22ee1b0ea004fc5b9df5b0c1fb92f00f1&",
             "url": "https://playp.red/SplashDamage"
         },
         {
@@ -446,10 +446,10 @@
             "date": "2026-07-03",
             "end_date": "2026-07-06",
             "iso_date": "2026-07-03T14:00:00+02:00",
-            "title": "DOUBLE XP WEEKEND",
+            "title": "SPLASH DAMAGE - DOUBLE XP WEEKEND",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a76a304&is=6a755184&hm=7755ea0c0df331e32ddd3556e801c09a32bd2907c42774f57f965351161275b3&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a774bc4&is=6a75fa44&hm=115a37f234fb72a12d8939492755399d2738f6a1a60b8a053b8ee70fd7c62f3f&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -460,7 +460,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \ud83c\udf0a Patch Notes are here! \n\nBalance Patch 1.15.3 lands next Tuesday, 21st July! \n\nWe've got a bunch of new Summer skins and a slew of balance changes coming up, take a look \ud83d\udc47\nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a768be2&is=6a753a62&hm=af0673b01b322ac3d5d11cf46980380beb17746b86a7053a148a548650c826f5&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a7734a2&is=6a75e322&hm=1e6b183ce395e9562a1ec885651bc1d3cf5b924b019dfe3af452fdd6608e5426&",
             "url": "https://playp.red/PatchNotes1_15_3"
         },
         {
@@ -487,10 +487,10 @@
         },
         {
             "original_id": "1519406639629996163",
-            "date": "2026-08-07",
-            "end_date": "2026-08-07",
-            "iso_date": "2026-08-07T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "date": "2026-06-23",
+            "end_date": "2026-06-23",
+            "iso_date": "2026-06-23T14:00:00+02:00",
+            "title": "FIRST LOOK AT UPDATE 1.15: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udfa5\ud83d\udd34 We're live with a first look at Update 1.15: Splash Damage!\n\nCome take a look at what we've been cooking up for next week's update! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1519403073846509751/1.15_STREAM_LIVE.png?ex=6a76c721&is=6a7575a1&hm=7deada05a6dc7743fbe5c90114037a101efda4a4d5cc540c73a0b23aada245e2&",
@@ -501,18 +501,18 @@
             "date": "2026-08-11",
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "BRAWL MODE",
+            "title": "BRAWL IN UPDATE 1.16: AEGIS OF DAWN",
             "type": "patch",
             "desc": "# \ud83d\udce3 It's coming back! \u2694\ufe0f\ud83d\udd25\n\nGet ready to **BRAWL** in Update 1.16: Aegis of Dawn on August 11th \ud83d\udcab\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a76a3f3&is=6a755273&hm=b0aa0f8878524926df38adf7a98334e21ca272db5b4a8377ce21c15e41ba6097&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a774cb3&is=6a75fb33&hm=1e22c2b975a7b7568f056ad933f294a75b41041de00139d0dd0dd1d90fc28385&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
             "original_id": "1533877240629301349",
-            "date": "2026-08-11",
-            "end_date": "2026-08-11",
-            "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "SCARLETT RELEASE",
+            "date": "2026-08-05",
+            "end_date": "2026-08-05",
+            "iso_date": "2026-08-05T14:00:00+02:00",
+            "title": "GET READY TO IGNITE THE BATTLEFIELD",
             "type": "hero",
             "desc": "# \ud83d\udd25 Get ready to ignite the battlefield!\n\nScarlett joins the fight in Update 1.16: Aegis of Dawn \u2694\ufe0f\nhttps://youtu.be/KeOfssI0pLA\n\nCatch her in action for the first time on our Dev Stream \ud83d\uddd3\ufe0f  <t:1785952800:F> \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nScarlett | Hero Teaser | Predecessor\nNew Hero, Scarlett, arrives in update 1.16: Aegis of Dawn! Tune into the livestream on August 5th to see her in action for the first time!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/KeOfssI0pLA/maxresdefault.jpg",
@@ -520,13 +520,13 @@
         },
         {
             "original_id": "1534210385731784774",
-            "date": "2026-08-11",
-            "end_date": "2026-08-11",
-            "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "date": "2026-08-08",
+            "end_date": "2026-08-08",
+            "iso_date": "2026-08-08T14:00:00+02:00",
+            "title": "DEV STREAM TOMORROW",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a769579&is=6a7543f9&hm=f8dae55880a407af8015654011ff214c2c48da6ecf11e8250237d90f6ed96ab5&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a773e39&is=6a75ecb9&hm=2d87650e134a8c63034363d234877386ac64f20b1313e6b7baa898d03ff72799&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -534,8 +534,8 @@
             "date": "2026-08-07",
             "end_date": "2026-08-07",
             "iso_date": "2026-08-07T14:00:00+02:00",
-            "title": "QUICK MAINTENANCE",
-            "type": "maintenance",
+            "title": "QUICK MAINTENANCE UPCOMING",
+            "type": "news",
             "desc": "# \u26a0\ufe0f  Quick Maintenance Upcoming!\n\nHey everyone! We'll be restarting game servers <t:1785837606:R> to resolve a backend issue. \n\nDowntime should only last around 10-15 minutes then you can get back in and play!\n\nApologies for the short notice, we appreciate your patience \ud83d\ude4f",
             "image": "",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -583,6 +583,17 @@
             "desc": "# Maintenance complete \u2705\n\nServers are back up and the hotfix is live!",
             "image": "",
             "url": "https://www.predecessorgame.com/en-US/news"
+        },
+        {
+            "original_id": "1535306066915631197",
+            "date": "2026-08-11",
+            "end_date": "2026-08-11",
+            "iso_date": "2026-08-11T14:00:00+02:00",
+            "title": "AEGIS OF DAWN PATCH NOTES",
+            "type": "patch",
+            "desc": "# \ud83d\udd25 Aegis of Dawn Patch Notes!\n\nUpdate 1.16 Aegis of Dawn drops next week - August 11th \ud83d\ude4c\n\nCheck out the patch notes for all the changes! \ud83d\udc47\nhttps://playp.red/AegisofDawn_PatchNotes\n\n\ud83d\udd14 @Official News",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1535302283548561428/SCARLETT_HEADER.jpg?ex=6a77452c&is=6a75f3ac&hm=8aaa6a44227b883fd0a26e7849a96a0885071f56dd7cc5ae7d85760e64cb2dbc&",
+            "url": "https://playp.red/AegisofDawn_PatchNotes"
         }
     ]
 }
