@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-10 02:07:40",
+    "last_updated": "2026-08-10 04:41:49",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -427,7 +427,7 @@
             "title": "1.15 PATCH NOTES",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a79e254&is=6a7890d4&hm=ea7c3ca2006e4ffaf8adbe05cfc7cf726fd77cc64846b60cf4fa04dce2ab1c36&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a7a8b14&is=6a793994&hm=22956604a09dc2468ceb6ede2936f04b85d315a59204249cc07b1360e9eb4c58&",
             "url": "https://playp.red/SplashDamage"
         },
         {
@@ -449,7 +449,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a79eec4&is=6a789d44&hm=77edfdbaec852a4304c4e10af61d42094d7e9a9aa85a3628aa55a0195ef6e2c2&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a7a9784&is=6a794604&hm=cbd93381301e5d2685eab2d267047b38f76b951dba45463e55db1c39d7887420&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -504,7 +504,7 @@
             "title": "BRAWL IN UPDATE 1.16: AEGIS OF DAWN",
             "type": "patch",
             "desc": "# \ud83d\udce3 It's coming back! \u2694\ufe0f\ud83d\udd25\n\nGet ready to **BRAWL** in Update 1.16: Aegis of Dawn on August 11th \ud83d\udcab\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a79efb3&is=6a789e33&hm=a215a3175274680b4036a6eae7d8ca7b5853fb0eb39855f2b0987b1fbbef27c2&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a7a9873&is=6a7946f3&hm=dc444afee462de5f5a3091e47427462f3135b550ab49d62a73fc42ff7835448e&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -523,10 +523,10 @@
             "date": "2026-08-11",
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "title": "DEV STREAM TOMORROW",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a79e139&is=6a788fb9&hm=6a6650f646ebddeb30fa0854307e5f6dbafd1b180726c255cdc46a803807a122&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a7a89f9&is=6a793879&hm=18007218d0bfeeabb0491556b3cda55fb379e86d59a4a333d832ba62ace9eaea&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -534,7 +534,7 @@
             "date": "2026-08-10",
             "end_date": "2026-08-10",
             "iso_date": "2026-08-10T14:00:00+02:00",
-            "title": "QUICK MAINTENANCE",
+            "title": "QUICK MAINTENANCE UPCOMING",
             "type": "news",
             "desc": "# \u26a0\ufe0f  Quick Maintenance Upcoming!\n\nHey everyone! We'll be restarting game servers <t:1785837606:R> to resolve a backend issue. \n\nDowntime should only last around 10-15 minutes then you can get back in and play!\n\nApologies for the short notice, we appreciate your patience \ud83d\ude4f",
             "image": "",
@@ -592,7 +592,7 @@
             "title": "AEGIS OF DAWN PATCH NOTES",
             "type": "patch",
             "desc": "# \ud83d\udd25 Aegis of Dawn Patch Notes!\n\nUpdate 1.16 Aegis of Dawn drops next week - August 11th \ud83d\ude4c\n\nCheck out the patch notes for all the changes! \ud83d\udc47\nhttps://playp.red/AegisofDawn_PatchNotes\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1535302283548561428/SCARLETT_HEADER.jpg?ex=6a79e82c&is=6a7896ac&hm=5ec986ce799816e44b6c0e4b3d00b1f2f2f162932e524db7eb2a53746c062e0e&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1535302283548561428/SCARLETT_HEADER.jpg?ex=6a7a90ec&is=6a793f6c&hm=47419cfde662b6a1337b043bbbd5655c001f5f3957a8dc15b7230609df94363a&",
             "url": "https://playp.red/AegisofDawn_PatchNotes"
         }
     ]
