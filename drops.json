@@ -1,5 +1,38 @@
 {
-    "last_updated": "2026-08-11 16:14:02 (CEST)",
-    "active": false,
-    "campaigns": []
+    "last_updated": "2026-08-11 17:53:11 (CEST)",
+    "active": true,
+    "campaigns": [
+        {
+            "campaign_name": "Predecessor Drops",
+            "start": "2026-04-07T18:00:00Z",
+            "end": "2026-05-04T18:00:00Z",
+            "rewards": [
+                {
+                    "name": "Turquoise Scarlett Icon",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/24628127-f1f4-4662-a64e-604574869a3c.png",
+                    "minutes": 60
+                },
+                {
+                    "name": "Ion Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3d23d56e-1719-4fff-a001-c16c7e9f923f.png",
+                    "minutes": 120
+                },
+                {
+                    "name": "Turquoise Scarlett Banner",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/6f9769a5-b990-4db8-aabf-9f95c1069573.png",
+                    "minutes": 180
+                },
+                {
+                    "name": "Quantum Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
+                    "minutes": 360
+                },
+                {
+                    "name": "Turquoise Scarlett Skin",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/044ed1af-9ba4-419b-a812-a9dd7009b3ae.png",
+                    "minutes": 600
+                }
+            ]
+        }
+    ]
 }
