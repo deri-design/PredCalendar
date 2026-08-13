@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-13 10:16:49",
+    "last_updated": "2026-08-13 13:21:06",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -487,13 +487,13 @@
         },
         {
             "original_id": "1519406639629996163",
-            "date": "2026-06-23",
-            "end_date": "2026-06-23",
-            "iso_date": "2026-06-23T14:00:00+02:00",
-            "title": "DEV STREAM FOR UPDATE 1.15: SPLASH DAMAG",
+            "date": "2026-06-30",
+            "end_date": "2026-06-30",
+            "iso_date": "2026-06-30T14:00:00+02:00",
+            "title": "DEV STREAM: SPLASH DAMAGE",
             "type": "twitch",
             "desc": "# \ud83c\udfa5\ud83d\udd34 We're live with a first look at Update 1.15: Splash Damage!\n\nCome take a look at what we've been cooking up for next week's update! \ud83d\udc47\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1519403073846509751/1.15_STREAM_LIVE.png?ex=6a7c0d21&is=6a7abba1&hm=73aa3b4832d0b66e6396ff2ae62e38795ea40f5f6109198e0b3ee5ac01815bab&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1519403073846509751/1.15_STREAM_LIVE.png?ex=6a7eb021&is=6a7d5ea1&hm=1d1fb5bed864486fd54270be5586e154de363883672a7099df09551134c2ec22&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -502,7 +502,7 @@
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
             "title": "BRAWL MODE RETURNS",
-            "type": "news",
+            "type": "patch",
             "desc": "# \ud83d\udce3 It's coming back! \u2694\ufe0f\ud83d\udd25\n\nGet ready to **BRAWL** in Update 1.16: Aegis of Dawn on August 11th \ud83d\udcab\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a7e8cf3&is=6a7d3b73&hm=d4ac85e1ff38d3507c376d93a71b34f2dea0555a2d484ec7313dd4a44e1a0446&",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -520,10 +520,10 @@
         },
         {
             "original_id": "1534210385731784774",
-            "date": "2026-08-11",
-            "end_date": "2026-08-11",
-            "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "date": "2026-08-10",
+            "end_date": "2026-08-10",
+            "iso_date": "2026-08-10T14:00:00+02:00",
+            "title": "DEV STREAM TOMORROW",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a7e7e79&is=6a7d2cf9&hm=7389583a0f45fee2b66355a3b068ede70c0c8cc5b25aa2791dabf9a824284f64&",
@@ -531,10 +531,10 @@
         },
         {
             "original_id": "1534123365390880910",
-            "date": "2026-08-11",
-            "end_date": "2026-08-11",
-            "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "QUICK MAINTENANCE",
+            "date": "2026-08-13",
+            "end_date": "2026-08-13",
+            "iso_date": "2026-08-13T14:00:00+02:00",
+            "title": "QUICK MAINTENANCE UPCOMING",
             "type": "news",
             "desc": "# \u26a0\ufe0f  Quick Maintenance Upcoming!\n\nHey everyone! We'll be restarting game servers <t:1785837606:R> to resolve a backend issue. \n\nDowntime should only last around 10-15 minutes then you can get back in and play!\n\nApologies for the short notice, we appreciate your patience \ud83d\ude4f",
             "image": "",
@@ -553,13 +553,13 @@
         },
         {
             "original_id": "1534626467428831356",
-            "date": "2026-08-11",
-            "end_date": "2026-08-11",
-            "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "date": "2026-08-13",
+            "end_date": "2026-08-13",
+            "iso_date": "2026-08-13T14:00:00+02:00",
+            "title": "DEV STREAM IS LIVE",
             "type": "twitch",
             "desc": "# Dev Stream is LIVE \ud83c\udfa5\ud83d\udd34\n\nCome get a first look at what's coming up in Update 1.16: Aegis of Dawn! \ud83d\udd25\ud83d\udc40\n\ud83d\udd17 https://www.twitch.tv/predecessorgame\n\n\ud83d\udd14  @Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534622562804302147/1-16_LIVESTREAMSOCIALS_LiveNow_v4.png?ex=6a7c0c62&is=6a7abae2&hm=bb4908f61be1f9ba3549d2b43a1b3c3abb0e2e17e35b2b98079cbabad5008b80&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534622562804302147/1-16_LIVESTREAMSOCIALS_LiveNow_v4.png?ex=6a7eaf62&is=6a7d5de2&hm=58527c322dcce3d218f63bfca09131ab8495bdd3213f18be391b18b95b36ac88&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
