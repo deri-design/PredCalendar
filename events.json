@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-13 04:54:51",
+    "last_updated": "2026-08-13 07:40:37",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -424,7 +424,7 @@
             "date": "2026-06-30",
             "end_date": "2026-06-30",
             "iso_date": "2026-06-30T14:00:00+02:00",
-            "title": "UPDATE 1.15: SPLASH DAMAGE",
+            "title": "1.15 PATCH NOTES",
             "type": "patch",
             "desc": "# \ud83d\udcdd 1.15 Patch Notes! \ud83c\udf0a\n\nThe new update: Splash Damage is almost here! \ud83c\udf0a\ud83d\udd31\n\nCheck out the patch notes to see what's coming up on June 30th! \ud83d\udc47\nhttps://playp.red/SplashDamage\n\n\ud83d\udd14 @Official News\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520075716601843834/Patch_Header_1.15_1.png?ex=6a7e7f94&is=6a7d2e14&hm=a23846c283d5e9f3bc988e1a9e6c9c8f5f6b9d9729daeaa9ec6d4df25d834802&",
@@ -502,7 +502,7 @@
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
             "title": "BRAWL MODE RETURNS",
-            "type": "news",
+            "type": "patch",
             "desc": "# \ud83d\udce3 It's coming back! \u2694\ufe0f\ud83d\udd25\n\nGet ready to **BRAWL** in Update 1.16: Aegis of Dawn on August 11th \ud83d\udcab\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a7e8cf3&is=6a7d3b73&hm=d4ac85e1ff38d3507c376d93a71b34f2dea0555a2d484ec7313dd4a44e1a0446&",
             "url": "https://www.predecessorgame.com/en-US/news"
@@ -512,17 +512,17 @@
             "date": "2026-08-05",
             "end_date": "2026-08-05",
             "iso_date": "2026-08-05T14:00:00+02:00",
-            "title": "HERO TEASER",
-            "type": "twitch",
+            "title": "SCARLETT HERO TEASER",
+            "type": "hero",
             "desc": "# \ud83d\udd25 Get ready to ignite the battlefield!\n\nScarlett joins the fight in Update 1.16: Aegis of Dawn \u2694\ufe0f\nhttps://youtu.be/KeOfssI0pLA\n\nCatch her in action for the first time on our Dev Stream \ud83d\uddd3\ufe0f  <t:1785952800:F> \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nScarlett | Hero Teaser | Predecessor\nNew Hero, Scarlett, arrives in update 1.16: Aegis of Dawn! Tune into the livestream on August 5th to see her in action for the first time!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/KeOfssI0pLA/maxresdefault.jpg",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
             "original_id": "1534210385731784774",
-            "date": "2026-08-05",
-            "end_date": "2026-08-05",
-            "iso_date": "2026-08-05T14:00:00+02:00",
+            "date": "2026-08-11",
+            "end_date": "2026-08-11",
+            "iso_date": "2026-08-11T14:00:00+02:00",
             "title": "DEV STREAM",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
