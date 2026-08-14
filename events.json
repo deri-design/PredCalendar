@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-14 07:37:56",
+    "last_updated": "2026-08-14 10:07:31",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -432,10 +432,10 @@
         },
         {
             "original_id": "1520430849886130187",
-            "date": "2026-08-14",
-            "end_date": "2026-08-14",
-            "iso_date": "2026-08-14T14:00:00+02:00",
-            "title": "PCC SUMMER SUMMIT",
+            "date": "2026-07-17",
+            "end_date": "2026-07-19",
+            "iso_date": "2026-07-17T14:00:00+02:00",
+            "title": "PCC SUMMER SUMMIT: THE PINNACLE",
             "type": "twitch",
             "desc": "# \ud83d\udce3 PCC Summer Summit: The Pinnacle - LIVE!\n\nIt's finals weekend and the competition is FIERCE \ud83d\udd25\n\nCatch all the action live and pick up some new Twitch Drops! \ud83d\udc47\n\ud83d\udfe3Twitch: https://www.twitch.tv/predecessorgame \n\ud83d\udd34YouTube: https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1520428638707646536/LiveJune27.png?ex=6a7fc843&is=6a7e76c3&hm=82eaa244c52a3723056a627abdb060e8bc8ab57b9cce6540dfee81c7df2b5f15&",
@@ -457,7 +457,7 @@
             "date": "2026-07-21",
             "end_date": "2026-07-21",
             "iso_date": "2026-07-21T14:00:00+02:00",
-            "title": "BALANCE PATCH 1.15.3",
+            "title": "PATCH NOTES 1.15.3",
             "type": "patch",
             "desc": "# \ud83c\udf0a Patch Notes are here! \n\nBalance Patch 1.15.3 lands next Tuesday, 21st July! \n\nWe've got a bunch of new Summer skins and a slew of balance changes coming up, take a look \ud83d\udc47\nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a7fc662&is=6a7e74e2&hm=461b98517f3048f1ddf50e6a49360089eae72dd3416c3fcd55a1614d3e0b2d28&",
@@ -482,7 +482,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \u2696\ufe0f  Balance Patch 1.15.3 is LIVE! \n\nDownload the new update and check out all the summer skins, as well as a range of balance adjustments \ud83d\ude4c \n\nPatch notes if you missed them \ud83d\udc47 \nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1529063013120737310/1.15.3_LIVE.png?ex=6a7f8da6&is=6a7e3c26&hm=9f06a9b3b61baf9439797af686dce9b278acc58848051fadd315272d3ae09e16&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1529063013120737310/1.15.3_LIVE.png?ex=6a803666&is=6a7ee4e6&hm=7bc3b437f1d07bac8f09bcf6f613e62e3de44b21f34eea0d800e86910806baed&",
             "url": "https://playp.red/PatchNotes1_15_3"
         },
         {
@@ -520,10 +520,10 @@
         },
         {
             "original_id": "1534210385731784774",
-            "date": "2026-08-05",
-            "end_date": "2026-08-05",
-            "iso_date": "2026-08-05T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "date": "2026-08-15",
+            "end_date": "2026-08-15",
+            "iso_date": "2026-08-15T14:00:00+02:00",
+            "title": "DEV STREAM TOMORROW",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a7fcff9&is=6a7e7e79&hm=baddd85836342dfac7e9b8c9405736e44b385f9180faca027e4a0f6fb7611796&",
@@ -534,7 +534,7 @@
             "date": "2026-08-14",
             "end_date": "2026-08-14",
             "iso_date": "2026-08-14T14:00:00+02:00",
-            "title": "QUICK MAINTENANCE",
+            "title": "QUICK MAINTENANCE UPCOMING",
             "type": "news",
             "desc": "# \u26a0\ufe0f  Quick Maintenance Upcoming!\n\nHey everyone! We'll be restarting game servers <t:1785837606:R> to resolve a backend issue. \n\nDowntime should only last around 10-15 minutes then you can get back in and play!\n\nApologies for the short notice, we appreciate your patience \ud83d\ude4f",
             "image": "",
@@ -559,7 +559,7 @@
             "title": "DEV STREAM",
             "type": "twitch",
             "desc": "# Dev Stream is LIVE \ud83c\udfa5\ud83d\udd34\n\nCome get a first look at what's coming up in Update 1.16: Aegis of Dawn! \ud83d\udd25\ud83d\udc40\n\ud83d\udd17 https://www.twitch.tv/predecessorgame\n\n\ud83d\udd14  @Official News\nPredecessorGame - Twitch\nOfficial account for the third person action MOBA Predecessor, developed by Omeda Studios.",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534622562804302147/1-16_LIVESTREAMSOCIALS_LiveNow_v4.png?ex=6a7f5822&is=6a7e06a2&hm=0dd2995f0de26d52d28e326acd30fb264030166887e1ae7dd8a877fbfdc32042&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534622562804302147/1-16_LIVESTREAMSOCIALS_LiveNow_v4.png?ex=6a8000e2&is=6a7eaf62&hm=5f1cc31e3111070d720b5096e9bfd649c967249d760b10cd38a471a973708f38&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
