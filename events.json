@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-15 12:45:10",
+    "last_updated": "2026-08-15 15:25:58",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -460,7 +460,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \ud83c\udf0a Patch Notes are here! \n\nBalance Patch 1.15.3 lands next Tuesday, 21st July! \n\nWe've got a bunch of new Summer skins and a slew of balance changes coming up, take a look \ud83d\udc47\nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a8117e2&is=6a7fc662&hm=bcd65ff1860a32cdcbb16de81555e34c58fb8687b59f74be3c6e9b3428947dcf&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a81c0a2&is=6a806f22&hm=22b39ef149d0caefe071a9b6dd77f494431919c90fe66a9b4f0b289dcd346855&",
             "url": "https://playp.red/PatchNotes1_15_3"
         },
         {
@@ -520,13 +520,13 @@
         },
         {
             "original_id": "1534210385731784774",
-            "date": "2026-08-11",
-            "end_date": "2026-08-11",
-            "iso_date": "2026-08-11T14:00:00+02:00",
+            "date": "2026-08-10",
+            "end_date": "2026-08-10",
+            "iso_date": "2026-08-10T14:00:00+02:00",
             "title": "DEV STREAM",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a812179&is=6a7fcff9&hm=ccae11506a656162d91eac5d423ede226daf41fd3844c5b3ec07057dd0197205&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a81ca39&is=6a8078b9&hm=e778b0dbb7791d15b39cc20c80a8153b6029a85aa62f3768cfdaacf3ec65fee7&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -545,7 +545,7 @@
             "date": "2026-08-11",
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "SCARLETT OVERVIEW",
+            "title": "SCARLETT HERO OVERVIEW",
             "type": "hero",
             "desc": "# \ud83d\udd25 Scarlett Overview is here!\n\nScarlett lights the way to battle on August 11th in Update 1.16 Aegis of Dawn! \n\nCheck out the Hero Overview to see what our new, blazing swordmaster can do! \u2694\ufe0f\ud83d\udc47\nhttps://youtu.be/9-wjL8VUBzw\n\n\ud83d\udd14 @Official News\nScarlett | Hero Overview | Predecessor\nBrand new Hero, Scarlett, joins the fight on August 11th alongside Update 1.16: Aegis of Dawn! \n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/9-wjL8VUBzw/maxresdefault.jpg",
@@ -592,7 +592,7 @@
             "title": "AEGIS OF DAWN PATCH NOTES",
             "type": "patch",
             "desc": "# \ud83d\udd25 Aegis of Dawn Patch Notes!\n\nUpdate 1.16 Aegis of Dawn drops next week - August 11th \ud83d\ude4c\n\nCheck out the patch notes for all the changes! \ud83d\udc47\nhttps://playp.red/AegisofDawn_PatchNotes\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1535302283548561428/SCARLETT_HEADER.jpg?ex=6a81286c&is=6a7fd6ec&hm=ceb8ed403f0976579406f172bf5c0d554b365d22ea121c6cf757c9e03897b7b7&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1535302283548561428/SCARLETT_HEADER.jpg?ex=6a81d12c&is=6a807fac&hm=f38dc444eb58e500a2b7c4e34493453212b26a3635f0c81942585b320c0b10ee&",
             "url": "https://playp.red/AegisofDawn_PatchNotes"
         },
         {
@@ -608,13 +608,13 @@
         },
         {
             "original_id": "1537506394130096189",
-            "date": "2026-08-15",
+            "date": "2026-08-16",
             "end_date": "2026-08-17",
-            "iso_date": "2026-08-15T14:00:00+02:00",
+            "iso_date": "2026-08-16T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 Double XP Weekend begins tomorrow!\n\n\ud83d\udcab2x Affinity XP\n\ud83d\udd252x Account XP\n\ud83d\udca5AND Duplicate Heroes in Brawl\n\nDon't miss out! \n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537503524936622080/1-16_2XP_Weekend_1920x1080.png?ex=6a8098bd&is=6a7f473d&hm=194235a288ab1987fd8952ef7960e9be3852462384a095ef57d385b048b6e31d&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537503524936622080/1-16_2XP_Weekend_1920x1080.png?ex=6a81417d&is=6a7feffd&hm=ee4c8c576d33fbef410a9f75fa8e867e133cc99afc17f785d626c5295a9caf90&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -625,7 +625,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3  Double XP Weekend is LIVE!\n\n\ud83d\udcab2x Affinity XP\n\ud83d\udd252x Account XP\n\ud83d\udca5AND Duplicate Heroes in Brawl\n\nFrom today until Monday 17th August! \n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537843396838826095/1-16_2XP_Weekend_1920x1080_LIVE.png?ex=6a812c85&is=6a7fdb05&hm=5be8f6f64aae1e4cc5ab95d6b22207dd38b09af88352c42cdf7c9d5311f7d753&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537843396838826095/1-16_2XP_Weekend_1920x1080_LIVE.png?ex=6a81d545&is=6a8083c5&hm=946cbba140e4d15ae7025d6efc3ab17be1138fc670e5b2e3b6bba8fe7f013bd9&",
             "url": "https://www.predecessorgame.com/en-US/news"
         }
     ]
