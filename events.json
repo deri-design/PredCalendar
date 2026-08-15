@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-14 21:28:36",
+    "last_updated": "2026-08-15 01:27:14",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -465,9 +465,9 @@
         },
         {
             "original_id": "1521490675143807027",
-            "date": "2026-06-30",
-            "end_date": "2026-06-30",
-            "iso_date": "2026-06-30T14:00:00+02:00",
+            "date": "2026-07-11",
+            "end_date": "2026-07-11",
+            "iso_date": "2026-07-11T14:00:00+02:00",
             "title": "UPDATE 1.15: SPLASH DAMAGE",
             "type": "patch",
             "desc": "# \ud83c\udf0a Update 1.15: Splash Damage is LIVE! \ud83d\udd25\n\n\ud83d\udd31 New Hero - Ikra\n\ud83c\udf0d Daybreak v6\n\ud83d\udd25 Big QoL updates\n\u2600\ufe0f Summer skins\nand MORE! \n\nJump in and ride the waves to glory! \u2694\ufe0f\ud83c\udf0a\nhttps://youtube.com/shorts/BOWJUlvuKxY\n\nPatch notes if you missed them \ud83d\udc47 \nhttps://playp.red/SplashDamage\n\n\ud83d\udd14  @Official News\nNew Update is LIVE! \ud83c\udf0a Splash Damage!  #predecessor\n#moba #gaming #gamingshorts\nV1.15: Splash Damage Patch Notes | Predecessor\nEverything you need to know about update 1.15!",
@@ -482,7 +482,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \u2696\ufe0f  Balance Patch 1.15.3 is LIVE! \n\nDownload the new update and check out all the summer skins, as well as a range of balance adjustments \ud83d\ude4c \n\nPatch notes if you missed them \ud83d\udc47 \nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1529063013120737310/1.15.3_LIVE.png?ex=6a803666&is=6a7ee4e6&hm=7bc3b437f1d07bac8f09bcf6f613e62e3de44b21f34eea0d800e86910806baed&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1529063013120737310/1.15.3_LIVE.png?ex=6a80df26&is=6a7f8da6&hm=1577e017f62ce6ce789744c106258034ff223f3f7a7750b953cfd1c066813fca&",
             "url": "https://playp.red/PatchNotes1_15_3"
         },
         {
@@ -512,7 +512,7 @@
             "date": "2026-08-05",
             "end_date": "2026-08-05",
             "iso_date": "2026-08-05T14:00:00+02:00",
-            "title": "SCARLETT HERO TEASER",
+            "title": "SCARLETT TEASER",
             "type": "hero",
             "desc": "# \ud83d\udd25 Get ready to ignite the battlefield!\n\nScarlett joins the fight in Update 1.16: Aegis of Dawn \u2694\ufe0f\nhttps://youtu.be/KeOfssI0pLA\n\nCatch her in action for the first time on our Dev Stream \ud83d\uddd3\ufe0f  <t:1785952800:F> \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nScarlett | Hero Teaser | Predecessor\nNew Hero, Scarlett, arrives in update 1.16: Aegis of Dawn! Tune into the livestream on August 5th to see her in action for the first time!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/KeOfssI0pLA/maxresdefault.jpg",
@@ -520,9 +520,9 @@
         },
         {
             "original_id": "1534210385731784774",
-            "date": "2026-08-10",
-            "end_date": "2026-08-10",
-            "iso_date": "2026-08-10T14:00:00+02:00",
+            "date": "2026-08-11",
+            "end_date": "2026-08-11",
+            "iso_date": "2026-08-11T14:00:00+02:00",
             "title": "DEV STREAM",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
@@ -545,7 +545,7 @@
             "date": "2026-08-11",
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "SCARLETT HERO OVERVIEW",
+            "title": "SCARLETT OVERVIEW",
             "type": "hero",
             "desc": "# \ud83d\udd25 Scarlett Overview is here!\n\nScarlett lights the way to battle on August 11th in Update 1.16 Aegis of Dawn! \n\nCheck out the Hero Overview to see what our new, blazing swordmaster can do! \u2694\ufe0f\ud83d\udc47\nhttps://youtu.be/9-wjL8VUBzw\n\n\ud83d\udd14 @Official News\nScarlett | Hero Overview | Predecessor\nBrand new Hero, Scarlett, joins the fight on August 11th alongside Update 1.16: Aegis of Dawn! \n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/9-wjL8VUBzw/maxresdefault.jpg",
@@ -603,7 +603,7 @@
             "title": "UPDATE 1.16 AEGIS OF DAWN",
             "type": "patch",
             "desc": "# \ud83d\udce3 Update 1.16 Aegis of Dawn is LIVE! \ud83d\ude4c\n\n\ud83d\udd25 New Hero - Scarlett\n\ud83d\udca5 Brawl Mode Returns\n\ud83d\udc19 New Eternals\n\u2694\ufe0f Daybreak v7\n... and more!\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1536682356583174174/1.16_LIVE.jpg?ex=6a803ef7&is=6a7eed77&hm=39c247d8fdd9c4935a4adf2c5fe22294867fef35e1be8ea98daef6bf70df3118&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1536682356583174174/1.16_LIVE.jpg?ex=6a80e7b7&is=6a7f9637&hm=b27bcec1e0318999669978713249d886b0c1a60f0560ae596a5d5b5f4f4a1c3e&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -619,9 +619,9 @@
         },
         {
             "original_id": "1537846024821801004",
-            "date": "2026-08-14",
+            "date": "2026-08-15",
             "end_date": "2026-08-17",
-            "iso_date": "2026-08-14T14:00:00+02:00",
+            "iso_date": "2026-08-15T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3  Double XP Weekend is LIVE!\n\n\ud83d\udcab2x Affinity XP\n\ud83d\udd252x Account XP\n\ud83d\udca5AND Duplicate Heroes in Brawl\n\nFrom today until Monday 17th August! \n\n\ud83d\udd14 @Official News",
