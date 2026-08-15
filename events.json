@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-15 15:25:58",
+    "last_updated": "2026-08-15 18:34:55",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -449,7 +449,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a812f04&is=6a7fdd84&hm=e9d3e08a7f143d86161db32d38bd81b4f16b09c957050991331f49f15b8fa614&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a81d7c4&is=6a808644&hm=1d40bce8a4f401331f25d11e6467e02279277190727a34f0d9da1979934e86de&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -504,7 +504,7 @@
             "title": "BRAWL MODE RETURNS",
             "type": "news",
             "desc": "# \ud83d\udce3 It's coming back! \u2694\ufe0f\ud83d\udd25\n\nGet ready to **BRAWL** in Update 1.16: Aegis of Dawn on August 11th \ud83d\udcab\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a812ff3&is=6a7fde73&hm=14f71bbe2444c8e175f4975569367d2b05ea6a13ec2d6188166fc3111bed959f&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a81d8b3&is=6a808733&hm=fe2b86ffcf91bc6f8d7ecbfb605234e220f9c50b05f9e7eae3f81d70569d4b79&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -512,7 +512,7 @@
             "date": "2026-08-05",
             "end_date": "2026-08-05",
             "iso_date": "2026-08-05T14:00:00+02:00",
-            "title": "SCARLETT TEASER",
+            "title": "SCARLETT HERO TEASER",
             "type": "hero",
             "desc": "# \ud83d\udd25 Get ready to ignite the battlefield!\n\nScarlett joins the fight in Update 1.16: Aegis of Dawn \u2694\ufe0f\nhttps://youtu.be/KeOfssI0pLA\n\nCatch her in action for the first time on our Dev Stream \ud83d\uddd3\ufe0f  <t:1785952800:F> \ud83c\udfa5\n\n\ud83d\udd14 @Official News\nScarlett | Hero Teaser | Predecessor\nNew Hero, Scarlett, arrives in update 1.16: Aegis of Dawn! Tune into the livestream on August 5th to see her in action for the first time!\n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/KeOfssI0pLA/maxresdefault.jpg",
@@ -614,7 +614,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3 Double XP Weekend begins tomorrow!\n\n\ud83d\udcab2x Affinity XP\n\ud83d\udd252x Account XP\n\ud83d\udca5AND Duplicate Heroes in Brawl\n\nDon't miss out! \n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537503524936622080/1-16_2XP_Weekend_1920x1080.png?ex=6a81417d&is=6a7feffd&hm=ee4c8c576d33fbef410a9f75fa8e867e133cc99afc17f785d626c5295a9caf90&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537503524936622080/1-16_2XP_Weekend_1920x1080.png?ex=6a81ea3d&is=6a8098bd&hm=63e420d59b9c6ab00c78dc9fd703b8400ba382a2185c6d20df7ad8efd9b33783&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
@@ -627,6 +627,17 @@
             "desc": "# \ud83d\udce3  Double XP Weekend is LIVE!\n\n\ud83d\udcab2x Affinity XP\n\ud83d\udd252x Account XP\n\ud83d\udca5AND Duplicate Heroes in Brawl\n\nFrom today until Monday 17th August! \n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537843396838826095/1-16_2XP_Weekend_1920x1080_LIVE.png?ex=6a81d545&is=6a8083c5&hm=946cbba140e4d15ae7025d6efc3ab17be1138fc670e5b2e3b6bba8fe7f013bd9&",
             "url": "https://www.predecessorgame.com/en-US/news"
+        },
+        {
+            "original_id": "1538190649768149146",
+            "date": "2026-08-15",
+            "end_date": "2026-08-15",
+            "iso_date": "2026-08-15T14:00:00+02:00",
+            "title": "DAYBREAK DRAFT TOURNAMENT",
+            "type": "twitch",
+            "desc": "# \ud83d\udca5 Day 1 of the Daybreak Draft Tournament starts NOW \ud83d\udd25\n\nLIVE *VennyVens* vs *Omeda Police Department* (Devs) \ud83d\ude93  Show match!\n\nThen 8 teams stacked with some of the best Predecessor players will be battling it out all weekend on our new map, Daybreak! \n \nCatch all the action live! \ud83d\udc47\nTwitch https://playp.red/4zjuJgn\nYouTube https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1538186560699240528/LiveDaybreakDay1.png?ex=6a81c35e&is=6a8071de&hm=0fd2b9319a224372d621e4437cd9f011c5c137ad34201666d7d00ac7c62cd2ab&",
+            "url": "https://playp.red/4zjuJgn"
         }
     ]
 }
