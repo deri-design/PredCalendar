@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-16 12:47:35",
+    "last_updated": "2026-08-16 15:25:54",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -446,7 +446,7 @@
             "date": "2026-07-03",
             "end_date": "2026-07-06",
             "iso_date": "2026-07-03T14:00:00+02:00",
-            "title": "DOUBLE XP WEEKEND",
+            "title": "SPLASH DAMAGE - DOUBLE XP WEEKEND",
             "type": "patch",
             "desc": "# \ud83c\udf0a Splash Damage - Double XP Weekend! 3rd-6th July \u2600\ufe0f\n\nEarn double **Affinity** and **Account** XP all weekend AND complete **Patch Quests** to earn free Cores \ud83d\udd25\ud83d\udc47\n\n\ud83d\udd31 Win 2 PvP games - 1x Ion Core\n\ud83d\udee1\ufe0f Win 4 PvP games - 1x Ion Core\n\u2694\ufe0f Win 8 PvP games - 1x Quantum Core\n\nThis weekend only - Friday 3rd to Monday 6th.\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1521901011508400270/2XP_LIVE_v2_19201080.png?ex=6a828084&is=6a812f04&hm=36ee4ff015f68b2610e014de90c6fbc98fdccf6d3d12e75306d64424b3c6499d&",
@@ -460,7 +460,7 @@
             "title": "BALANCE PATCH 1.15.3",
             "type": "patch",
             "desc": "# \ud83c\udf0a Patch Notes are here! \n\nBalance Patch 1.15.3 lands next Tuesday, 21st July! \n\nWe've got a bunch of new Summer skins and a slew of balance changes coming up, take a look \ud83d\udc47\nhttps://playp.red/PatchNotes1_15_3\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a826962&is=6a8117e2&hm=8f6fddfaef1d3774a3a6e4d622e79f6ac5b5fbc34b5f5df21212df0c10fa199f&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1527674378580529242/1.15.3_PatchHeader.jpg?ex=6a831222&is=6a81c0a2&hm=1619dea94963c5d3c0224b9c8ec4ee1f4274d7aa6886df48d8eeabccb3c9e194&",
             "url": "https://playp.red/PatchNotes1_15_3"
         },
         {
@@ -501,7 +501,7 @@
             "date": "2026-08-11",
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "BRAWL MODE RETURNS",
+            "title": "BRAWL IN UPDATE 1.16: AEGIS OF DAWN",
             "type": "news",
             "desc": "# \ud83d\udce3 It's coming back! \u2694\ufe0f\ud83d\udd25\n\nGet ready to **BRAWL** in Update 1.16: Aegis of Dawn on August 11th \ud83d\udcab\n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1532411261973696592/BrawlReturn_1920.png?ex=6a828173&is=6a812ff3&hm=815f37dad7db5f2bec96ec93b23d281ddcbac0eb2b4d03a0c556ad3675492a7c&",
@@ -520,13 +520,13 @@
         },
         {
             "original_id": "1534210385731784774",
-            "date": "2026-08-10",
-            "end_date": "2026-08-10",
-            "iso_date": "2026-08-10T14:00:00+02:00",
-            "title": "DEV STREAM",
+            "date": "2026-08-11",
+            "end_date": "2026-08-11",
+            "iso_date": "2026-08-11T14:00:00+02:00",
+            "title": "DEV STREAM TOMORROW",
             "type": "twitch",
             "desc": "# \ud83d\udd25 Dev Stream Tomorrow!\n\nWe'll be live tomorrow evening for a first look at Update 1.16: Aegis of Dawn \u2694\ufe0f\n\nTune in from <t:1785952800:t> <t:1785952800:R> and check out everything we've got coming up on August 11th \ud83d\udc40\nhttps://www.twitch.tv/predecessorgame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a8272f9&is=6a812179&hm=da29a78a7cd0d3dbf1e4a4b3e9886e0e8239ffe9afc7a772dccd9eca576321b2&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1534207657978888412/1-16_LIVESTREAMSOCIALS_Annoucement_v4.png?ex=6a831bb9&is=6a81ca39&hm=01d64bb70186a1d7d44487db6979d98781a715535273d1dbd879f37aeae67506&",
             "url": "https://www.twitch.tv/predecessorgame"
         },
         {
@@ -545,7 +545,7 @@
             "date": "2026-08-11",
             "end_date": "2026-08-11",
             "iso_date": "2026-08-11T14:00:00+02:00",
-            "title": "SCARLETT HERO OVERVIEW",
+            "title": "SCARLETT OVERVIEW",
             "type": "hero",
             "desc": "# \ud83d\udd25 Scarlett Overview is here!\n\nScarlett lights the way to battle on August 11th in Update 1.16 Aegis of Dawn! \n\nCheck out the Hero Overview to see what our new, blazing swordmaster can do! \u2694\ufe0f\ud83d\udc47\nhttps://youtu.be/9-wjL8VUBzw\n\n\ud83d\udd14 @Official News\nScarlett | Hero Overview | Predecessor\nBrand new Hero, Scarlett, joins the fight on August 11th alongside Update 1.16: Aegis of Dawn! \n\nPredecessor redefines the modern MOBA genre, blending stunning realistic environments with explosive third-person action. \n\nPLAY NOW!\nhttps://playp.red/playnow",
             "image": "https://i.ytimg.com/vi/9-wjL8VUBzw/maxresdefault.jpg",
@@ -592,7 +592,7 @@
             "title": "AEGIS OF DAWN PATCH NOTES",
             "type": "patch",
             "desc": "# \ud83d\udd25 Aegis of Dawn Patch Notes!\n\nUpdate 1.16 Aegis of Dawn drops next week - August 11th \ud83d\ude4c\n\nCheck out the patch notes for all the changes! \ud83d\udc47\nhttps://playp.red/AegisofDawn_PatchNotes\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1535302283548561428/SCARLETT_HEADER.jpg?ex=6a8279ec&is=6a81286c&hm=5af90116a182613966e540884a1bc65e8777627a660ef769d2bfccf1496e7860&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1535302283548561428/SCARLETT_HEADER.jpg?ex=6a8322ac&is=6a81d12c&hm=165f9c02e05778cebab981dcf3238d13eeef0bab77618a1c369d4724ba98ec20&",
             "url": "https://playp.red/AegisofDawn_PatchNotes"
         },
         {
@@ -608,10 +608,10 @@
         },
         {
             "original_id": "1537506394130096189",
-            "date": "2026-08-17",
+            "date": "2026-08-16",
             "end_date": "2026-08-17",
-            "iso_date": "2026-08-17T14:00:00+02:00",
-            "title": "DOUBLE XP WEEKEND",
+            "iso_date": "2026-08-16T14:00:00+02:00",
+            "title": "DOUBLE XP WEEKEND BEGINS TOMORROW",
             "type": "news",
             "desc": "# \ud83d\udce3 Double XP Weekend begins tomorrow!\n\n\ud83d\udcab2x Affinity XP\n\ud83d\udd252x Account XP\n\ud83d\udca5AND Duplicate Heroes in Brawl\n\nDon't miss out! \n\n\ud83d\udd14 @Official News",
             "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537503524936622080/1-16_2XP_Weekend_1920x1080.png?ex=6a8292fd&is=6a81417d&hm=acf90e91a7694a243a880ee569a38057a687d739c5825333f928be03b00b25b9&",
@@ -625,7 +625,7 @@
             "title": "DOUBLE XP WEEKEND",
             "type": "news",
             "desc": "# \ud83d\udce3  Double XP Weekend is LIVE!\n\n\ud83d\udcab2x Affinity XP\n\ud83d\udd252x Account XP\n\ud83d\udca5AND Duplicate Heroes in Brawl\n\nFrom today until Monday 17th August! \n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537843396838826095/1-16_2XP_Weekend_1920x1080_LIVE.png?ex=6a827e05&is=6a812c85&hm=d66a8a4136588dbcfc4ad1449b19a7d7a549459a95adaad45e847779759c655e&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1537843396838826095/1-16_2XP_Weekend_1920x1080_LIVE.png?ex=6a8326c5&is=6a81d545&hm=f8072003a351f151bc1b9f35d6627f5d328adaf150a9e8ffbf63f2bfce905c89&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
