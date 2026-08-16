@@ -1,5 +1,5 @@
 {
-    "last_updated": "2026-08-16 18:34:12",
+    "last_updated": "2026-08-16 21:24:04",
     "events": [
         {
             "original_id": "1491804563257163796",
@@ -603,14 +603,14 @@
             "title": "UPDATE 1.16 AEGIS OF DAWN IS LIVE",
             "type": "patch",
             "desc": "# \ud83d\udce3 Update 1.16 Aegis of Dawn is LIVE! \ud83d\ude4c\n\n\ud83d\udd25 New Hero - Scarlett\n\ud83d\udca5 Brawl Mode Returns\n\ud83d\udc19 New Eternals\n\u2694\ufe0f Daybreak v7\n... and more!\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1536682356583174174/1.16_LIVE.jpg?ex=6a823937&is=6a80e7b7&hm=bb247232c8a79ee577649f73e7ef533de2bb1fae4191dd1a417b306567983391&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1536682356583174174/1.16_LIVE.jpg?ex=6a82e1f7&is=6a819077&hm=f6a2a7ac0d511aee5171ca709e5e4eb7dfc1f9a85fd61937a1026d1f780206de&",
             "url": "https://www.predecessorgame.com/en-US/news"
         },
         {
             "original_id": "1537506394130096189",
-            "date": "2026-08-16",
+            "date": "2026-08-17",
             "end_date": "2026-08-17",
-            "iso_date": "2026-08-16T14:00:00+02:00",
+            "iso_date": "2026-08-17T14:00:00+02:00",
             "title": "DOUBLE XP WEEKEND BEGINS TOMORROW",
             "type": "news",
             "desc": "# \ud83d\udce3 Double XP Weekend begins tomorrow!\n\n\ud83d\udcab2x Affinity XP\n\ud83d\udd252x Account XP\n\ud83d\udca5AND Duplicate Heroes in Brawl\n\nDon't miss out! \n\n\ud83d\udd14 @Official News",
@@ -633,10 +633,21 @@
             "date": "2026-08-16",
             "end_date": "2026-08-16",
             "iso_date": "2026-08-16T14:00:00+02:00",
-            "title": "DAYBREAK DRAFT TOURNAMENT",
+            "title": "DAY 1 OF THE DAYBREAK DRAFT TOURNAMENT",
             "type": "twitch",
             "desc": "# \ud83d\udca5 Day 1 of the Daybreak Draft Tournament starts NOW \ud83d\udd25\n\nLIVE *VennyVens* vs *Omeda Police Department* (Devs) \ud83d\ude93  Show match!\n\nThen 8 teams stacked with some of the best Predecessor players will be battling it out all weekend on our new map, Daybreak! \n \nCatch all the action live! \ud83d\udc47\nTwitch https://playp.red/4zjuJgn\nYouTube https://www.youtube.com/@PredecessorGame\n\n\ud83d\udd14 @Official News",
-            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1538186560699240528/LiveDaybreakDay1.png?ex=6a826c1e&is=6a811a9e&hm=cbe0ca25dc3f6d48d9d259416080f78489556f29234ae67862493da23e15c7bb&",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1538186560699240528/LiveDaybreakDay1.png?ex=6a8314de&is=6a81c35e&hm=c59ce190c439837fe5a3c9cd675c7d6a296400f26b14d06c4cc77b963bb9162d&",
+            "url": "https://playp.red/4zjuJgn"
+        },
+        {
+            "original_id": "1538555805824057477",
+            "date": "2026-08-16",
+            "end_date": "2026-08-16",
+            "iso_date": "2026-08-16T14:00:00+02:00",
+            "title": "FINALS DAY IS HERE",
+            "type": "twitch",
+            "desc": "# \ud83c\udfc6FINALS DAY IS HERE \u2694\ufe0f\n \nThe competition has been intense so far and it all comes down to this! \n \nWhich team will break through and claim the crown? \ud83d\udc51\n \nDay 2 of the Daybreak Draft Tournament starts NOW \ud83d\udc47\nTwitch: https://playp.red/4zjuJgn\nTikTok: https://www.tiktok.com/@predecessorgame \nYouTube: https://www.youtube.com/@PredecessorGame\n\ud83d\udd14 @Official News",
+            "image": "https://cdn.discordapp.com/attachments/514802553213550602/1538550733799170098/LiveDaybreakDay2.png?ex=6a831687&is=6a81c507&hm=915785ac2db808c08e43b395d6d8bb502febe3d4a1a7f6e8c04d5a1c9df52c7d&",
             "url": "https://playp.red/4zjuJgn"
         }
     ]
