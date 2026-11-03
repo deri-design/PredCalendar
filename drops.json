@@ -1,5 +1,38 @@
 {
-    "last_updated": "2026-11-03 17:40:25 (CEST)",
-    "active": false,
-    "campaigns": []
+    "last_updated": "2026-11-03 23:23:52 (CEST)",
+    "active": true,
+    "campaigns": [
+        {
+            "campaign_name": "Predecessor Drops",
+            "start": "2026-04-07T18:00:00Z",
+            "end": "2026-05-04T18:00:00Z",
+            "rewards": [
+                {
+                    "name": "Ion Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3d23d56e-1719-4fff-a001-c16c7e9f923f.png",
+                    "minutes": 60
+                },
+                {
+                    "name": "Kaelen Icon",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/4a122261-61ef-4c28-a3ba-a5ee18e58dcf.png",
+                    "minutes": 120
+                },
+                {
+                    "name": "Kaelen Banner",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/3ce24a5e-6944-405f-a66a-4b8388382b7c.png",
+                    "minutes": 180
+                },
+                {
+                    "name": "Quantum Loot Core",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/524953d6-ade9-4ad3-8f65-2120682a44f3.png",
+                    "minutes": 360
+                },
+                {
+                    "name": "Kaelen Variant",
+                    "image": "https://static-cdn.jtvnw.net/twitch-quests-assets/REWARD/eef3f121-b158-410d-900b-76e7e008acd9.png",
+                    "minutes": 600
+                }
+            ]
+        }
+    ]
 }
